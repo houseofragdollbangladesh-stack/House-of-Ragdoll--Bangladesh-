@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House of Ragdoll Bangladesh | Pure-Bred Ragdoll Kittens & Cat Shop</title>
+  <meta name="description" content="Bangladesh's premier Ragdoll cattery. Pure-bred, health-certified Ragdoll kittens and cat accessories delivered nationwide.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --cream: #fdf8f3;
+      --deep: #1a1a2e;
+      --accent: #7b5ea7;
+      --accent-light: #f0eaf8;
+      --gold: #c9a84c;
+      --text: #2d2d2d;
+      --muted: #6b6b6b;
+      --white: #ffffff;
+      --border-col: #e8e0f0;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Lato', system-ui, sans-serif;
+    }
+    body { font-family: var(--font-body); background: var(--cream); color: var(--text); }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAV */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border-col);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo { font-family: var(--font-display); font-size: 1.25rem; color: var(--accent); font-weight: 700; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; font-size: 0.875rem; color: var(--muted); }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { background: var(--accent); color: var(--white); border: none; padding: 0.5rem 1.25rem; border-radius: 20px; font-size: 0.85rem; cursor: pointer; font-family: var(--font-body); }
+    .nav-cta:hover { background: #6a4d96; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1b5e 60%, #4a2080 100%);
+      color: var(--white);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.08);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 250px; height: 250px;
+      border-radius: 50%;
+      background: rgba(123,94,167,0.15);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201,168,76,0.2);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 { font-family: var(--font-display); font-size: 3rem; font-weight: 700; line-height: 1.15; margin-bottom: 1rem; }
+    .hero h1 span { color: var(--gold); }
+    .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto 2rem; line-height: 1.7; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--gold); color: var(--deep); padding: 0.75rem 2rem; border-radius: 25px; font-weight: 700; font-size: 0.95rem; cursor: pointer; border: none; font-family: var(--font-body); }
+    .btn-primary:hover { background: #b8952e; }
+    .btn-outline { border: 1.5px solid rgba(255,255,255,0.4); color: var(--white); padding: 0.75rem 2rem; border-radius: 25px; font-size: 0.95rem; cursor: pointer; background: transparent; font-family: var(--font-body); }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+    .hero-cats { font-size: 4rem; margin-top: 2.5rem; letter-spacing: 0.5rem; }
+
+    /* STATS */
+    .stats { background: var(--white); padding: 2rem; display: flex; justify-content: center; gap: 0; border-bottom: 1px solid var(--border-col); flex-wrap: wrap; }
+    .stat { text-align: center; padding: 1rem 2.5rem; border-right: 1px solid var(--border-col); }
+    .stat:last-child { border-right: none; }
+    .stat-num { font-family: var(--font-display); font-size: 1.8rem; color: var(--accent); font-weight: 700; }
+    .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+
+    /* SECTION COMMON */
+    section { padding: 4rem 2rem; max-width: 900px; margin: 0 auto; }
+    .section-eyebrow { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 0.5rem; }
+    .section-title { font-family: var(--font-display); font-size: 2rem; color: var(--deep); margin-bottom: 0.75rem; }
+    .section-sub { color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 560px; }
+
+    /* KITTENS */
+    .kittens-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
+    .kitten-card { background: var(--white); border: 1px solid var(--border-col); border-radius: 16px; overflow: hidden; transition: transform 0.2s; }
+    .kitten-card:hover { transform: translateY(-4px); }
+    .kitten-img { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 5rem; }
+    .kitten-img.blue { background: #eef2ff; }
+    .kitten-img.lilac { background: #f5f0ff; }
+    .kitten-img.seal { background: #fff5e6; }
+    .kitten-info { padding: 1rem 1.25rem; }
+    .kitten-name { font-family: var(--font-display); font-size: 1.1rem; color: var(--deep); font-weight: 700; }
+    .kitten-color { font-size: 0.8rem; color: var(--accent); margin: 0.2rem 0; }
+    .kitten-price { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.75rem; }
+    .kitten-price strong { color: var(--gold); font-size: 1rem; }
+    .badge-avail { background: #e8f5e9; color: #2e7d32; font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 10px; font-weight: 700; letter-spacing: 0.05em; }
+    .badge-reserved { background: #fff3e0; color: #e65100; font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 10px; font-weight: 700; letter-spacing: 0.05em; }
+    .btn-adopt { width: 100%; background: var(--accent); color: var(--white); border: none; padding: 0.6rem; border-radius: 8px; font-size: 0.85rem; cursor: pointer; margin-top: 0.75rem; font-family: var(--font-body); }
+    .btn-adopt:hover { background: #6a4d96; }
+    .btn-adopt-out { width: 100%; background: transparent; color: var(--muted); border: 1px solid var(--border-col); padding: 0.6rem; border-radius: 8px; font-size: 0.85rem; cursor: default; margin-top: 0.75rem; font-family: var(--font-body); }
+
+    /* SHOP */
+    .shop-wrap { background: #f8f4fe; padding: 4rem 0; }
+    .shop-inner { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .product-card { background: var(--white); border: 1px solid var(--border-col); border-radius: 12px; padding: 1.25rem; text-align: center; transition: box-shadow 0.2s; }
+    .product-card:hover { box-shadow: 0 4px 20px rgba(123,94,167,0.12); }
+    .product-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    .product-name { font-size: 0.9rem; font-weight: 600; color: var(--deep); margin-bottom: 0.3rem; }
+    .product-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; margin-bottom: 0.75rem; }
+    .product-price { font-size: 0.95rem; color: var(--gold); font-weight: 700; margin-bottom: 0.5rem; }
+    .btn-cart { background: var(--accent-light); color: var(--accent); border: none; padding: 0.45rem 1rem; border-radius: 20px; font-size: 0.78rem; cursor: pointer; font-weight: 600; font-family: var(--font-body); }
+    .btn-cart:hover { background: var(--accent); color: var(--white); }
+
+    /* WHY US */
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+    .why-card { background: var(--white); border: 1px solid var(--border-col); border-radius: 12px; padding: 1.5rem; }
+    .why-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .why-title { font-weight: 600; font-size: 0.95rem; color: var(--deep); margin-bottom: 0.4rem; }
+    .why-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+    /* CONTACT */
+    .contact-wrap { background: linear-gradient(135deg, #1a1a2e 0%, #2d1b5e 100%); padding: 4rem 2rem; color: var(--white); text-align: center; }
+    .contact-wrap .section-title { color: var(--white); }
+    .contact-wrap .section-sub { color: rgba(255,255,255,0.65); margin: 0 auto 2rem; }
+    .contact-cards { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
+    .contact-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 1.25rem 2rem; min-width: 180px; }
+    .contact-card-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .contact-card-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.08em; }
+    .contact-card-val { font-size: 0.95rem; color: var(--white); font-weight: 600; }
+
+    /* FOOTER */
+    footer { background: var(--deep); color: rgba(255,255,255,0.4); text-align: center; padding: 1.5rem; font-size: 0.8rem; }
+    footer span { color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .nav-links { display: none; }
+      .stat { padding: 1rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">House of <span>Ragdoll</span></div>
+  <div class="nav-links">
+    <a href="#kittens">Kittens</a>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Adopt Now</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Bangladesh's Premier Ragdoll Cattery</div>
+  <h1>Fall in Love with a<br><span>Ragdoll Kitten</span></h1>
+  <p>Pure-bred, health-certified Ragdoll cats raised with love — brought to cat lovers across Bangladesh.</p>
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="document.getElementById('kittens').scrollIntoView({behavior:'smooth'})">See Available Kittens</button>
+    <button class="btn-outline" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Browse Shop</button>
+  </div>
+  <div class="hero-cats">🐱 🐾 🐱</div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Happy Families</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Health Certified</div></div>
+  <div class="stat"><div class="stat-num">3+</div><div class="stat-label">Years of Breeding</div></div>
+  <div class="stat"><div class="stat-num">BD</div><div class="stat-label">Nationwide Delivery</div></div>
+</div>
+
+<!-- KITTENS -->
+<section id="kittens">
+  <div class="section-eyebrow">Available Now</div>
+  <div class="section-title">Our Ragdoll Kittens</div>
+  <div class="section-sub">Each kitten is vaccinated, dewormed, and raised in a loving home environment. Pure-bred with beautiful blue eyes.</div>
+  <div class="kittens-grid">
+    <div class="kitten-card">
+      <div class="kitten-img blue">🐈</div>
+      <div class="kitten-info">
+        <div class="kitten-name">Luna</div>
+        <div class="kitten-color">Blue Colorpoint • Female</div>
+        <div class="kitten-price">Starting from <strong>৳ 25,000</strong></div>
+        <span class="badge-avail">Available</span>
+        <button class="btn-adopt" onclick="window.location.href='#contact'">Inquire to Adopt</button>
+      </div>
+    </div>
+    <div class="kitten-card">
+      <div class="kitten-img lilac">🐈</div>
+      <div class="kitten-info">
+        <div class="kitten-name">Milo</div>
+        <div class="kitten-color">Lilac Bicolor • Male</div>
+        <div class="kitten-price">Starting from <strong>৳ 28,000</strong></div>
+        <span class="badge-avail">Available</span>
+        <button class="btn-adopt" onclick="window.location.href='#contact'">Inquire to Adopt</button>
+      </div>
+    </div>
+    <div class="kitten-card">
+      <div class="kitten-img seal">🐈</div>
+      <div class="kitten-info">
+        <div class="kitten-name">Nova</div>
+        <div class="kitten-color">Seal Mitted • Female</div>
+        <div class="kitten-price">Starting from <strong>৳ 22,000</strong></div>
+        <span class="badge-reserved">Reserved</span>
+        <button class="btn-adopt-out" disabled>Currently Reserved</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<div class="shop-wrap" id="shop">
+  <div class="shop-inner">
+    <div class="section-eyebrow">Cat Accessories</div>
+    <div class="section-title">The Ragdoll Shop</div>
+    <div class="section-sub">Premium cat care essentials — food, grooming tools, toys, and more. Delivered across Bangladesh.</div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-icon">🥣</div>
+        <div class="product-name">Premium Cat Food</div>
+        <div class="product-desc">High-protein formula, specially suited for Ragdoll breeds.</div>
+        <div class="product-price">৳ 1,200 / bag</div>
+        <button class="btn-cart" onclick="window.location.href='#contact'">Order Now</button>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">🪮</div>
+        <div class="product-name">Grooming Kit</div>
+        <div class="product-desc">Slicker brush, dematting comb, and nail clipper set.</div>
+        <div class="product-price">৳ 850</div>
+        <button class="btn-cart" onclick="window.location.href='#contact'">Order Now</button>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">🧸</div>
+        <div class="product-name">Toy Bundle</div>
+        <div class="product-desc">Feather wand, crinkle balls, and interactive puzzle toys.</div>
+        <div class="product-price">৳ 650</div>
+        <button class="btn-cart" onclick="window.location.href='#contact'">Order Now</button>
+      </div>
+      <div class="product-card">
+        <div class="product-icon">🛏️</div>
+        <div class="product-name">Cozy Cat Bed</div>
+        <div class="product-desc">Plush, washable, and sized perfectly for Ragdolls.</div>
+        <div class="product-price">৳ 1,800</div>
+        <button class="btn-cart" onclick="window.location.href='#contact'">Order Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section id="about">
+  <div class="section-eyebrow">Why Choose Us</div>
+  <div class="section-title">Raised with Love, Backed by Care</div>
+  <div class="section-sub">We are Bangladesh's most trusted Ragdoll cattery — every kitten leaves our home healthy, socialized, and loved.</div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">📋</div>
+      <div class="why-title">Health Certified</div>
+      <div class="why-desc">Every kitten comes with full vaccination records, vet check-ups, and deworming certificates.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🏆</div>
+      <div class="why-title">Pure Breed Guarantee</div>
+      <div class="why-desc">TICA-standard Ragdoll bloodlines. Blue eyes, silky coats, and gentle temperament guaranteed.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💬</div>
+      <div class="why-title">Lifetime Support</div>
+      <div class="why-desc">We stay connected after adoption. Get guidance on food, grooming, and care any time.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🚚</div>
+      <div class="why-title">Safe Delivery BD-Wide</div>
+      <div class="why-desc">Safe, stress-free transport arranged to Dhaka, Chittagong, Sylhet, and beyond.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-wrap" id="contact">
+  <div class="section-eyebrow" style="color: var(--gold);">Get in Touch</div>
+  <div class="section-title">Ready to Adopt or Shop?</div>
+  <div class="section-sub">Reach out to us — we respond within 24 hours.</div>
+  <div class="contact-cards">
+    <div class="contact-card">
+      <div class="contact-card-icon">📱</div>
+      <div class="contact-card-label">WhatsApp / Call</div>
+      <div class="contact-card-val">+880 XXXX-XXXXXX</div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">📘</div>
+      <div class="contact-card-label">Facebook Page</div>
+      <div class="contact-card-val">House of Ragdoll BD</div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">🎬</div>
+      <div class="contact-card-label">YouTube</div>
+      <div class="contact-card-val">House of Ragdoll - Bangladesh</div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">📍</div>
+      <div class="contact-card-label">Location</div>
+      <div class="contact-card-val">Dhaka, Bangladesh</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>House of Ragdoll Bangladesh</span>. Crafted with love for cat lovers across Bangladesh. 🐾</p>
+</footer>
+
+</body>
+</html>
