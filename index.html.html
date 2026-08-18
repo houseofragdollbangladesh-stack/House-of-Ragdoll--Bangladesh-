@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shinzu Family - Ragdoll, Persian & Scottish Fold Cats in Dhaka Bangladesh</title>
+  <meta name="description" content="Buy pure-bred Ragdoll, Persian, Scottish Fold and British Shorthair kittens in Bangladesh. Grooming, foster and mating services. Chandrima Model Town, Dhaka 1207.">
+  <meta name="keywords" content="Ragdoll cat Bangladesh, Persian cat Dhaka, Scottish Fold Bangladesh, Bicolor Ragdoll, Seal Mitted Ragdoll, Colorpoint Ragdoll, Van Ragdoll, Scottish Straight, Blue eye Persian, Shinzu Family cats Dhaka">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Shinzu Family - Premium Cats in Bangladesh">
+  <meta property="og:description" content="Pure-bred Ragdoll, Persian, Scottish Fold & British Shorthair kittens. Grooming, Foster & Mating services. Dhaka, Bangladesh.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://houseofragdollbangladesh-stack.github.io/House-of-Ragdoll--Bangladesh-">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    :root{
+      --navy:#1b2a4a;--blue:#2e5fa3;--sky:#5b9bd5;
+      --cream:#fdf9f4;--warm:#f5efe6;--gold:#c8973a;
+      --gold-light:#f0d9a8;--white:#fff;--text:#1e1e2e;
+      --muted:#6b7280;--border:#dde3ed;--accent:#7b9fd4;
+      --sidebar:265px;
+      --font-display:'Playfair Display',Georgia,serif;
+      --font-body:'Inter',system-ui,sans-serif;
+    }
+    body{font-family:var(--font-body);background:var(--cream);color:var(--text);}
+    a{text-decoration:none;color:inherit;}
+    .main-content{margin-left:var(--sidebar);transition:margin-left .3s;}
+    .main-content.sb-hidden{margin-left:0;}
+    .sidebar{width:var(--sidebar);position:fixed;top:0;left:0;height:100vh;background:var(--navy);color:#fff;overflow-y:auto;z-index:300;transition:transform .3s;display:flex;flex-direction:column;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent;}
+    .sidebar.hidden{transform:translateX(-100%);}
+    .sb-head{padding:1rem 1.1rem .85rem;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;}
+    .sb-logo{display:flex;align-items:center;gap:9px;}
+    .sb-logo-icon{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--sky));display:flex;align-items:center;justify-content:center;font-size:1rem;}
+    .sb-logo-text{font-family:var(--font-display);font-size:.8rem;color:#fff;font-weight:700;}
+    .sb-logo-sub{font-size:.57rem;color:rgba(255,255,255,.42);}
+    .sb-x{background:none;border:none;color:rgba(255,255,255,.5);font-size:1.1rem;cursor:pointer;}
+    .sb-x:hover{color:#fff;}
+    .sb-sec{padding:.8rem 1rem .45rem;}
+    .sb-sec-title{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.36);margin-bottom:.55rem;font-weight:600;}
+    .sb-item{display:flex;align-items:center;justify-content:space-between;padding:.44rem .6rem;border-radius:7px;margin-bottom:3px;cursor:pointer;transition:background .2s;}
+    .sb-item:hover{background:rgba(255,255,255,.07);}
+    .sb-item.active{background:rgba(91,155,213,.2);border:1px solid rgba(91,155,213,.25);}
+    .sb-item-l{display:flex;align-items:center;gap:8px;font-size:.78rem;color:rgba(255,255,255,.8);}
+    .sb-ico{font-size:.9rem;width:17px;text-align:center;}
+    .toggle{width:30px;height:16px;background:rgba(255,255,255,.16);border-radius:8px;position:relative;transition:background .2s;flex-shrink:0;}
+    .toggle.on{background:var(--sky);}
+    .toggle::after{content:'';position:absolute;width:12px;height:12px;background:#fff;border-radius:50%;top:2px;left:2px;transition:transform .2s;}
+    .toggle.on::after{transform:translateX(14px);}
+    .sb-div{height:1px;background:rgba(255,255,255,.07);margin:.35rem 1rem;}
+    .sb-link{display:flex;align-items:center;gap:8px;padding:.44rem .6rem;border-radius:7px;font-size:.78rem;color:rgba(255,255,255,.7);margin-bottom:3px;cursor:pointer;transition:background .2s;}
+    .sb-link:hover{background:rgba(255,255,255,.07);color:#fff;}
+    .sb-sub .sb-link{font-size:.7rem;color:rgba(255,255,255,.52);padding:.3rem .6rem .3rem 1.5rem;}
+    .sb-sub .sb-link:hover{color:rgba(255,255,255,.9);}
+    .sb-social{padding:.8rem 1rem;margin-top:auto;border-top:1px solid rgba(255,255,255,.08);}
+    .social-row{display:flex;gap:.45rem;margin-top:.55rem;}
+    .social-btn{flex:1;padding:.42rem;border-radius:7px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#fff;font-size:.65rem;text-align:center;cursor:pointer;font-family:var(--font-body);}
+    .social-btn:hover{background:rgba(255,255,255,.12);}
+    .social-btn span{display:block;font-size:.95rem;margin-bottom:1px;}
+    .sb-toggle-btn{position:fixed;top:13px;left:13px;z-index:400;background:var(--navy);color:#fff;border:none;width:37px;height:37px;border-radius:9px;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.22);transition:left .3s;}
+    .sb-toggle-btn:hover{background:var(--blue);}
+    .sb-toggle-btn.shifted{left:calc(var(--sidebar) + 9px);}
+    nav{background:#fff;border-bottom:1px solid var(--border);padding:0 1.3rem 0 3.7rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;box-shadow:0 1px 10px rgba(30,60,100,.06);}
+    .nav-title{font-family:var(--font-display);font-size:.92rem;color:var(--navy);font-weight:700;}
+    .nav-title span{color:var(--gold);font-size:.64rem;display:block;font-family:var(--font-body);font-weight:400;}
+    .nav-links{display:flex;gap:1.2rem;font-size:.76rem;color:var(--muted);font-weight:500;}
+    .nav-links a{cursor:pointer;}
+    .nav-links a:hover{color:var(--blue);}
+    .nav-right{display:flex;align-items:center;gap:.6rem;}
+    .nav-cta{background:var(--blue);color:#fff;border:none;padding:.4rem .95rem;border-radius:17px;font-size:.76rem;cursor:pointer;font-family:var(--font-body);font-weight:600;}
+    .nav-cta:hover{background:var(--navy);}
+    .cart-btn{position:relative;background:var(--warm);border:1px solid var(--border);color:var(--navy);padding:.4rem .8rem;border-radius:17px;font-size:.76rem;cursor:pointer;font-family:var(--font-body);font-weight:600;display:flex;align-items:center;gap:4px;}
+    .cart-count{position:absolute;top:-5px;right:-5px;background:var(--gold);color:var(--navy);font-size:.56rem;font-weight:700;width:14px;height:14px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+    .hero{background:linear-gradient(150deg,var(--navy) 0%,#1e3a6e 50%,#2e5fa3 100%);color:#fff;padding:4.5rem 2rem 3.5rem;text-align:center;position:relative;overflow:hidden;}
+    .hero-circles{position:absolute;inset:0;pointer-events:none;}
+    .hero-circles span{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.06);}
+    .hero-circles span:nth-child(1){width:380px;height:380px;top:-90px;right:-70px;}
+    .hero-circles span:nth-child(2){width:280px;height:280px;bottom:-70px;left:-50px;}
+    .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(200,151,58,.18);border:1px solid rgba(200,151,58,.4);color:var(--gold-light);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.33rem .9rem;border-radius:19px;margin-bottom:1.25rem;}
+    .hero h1{font-family:var(--font-display);font-size:2.5rem;font-weight:700;line-height:1.18;margin-bottom:.52rem;}
+    .hero h1 em{color:var(--gold-light);font-style:normal;}
+    .hero-sub{font-size:.93rem;color:rgba(255,255,255,.7);margin-bottom:.42rem;}
+    .hero-loc{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:1.75rem;}
+    .hero-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.2rem;}
+    .btn-gold{background:var(--gold);color:var(--navy);padding:.65rem 1.65rem;border-radius:22px;font-weight:700;font-size:.85rem;cursor:pointer;border:none;font-family:var(--font-body);}
+    .btn-gold:hover{background:#b5842e;}
+    .btn-ghost{border:1.5px solid rgba(255,255,255,.3);color:#fff;padding:.65rem 1.65rem;border-radius:22px;font-size:.85rem;cursor:pointer;background:transparent;font-family:var(--font-body);}
+    .btn-ghost:hover{background:rgba(255,255,255,.1);}
+    .breed-pills{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;}
+    .breed-pill{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.17);color:rgba(255,255,255,.8);font-size:.74rem;padding:.28rem .8rem;border-radius:14px;font-weight:500;}
+    .stats{background:#fff;display:flex;justify-content:center;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+    .stat{text-align:center;padding:1rem 1.8rem;border-right:1px solid var(--border);}
+    .stat:last-child{border-right:none;}
+    .stat-num{font-family:var(--font-display);font-size:1.5rem;color:var(--blue);font-weight:700;}
+    .stat-label{font-size:.68rem;color:var(--muted);margin-top:.1rem;}
+    .social-banner{background:linear-gradient(135deg,#1a1a2e,#2d1b5e);padding:1.6rem 2rem;display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;}
+    .soc-card{flex:1;min-width:200px;max-width:350px;border-radius:13px;padding:1.2rem;display:flex;align-items:center;gap:.85rem;cursor:pointer;transition:transform .2s;border:1px solid rgba(255,255,255,.1);}
+    .soc-card:hover{transform:translateY(-2px);}
+    .soc-card.fb{background:linear-gradient(135deg,#1877f2,#0d5fd4);}
+    .soc-card.yt{background:linear-gradient(135deg,#ff0000,#cc0000);}
+    .soc-icon{font-size:2rem;flex-shrink:0;}
+    .soc-label{font-size:.63rem;color:rgba(255,255,255,.62);text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px;}
+    .soc-name{font-family:var(--font-display);font-size:.9rem;color:#fff;font-weight:700;}
+    .soc-sub{font-size:.7rem;color:rgba(255,255,255,.6);margin-top:2px;}
+    .soc-btn{margin-top:.5rem;background:rgba(255,255,255,.18);color:#fff;border:none;padding:.28rem .8rem;border-radius:11px;font-size:.68rem;cursor:pointer;font-family:var(--font-body);font-weight:600;}
+    .section{padding:3.5rem 2rem;max-width:960px;margin:0 auto;}
+    .sec-eyebrow{font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:.35rem;}
+    .sec-title{font-family:var(--font-display);font-size:1.7rem;color:var(--navy);margin-bottom:.55rem;font-weight:700;}
+    .sec-sub{color:var(--muted);font-size:.88rem;line-height:1.7;max-width:600px;}
+    .tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.3rem 0;}
+    .tab{padding:.38rem .92rem;border-radius:17px;border:1.5px solid var(--border);background:#fff;font-size:.74rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .2s;font-family:var(--font-body);}
+    .tab.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+    .tab:hover:not(.active){border-color:var(--blue);color:var(--blue);}
+    .subtabs{display:flex;gap:.32rem;flex-wrap:wrap;margin-bottom:1.1rem;}
+    .subtab{padding:.28rem .75rem;border-radius:13px;border:1px solid var(--border);background:var(--cream);font-size:.68rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .2s;font-family:var(--font-body);}
+    .subtab.active{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+    .subtab:hover:not(.active){border-color:var(--gold);color:var(--navy);}
+    .gallery-wrap{background:var(--warm);padding:3.5rem 0;}
+    .gallery-inner{max-width:960px;margin:0 auto;padding:0 2rem;}
+    .gallery-panel{display:none;}
+    .gallery-panel.active{display:block;}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;}
+    .cat-card{background:#fff;border:1px solid var(--border);border-radius:13px;overflow:hidden;transition:transform .2s;box-shadow:0 2px 9px rgba(30,60,100,.05);}
+    .cat-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(30,60,100,.1);}
+    .slideshow{position:relative;height:280px;overflow:hidden;background:#eef4fb;}
+    .slides{display:flex;height:100%;transition:transform .4s ease;}
+    .slide{min-width:100%;height:280px;flex-shrink:0;overflow:hidden;}
+    .slide img{width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;}
+    .slide-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.4);color:#fff;border:none;width:23px;height:23px;border-radius:50%;cursor:pointer;font-size:.74rem;display:flex;align-items:center;justify-content:center;z-index:10;}
+    .slide-btn:hover{background:rgba(0,0,0,.65);}
+    .slide-prev{left:5px;}.slide-next{right:5px;}
+    .slide-dots{position:absolute;bottom:5px;left:50%;transform:translateX(-50%);display:flex;gap:4px;}
+    .dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.42);cursor:pointer;transition:background .2s;}
+    .dot.active{background:#fff;}
+    .slide-count{position:absolute;top:5px;right:5px;background:rgba(0,0,0,.4);color:#fff;font-size:.57rem;padding:2px 5px;border-radius:8px;}
+    .cat-info{padding:.78rem .88rem;}
+    .cat-name{font-family:var(--font-display);font-size:.93rem;color:var(--navy);font-weight:700;}
+    .cat-parent{font-size:.63rem;color:var(--gold);margin:.04rem 0;font-weight:600;}
+    .cat-detail{font-size:.67rem;color:var(--blue);margin:.06rem 0;}
+    .cat-specs{display:grid;grid-template-columns:1fr 1fr;gap:.18rem;margin:.42rem 0;}
+    .spec-item{font-size:.61rem;color:var(--muted);display:flex;align-items:flex-start;gap:.25rem;line-height:1.35;}
+    .spec-item strong{color:var(--text);}
+    .cat-price{font-size:.74rem;color:var(--muted);margin:.38rem 0 .38rem;}
+    .cat-price strong{color:var(--gold);font-size:.84rem;}
+    .badge-avail{background:#e8f5e9;color:#2e7d32;font-size:.6rem;padding:.12rem .44rem;border-radius:8px;font-weight:700;}
+    .badge-soon{background:#e3f2fd;color:#1565c0;font-size:.6rem;padding:.12rem .44rem;border-radius:8px;font-weight:700;}
+    .card-btns{display:flex;gap:4px;margin-top:.48rem;flex-wrap:wrap;}
+    .btn-order{flex:1;background:var(--blue);color:#fff;border:none;padding:.4rem .35rem;border-radius:6px;font-size:.67rem;cursor:pointer;font-family:var(--font-body);font-weight:600;white-space:nowrap;}
+    .btn-order:hover{background:var(--navy);}
+    .btn-prebook{flex:1;background:var(--warm);color:var(--navy);border:1.5px solid var(--gold);padding:.4rem .35rem;border-radius:6px;font-size:.67rem;cursor:pointer;font-family:var(--font-body);font-weight:600;white-space:nowrap;}
+    .btn-prebook:hover{background:var(--gold);}
+    .btn-cart-add{background:var(--warm);color:var(--navy);border:1px solid var(--border);padding:.4rem .5rem;border-radius:6px;font-size:.67rem;cursor:pointer;font-family:var(--font-body);font-weight:600;}
+    .btn-cart-add:hover{background:var(--gold-light);}
+    .btn-cart-add.in-cart{background:#e8f5e9;color:#2e7d32;border-color:#a5d6a7;}
+    .dolls-wrap{background:#fff;padding:3.5rem 0;border-bottom:1px solid var(--border);}
+    .dolls-inner{max-width:960px;margin:0 auto;padding:0 2rem;}
+    .dolls-tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.3rem 0 .75rem;}
+    .dtab{padding:.38rem 1.05rem;border-radius:17px;border:2px solid var(--border);background:var(--cream);font-size:.76rem;font-weight:700;color:var(--muted);cursor:pointer;transition:all .2s;font-family:var(--font-body);}
+    .dtab.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+    .dtab:hover:not(.active){border-color:var(--navy);color:var(--navy);}
+    .dolls-panel{display:none;}
+    .dolls-panel.active{display:block;}
+    .dolls-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:1.35rem;}
+    .doll-card{background:#fff;border:2px solid var(--gold);border-radius:16px;overflow:hidden;transition:transform .2s;box-shadow:0 4px 16px rgba(200,151,58,.11);}
+    .doll-card:hover{transform:translateY(-4px);box-shadow:0 9px 28px rgba(30,60,100,.12);}
+    .doll-slideshow{position:relative;height:300px;overflow:hidden;}
+    .doll-slides{display:flex;height:100%;transition:transform .4s ease;}
+    .doll-slide{min-width:100%;height:300px;display:flex;align-items:center;justify-content:center;font-size:4.8rem;flex-shrink:0;}
+    .doll-slide img{width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;}
+    .doll-slide-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.38);color:#fff;border:none;width:27px;height:27px;border-radius:50%;cursor:pointer;font-size:.82rem;display:flex;align-items:center;justify-content:center;z-index:10;}
+    .doll-slide-btn:hover{background:rgba(0,0,0,.6);}
+    .doll-prev{left:7px;}.doll-next{right:7px;}
+    .doll-dots{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);display:flex;gap:4px;}
+    .ddot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:background .2s;}
+    .ddot.active{background:#fff;}
+    .doll-crown{position:absolute;top:8px;left:8px;background:var(--gold);color:var(--navy);font-size:.61rem;font-weight:700;padding:.23rem .62rem;border-radius:10px;}
+    .doll-info{padding:1.05rem 1.2rem;}
+    .doll-name{font-family:var(--font-display);font-size:1.12rem;color:var(--navy);font-weight:700;}
+    .doll-role{font-size:.66rem;color:var(--gold);font-weight:700;margin:.08rem 0 .45rem;text-transform:uppercase;letter-spacing:.06em;}
+    .doll-specs{display:grid;grid-template-columns:1fr 1fr;gap:.25rem;margin:.45rem 0 .6rem;}
+    .dspec{font-size:.63rem;color:var(--muted);display:flex;align-items:flex-start;gap:.28rem;line-height:1.38;}
+    .dspec strong{color:var(--text);}
+    .doll-tags{display:flex;flex-wrap:wrap;gap:.32rem;margin-bottom:.65rem;}
+    .doll-tag{background:var(--warm);color:var(--navy);font-size:.63rem;padding:.18rem .55rem;border-radius:8px;border:1px solid var(--border);font-weight:500;}
+    .not-for-sale{background:rgba(200,151,58,.1);border:1px solid rgba(200,151,58,.26);color:var(--navy);font-size:.68rem;text-align:center;padding:.46rem;border-radius:7px;margin-bottom:.58rem;font-weight:600;}
+    .btn-doll-wa{background:linear-gradient(135deg,#25d366,#1da851);color:#fff;border:none;padding:.5rem 1.05rem;border-radius:17px;font-size:.74rem;font-weight:700;cursor:pointer;font-family:var(--font-body);}
+    .btn-doll-wa:hover{opacity:.88;}
+    .sold-wrap{background:var(--navy);padding:3.5rem 0;}
+    .sold-inner{max-width:960px;margin:0 auto;padding:0 2rem;}
+    .sold-wrap .sec-eyebrow{color:var(--gold-light);}
+    .sold-wrap .sec-title{color:#fff;}
+    .sold-wrap .sec-sub{color:rgba(255,255,255,.55);}
+    .sold-tabs .tab{border-color:rgba(255,255,255,.17);background:rgba(255,255,255,.06);color:rgba(255,255,255,.65);}
+    .sold-tabs .tab.active{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+    .sold-tabs .tab:hover:not(.active){border-color:var(--gold-light);color:var(--gold-light);}
+    .sold-panel{display:none;}
+    .sold-panel.active{display:block;}
+    .sold-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.95rem;}
+    .sold-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;position:relative;transition:transform .2s;}
+    .sold-card:hover{transform:translateY(-3px);}
+    .sold-img{height:148px;display:flex;align-items:center;justify-content:center;font-size:3rem;}
+    .sold-img img{width:100%;height:148px;object-fit:cover;filter:grayscale(15%);}
+    .ragdoll-bg{background:linear-gradient(135deg,#dce8f5,#c8dcf0);}
+    .persian-bg{background:linear-gradient(135deg,#f5e6dc,#f0d8c8);}
+    .scottish-bg{background:linear-gradient(135deg,#e8e8f5,#d8d8f0);}
+    .british-bg{background:linear-gradient(135deg,#dff0e8,#c8e8d8);}
+    .sold-badge{position:absolute;top:7px;right:7px;background:var(--gold);color:var(--navy);font-size:.6rem;font-weight:700;padding:.2rem .52rem;border-radius:10px;}
+    .sold-info{padding:.72rem .84rem;}
+    .sold-name{font-family:var(--font-display);font-size:.88rem;color:#fff;font-weight:700;}
+    .sold-specs{display:grid;grid-template-columns:1fr 1fr;gap:.16rem;margin:.3rem 0;}
+    .sold-spec{font-size:.6rem;color:rgba(255,255,255,.52);display:flex;gap:.22rem;line-height:1.35;}
+    .sold-spec strong{color:rgba(255,255,255,.82);}
+    .sold-home{font-size:.65rem;color:var(--gold-light);margin-top:.28rem;}
+    .sold-note{text-align:center;margin-top:1.4rem;font-size:.78rem;color:rgba(255,255,255,.42);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:.75rem;}
+    .mating-wrap{background:var(--warm);padding:3.5rem 0;}
+    .mating-inner{max-width:960px;margin:0 auto;padding:0 2rem;}
+    .mating-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(262px,1fr));gap:1.2rem;margin-top:1.55rem;}
+    .mating-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s;}
+    .mating-card:hover{transform:translateY(-4px);box-shadow:0 7px 24px rgba(30,60,100,.11);}
+    .mating-slideshow{position:relative;height:220px;overflow:hidden;}
+    .mating-slides{display:flex;height:100%;transition:transform .4s ease;}
+    .mating-slide{min-width:100%;height:220px;display:flex;align-items:center;justify-content:center;font-size:4rem;flex-shrink:0;}
+    .mating-slide img{width:100%;height:220px;object-fit:cover;display:block;}
+    .mating-slide-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.38);color:#fff;border:none;width:25px;height:25px;border-radius:50%;cursor:pointer;font-size:.78rem;display:flex;align-items:center;justify-content:center;z-index:10;}
+    .mating-slide-btn:hover{background:rgba(0,0,0,.62);}
+    .mating-prev{left:6px;}.mating-next{right:6px;}
+    .mating-dots{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);display:flex;gap:4px;}
+    .mdot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:background .2s;}
+    .mdot.active{background:#fff;}
+    .mating-badge{position:absolute;top:7px;left:7px;background:rgba(200,151,58,.9);color:var(--navy);font-size:.6rem;font-weight:700;padding:.2rem .58rem;border-radius:10px;}
+    .mating-body{padding:1.05rem 1.2rem;}
+    .mating-title{font-family:var(--font-display);font-size:1.02rem;color:var(--navy);font-weight:700;margin-bottom:.32rem;}
+    .mating-specs{display:grid;grid-template-columns:1fr 1fr;gap:.22rem;margin:.4rem 0 .65rem;}
+    .mspec{font-size:.63rem;color:var(--muted);display:flex;gap:.25rem;line-height:1.38;}
+    .mspec strong{color:var(--text);}
+    .mating-desc{font-size:.76rem;color:var(--muted);line-height:1.62;margin-bottom:.8rem;}
+    .mating-features{list-style:none;display:flex;flex-direction:column;gap:.26rem;margin-bottom:.8rem;}
+    .mating-features li{font-size:.72rem;color:var(--text);display:flex;align-items:center;gap:.38rem;}
+    .mating-features li::before{content:'♦';color:var(--gold);font-size:.56rem;}
+    .btn-mating{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border:none;padding:.48rem 1.15rem;border-radius:16px;font-size:.74rem;cursor:pointer;font-family:var(--font-body);font-weight:600;}
+    .btn-mating:hover{opacity:.88;}
+    .services-wrap{background:#fff;padding:3.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+    .services-inner{max-width:960px;margin:0 auto;padding:0 2rem;}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(262px,1fr));gap:1.15rem;margin-top:1.55rem;}
+    .svc-card{border:1.5px solid var(--border);border-radius:12px;padding:1.45rem;transition:box-shadow .2s,border-color .2s;}
+    .svc-card:hover{box-shadow:0 5px 18px rgba(46,95,163,.08);border-color:var(--accent);}
+    .svc-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,#dce8f5,#b8d4ed);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:.82rem;}
+    .svc-title{font-family:var(--font-display);font-size:1.02rem;color:var(--navy);font-weight:700;margin-bottom:.33rem;}
+    .svc-desc{font-size:.76rem;color:var(--muted);line-height:1.62;margin-bottom:.82rem;}
+    .svc-features{list-style:none;display:flex;flex-direction:column;gap:.26rem;margin-bottom:.82rem;}
+    .svc-features li{font-size:.72rem;color:var(--text);display:flex;align-items:center;gap:.38rem;}
+    .svc-features li::before{content:'✓';color:var(--blue);font-weight:700;}
+    .btn-svc{background:var(--warm);color:var(--navy);border:1.5px solid var(--border);padding:.44rem .92rem;border-radius:16px;font-size:.74rem;cursor:pointer;font-family:var(--font-body);font-weight:600;transition:all .2s;}
+    .btn-svc:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+    .about-text{color:var(--text);font-size:.84rem;line-height:1.85;margin-top:1.15rem;background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.35rem 1.55rem;}
+    .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(182px,1fr));gap:.92rem;margin-top:1.55rem;}
+    .why-card{background:#fff;border:1px solid var(--border);border-radius:11px;padding:1.1rem;}
+    .why-icon{font-size:1.4rem;margin-bottom:.42rem;}
+    .why-title{font-weight:600;font-size:.82rem;color:var(--navy);margin-bottom:.24rem;}
+    .why-desc{font-size:.7rem;color:var(--muted);line-height:1.58;}
+    .contact-wrap{background:linear-gradient(150deg,var(--navy) 0%,#1e3a6e 100%);padding:3.5rem 2rem;color:#fff;text-align:center;}
+    .contact-wrap .sec-title{color:#fff;}
+    .contact-wrap .sec-sub{color:rgba(255,255,255,.55);margin:0 auto 1.15rem;}
+    .contact-grid{display:flex;gap:.78rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;}
+    .contact-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:11px;padding:.92rem 1.18rem;min-width:148px;text-align:center;transition:background .2s;}
+    .contact-card:hover{background:rgba(255,255,255,.11);}
+    .c-icon{font-size:1.2rem;margin-bottom:.28rem;}
+    .c-label{font-size:.61rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.15rem;}
+    .c-val{font-size:.76rem;color:#fff;font-weight:600;word-break:break-all;}
+    .map-btn{display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:var(--navy);padding:.6rem 1.6rem;border-radius:22px;font-weight:700;font-size:.83rem;margin-top:1.45rem;border:none;cursor:pointer;font-family:var(--font-body);}
+    .map-btn:hover{background:#b5842e;}
+    .float-cart{position:fixed;bottom:1.3rem;right:1.3rem;z-index:450;display:none;}
+    .float-cart.show{display:block;}
+    .float-cart-btn{background:var(--blue);color:#fff;border:none;padding:.68rem 1.35rem;border-radius:22px;font-size:.83rem;font-weight:700;cursor:pointer;font-family:var(--font-body);box-shadow:0 4px 15px rgba(46,95,163,.3);}
+    .cart-panel{position:fixed;top:0;right:-355px;width:335px;height:100vh;background:#fff;z-index:500;box-shadow:-4px 0 20px rgba(0,0,0,.11);transition:right .3s;display:flex;flex-direction:column;}
+    .cart-panel.open{right:0;}
+    .cart-header{padding:1rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+    .cart-header h3{font-family:var(--font-display);font-size:.98rem;color:var(--navy);}
+    .cart-close{background:none;border:none;font-size:1.05rem;cursor:pointer;color:var(--muted);}
+    .cart-items{flex:1;overflow-y:auto;padding:.82rem;}
+    .cart-item{display:flex;gap:8px;padding:.58rem 0;border-bottom:1px solid var(--border);align-items:center;}
+    .cart-item-info{flex:1;}
+    .cart-item-name{font-size:.78rem;font-weight:600;color:var(--navy);}
+    .cart-item-price{font-size:.71rem;color:var(--gold);}
+    .cart-item-type{font-size:.63rem;color:var(--blue);margin-top:1px;}
+    .cart-item-remove{background:none;border:none;color:var(--muted);cursor:pointer;font-size:.83rem;}
+    .cart-empty{text-align:center;padding:2rem;color:var(--muted);font-size:.78rem;}
+    .cart-footer{padding:.82rem;border-top:1px solid var(--border);}
+    .cart-total-row{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);margin-bottom:.32rem;}
+    .cart-total-main{display:flex;justify-content:space-between;font-weight:700;margin-bottom:.82rem;font-size:.9rem;}
+    .btn-checkout{width:100%;background:var(--blue);color:#fff;border:none;padding:.65rem;border-radius:9px;font-size:.83rem;font-weight:700;cursor:pointer;font-family:var(--font-body);margin-bottom:.42rem;}
+    .btn-checkout:hover{background:var(--navy);}
+    .btn-continue{width:100%;background:var(--warm);color:var(--navy);border:1px solid var(--border);padding:.54rem;border-radius:9px;font-size:.78rem;font-weight:600;cursor:pointer;font-family:var(--font-body);}
+    .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;display:none;align-items:center;justify-content:center;padding:1rem;}
+    .modal-overlay.open{display:flex;}
+    .modal{background:#fff;border-radius:16px;padding:1.6rem;max-width:425px;width:100%;position:relative;max-height:92vh;overflow-y:auto;}
+    .modal-close{position:absolute;top:.82rem;right:.82rem;background:var(--warm);border:none;width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:.86rem;display:flex;align-items:center;justify-content:center;}
+    .modal-title{font-family:var(--font-display);font-size:1.15rem;color:var(--navy);margin-bottom:.2rem;font-weight:700;}
+    .modal-sub{font-size:.76rem;color:var(--muted);margin-bottom:.95rem;}
+    .order-summary{background:var(--warm);border-radius:9px;padding:.78rem;margin-bottom:.95rem;}
+    .order-summary-item{display:flex;justify-content:space-between;font-size:.74rem;padding:.17rem 0;}
+    .order-summary-item:last-child{font-weight:700;border-top:1px solid var(--border);margin-top:.26rem;padding-top:.36rem;color:var(--navy);}
+    .form-group{margin-bottom:.76rem;}
+    .form-label{font-size:.71rem;font-weight:600;color:var(--navy);margin-bottom:.26rem;display:block;}
+    .form-input{width:100%;border:1.5px solid var(--border);border-radius:6px;padding:.5rem .76rem;font-size:.78rem;font-family:var(--font-body);color:var(--text);outline:none;transition:border .2s;}
+    .form-input:focus{border-color:var(--blue);}
+    .pay-methods{display:flex;flex-direction:column;gap:.52rem;margin-bottom:.9rem;}
+    .pay-opt{border:2px solid var(--border);border-radius:9px;padding:.76rem;cursor:pointer;transition:all .2s;}
+    .pay-opt:hover{border-color:var(--blue);}
+    .pay-opt.sel{border-color:var(--blue);background:#f0f5ff;}
+    .pay-opt-head{display:flex;align-items:center;gap:8px;}
+    .pay-ico{font-size:1.28rem;}
+    .pay-name{font-weight:700;font-size:.8rem;color:var(--navy);}
+    .pay-detail{font-size:.7rem;color:var(--muted);margin-top:.25rem;padding-left:1.9rem;line-height:1.52;}
+    .pay-detail strong{color:var(--text);}
+    .btn-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:.74rem;border-radius:9px;font-size:.84rem;font-weight:700;cursor:pointer;font-family:var(--font-body);}
+    .btn-submit:hover{background:var(--navy);}
+    footer{background:#0f1a2e;color:rgba(255,255,255,.3);text-align:center;padding:1.05rem 2rem;font-size:.7rem;}
+    footer a{color:rgba(255,255,255,.44);}
+    footer span{color:var(--gold);}
+
+
+    .slideshow::after{content:'🔍';position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.45);color:#fff;font-size:.75rem;padding:3px 7px;border-radius:8px;pointer-events:none;opacity:0;transition:opacity .2s;}
+    .slideshow:hover::after{opacity:1;}
+    .doll-slideshow::after{content:'🔍 Tap to zoom';position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.45);color:#fff;font-size:.72rem;padding:3px 8px;border-radius:8px;pointer-events:none;opacity:0;transition:opacity .2s;}
+    .doll-slideshow:hover::after{opacity:1;}
+    /* LIGHTBOX */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:2000;display:none;align-items:center;justify-content:center;flex-direction:column;}
+    .lightbox.open{display:flex;}
+    .lightbox-img{max-width:96vw;max-height:88vh;object-fit:contain;border-radius:6px;box-shadow:0 8px 40px rgba(0,0,0,.6);}
+    .lightbox-close{position:absolute;top:18px;right:22px;color:#fff;font-size:2rem;cursor:pointer;background:none;border:none;line-height:1;opacity:.8;}
+    .lightbox-close:hover{opacity:1;}
+    .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);color:#fff;border:none;width:46px;height:46px;border-radius:50%;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+    .lightbox-nav:hover{background:rgba(255,255,255,.3);}
+    .lightbox-prev{left:16px;}
+    .lightbox-next{right:16px;}
+    .lightbox-counter{position:absolute;bottom:20px;color:rgba(255,255,255,.7);font-size:.85rem;font-family:var(--font-body);}
+    .lightbox-caption{color:rgba(255,255,255,.85);font-size:.88rem;margin-top:.75rem;font-family:var(--font-body);text-align:center;}
+    @media(max-width:768px){
+      .main-content{margin-left:0;}
+      .sb-toggle-btn{left:10px;}
+      .sb-toggle-btn.shifted{left:calc(var(--sidebar) + 7px);}
+      .hero h1{font-size:1.72rem;}
+      .nav-links{display:none;}
+      nav{padding:0 .82rem 0 3.3rem;}
+      .stat{padding:.82rem .92rem;}
+      .dolls-grid{grid-template-columns:1fr;}
+    }
+  </style>
+
+  <!-- Google Search Verification - replace with your code from Google Search Console -->
+  <meta name="google-site-verification" content="ADD_YOUR_GOOGLE_VERIFICATION_CODE_HERE">
+  
+  <!-- Structured Data for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AnimalShelter",
+    "name": "Shinzu Family - House of Ragdoll, Persian and Scottish Fold",
+    "description": "Bangladesh premier cattery for Ragdoll, Persian, Scottish Fold and British Shorthair cats. Cat grooming and foster care services in Dhaka.",
+    "url": "https://houseofragdollbangladesh-stack.github.io/House-of-Ragdoll--Bangladesh-",
+    "telephone": "+8801797822108",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "House-4, Road-1, Block-B, Chandrima Model Town",
+      "addressLocality": "Dhaka",
+      "postalCode": "1207",
+      "addressCountry": "BD"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "23.7561",
+      "longitude": "90.3564"
+    },
+    "openingHours": "Mo-Su 09:00-21:00",
+    "priceRange": "৳৳৳",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61592266154793",
+      "https://www.youtube.com/@HouseofRagdollBangladesh"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Pure-bred Kittens for Sale in Bangladesh",
+    "description": "Available pure-bred kittens from Shinzu Family cattery in Dhaka, Bangladesh",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Product",
+          "name": "Ragdoll Kittens Bangladesh",
+          "description": "Pure-bred Ragdoll kittens available in Dhaka, Bangladesh. Seal Point, Seal Mitted, Bicolor and Van patterns. Blue eyes, health certified.",
+          "brand": {"@type": "Brand", "name": "Shinzu Family"},
+          "category": "Ragdoll Cat",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "BDT",
+            "priceSpecification": [
+              {"@type": "PriceSpecification", "price": "120000", "priceCurrency": "BDT", "name": "Male"},
+              {"@type": "PriceSpecification", "price": "150000", "priceCurrency": "BDT", "name": "Female"}
+            ],
+            "availability": "https://schema.org/InStock",
+            "seller": {"@type": "Organization", "name": "Shinzu Family"},
+            "url": "https://houseofragdollbangladesh-stack.github.io/House-of-Ragdoll--Bangladesh-"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "10",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Product",
+          "name": "Persian Kittens Bangladesh",
+          "description": "Pure-bred Persian kittens in Dhaka, Bangladesh. Blue eye and Orange eye variants. Health certified.",
+          "brand": {"@type": "Brand", "name": "Shinzu Family"},
+          "category": "Persian Cat",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "BDT",
+            "priceSpecification": [
+              {"@type": "PriceSpecification", "price": "8000", "priceCurrency": "BDT", "name": "Male"},
+              {"@type": "PriceSpecification", "price": "10000", "priceCurrency": "BDT", "name": "Female"}
+            ],
+            "availability": "https://schema.org/InStock",
+            "seller": {"@type": "Organization", "name": "Shinzu Family"},
+            "url": "https://houseofragdollbangladesh-stack.github.io/House-of-Ragdoll--Bangladesh-"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "8",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Product",
+          "name": "Scottish Fold Kittens Bangladesh",
+          "description": "Pure-bred Scottish Fold and Scottish Straight kittens in Dhaka, Bangladesh. Health certified.",
+          "brand": {"@type": "Brand", "name": "Shinzu Family"},
+          "category": "Scottish Fold Cat",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "BDT",
+            "priceSpecification": [
+              {"@type": "PriceSpecification", "price": "25000", "priceCurrency": "BDT", "name": "Male"},
+              {"@type": "PriceSpecification", "price": "30000", "priceCurrency": "BDT", "name": "Female"}
+            ],
+            "availability": "https://schema.org/InStock",
+            "seller": {"@type": "Organization", "name": "Shinzu Family"},
+            "url": "https://houseofragdollbangladesh-stack.github.io/House-of-Ragdoll--Bangladesh-"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "6",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Product",
+          "name": "British Shorthair Kittens Bangladesh",
+          "description": "Pure-bred British Shorthair and Longhair kittens available in Dhaka, Bangladesh. Health certified.",
+          "brand": {"@type": "Brand", "name": "Shinzu Family"},
+          "category": "British Shorthair Cat",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "BDT",
+            "priceSpecification": [
+              {"@type": "PriceSpecification", "price": "55000", "priceCurrency": "BDT", "name": "Male"},
+              {"@type": "PriceSpecification", "price": "60000", "priceCurrency": "BDT", "name": "Female"}
+            ],
+            "availability": "https://schema.org/InStock",
+            "seller": {"@type": "Organization", "name": "Shinzu Family"},
+            "url": "https://houseofragdollbangladesh-stack.github.io/House-of-Ragdoll--Bangladesh-"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<button class="sb-toggle-btn shifted" id="sbToggle" onclick="toggleSidebar()">☰</button>
+<div class="sidebar" id="sidebar">
+  <div class="sb-head">
+    <div class="sb-logo"><div class="sb-logo-icon">🐱</div><div><div class="sb-logo-text">Shinzu Family</div><div class="sb-logo-sub">Chandrima Model Town, Dhaka</div></div></div>
+    <button class="sb-x" onclick="toggleSidebar()">✕</button>
+  </div>
+  <div class="sb-sec">
+    <div class="sb-sec-title">Browse Breeds</div>
+    <div class="sb-item active" id="sb-ragdoll" onclick="filterBreed('ragdoll')"><div class="sb-item-l"><span class="sb-ico">🐱</span>Ragdoll</div><div class="toggle on" id="tog-ragdoll"></div></div>
+    <div class="sb-sub">
+      <div class="sb-link" onclick="goSubTab('ragdoll','bicolor')">↳ Bicolor</div>
+      <div class="sb-link" onclick="goSubTab('ragdoll','sealmitted')">↳ Seal Mitted</div>
+      <div class="sb-link" onclick="goSubTab('ragdoll','colorpoint')">↳ Colorpoint</div>
+      <div class="sb-link" onclick="goSubTab('ragdoll','van')">↳ Van</div>
+    </div>
+    <div class="sb-item active" id="sb-persian" onclick="filterBreed('persian')"><div class="sb-item-l"><span class="sb-ico">🤍</span>Persian</div><div class="toggle on" id="tog-persian"></div></div>
+    <div class="sb-sub">
+      <div class="sb-link" onclick="goSubTab('persian','blueeye')">↳ Blue Eye</div>
+      <div class="sb-link" onclick="goSubTab('persian','orangeeye')">↳ Orange Eye</div>
+    </div>
+    <div class="sb-item active" id="sb-scottish" onclick="filterBreed('scottish')"><div class="sb-item-l"><span class="sb-ico">🐾</span>Scottish Fold</div><div class="toggle on" id="tog-scottish"></div></div>
+    <div class="sb-sub">
+      <div class="sb-link" onclick="goSubTab('scottish','fold')">↳ Scottish Fold</div>
+      <div class="sb-link" onclick="goSubTab('scottish','straight')">↳ Scottish Straight</div>
+    </div>
+    <div class="sb-item active" id="sb-british" onclick="filterBreed('british')"><div class="sb-item-l"><span class="sb-ico">🇬🇧</span>British L/S Hair</div><div class="toggle on" id="tog-british"></div></div>
+  </div>
+  <div class="sb-div"></div>
+  <div class="sb-sec">
+    <div class="sb-sec-title">Our Dolls (Parents)</div>
+    <div class="sb-link" onclick="showDollTabAndGo('ragdoll')">🐱 Ragdoll</div>
+    <div class="sb-link" onclick="showDollTabAndGo('scottish')">🐾 Scottish Fold</div>
+    <div class="sb-link" onclick="showDollTabAndGo('persian')">🤍 Persian</div>
+  </div>
+  <div class="sb-div"></div>
+  <div class="sb-sec">
+    <div class="sb-sec-title">Services</div>
+    <div class="sb-item active" id="sb-grooming" onclick="filterService('grooming')"><div class="sb-item-l"><span class="sb-ico">✂️</span>Grooming</div><div class="toggle on" id="tog-grooming"></div></div>
+    <div class="sb-item active" id="sb-foster" onclick="filterService('foster')"><div class="sb-item-l"><span class="sb-ico">🏠</span>Foster Care</div><div class="toggle on" id="tog-foster"></div></div>
+    <div class="sb-item active" id="sb-mating" onclick="filterService('mating')"><div class="sb-item-l"><span class="sb-ico">💕</span>Mating Service</div><div class="toggle on" id="tog-mating"></div></div>
+  </div>
+  <div class="sb-div"></div>
+  <div class="sb-sec">
+    <div class="sb-sec-title">Quick Links</div>
+    <div class="sb-link" onclick="goTo('ourdolls')">👑 Our Dolls</div>
+    <div class="sb-link" onclick="goTo('gallery')">🐱 Available Kittens</div>
+    <div class="sb-link" onclick="goTo('happyhomes')">🏡 Happy Homes</div>
+    <div class="sb-link" onclick="goTo('mating')">💕 Mating</div>
+    <div class="sb-link" onclick="goTo('services')">✂️ Services</div>
+    <div class="sb-link" onclick="goTo('about')">ℹ️ About</div>
+    <div class="sb-link" onclick="goTo('contact')">📞 Contact</div>
+    <div class="sb-link" onclick="openCart()">🛒 View Cart</div>
+  </div>
+  <div class="sb-social">
+    <div class="sb-sec-title" style="margin-bottom:.5rem;">Follow Us</div>
+    <div class="social-row">
+      <button class="social-btn" onclick="window.open('https://www.facebook.com/profile.php?id=61592266154793','_blank')"><span>📘</span>Facebook</button>
+      <button class="social-btn" onclick="window.open('https://www.youtube.com/@HouseofRagdollBangladesh','_blank')"><span>🎬</span>YouTube</button>
+      <button class="social-btn" onclick="window.open('https://wa.me/8801797822108','_blank')"><span>📱</span>WhatsApp</button>
+    </div>
+  </div>
+</div>
+<div class="main-content" id="mainContent">
+  <nav>
+    <div class="nav-title">Shinzu Family<span>Ragdoll · Persian · Scottish Fold</span></div>
+    <div class="nav-links">
+      <a onclick="goTo('ourdolls')">Our Dolls</a>
+      <a onclick="goTo('gallery')">Kittens</a>
+      <a onclick="goTo('happyhomes')">Happy Homes</a>
+      <a onclick="goTo('mating')">Mating</a>
+      <a onclick="goTo('services')">Services</a>
+      <a onclick="goTo('contact')">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="cart-btn" onclick="openCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button>
+      <button class="nav-cta" onclick="goTo('contact')">Adopt Now</button>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-circles"><span></span><span></span></div>
+    <div class="hero-badge">🐾 Bangladesh's Premier Cat Family</div>
+    <h1>Welcome to<br><em>Shinzu Family</em></h1>
+    <p class="hero-sub">House of Ragdoll, Persian &amp; Scottish Fold</p>
+    <div class="hero-loc">📍 Chandrima Model Town, Dhaka 1207</div>
+    <div class="hero-btns">
+      <button class="btn-gold" onclick="goTo('gallery')">Meet Our Kittens</button>
+      <button class="btn-ghost" onclick="goTo('ourdolls')">Our Parent Cats</button>
+    </div>
+    <div class="breed-pills">
+      <span class="breed-pill">🐱 Ragdoll</span><span class="breed-pill">🤍 Persian</span>
+      <span class="breed-pill">🐾 Scottish Fold</span><span class="breed-pill">🇬🇧 British Shorthair</span>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">4</div><div class="stat-label">Breeds Available</div></div>
+    <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Happy Families</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Health Certified</div></div>
+    <div class="stat"><div class="stat-num">BD</div><div class="stat-label">Nationwide Delivery</div></div>
+  </div>
+  <div class="social-banner">
+    <div class="soc-card fb" onclick="window.open('https://www.facebook.com/profile.php?id=61592266154793','_blank')">
+      <div class="soc-icon">📘</div><div><div class="soc-label">Follow us on</div><div class="soc-name">Facebook</div><div class="soc-sub">Latest updates &amp; photos</div><button class="soc-btn">Follow Page</button></div>
+    </div>
+    <div class="soc-card yt" onclick="window.open('https://www.youtube.com/@HouseofRagdollBangladesh','_blank')">
+      <div class="soc-icon">🎬</div><div><div class="soc-label">Watch us on</div><div class="soc-name">YouTube</div><div class="soc-sub">Cute cat videos &amp; care guides</div><button class="soc-btn">Subscribe</button></div>
+    </div>
+  </div>
+  <!-- OUR DOLLS -->
+  <div class="dolls-wrap" id="ourdolls">
+    <div class="dolls-inner">
+      <div class="sec-eyebrow">Our Resident Cats</div>
+      <div class="sec-title">Our Dolls 👑</div>
+      <div class="sec-sub">Meet our beautiful parent cats — not for sale. Their kittens are available in the gallery below!</div>
+      <div class="dolls-tabs">
+        <button class="dtab active" id="dtab-ragdoll" onclick="showDollTab('ragdoll',this)">🐱 Ragdoll</button>
+        <button class="dtab" id="dtab-scottish" onclick="showDollTab('scottish',this)">🐾 Scottish Fold</button>
+        <button class="dtab" id="dtab-persian" onclick="showDollTab('persian',this)">🤍 Persian</button>
+      </div>
+      <div class="dolls-panel active" id="dpanel-ragdoll">
+        <div class="dolls-grid">
+          <div class="doll-card">
+            <div class="doll-slideshow">
+              <div class="doll-slides" id="dslides-luna">
+                <div class="doll-slide" style="background:linear-gradient(135deg,#dce8f5,#b8d4ed);">🐱</div>
+                <div class="doll-slide" style="background:linear-gradient(135deg,#c8dcf0,#a0c4e8);">🐱</div>
+                <div class="doll-slide" style="background:linear-gradient(135deg,#b8d0ec,#90b8e0);">🐱</div>
+              </div>
+              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('luna',-1)">&#8249;</button>
+              <button class="doll-slide-btn doll-next" onclick="changeDSlide('luna',1)">&#8250;</button>
+              <div class="doll-dots" id="ddots-luna"><div class="ddot active" onclick="goDSlide('luna',0)"></div><div class="ddot" onclick="goDSlide('luna',1)"></div><div class="ddot" onclick="goDSlide('luna',2)"></div></div>
+              <div class="doll-crown">👑 Parent Queen</div>
+            </div>
+            <div class="doll-info">
+              <div class="doll-name">Vutum</div>
+              <div class="doll-role">Ragdoll · Bicolor · Female</div>
+              <div class="doll-specs">
+                <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
+                <div class="dspec">🎂 <span><strong>Age:</strong> 16 Months</span></div>
+                <div class="dspec">🎨 <span><strong>Coat:</strong> Bicolor</span></div>
+                <div class="dspec">👁️ <span><strong>Eyes:</strong> Blue</span></div>
+                <div class="dspec">🎀 <span><strong>Color:</strong> Chocolate</span></div>
+                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+              </div>
+              <div class="doll-tags"><span class="doll-tag">💙 Blue Eyes</span><span class="doll-tag">🍫 Chocolate</span><span class="doll-tag">😇 Gentle</span></div>
+              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
+              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Vutum (Ragdoll Bicolor).','_blank')">Inquire About Vutum's Kittens 🐱</button>
+            </div>
+          </div>
+          <div class="doll-card">
+            <div class="doll-slideshow">
+              <div class="doll-slides" id="dslides-milo">
+                <div class="doll-slide" style="background:linear-gradient(135deg,#dce8f5,#b8d4ed);">🐱</div>
+                <div class="doll-slide" style="background:linear-gradient(135deg,#c8dcf0,#a0c4e8);">🐱</div>
+              </div>
+              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('milo',-1)">&#8249;</button>
+              <button class="doll-slide-btn doll-next" onclick="changeDSlide('milo',1)">&#8250;</button>
+              <div class="doll-dots" id="ddots-milo"><div class="ddot active" onclick="goDSlide('milo',0)"></div><div class="ddot" onclick="goDSlide('milo',1)"></div></div>
+              <div class="doll-crown">👑 Parent King</div>
+            </div>
+            <div class="doll-info">
+              <div class="doll-name">Sondesh</div>
+              <div class="doll-role">Ragdoll · Bicolor · Male</div>
+              <div class="doll-specs">
+                <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
+                <div class="dspec">🎂 <span><strong>Age:</strong> 18 Months</span></div>
+                <div class="dspec">🎨 <span><strong>Coat:</strong> Bicolor</span></div>
+                <div class="dspec">👁️ <span><strong>Eyes:</strong> Blue</span></div>
+                <div class="dspec">🎀 <span><strong>Color:</strong> Blue</span></div>
+                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+              </div>
+              <div class="doll-tags"><span class="doll-tag">💙 Blue</span><span class="doll-tag">🤗 Playful</span><span class="doll-tag">👑 Pure Breed</span></div>
+              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
+              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Sondesh (Ragdoll Bicolor).','_blank')">Inquire About Sondesh's Kittens 🐱</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dolls-panel" id="dpanel-scottish">
+        <div class="dolls-grid">
+          <div class="doll-card">
+            <div class="doll-slideshow">
+              <div class="doll-slides" id="dslides-cleo">
+                <div class="doll-slide" style="background:linear-gradient(135deg,#e8e8f5,#d0d0ec);">🐾</div>
+                <div class="doll-slide" style="background:linear-gradient(135deg,#d8d8f0,#c0c0e8);">🐾</div>
+                <div class="doll-slide" style="background:linear-gradient(135deg,#c8c8ec,#b0b0e4);">🐾</div>
+              </div>
+              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('cleo',-1)">&#8249;</button>
+              <button class="doll-slide-btn doll-next" onclick="changeDSlide('cleo',1)">&#8250;</button>
+              <div class="doll-dots" id="ddots-cleo"><div class="ddot active" onclick="goDSlide('cleo',0)"></div><div class="ddot" onclick="goDSlide('cleo',1)"></div><div class="ddot" onclick="goDSlide('cleo',2)"></div></div>
+              <div class="doll-crown">👑 Parent Queen</div>
+            </div>
+            <div class="doll-info">
+              <div class="doll-name">Cleo</div>
+              <div class="doll-role">Scottish Fold · Grey · Female</div>
+              <div class="doll-specs">
+                <div class="dspec">🎂 <span><strong>Age:</strong> To be updated</span></div>
+                <div class="dspec">🎨 <span><strong>Pattern:</strong> Scottish Fold</span></div>
+                <div class="dspec">👁️ <span><strong>Eyes:</strong> To be updated</span></div>
+                <div class="dspec">🎀 <span><strong>Color:</strong> Grey</span></div>
+                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+              </div>
+              <div class="doll-tags"><span class="doll-tag">👂 Folded Ears</span><span class="doll-tag">🌀 Round Face</span><span class="doll-tag">💫 Unique</span></div>
+              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
+              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Cleo (Scottish Fold).','_blank')">Inquire About Cleo's Kittens 🐾</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dolls-panel" id="dpanel-persian">
+        <div class="dolls-grid">
+          <div class="doll-card">
+            <div class="doll-slideshow">
+              <div class="doll-slides" id="dslides-bella">
+                <div class="doll-slide" style="background:linear-gradient(135deg,#f5e6dc,#f0d8c8);">🤍</div>
+                <div class="doll-slide" style="background:linear-gradient(135deg,#f0ddd0,#ecd0bc);">🤍</div>
+                <div class="doll-slide" style="background:linear-gradient(135deg,#ecd4c4,#e8c8b0);">🤍</div>
+              </div>
+              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('bella',-1)">&#8249;</button>
+              <button class="doll-slide-btn doll-next" onclick="changeDSlide('bella',1)">&#8250;</button>
+              <div class="doll-dots" id="ddots-bella"><div class="ddot active" onclick="goDSlide('bella',0)"></div><div class="ddot" onclick="goDSlide('bella',1)"></div><div class="ddot" onclick="goDSlide('bella',2)"></div></div>
+              <div class="doll-crown">👑 Parent Queen</div>
+            </div>
+            <div class="doll-info">
+              <div class="doll-name">Bella</div>
+              <div class="doll-role">Persian · Blue Eye · Female</div>
+              <div class="doll-specs">
+                <div class="dspec">🎂 <span><strong>Age:</strong> To be updated</span></div>
+                <div class="dspec">🎨 <span><strong>Category:</strong> Blue Eye</span></div>
+                <div class="dspec">👁️ <span><strong>Eyes:</strong> Blue</span></div>
+                <div class="dspec">🎀 <span><strong>Color:</strong> White</span></div>
+                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+              </div>
+              <div class="doll-tags"><span class="doll-tag">🤍 Snow White</span><span class="doll-tag">👁️ Blue Eyes</span><span class="doll-tag">🦁 Fluffy</span></div>
+              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
+              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Bella (Persian Blue Eye).','_blank')">Inquire About Bella's Kittens 🤍</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- KITTENS GALLERY -->
+  <div class="gallery-wrap" id="gallery">
+    <div class="gallery-inner">
+      <div class="sec-eyebrow">Available Kittens</div>
+      <div class="sec-title">Find Your Perfect Companion</div>
+      <div class="sec-sub">Select kittens, add to cart and checkout together. All kittens are vaccinated and health-certified.</div>
+      <div class="tabs">
+        <button class="tab active" id="tab-ragdoll" onclick="showTab('ragdoll',this)">🐱 Ragdoll</button>
+        <button class="tab" id="tab-persian" onclick="showTab('persian',this)">🤍 Persian</button>
+        <button class="tab" id="tab-scottish" onclick="showTab('scottish',this)">🐾 Scottish Fold</button>
+        <button class="tab" id="tab-british" onclick="showTab('british',this)">🇬🇧 British L/S Hair</button>
+      </div>
+      <!-- RAGDOLL -->
+      <div class="gallery-panel active" id="panel-ragdoll">
+        <div class="subtabs">
+          <button class="subtab active" id="stab-ragdoll-all" onclick="showSubTab('ragdoll','all',this)">All</button>
+          <button class="subtab" id="stab-ragdoll-bicolor" onclick="showSubTab('ragdoll','bicolor',this)">Bicolor</button>
+          <button class="subtab" id="stab-ragdoll-sealmitted" onclick="showSubTab('ragdoll','sealmitted',this)">Seal Mitted</button>
+          <button class="subtab" id="stab-ragdoll-colorpoint" onclick="showSubTab('ragdoll','colorpoint',this)">Colorpoint</button>
+          <button class="subtab" id="stab-ragdoll-van" onclick="showSubTab('ragdoll','van',this)">Van</button>
+        </div>
+        <div class="gallery-grid" id="grid-ragdoll">
+          <div class="cat-card" data-pattern="colorpoint">
+            <div class="slideshow">
+              <div class="slides" id="slides-ka"><div class="slide"><img src="Makhon1.jpg" alt="Makhon" onclick="openLightbox(['Makhon1.jpg','Makhon2.jpg','Makhon3.jpg','Makhon4.jpg'],0,'Makhon')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Makhon2.jpg" alt="Makhon" onclick="openLightbox(['Makhon1.jpg','Makhon2.jpg','Makhon3.jpg','Makhon4.jpg'],1,'Makhon')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Makhon3.jpg" alt="Makhon" onclick="openLightbox(['Makhon1.jpg','Makhon2.jpg','Makhon3.jpg','Makhon4.jpg'],2,'Makhon')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Makhon4.jpg" alt="Makhon" onclick="openLightbox(['Makhon1.jpg','Makhon2.jpg','Makhon3.jpg','Makhon4.jpg'],3,'Makhon')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
+              <button class="slide-btn slide-prev" onclick="changeSlide('ka',-1)">&#8249;</button>
+              <button class="slide-btn slide-next" onclick="changeSlide('ka',1)">&#8250;</button>
+              <div class="slide-dots" id="dots-ka"><div class="dot active" onclick="goSlide('ka',0)"></div><div class="dot" onclick="goSlide('ka',1)"></div><div class="dot" onclick="goSlide('ka',2)"></div><div class="dot" onclick="goSlide('ka',3)"></div></div>
+              <div class="slide-count" id="count-ka">1/4</div>
+            </div>
+            <div class="cat-info">
+              <div class="cat-name">Makhon</div>
+              <div class="cat-parent">👑 Father: Sondesh (Bicolor) · Mother: Vutum (Bicolor)</div>
+              <div class="cat-detail">Ragdoll · Seal Point (Colorpoint) · Male</div>
+              <div class="cat-specs">
+                <div class="spec-item">⚥ <span><strong>Gender:</strong> Male</span></div>
+                <div class="spec-item">🎂 <span><strong>Age:</strong> 2 Months</span></div>
+                <div class="spec-item">🎨 <span><strong>Pattern:</strong> Seal Point (Colorpoint)</span></div>
+                <div class="spec-item">👁️ <span><strong>Eyes:</strong> Blue</span></div>
+                <div class="spec-item">🎀 <span><strong>Color:</strong> Chocolate</span></div>
+                <div class="spec-item">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+              </div>
+              <div class="cat-price"><strong>৳ 1,20,000</strong></div>
+              <span class="badge-avail">Available</span>
+              <div class="card-btns">
+                <button class="btn-order" onclick="quickOrder('Makhon - Ragdoll Seal Point (Father: Sondesh, Mother: Vutum)','120000','order')">Order Now</button>
+                <button class="btn-prebook" onclick="quickOrder('Makhon - Ragdoll Seal Point (Father: Sondesh, Mother: Vutum)','120000','prebook')">Pre-Book</button>
+                <button class="btn-cart-add" id="cartbtn-ka" onclick="addToCart('ka','Kitten A - Ragdoll Bicolor','120000')">🛒</button>
+              </div>
+            </div>
+          </div>
+          <div class="cat-card" data-pattern="sealmitted">
+            <div class="slideshow">
+              <div class="slides" id="slides-kb"><div class="slide"><img src="Mithai1.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],0,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Mithai2.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],1,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Mithai3.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],2,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Mithai4.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],3,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
+              <button class="slide-btn slide-prev" onclick="changeSlide('kb',-1)">&#8249;</button>
+              <button class="slide-btn slide-next" onclick="changeSlide('kb',1)">&#8250;</button>
+              <div class="slide-dots" id="dots-kb"><div class="dot active" onclick="goSlide('kb',0)"></div><div class="dot" onclick="goSlide('kb',1)"></div><div class="dot" onclick="goSlide('kb',2)"></div><div class="dot" onclick="goSlide('kb',3)"></div></div>
+              <div class="slide-count" id="count-kb">1/4</div>
+            </div>
+            <div class="cat-info">
+              <div class="cat-name">Mithai</div>
+              <div class="cat-parent">👑 Father: Sondesh (Bicolor) · Mother: Vutum (Bicolor)</div>
+              <div class="cat-detail">Ragdoll · Seal Mitted · Female</div>
+              <div class="cat-specs">
+                <div class="spec-item">⚥ <span><strong>Gender:</strong> Female</span></div>
+                <div class="spec-item">🎂 <span><strong>Age:</strong> 2 Months</span></div>
+                <div class="spec-item">🎨 <span><strong>Pattern:</strong> Seal Mitted</span></div>
+                <div class="spec-item">👁️ <span><strong>Eyes:</strong> Blue</span></div>
+                <div class="spec-item">🎀 <span><strong>Color:</strong> Blue Mitted</span></div>
+                <div class="spec-item">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+              </div>
+              <div class="cat-price"><strong>৳ 1,50,000</strong></div>
+              <span class="badge-avail">Available</span>
+              <div class="card-btns">
+                <button class="btn-order" onclick="quickOrder('Mithai - Ragdoll Seal Mitted (Father: Sondesh, Mother: Vutum)','120000','order')">Order Now</button>
+                <button class="btn-prebook" onclick="quickOrder('Mithai - Ragdoll Seal Mitted (Father: Sondesh, Mother: Vutum)','120000','prebook')">Pre-Book</button>
+                <button class="btn-cart-add" id="cartbtn-kb" onclick="addToCart('kb','Kitten B - Ragdoll Colorpoint','120000')">🛒</button>
+              </div>
+            </div>
+          </div>
+          <div class="cat-card" data-pattern="van">
+            <div class="slideshow"><div class="slides" id="slides-kc"><div class="slide"><img src="Golla1.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],0,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Golla2.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],1,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Golla3.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],2,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Golla4.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],3,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
+              <button class="slide-btn slide-prev" onclick="changeSlide('kc',-1)">&#8249;</button>
+              <button class="slide-btn slide-next" onclick="changeSlide('kc',1)">&#8250;</button>
+              <div class="slide-dots" id="dots-kc"><div class="dot active" onclick="goSlide('kc',0)"></div><div class="dot" onclick="goSlide('kc',1)"></div><div class="dot" onclick="goSlide('kc',2)"></div><div class="dot" onclick="goSlide('kc',3)"></div></div>
+              <div class="slide-count" id="count-kc">1/4</div></div>
+            <div class="cat-info">
+              <div class="cat-name">Golla</div>
+              <div class="cat-parent">👑 Father: Sondesh (Bicolor) · Mother: Vutum (Bicolor)</div>
+              <div class="cat-detail">Ragdoll · Van · Male</div>
+              <div class="cat-specs">
+                <div class="spec-item">⚥ <span><strong>Gender:</strong> Male</span></div>
+                <div class="spec-item">🎂 <span><strong>Age:</strong> 2 Months</span></div>
+                <div class="spec-item">🎨 <span><strong>Pattern:</strong> Van</span></div>
+                <div class="spec-item">👁️ <span><strong>Eyes:</strong> Blue</span></div>
+                <div class="spec-item">🎀 <span><strong>Color:</strong> Chocolate</span></div>
+                <div class="spec-item">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+              </div>
+              <div class="cat-price"><strong>৳ 1,20,000</strong></div>
+              <span class="badge-avail">Available</span>
+              <div class="card-btns">
+                <button class="btn-order" onclick="quickOrder('Golla - Ragdoll Van Male (Father: Sondesh, Mother: Vutum)','120000','order')">Order Now</button>
+                <button class="btn-prebook" onclick="quickOrder('Golla - Ragdoll Van Male (Father: Sondesh, Mother: Vutum)','120000','prebook')">Pre-Book</button>
+                <button class="btn-cart-add" id="cartbtn-kc" onclick="addToCart('kc','Golla - Ragdoll Van Male','120000')">🛒</button>
+              </div>
+            </div>
+          </div>
+          <div class="cat-card" data-pattern="sealmitted">
+            <div class="slideshow">
+              <div class="slides" id="slides-kd"><div class="slide"><img src="Laddu1.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],0,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Laddu2.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],1,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Laddu3.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],2,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Laddu4.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],3,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
+              <button class="slide-btn slide-prev" onclick="changeSlide('kd',-1)">&#8249;</button>
+              <button class="slide-btn slide-next" onclick="changeSlide('kd',1)">&#8250;</button>
+              <div class="slide-dots" id="dots-kd"><div class="dot active" onclick="goSlide('kd',0)"></div><div class="dot" onclick="goSlide('kd',1)"></div><div class="dot" onclick="goSlide('kd',2)"></div><div class="dot" onclick="goSlide('kd',3)"></div></div>
+              <div class="slide-count" id="count-kd">1/4</div>
+            </div>
+            <div class="cat-info">
+              <div class="cat-name">Laddu</div>
+              <div class="cat-parent">👑 Father: Sondesh (Bicolor) · Mother: Vutum (Bicolor)</div>
+              <div class="cat-detail">Ragdoll · Seal Mitted · Male</div>
+              <div class="cat-specs">
+                <div class="spec-item">⚥ <span><strong>Gender:</strong> Male</span></div>
+                <div class="spec-item">🎂 <span><strong>Age:</strong> 2 Months</span></div>
+                <div class="spec-item">🎨 <span><strong>Pattern:</strong> Seal Mitted</span></div>
+                <div class="spec-item">👁️ <span><strong>Eyes:</strong> Blue</span></div>
+                <div class="spec-item">🎀 <span><strong>Color:</strong> Blue Mitted</span></div>
+                <div class="spec-item">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+              </div>
+              <div class="cat-price"><strong>৳ 1,20,000</strong></div>
+              <span class="badge-avail">Available</span>
+              <div class="card-btns">
+                <button class="btn-order" onclick="quickOrder('Laddu - Ragdoll Seal Mitted Male (Father: Sondesh, Mother: Vutum)','120000','order')">Order Now</button>
+                <button class="btn-prebook" onclick="quickOrder('Laddu - Ragdoll Seal Mitted Male (Father: Sondesh, Mother: Vutum)','120000','prebook')">Pre-Book</button>
+                <button class="btn-cart-add" id="cartbtn-kd" onclick="addToCart('kd','Laddu - Ragdoll Seal Mitted Male','120000')">🛒</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+        </div>
+      </div>
+
+      <!-- PERSIAN -->
+      <div class="gallery-panel" id="panel-persian">
+        <div class="subtabs">
+          <button class="subtab active" id="stab-persian-all" onclick="showSubTab('persian','all',this)">All</button>
+          <button class="subtab" id="stab-persian-blueeye" onclick="showSubTab('persian','blueeye',this)">Blue Eye</button>
+          <button class="subtab" id="stab-persian-orangeeye" onclick="showSubTab('persian','orangeeye',this)">Orange Eye</button>
+        </div>
+        <div class="gallery-grid" id="grid-persian">
+          <div class="cat-card" data-pattern="blueeye">
+            <div class="slideshow">
+              <div class="slides" id="slides-pd"><div class="slide"><img src="persian1.jpg" alt="Persian Kitten" onclick="openLightbox(['persian1.jpg','persian1b.jpg','persian1c.jpg'],0,'Persian Kitten')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="persian1b.jpg" alt="Persian Kitten" onclick="openLightbox(['persian1.jpg','persian1b.jpg','persian1c.jpg'],1,'Persian Kitten')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="persian1c.jpg" alt="Persian Kitten" onclick="openLightbox(['persian1.jpg','persian1b.jpg','persian1c.jpg'],2,'Persian Kitten')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
+              <button class="slide-btn slide-prev" onclick="changeSlide('pd',-1)">&#8249;</button>
+              <button class="slide-btn slide-next" onclick="changeSlide('pd',1)">&#8250;</button>
+              <div class="slide-dots" id="dots-pd"><div class="dot active" onclick="goSlide('pd',0)"></div><div class="dot" onclick="goSlide('pd',1)"></div><div class="dot" onclick="goSlide('pd',2)"></div></div>
+              <div class="slide-count" id="count-pd">1/3</div>
+            </div>
+            <div class="cat-info">
+              <div class="cat-name">Kitten D</div>
+              <div class="cat-parent">👑 Parent: Bella (Blue Eye Persian)</div>
+              <div class="cat-detail">Persian · Blue Eye</div>
+              <div class="cat-specs">
+                <div class="spec-item">🎂 <span><strong>Age:</strong> To be updated</span></div>
+                <div class="spec-item">🎨 <span><strong>Category:</strong> Blue Eye</span></div>
+                <div class="spec-item">👁️ <span><strong>Eyes:</strong> Blue</span></div>
+                <div class="spec-item">🎀 <span><strong>Color:</strong> White</span></div>
+                <div class="spec-item">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+              </div>
+              <div class="cat-price">From <strong>৳ 8,000 (Male) / ৳ 10,000 (Female)</strong></div>
+              <span class="badge-avail">Available</span>
+              <div class="card-btns">
+                <button class="btn-order" onclick="quickOrder('Kitten D - Persian Blue Eye (Parent: Bella)','8000','order')">Order Now</button>
+                <button class="btn-prebook" onclick="quickOrder('Kitten D - Persian Blue Eye (Parent: Bella)','8000','prebook')">Pre-Book</button>
+                <button class="btn-cart-add" id="cartbtn-pd" onclick="addToCart('pd','Kitten D - Persian Blue Eye','8000')">🛒</button>
+              </div>
+            </div>
+          </div>
+          <div class="cat-card" data-pattern="orangeeye">
+            <div class="slideshow"><div class="slides" id="slides-pe"><div class="slide" style="background:#f5e6dc;font-size:3.6rem;">🤍</div></div></div>
+            <div class="cat-info">
+              <div class="cat-name">Kitten E</div>
+              <div class="cat-parent">👑 Parent: Bella (Persian)</div>
+              <div class="cat-detail">Persian · Orange Eye</div>
+              <div class="cat-specs">
+                <div class="spec-item">🎂 <span><strong>Age:</strong> To be updated</span></div>
+                <div class="spec-item">🎨 <span><strong>Category:</strong> Orange Eye</span></div>
+                <div class="spec-item">👁️ <span><strong>Eyes:</strong> Orange</span></div>
+                <div class="spec-item">🎀 <span><strong>Color:</strong> Golden</span></div>
+                <div class="spec-item">💉 <span><strong>Vaccinated:</strong> To be updated</span></div>
+              </div>
+              <div class="cat-price">From <strong>৳ 8,000 (Male) / ৳ 10,000 (Female)</strong></div>
+              <span class="badge-soon">Coming Soon</span>
+              <div class="card-btns">
+                <button class="btn-prebook" onclick="quickOrder('Kitten E - Persian Orange Eye (Parent: Bella)','8000','prebook')">Pre-Book</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SCOTTISH -->
+      <div class="gallery-panel" id="panel-scottish">
+        <div class="subtabs">
+          <button class="subtab active" id="stab-scottish-all" onclick="showSubTab('scottish','all',this)">All</button>
+          <button class="subtab" id="stab-scottish-fold" onclick="showSubTab('scottish','fold',this)">Scottish Fold</button>
+          <button class="subtab" id="stab-scottish-straight" onclick="showSubTab('scottish','straight',this)">Scottish Straight</button>
+        </div>
+        <div class="gallery-grid" id="grid-scottish">
+          <div class="cat-card" data-pattern="fold">
+            <div class="slideshow">
+              <div class="slides" id="slides-sf"><div class="slide"><img src="scottish1.jpg" alt="Scottish Kitten" onclick="openLightbox(['scottish1.jpg','scottish1b.jpg','scottish1c.jpg'],0,'Scottish Kitten')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="scottish1b.jpg" alt="Scottish Kitten" onclick="openLightbox(['scottish1.jpg','scottish1b.jpg','scottish1c.jpg'],1,'Scottish Kitten')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="scottish1c.jpg" alt="Scottish Kitten" onclick="openLightbox(['scottish1.jpg','scottish1b.jpg','scottish1c.jpg'],2,'Scottish Kitten')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
+              <button class="slide-btn slide-prev" onclick="changeSlide('sf',-1)">&#8249;</button>
+              <button class="slide-btn slide-next" onclick="changeSlide('sf',1)">&#8250;</button>
+              <div class="slide-dots" id="dots-sf"><div class="dot active" onclick="goSlide('sf',0)"></div><div class="dot" onclick="goSlide('sf',1)"></div><div class="dot" onclick="goSlide('sf',2)"></div></div>
+              <div class="slide-count" id="count-sf">1/3</div>
+            </div>
+            <div class="cat-info">
+              <div class="cat-name">Kitten F</div>
+              <div class="cat-parent">👑 Parent: Cleo (Scottish Fold)</div>
+              <div class="cat-detail">Scottish Fold · Grey</div>
+              <div class="cat-specs">
+                <div class="spec-item">🎂 <span><strong>Age:</strong> To be updated</span></div>
+                <div class="spec-item">🎨 <span><strong>Pattern:</strong> Scottish Fold</span></div>
+                <div class="spec-item">👁️ <span><strong>Eyes:</strong> To be updated</span></div>
+                <div class="spec-item">🎀 <span><strong>Color:</strong> Grey</span></div>
+                <div class="spec-item">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+              </div>
+              <div class="cat-price">From <strong>৳ 25,000 (Male) / ৳ 30,000 (Female)</strong></div>
+              <span class="badge-avail">Available</span>
+              <div class="card-btns">
+                <button class="btn-order" onclick="quickOrder('Kitten F - Scottish Fold (Parent: Cleo)','25000','order')">Order Now</button>
+                <button class="btn-prebook" onclick="quickOrder('Kitten F - Scottish Fold (Parent: Cleo)','25000','prebook')">Pre-Book</button>
+                <button class="btn-cart-add" id="cartbtn-sf" onclick="addToCart('sf','Kitten F - Scottish Fold','25000')">🛒</button>
+              </div>
+            </div>
+          </div>
+          <div class="cat-card" data-pattern="straight">
+            <div class="slideshow"><div class="slides" id="slides-sg"><div class="slide" style="background:#e8e8f5;font-size:3.6rem;">🐾</div></div></div>
+            <div class="cat-info">
+              <div class="cat-name">Kitten G</div>
+              <div class="cat-parent">👑 Parent: Cleo (Scottish Fold)</div>
+              <div class="cat-detail">Scottish Straight · To be updated</div>
+              <div class="cat-specs">
+                <div class="spec-item">🎂 <span><strong>Age:</strong> To be updated</span></div>
+                <div class="spec-item">🎨 <span><strong>Pattern:</strong> Scottish Straight</span></div>
+                <div class="spec-item">👁️ <span><strong>Eyes:</strong> To be updated</span></div>
+                <div class="spec-item">🎀 <span><strong>Color:</strong> To be updated</span></div>
+                <div class="spec-item">💉 <span><strong>Vaccinated:</strong> To be updated</span></div>
+              </div>
+              <div class="cat-price">From <strong>৳ 25,000 (Male) / ৳ 30,000 (Female)</strong></div>
+              <span class="badge-soon">Coming Soon</span>
+              <div class="card-btns">
+                <button class="btn-prebook" onclick="quickOrder('Kitten G - Scottish Straight (Parent: Cleo)','25000','prebook')">Pre-Book</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- BRITISH -->
+      <div class="gallery-panel" id="panel-british">
+        <div class="gallery-grid" id="grid-british">
+          <div class="cat-card">
+            <div class="slideshow">
+              <div class="slides" id="slides-bh"><div class="slide"><img src="british1.jpg" alt="British Kitten" onclick="openLightbox(['british1.jpg','british1b.jpg','british1c.jpg'],0,'British Kitten')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="british1b.jpg" alt="British Kitten" onclick="openLightbox(['british1.jpg','british1b.jpg','british1c.jpg'],1,'British Kitten')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="british1c.jpg" alt="British Kitten" onclick="openLightbox(['british1.jpg','british1b.jpg','british1c.jpg'],2,'British Kitten')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
+              <button class="slide-btn slide-prev" onclick="changeSlide('bh',-1)">&#8249;</button>
+              <button class="slide-btn slide-next" onclick="changeSlide('bh',1)">&#8250;</button>
+              <div class="slide-dots" id="dots-bh"><div class="dot active" onclick="goSlide('bh',0)"></div><div class="dot" onclick="goSlide('bh',1)"></div><div class="dot" onclick="goSlide('bh',2)"></div></div>
+              <div class="slide-count" id="count-bh">1/3</div>
+            </div>
+            <div class="cat-info">
+              <div class="cat-name">Kitten H</div>
+              <div class="cat-parent">👑 Parent: Add your parent cat name here</div>
+              <div class="cat-detail">British Shorthair · Blue</div>
+              <div class="cat-specs">
+                <div class="spec-item">🎂 <span><strong>Age:</strong> To be updated</span></div>
+                <div class="spec-item">🎨 <span><strong>Type:</strong> Shorthair</span></div>
+                <div class="spec-item">👁️ <span><strong>Eyes:</strong> To be updated</span></div>
+                <div class="spec-item">🎀 <span><strong>Color:</strong> Blue</span></div>
+                <div class="spec-item">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+              </div>
+              <div class="cat-price">From <strong>৳ 55,000 (Male) / ৳ 60,000 (Female)</strong></div>
+              <span class="badge-avail">Available</span>
+              <div class="card-btns">
+                <button class="btn-order" onclick="quickOrder('Kitten H - British Shorthair Blue','55000','order')">Order Now</button>
+                <button class="btn-prebook" onclick="quickOrder('Kitten H - British Shorthair Blue','55000','prebook')">Pre-Book</button>
+                <button class="btn-cart-add" id="cartbtn-bh" onclick="addToCart('bh','Kitten H - British Shorthair','55000')">🛒</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- HAPPY HOMES -->
+  <div class="sold-wrap" id="happyhomes">
+    <div class="sold-inner">
+      <div class="sec-eyebrow">Previously Adopted</div>
+      <div class="sec-title">Happy Homes 🏡</div>
+      <div class="sec-sub">These beautiful cats have found their forever families.</div>
+      <div class="tabs sold-tabs">
+        <button class="tab active" onclick="showSoldTab('ragdoll',this)">🐱 Ragdoll</button>
+        <button class="tab" onclick="showSoldTab('persian',this)">🤍 Persian</button>
+        <button class="tab" onclick="showSoldTab('scottish',this)">🐾 Scottish Fold</button>
+        <button class="tab" onclick="showSoldTab('british',this)">🇬🇧 British Shorthair</button>
+      </div>
+      <div class="sold-panel active" id="spanel-ragdoll">
+        <div class="sold-grid">
+          <div class="sold-card"><div class="sold-img ragdoll-bg">🐱</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Snowball</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Bicolor</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Mirpur, Dhaka</div></div></div>
+          <div class="sold-card"><div class="sold-img ragdoll-bg">🐱</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Bluey</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Seal Bicolor</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Dhanmondi, Dhaka</div></div></div>
+          <div class="sold-card"><div class="sold-img ragdoll-bg">🐱</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Angel</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Lilac Mitted</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Uttara, Dhaka</div></div></div>
+        </div>
+      </div>
+      <div class="sold-panel" id="spanel-persian">
+        <div class="sold-grid">
+          <div class="sold-card"><div class="sold-img persian-bg">🤍</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Pearl</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Category:</strong> Blue Eye</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Gulshan, Dhaka</div></div></div>
+          <div class="sold-card"><div class="sold-img persian-bg">🤍</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Fluffy</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Category:</strong> Orange Eye</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Chittagong</div></div></div>
+        </div>
+      </div>
+      <div class="sold-panel" id="spanel-scottish">
+        <div class="sold-grid">
+          <div class="sold-card"><div class="sold-img scottish-bg">🐾</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Mochi</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Scottish Fold</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> To be updated</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Sylhet</div></div></div>
+          <div class="sold-card"><div class="sold-img scottish-bg">🐾</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Dumpling</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Scottish Straight</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> To be updated</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Bashundhara, Dhaka</div></div></div>
+        </div>
+      </div>
+      <div class="sold-panel" id="spanel-british">
+        <div class="sold-grid">
+          <div class="sold-card"><div class="sold-img british-bg">🇬🇧</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Winston</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Color:</strong> Blue</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> To be updated</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Rajshahi</div></div></div>
+        </div>
+      </div>
+      <div class="sold-note">💬 Want to be featured here? Share your adoption story on WhatsApp or Facebook!</div>
+    </div>
+  </div>
+  <!-- MATING -->
+  <div class="mating-wrap" id="mating">
+    <div class="mating-inner">
+      <div class="sec-eyebrow">Breeding Services</div>
+      <div class="sec-title">Mating Service 💕</div>
+      <div class="sec-sub">Professional and responsible mating services. Health-tested, pedigree-verified studs available.</div>
+      <div class="mating-grid">
+        <div class="mating-card" id="service-mating">
+          <div class="mating-slideshow"><div class="mating-slides" id="mslides-ragdoll"><div class="mating-slide" style="background:linear-gradient(135deg,#dce8f5,#b8d4ed);">🐱</div><div class="mating-slide" style="background:linear-gradient(135deg,#c8dcf0,#a0c4e8);">🐱</div><div class="mating-slide" style="background:linear-gradient(135deg,#b8d0ec,#90b8e0);">🐱</div></div>
+            <button class="mating-slide-btn mating-prev" onclick="changeMSlide('ragdoll',-1)">&#8249;</button><button class="mating-slide-btn mating-next" onclick="changeMSlide('ragdoll',1)">&#8250;</button>
+            <div class="mating-dots" id="mdots-ragdoll"><div class="mdot active" onclick="goMSlide('ragdoll',0)"></div><div class="mdot" onclick="goMSlide('ragdoll',1)"></div><div class="mdot" onclick="goMSlide('ragdoll',2)"></div></div>
+            <div class="mating-badge">💕 Ragdoll Stud</div></div>
+          <div class="mating-body">
+            <div class="mating-title">Ragdoll Mating</div>
+            <div class="mating-specs"><div class="mspec">🐱 <span><strong>Stud:</strong> Sondesh</span></div><div class="mspec">🎂 <span><strong>Age:</strong> To be updated</span></div><div class="mspec">🎨 <span><strong>Pattern:</strong> Bicolor</span></div><div class="mspec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="mspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div>
+            <div class="mating-desc">Pure-bred Ragdoll studs. Blue eyes, silky coat, gentle temperament guaranteed in offspring.</div>
+            <ul class="mating-features"><li>Health-tested &amp; vaccinated studs</li><li>Pre-mating health check required</li><li>Post-mating follow-up support</li></ul>
+            <button class="btn-mating" onclick="quickOrder('Ragdoll Mating Service','0','mating')">Inquire Now 📱</button>
+          </div>
+        </div>
+        <div class="mating-card">
+          <div class="mating-slideshow"><div class="mating-slides" id="mslides-persian"><div class="mating-slide" style="background:linear-gradient(135deg,#f5e6dc,#f0d8c8);">🤍</div><div class="mating-slide" style="background:linear-gradient(135deg,#f0ddd0,#ecd0bc);">🤍</div><div class="mating-slide" style="background:linear-gradient(135deg,#ecd4c4,#e8c8b0);">🤍</div></div>
+            <button class="mating-slide-btn mating-prev" onclick="changeMSlide('persian',-1)">&#8249;</button><button class="mating-slide-btn mating-next" onclick="changeMSlide('persian',1)">&#8250;</button>
+            <div class="mating-dots" id="mdots-persian"><div class="mdot active" onclick="goMSlide('persian',0)"></div><div class="mdot" onclick="goMSlide('persian',1)"></div><div class="mdot" onclick="goMSlide('persian',2)"></div></div>
+            <div class="mating-badge">💕 Persian Stud</div></div>
+          <div class="mating-body">
+            <div class="mating-title">Persian Mating</div>
+            <div class="mating-specs"><div class="mspec">🤍 <span><strong>Stud:</strong> To be updated</span></div><div class="mspec">🎂 <span><strong>Age:</strong> To be updated</span></div><div class="mspec">🎨 <span><strong>Category:</strong> Blue Eye</span></div><div class="mspec">👁️ <span><strong>Eyes:</strong> Blue / Orange</span></div><div class="mspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div>
+            <div class="mating-desc">Premium Persian studs. Blue Eye &amp; Orange Eye variants available. Affectionate temperament passed to kittens.</div>
+            <ul class="mating-features"><li>Health-tested &amp; vaccinated studs</li><li>Blue Eye &amp; Orange Eye variants</li><li>Pre-mating consultation included</li><li>Kitten guidance &amp; support</li></ul>
+            <button class="btn-mating" onclick="quickOrder('Persian Mating Service','0','mating')">Inquire Now 📱</button>
+          </div>
+        </div>
+        <div class="mating-card">
+          <div class="mating-slideshow"><div class="mating-slides" id="mslides-scottish"><div class="mating-slide" style="background:linear-gradient(135deg,#e8e8f5,#d8d8f0);">🐾</div><div class="mating-slide" style="background:linear-gradient(135deg,#dcdcf0,#ccccec);">🐾</div><div class="mating-slide" style="background:linear-gradient(135deg,#d0d0ec,#c0c0e8);">🐾</div></div>
+            <button class="mating-slide-btn mating-prev" onclick="changeMSlide('scottish',-1)">&#8249;</button><button class="mating-slide-btn mating-next" onclick="changeMSlide('scottish',1)">&#8250;</button>
+            <div class="mating-dots" id="mdots-scottish"><div class="mdot active" onclick="goMSlide('scottish',0)"></div><div class="mdot" onclick="goMSlide('scottish',1)"></div><div class="mdot" onclick="goMSlide('scottish',2)"></div></div>
+            <div class="mating-badge">💕 Scottish Fold Stud</div></div>
+          <div class="mating-body">
+            <div class="mating-title">Scottish Fold Mating</div>
+            <div class="mating-specs"><div class="mspec">🐾 <span><strong>Stud:</strong> To be updated</span></div><div class="mspec">🎂 <span><strong>Age:</strong> To be updated</span></div><div class="mspec">🎨 <span><strong>Pattern:</strong> Scottish Fold</span></div><div class="mspec">👁️ <span><strong>Eyes:</strong> To be updated</span></div><div class="mspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div>
+            <div class="mating-desc">Scottish Fold &amp; Straight studs. Ethical Fold × Straight breeding only. Distinctive traits maintained.</div>
+            <ul class="mating-features"><li>Ethical Fold × Straight breeding only</li><li>Genetic health screening</li><li>Full breeding documentation</li><li>Post-mating follow-up support</li></ul>
+            <button class="btn-mating" onclick="quickOrder('Scottish Fold Mating Service','0','mating')">Inquire Now 📱</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- SERVICES -->
+  <div class="services-wrap" id="services">
+    <div class="services-inner">
+      <div class="sec-eyebrow">What We Offer</div>
+      <div class="sec-title">Cat Services</div>
+      <div class="sec-sub">Professional care for your beloved feline companions.</div>
+      <div class="services-grid">
+        <div class="svc-card" id="service-grooming">
+          <div class="svc-icon">✂️</div><div class="svc-title">Cat Grooming</div>
+          <div class="svc-desc">Full professional grooming for all breeds. Your cat will look beautiful and feel comfortable.</div>
+          <ul class="svc-features"><li>Full body bath &amp; blow dry</li><li>Coat brushing &amp; dematting</li><li>Nail trimming &amp; ear cleaning</li><li>Eye cleaning &amp; sanitary trim</li><li>All breeds welcome</li></ul>
+          <button class="btn-svc" onclick="quickOrder('Cat Grooming Service','0','service')">Book Grooming</button>
+        </div>
+        <div class="svc-card" id="service-foster">
+          <div class="svc-icon">🏠</div><div class="svc-title">Cat Foster Care</div>
+          <div class="svc-desc">Going on vacation? We provide a safe, loving home for your cat while you're away.</div>
+          <ul class="svc-features"><li>Home-based foster environment</li><li>Daily feeding &amp; fresh water</li><li>Playtime &amp; socialization</li><li>Daily photo updates sent to you</li><li>Experienced cat handlers</li></ul>
+          <button class="btn-svc" onclick="quickOrder('Cat Foster Care Service','0','service')">Book Foster Care</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="sec-eyebrow">Who We Are</div>
+    <div class="sec-title">About Shinzu Family</div>
+    <div class="sec-sub">A haven for cat enthusiasts in the heart of Dhaka.</div>
+    <div class="about-text">
+      Welcome to <strong>Shinzu Family — House of Ragdoll, Persian, and Scottish Fold</strong>, a haven for cat enthusiasts. We proudly operate from our address at House-4, Road-1, Block-B, Chandrima Model Town, Dhaka Uddan in Dhaka, Bangladesh, and delight in ensuring your furry felines receive only the best we can offer.<br><br>
+      Our services cater to Mohammadpur, Dhaka, Bangladesh, and we take pride in providing high-quality Persian, Ragdoll, Scottish Fold, and British Shorthair cats at reasonable prices. From finding your ideal Persian cat companion to grooming and nutrition tips, and recently we have added world-class cat foods and essentials.<br><br>
+      <strong>Shinzu Family — House of Ragdoll, Persian, and Scottish Fold</strong> is here to cater to all your cat needs.
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">📋</div><div class="why-title">Health Certified</div><div class="why-desc">Full vaccination records, vet check-ups, and deworming certificates with every kitten.</div></div>
+      <div class="why-card"><div class="why-icon">🏆</div><div class="why-title">Pure Breed Guarantee</div><div class="why-desc">Authentic bloodlines for all 4 breeds. Beautiful appearance and gentle temperament.</div></div>
+      <div class="why-card"><div class="why-icon">💬</div><div class="why-title">Lifetime Support</div><div class="why-desc">We stay connected after adoption. Guidance on food, grooming, and care always available.</div></div>
+      <div class="why-card"><div class="why-icon">🚚</div><div class="why-title">Nationwide Delivery</div><div class="why-desc">Safe transport to Dhaka, Chittagong, Sylhet, Rajshahi, and beyond.</div></div>
+    </div>
+  </section>
+  <!-- CONTACT -->
+  <div class="contact-wrap" id="contact">
+    <div class="sec-eyebrow" style="color:var(--gold-light);">Get in Touch</div>
+    <div class="sec-title">Visit Us or Reach Out</div>
+    <div class="sec-sub">We're in Chandrima Model Town, Dhaka. Come visit or contact us anytime!</div>
+    <div class="contact-grid">
+      <a class="contact-card" href="https://wa.me/8801797822108" target="_blank"><div class="c-icon">📱</div><div class="c-label">WhatsApp / Call</div><div class="c-val">+880 1797-822108</div></a>
+      <div class="contact-card"><div class="c-icon">📍</div><div class="c-label">Address</div><div class="c-val">Block-B, Chandrima Model Town, House-4 Road No.1, Dhaka 1207</div></div>
+    </div>
+    <a href="https://maps.app.goo.gl/ur427txpaTomjEuz8" target="_blank"><button class="map-btn">🗺️ Open in Google Maps</button></a>
+  </div>
+  <footer>
+    <p>© 2026 <span>Shinzu Family — House of Ragdoll, Persian &amp; Scottish Fold</span> · Chandrima Model Town, Dhaka 1207 ·
+      <a href="https://wa.me/8801797822108">WhatsApp</a> · <a href="https://www.facebook.com/profile.php?id=61592266154793">Facebook</a> · <a href="https://www.youtube.com/@HouseofRagdollBangladesh">YouTube</a></p>
+  </footer>
+</div>
+<div class="float-cart" id="floatCart"><button class="float-cart-btn" onclick="openCart()">🛒 View Cart (<span id="floatCount">0</span>)</button></div>
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header"><h3>🛒 Your Cart</h3><button class="cart-close" onclick="closeCart()">✕</button></div>
+  <div class="cart-items" id="cartItems"><div class="cart-empty">Your cart is empty.</div></div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total-row"><span>Items</span><span id="cartItemCount">0</span></div>
+    <div class="cart-total-main"><span>Estimated Total</span><span id="cartTotal">৳ 0</span></div>
+    <button class="btn-checkout" onclick="checkoutCart()">Checkout via WhatsApp 📱</button>
+    <button class="btn-continue" onclick="closeCart()">+ Add More Cats</button>
+  </div>
+</div>
+<div class="modal-overlay" id="orderModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title" id="modalTitle">Complete Your Order</div>
+    <div class="modal-sub" id="modalSub">Fill in your details and choose payment</div>
+    <div class="order-summary" id="orderSummary"></div>
+    <div class="form-group"><label class="form-label">Your Name *</label><input type="text" class="form-input" id="orderName" placeholder="Your full name"></div>
+    <div class="form-group"><label class="form-label">Phone Number *</label><input type="tel" class="form-input" id="orderPhone" placeholder="+880 XXXX-XXXXXX"></div>
+    <div class="form-group"><label class="form-label">Your Location / District *</label><input type="text" class="form-input" id="orderLocation" placeholder="e.g. Mirpur, Dhaka"></div>
+    <div class="form-group"><label class="form-label">Message (optional)</label><input type="text" class="form-input" id="orderMessage" placeholder="Any special requests?"></div>
+    <div class="form-group"><label class="form-label">Payment Method *</label>
+      <div class="pay-methods">
+        <div class="pay-opt" id="pay-bkash" onclick="selPay('bkash')"><div class="pay-opt-head"><span class="pay-ico">💳</span><span class="pay-name">bKash</span></div><div class="pay-detail">Send to: <strong>01737170160</strong><br>Mention your TrxID.</div></div>
+        <div class="pay-opt" id="pay-npsb" onclick="selPay('npsb')"><div class="pay-opt-head"><span class="pay-ico">🏦</span><span class="pay-name">NPSB / Bank Transfer</span></div><div class="pay-detail">Bank: <strong>Sonali Bank, BUET Branch</strong><br>A/C: <strong>4404001031620</strong><br>Name: <strong>Md. Rayhanur Rahman</strong></div></div>
+        <div class="pay-opt" id="pay-cod" onclick="selPay('cod')"><div class="pay-opt-head"><span class="pay-ico">💵</span><span class="pay-name">Cash on Delivery</span></div><div class="pay-detail">Pay on arrival. Dhaka &amp; nearby. Delivery charge may apply.</div></div>
+      </div>
+    </div>
+    <button class="btn-submit" onclick="submitOrder()">Confirm Order via WhatsApp 📱</button>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">&#x2715;</button>
+  <button class="lightbox-nav lightbox-prev" onclick="lightboxNav(-1)">&#8249;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+  <button class="lightbox-nav lightbox-next" onclick="lightboxNav(1)">&#8250;</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<script>
+  var sbOpen=true,slideIdx={},dSlIdx={},mSlIdx={},cart=[],selPaid='',pendingOrder=null;
+  function toggleSidebar(){sbOpen=!sbOpen;document.getElementById('sidebar').classList.toggle('hidden',!sbOpen);document.getElementById('mainContent').classList.toggle('sb-hidden',!sbOpen);document.getElementById('sbToggle').classList.toggle('shifted',sbOpen);}
+  function goTo(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});}
+  var breedOn={ragdoll:true,persian:true,scottish:true,british:true};
+  function filterBreed(b){breedOn[b]=!breedOn[b];document.getElementById('tog-'+b).classList.toggle('on',breedOn[b]);document.getElementById('sb-'+b).classList.toggle('active',breedOn[b]);var tab=document.getElementById('tab-'+b);if(tab)tab.style.display=breedOn[b]?'':'none';if(!breedOn[b]){var first=Object.keys(breedOn).find(function(k){return breedOn[k];});if(first)showTab(first,document.getElementById('tab-'+first));}}
+  var svcOn={grooming:true,foster:true,mating:true};
+  function filterService(s){svcOn[s]=!svcOn[s];document.getElementById('tog-'+s).classList.toggle('on',svcOn[s]);document.getElementById('sb-'+s).classList.toggle('active',svcOn[s]);var el=document.getElementById('service-'+s);if(el)el.style.display=svcOn[s]?'':'none';}
+  function showTab(breed,btn){document.querySelectorAll('.gallery-panel').forEach(function(p){p.classList.remove('active');});document.querySelectorAll('#gallery .tab').forEach(function(t){t.classList.remove('active');});var panel=document.getElementById('panel-'+breed);if(panel)panel.classList.add('active');if(btn)btn.classList.add('active');}
+  function showDollTab(breed,btn){document.querySelectorAll('.dolls-panel').forEach(function(p){p.classList.remove('active');});document.querySelectorAll('.dtab').forEach(function(t){t.classList.remove('active');});var panel=document.getElementById('dpanel-'+breed);if(panel)panel.classList.add('active');if(btn)btn.classList.add('active');}
+  function showDollTabAndGo(breed){showDollTab(breed,document.getElementById('dtab-'+breed));goTo('ourdolls');}
+  function showSoldTab(breed,btn){document.querySelectorAll('.sold-panel').forEach(function(p){p.classList.remove('active');});document.querySelectorAll('.sold-tabs .tab').forEach(function(t){t.classList.remove('active');});var panel=document.getElementById('spanel-'+breed);if(panel)panel.classList.add('active');if(btn)btn.classList.add('active');}
+  function showSubTab(breed,pattern,btn){document.querySelectorAll('[id^="stab-'+breed+'"]').forEach(function(t){t.classList.remove('active');});if(btn)btn.classList.add('active');var grid=document.getElementById('grid-'+breed);if(!grid)return;grid.querySelectorAll('.cat-card').forEach(function(card){card.style.display=(pattern==='all'||card.dataset.pattern===pattern)?'':' none';});}
+  function goSubTab(breed,pattern){var tab=document.getElementById('stab-'+breed+'-'+pattern);showTab(breed,document.getElementById('tab-'+breed));showSubTab(breed,pattern,tab);goTo('gallery');}
+  function changeSlide(id,dir){if(!slideIdx[id])slideIdx[id]=0;var s=document.getElementById('slides-'+id);if(!s)return;slideIdx[id]=(slideIdx[id]+dir+s.children.length)%s.children.length;updateSlide(id,s.children.length);}
+  function goSlide(id,idx){slideIdx[id]=idx;var s=document.getElementById('slides-'+id);if(s)updateSlide(id,s.children.length);}
+  function updateSlide(id,total){var s=document.getElementById('slides-'+id);if(!s)return;s.style.transform='translateX(-'+(slideIdx[id]*100)+'%)';var dots=document.getElementById('dots-'+id);if(dots)dots.querySelectorAll('.dot').forEach(function(d,i){d.classList.toggle('active',i===slideIdx[id]);});var c=document.getElementById('count-'+id);if(c)c.textContent=(slideIdx[id]+1)+'/'+total;}
+  function changeDSlide(id,dir){if(!dSlIdx[id])dSlIdx[id]=0;var s=document.getElementById('dslides-'+id);if(!s)return;dSlIdx[id]=(dSlIdx[id]+dir+s.children.length)%s.children.length;var sl=document.getElementById('dslides-'+id);sl.style.transform='translateX(-'+(dSlIdx[id]*100)+'%)';var dots=document.getElementById('ddots-'+id);if(dots)dots.querySelectorAll('.ddot').forEach(function(d,i){d.classList.toggle('active',i===dSlIdx[id]);});}
+  function goDSlide(id,idx){dSlIdx[id]=idx;changeDSlide(id,0);}
+  function changeMSlide(id,dir){if(!mSlIdx[id])mSlIdx[id]=0;var s=document.getElementById('mslides-'+id);if(!s)return;mSlIdx[id]=(mSlIdx[id]+dir+s.children.length)%s.children.length;s.style.transform='translateX(-'+(mSlIdx[id]*100)+'%)';var dots=document.getElementById('mdots-'+id);if(dots)dots.querySelectorAll('.mdot').forEach(function(d,i){d.classList.toggle('active',i===mSlIdx[id]);});}
+  function goMSlide(id,idx){mSlIdx[id]=idx;changeMSlide(id,0);}
+  function addToCart(id,name,price){if(cart.find(function(c){return c.id===id;})){alert(name+' is already in your cart!');return;}cart.push({id:id,name:name,price:parseInt(price),type:'order'});updateCartUI();var btn=document.getElementById('cartbtn-'+id);if(btn){btn.textContent='✓';btn.classList.add('in-cart');}openCart();}
+  function updateCartUI(){var n=cart.length;document.getElementById('cartCount').textContent=n;document.getElementById('floatCount').textContent=n;document.getElementById('floatCart').classList.toggle('show',n>0);}
+  function openCart(){document.getElementById('cartPanel').classList.add('open');renderCart();}
+  function closeCart(){document.getElementById('cartPanel').classList.remove('open');}
+  function renderCart(){var el=document.getElementById('cartItems'),footer=document.getElementById('cartFooter');if(cart.length===0){el.innerHTML='<div class="cart-empty">Your cart is empty.<br>Browse our kittens and add them!</div>';footer.style.display='none';return;}footer.style.display='block';var total=cart.reduce(function(s,c){return s+c.price;},0);el.innerHTML=cart.map(function(item,i){return '<div class="cart-item"><div class="cart-item-info"><div class="cart-item-name">'+item.name+'</div>'+(item.price>0?'<div class="cart-item-price">৳ '+item.price.toLocaleString()+'</div>':'<div class="cart-item-price">Price on inquiry</div>')+'<div class="cart-item-type">'+(item.type==='prebook'?'Pre-Book':item.type==='service'?'Service':'Order')+'</div></div><button class="cart-item-remove" onclick="removeFromCart('+i+')">✕</button></div>';}).join('');document.getElementById('cartItemCount').textContent=cart.length+' item(s)';document.getElementById('cartTotal').textContent='৳ '+total.toLocaleString();}
+  function removeFromCart(i){var id=cart[i].id;cart.splice(i,1);updateCartUI();renderCart();var btn=document.getElementById('cartbtn-'+id);if(btn){btn.textContent='🛒';btn.classList.remove('in-cart');}}
+  function checkoutCart(){pendingOrder={items:cart.slice(),type:'cart'};var summary='',total=0;pendingOrder.items.forEach(function(item){summary+='<div class="order-summary-item"><span>'+item.name+'</span><span>'+(item.price>0?'৳ '+item.price.toLocaleString():'Inquiry')+'</span></div>';total+=item.price;});summary+='<div class="order-summary-item"><span>Total</span><span>৳ '+total.toLocaleString()+'</span></div>';document.getElementById('orderSummary').innerHTML=summary;document.getElementById('modalTitle').textContent='Complete Your Order';document.getElementById('modalSub').textContent=cart.length+' item(s) in your cart';selPaid='';document.querySelectorAll('.pay-opt').forEach(function(o){o.classList.remove('sel');});document.getElementById('orderModal').classList.add('open');closeCart();}
+  function quickOrder(name,price,type){var p=parseInt(price)||0;pendingOrder={items:[{id:'quick',name:name,price:p,type:type}],type:type};var summary='<div class="order-summary-item"><span>'+name+'</span><span>'+(p>0?'৳ '+p.toLocaleString():'Price on inquiry')+'</span></div>';if(p>0)summary+='<div class="order-summary-item"><span>Total</span><span>৳ '+p.toLocaleString()+'</span></div>';document.getElementById('orderSummary').innerHTML=summary;var titles={order:'Order Now',prebook:'Pre-Book',service:'Book Service',mating:'Mating Inquiry'};document.getElementById('modalTitle').textContent=titles[type]||'Order';document.getElementById('modalSub').textContent=name;selPaid='';document.querySelectorAll('.pay-opt').forEach(function(o){o.classList.remove('sel');});document.getElementById('orderModal').classList.add('open');}
+  function selPay(method){selPaid=method;document.querySelectorAll('.pay-opt').forEach(function(o){o.classList.remove('sel');});document.getElementById('pay-'+method).classList.add('sel');}
+  function closeModal(){document.getElementById('orderModal').classList.remove('open');}
+  function submitOrder(){var name=document.getElementById('orderName').value.trim(),phone=document.getElementById('orderPhone').value.trim(),loc=document.getElementById('orderLocation').value.trim(),msg=document.getElementById('orderMessage').value.trim();if(!name||!phone||!loc){alert('Please fill your name, phone, and location.');return;}if(!selPaid){alert('Please select a payment method.');return;}var payMap={bkash:'bKash — Send to: 01737170160',npsb:'Bank Transfer — Sonali Bank BUET Branch, A/C: 4404001031620 (Md. Rayhanur Rahman)',cod:'Cash on Delivery'};var orderType={order:'Order',prebook:'Pre-Book',service:'Service Booking',mating:'Mating Inquiry',cart:'Cart Order'};var items=pendingOrder.items.map(function(i){return '• '+i.name+(i.price>0?' — ৳ '+i.price.toLocaleString():'');}).join('\n');var total=pendingOrder.items.reduce(function(s,i){return s+i.price;},0);var text='Hello Shinzu Family! 🐱\n\n*'+orderType[pendingOrder.type||'order']+'*\n'+items+'\n'+(total>0?'*Total: ৳ '+total.toLocaleString()+'*\n':'\n')+'\n*Customer Details:*\nName: '+name+'\nPhone: '+phone+'\nLocation: '+loc+'\nPayment: '+payMap[selPaid]+(msg?'\nMessage: '+msg:'');window.open('https://wa.me/8801797822108?text='+encodeURIComponent(text),'_blank');if(pendingOrder.type==='cart'){cart=[];updateCartUI();document.querySelectorAll('.btn-cart-add').forEach(function(b){b.textContent='🛒';b.classList.remove('in-cart');});}closeModal();}
+
+  // LIGHTBOX
+  var lbImgs=[], lbIdx=0;
+  function openLightbox(imgs, idx, caption){
+    lbImgs=imgs; lbIdx=idx;
+    document.getElementById('lightboxImg').src=imgs[idx];
+    document.getElementById('lightboxCaption').textContent=caption||'';
+    document.getElementById('lightboxCounter').textContent=(idx+1)+' / '+imgs.length;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+  function closeLightboxOnBg(e){if(e.target===document.getElementById('lightbox'))closeLightbox();}
+  function lightboxNav(dir){
+    lbIdx=(lbIdx+dir+lbImgs.length)%lbImgs.length;
+    document.getElementById('lightboxImg').src=lbImgs[lbIdx];
+    document.getElementById('lightboxCounter').textContent=(lbIdx+1)+' / '+lbImgs.length;
+  }
+  document.addEventListener('keydown',function(e){
+    var lb=document.getElementById('lightbox');
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='ArrowRight')lightboxNav(1);
+    if(e.key==='ArrowLeft')lightboxNav(-1);
+    if(e.key==='Escape')closeLightbox();
+  });
+  document.getElementById('orderModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+  if(window.innerWidth<768){sbOpen=true;toggleSidebar();}
+</script>
+</body>
+</html>
