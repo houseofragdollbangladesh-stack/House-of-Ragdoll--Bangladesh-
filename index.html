@@ -122,10 +122,10 @@
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;}
     .cat-card{background:#fff;border:1px solid var(--border);border-radius:13px;overflow:hidden;transition:transform .2s;box-shadow:0 2px 9px rgba(30,60,100,.05);}
     .cat-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(30,60,100,.1);}
-    .slideshow{position:relative;height:180px;overflow:hidden;background:#eef4fb;}
+    .slideshow{position:relative;height:240px;overflow:hidden;background:#eef4fb;}
     .slides{display:flex;height:100%;transition:transform .4s ease;}
-    .slide{min-width:100%;height:180px;display:flex;align-items:center;justify-content:center;font-size:3.6rem;flex-shrink:0;}
-    .slide img{width:100%;height:180px;object-fit:cover;display:block;}
+    .slide{min-width:100%;height:240px;display:flex;align-items:center;justify-content:center;font-size:4.5rem;flex-shrink:0;}
+    .slide img{width:100%;height:240px;object-fit:cover;display:block;cursor:zoom-in;}
     .slide-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.4);color:#fff;border:none;width:23px;height:23px;border-radius:50%;cursor:pointer;font-size:.74rem;display:flex;align-items:center;justify-content:center;z-index:10;}
     .slide-btn:hover{background:rgba(0,0,0,.65);}
     .slide-prev{left:5px;}.slide-next{right:5px;}
@@ -163,10 +163,10 @@
     .dolls-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:1.35rem;}
     .doll-card{background:#fff;border:2px solid var(--gold);border-radius:16px;overflow:hidden;transition:transform .2s;box-shadow:0 4px 16px rgba(200,151,58,.11);}
     .doll-card:hover{transform:translateY(-4px);box-shadow:0 9px 28px rgba(30,60,100,.12);}
-    .doll-slideshow{position:relative;height:225px;overflow:hidden;}
+    .doll-slideshow{position:relative;height:260px;overflow:hidden;}
     .doll-slides{display:flex;height:100%;transition:transform .4s ease;}
-    .doll-slide{min-width:100%;height:225px;display:flex;align-items:center;justify-content:center;font-size:4.8rem;flex-shrink:0;}
-    .doll-slide img{width:100%;height:225px;object-fit:cover;display:block;}
+    .doll-slide{min-width:100%;height:260px;display:flex;align-items:center;justify-content:center;font-size:4.8rem;flex-shrink:0;}
+    .doll-slide img{width:100%;height:260px;object-fit:cover;display:block;cursor:zoom-in;}
     .doll-slide-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.38);color:#fff;border:none;width:27px;height:27px;border-radius:50%;cursor:pointer;font-size:.82rem;display:flex;align-items:center;justify-content:center;z-index:10;}
     .doll-slide-btn:hover{background:rgba(0,0,0,.6);}
     .doll-prev{left:7px;}.doll-next{right:7px;}
@@ -318,6 +318,24 @@
     footer{background:#0f1a2e;color:rgba(255,255,255,.3);text-align:center;padding:1.05rem 2rem;font-size:.7rem;}
     footer a{color:rgba(255,255,255,.44);}
     footer span{color:var(--gold);}
+
+
+    .slideshow::after{content:'🔍';position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.45);color:#fff;font-size:.75rem;padding:3px 7px;border-radius:8px;pointer-events:none;opacity:0;transition:opacity .2s;}
+    .slideshow:hover::after{opacity:1;}
+    .doll-slideshow::after{content:'🔍 Tap to zoom';position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.45);color:#fff;font-size:.72rem;padding:3px 8px;border-radius:8px;pointer-events:none;opacity:0;transition:opacity .2s;}
+    .doll-slideshow:hover::after{opacity:1;}
+    /* LIGHTBOX */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:2000;display:none;align-items:center;justify-content:center;flex-direction:column;}
+    .lightbox.open{display:flex;}
+    .lightbox-img{max-width:92vw;max-height:82vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.5);}
+    .lightbox-close{position:absolute;top:18px;right:22px;color:#fff;font-size:2rem;cursor:pointer;background:none;border:none;line-height:1;opacity:.8;}
+    .lightbox-close:hover{opacity:1;}
+    .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);color:#fff;border:none;width:46px;height:46px;border-radius:50%;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+    .lightbox-nav:hover{background:rgba(255,255,255,.3);}
+    .lightbox-prev{left:16px;}
+    .lightbox-next{right:16px;}
+    .lightbox-counter{position:absolute;bottom:20px;color:rgba(255,255,255,.7);font-size:.85rem;font-family:var(--font-body);}
+    .lightbox-caption{color:rgba(255,255,255,.85);font-size:.88rem;margin-top:.75rem;font-family:var(--font-body);text-align:center;}
     @media(max-width:768px){
       .main-content{margin-left:0;}
       .sb-toggle-btn{left:10px;}
@@ -329,6 +347,69 @@
       .dolls-grid{grid-template-columns:1fr;}
     }
   </style>
+
+  <!-- Google Search Verification - replace with your code from Google Search Console -->
+  <meta name="google-site-verification" content="ADD_YOUR_GOOGLE_VERIFICATION_CODE_HERE">
+  
+  <!-- Structured Data for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PetStore",
+    "name": "Shinzu Family - House of Ragdoll, Persian and Scottish Fold",
+    "description": "Bangladesh premier cattery for Ragdoll, Persian, Scottish Fold and British Shorthair cats. Cat grooming and foster care services in Dhaka.",
+    "url": "https://houseofragdollbangladesh-stack.github.io/House-of-Ragdoll--Bangladesh-",
+    "telephone": "+8801797822108",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "House-4, Road-1, Block-B, Chandrima Model Town",
+      "addressLocality": "Dhaka",
+      "postalCode": "1207",
+      "addressCountry": "BD"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "23.7561",
+      "longitude": "90.3564"
+    },
+    "openingHours": "Mo-Su 09:00-21:00",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61592266154793",
+      "https://www.youtube.com/@HouseofRagdollBangladesh"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Cat Breeds",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Ragdoll Kittens Bangladesh"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Persian Kittens Bangladesh"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Scottish Fold Kittens Bangladesh"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "British Shorthair Kittens Bangladesh"}}
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Shinzu Family Cat Breeder Dhaka",
+    "image": "https://houseofragdollbangladesh-stack.github.io/House-of-Ragdoll--Bangladesh-",
+    "@id": "https://houseofragdollbangladesh-stack.github.io/House-of-Ragdoll--Bangladesh-",
+    "url": "https://houseofragdollbangladesh-stack.github.io/House-of-Ragdoll--Bangladesh-",
+    "telephone": "+8801797822108",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "House-4, Road-1, Block-B, Chandrima Model Town, Dhaka Uddan",
+      "addressLocality": "Mohammadpur",
+      "addressRegion": "Dhaka",
+      "postalCode": "1207",
+      "addressCountry": "BD"
+    },
+    "priceRange": "৳৳",
+    "servesCuisine": "Cat Breeding"
+  }
+  </script>
 </head>
 <body>
 <button class="sb-toggle-btn shifted" id="sbToggle" onclick="toggleSidebar()">☰</button>
@@ -341,7 +422,6 @@
     <div class="sb-sec-title">Browse Breeds</div>
     <div class="sb-item active" id="sb-ragdoll" onclick="filterBreed('ragdoll')"><div class="sb-item-l"><span class="sb-ico">🐱</span>Ragdoll</div><div class="toggle on" id="tog-ragdoll"></div></div>
     <div class="sb-sub">
-      <div class="sb-link" onclick="goSubTab('ragdoll','bicolor')">↳ Bicolor</div>
       <div class="sb-link" onclick="goSubTab('ragdoll','sealmitted')">↳ Seal Mitted</div>
       <div class="sb-link" onclick="goSubTab('ragdoll','colorpoint')">↳ Colorpoint</div>
       <div class="sb-link" onclick="goSubTab('ragdoll','van')">↳ Van</div>
@@ -588,7 +668,6 @@
       <div class="gallery-panel active" id="panel-ragdoll">
         <div class="subtabs">
           <button class="subtab active" id="stab-ragdoll-all" onclick="showSubTab('ragdoll','all',this)">All</button>
-          <button class="subtab" id="stab-ragdoll-bicolor" onclick="showSubTab('ragdoll','bicolor',this)">Bicolor</button>
           <button class="subtab" id="stab-ragdoll-sealmitted" onclick="showSubTab('ragdoll','sealmitted',this)">Seal Mitted</button>
           <button class="subtab" id="stab-ragdoll-colorpoint" onclick="showSubTab('ragdoll','colorpoint',this)">Colorpoint</button>
           <button class="subtab" id="stab-ragdoll-van" onclick="showSubTab('ragdoll','van',this)">Van</button>
@@ -596,7 +675,7 @@
         <div class="gallery-grid" id="grid-ragdoll">
           <div class="cat-card" data-pattern="colorpoint">
             <div class="slideshow">
-              <div class="slides" id="slides-ka"><div class="slide"><img src="Makhon1.jpg" alt="Makhon"></div><div class="slide"><img src="Makhon2.jpg" alt="Makhon 2"></div><div class="slide"><img src="Makhon3.jpg" alt="Makhon 3"></div><div class="slide"><img src="Makhon4.jpg" alt="Makhon 4"></div></div>
+              <div class="slides" id="slides-ka"><div class="slide"><img src="Makhon1.jpg" alt="Makhon" onclick="openLightbox(["Makhon1.jpg", "Makhon2.jpg", "Makhon3.jpg", "Makhon4.jpg"],0,'Makhon')" style="cursor:zoom-in""></div><div class="slide"><img src="Makhon2.jpg" alt="Makhon" onclick="openLightbox(["Makhon1.jpg", "Makhon2.jpg", "Makhon3.jpg", "Makhon4.jpg"],1,'Makhon')" style="cursor:zoom-in" 2"></div><div class="slide"><img src="Makhon3.jpg" alt="Makhon" onclick="openLightbox(["Makhon1.jpg", "Makhon2.jpg", "Makhon3.jpg", "Makhon4.jpg"],2,'Makhon')" style="cursor:zoom-in" 3"></div><div class="slide"><img src="Makhon4.jpg" alt="Makhon" onclick="openLightbox(["Makhon1.jpg", "Makhon2.jpg", "Makhon3.jpg", "Makhon4.jpg"],3,'Makhon')" style="cursor:zoom-in" 4"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('ka',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('ka',1)">&#8250;</button>
               <div class="slide-dots" id="dots-ka"><div class="dot active" onclick="goSlide('ka',0)"></div><div class="dot" onclick="goSlide('ka',1)"></div><div class="dot" onclick="goSlide('ka',2)"></div><div class="dot" onclick="goSlide('ka',3)"></div></div>
@@ -625,7 +704,7 @@
           </div>
           <div class="cat-card" data-pattern="colorpoint">
             <div class="slideshow">
-              <div class="slides" id="slides-kb"><div class="slide"><img src="Mithai1.jpg" alt="Mithai"></div><div class="slide"><img src="Mithai2.jpg" alt="Mithai 2"></div><div class="slide"><img src="Mithai3.jpg" alt="Mithai 3"></div><div class="slide"><img src="Mithai4.jpg" alt="Mithai 4"></div></div>
+              <div class="slides" id="slides-kb"><div class="slide"><img src="Mithai1.jpg" alt="Mithai" onclick="openLightbox(["Mithai1.jpg", "Mithai2.jpg", "Mithai3.jpg", "Mithai4.jpg"],0,'Mithai')" style="cursor:zoom-in""></div><div class="slide"><img src="Mithai2.jpg" alt="Mithai" onclick="openLightbox(["Mithai1.jpg", "Mithai2.jpg", "Mithai3.jpg", "Mithai4.jpg"],1,'Mithai')" style="cursor:zoom-in" 2"></div><div class="slide"><img src="Mithai3.jpg" alt="Mithai" onclick="openLightbox(["Mithai1.jpg", "Mithai2.jpg", "Mithai3.jpg", "Mithai4.jpg"],2,'Mithai')" style="cursor:zoom-in" 3"></div><div class="slide"><img src="Mithai4.jpg" alt="Mithai" onclick="openLightbox(["Mithai1.jpg", "Mithai2.jpg", "Mithai3.jpg", "Mithai4.jpg"],3,'Mithai')" style="cursor:zoom-in" 4"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('kb',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('kb',1)">&#8250;</button>
               <div class="slide-dots" id="dots-kb"><div class="dot active" onclick="goSlide('kb',0)"></div><div class="dot" onclick="goSlide('kb',1)"></div><div class="dot" onclick="goSlide('kb',2)"></div><div class="dot" onclick="goSlide('kb',3)"></div></div>
@@ -653,7 +732,7 @@
             </div>
           </div>
           <div class="cat-card" data-pattern="van">
-            <div class="slideshow"><div class="slides" id="slides-kc"><div class="slide"><img src="Golla1.jpg" alt="Golla"></div><div class="slide"><img src="Golla2.jpg" alt="Golla 2"></div><div class="slide"><img src="Golla3.jpg" alt="Golla 3"></div><div class="slide"><img src="Golla4.jpg" alt="Golla 4"></div></div>
+            <div class="slideshow"><div class="slides" id="slides-kc"><div class="slide"><img src="Golla1.jpg" alt="Golla" onclick="openLightbox(["Golla1.jpg", "Golla2.jpg", "Golla3.jpg", "Golla4.jpg"],0,'Golla')" style="cursor:zoom-in""></div><div class="slide"><img src="Golla2.jpg" alt="Golla" onclick="openLightbox(["Golla1.jpg", "Golla2.jpg", "Golla3.jpg", "Golla4.jpg"],1,'Golla')" style="cursor:zoom-in" 2"></div><div class="slide"><img src="Golla3.jpg" alt="Golla" onclick="openLightbox(["Golla1.jpg", "Golla2.jpg", "Golla3.jpg", "Golla4.jpg"],2,'Golla')" style="cursor:zoom-in" 3"></div><div class="slide"><img src="Golla4.jpg" alt="Golla" onclick="openLightbox(["Golla1.jpg", "Golla2.jpg", "Golla3.jpg", "Golla4.jpg"],3,'Golla')" style="cursor:zoom-in" 4"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('kc',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('kc',1)">&#8250;</button>
               <div class="slide-dots" id="dots-kc"><div class="dot active" onclick="goSlide('kc',0)"></div><div class="dot" onclick="goSlide('kc',1)"></div><div class="dot" onclick="goSlide('kc',2)"></div><div class="dot" onclick="goSlide('kc',3)"></div></div>
@@ -681,7 +760,7 @@
           </div>
           <div class="cat-card" data-pattern="sealmitted">
             <div class="slideshow">
-              <div class="slides" id="slides-kd"><div class="slide"><img src="Laddu1.jpg" alt="Laddu"></div><div class="slide"><img src="Laddu2.jpg" alt="Laddu 2"></div><div class="slide"><img src="Laddu3.jpg" alt="Laddu 3"></div><div class="slide"><img src="Laddu4.jpg" alt="Laddu 4"></div></div>
+              <div class="slides" id="slides-kd"><div class="slide"><img src="Laddu1.jpg" alt="Laddu" onclick="openLightbox(["Laddu1.jpg", "Laddu2.jpg", "Laddu3.jpg", "Laddu4.jpg"],0,'Laddu')" style="cursor:zoom-in""></div><div class="slide"><img src="Laddu2.jpg" alt="Laddu" onclick="openLightbox(["Laddu1.jpg", "Laddu2.jpg", "Laddu3.jpg", "Laddu4.jpg"],1,'Laddu')" style="cursor:zoom-in" 2"></div><div class="slide"><img src="Laddu3.jpg" alt="Laddu" onclick="openLightbox(["Laddu1.jpg", "Laddu2.jpg", "Laddu3.jpg", "Laddu4.jpg"],2,'Laddu')" style="cursor:zoom-in" 3"></div><div class="slide"><img src="Laddu4.jpg" alt="Laddu" onclick="openLightbox(["Laddu1.jpg", "Laddu2.jpg", "Laddu3.jpg", "Laddu4.jpg"],3,'Laddu')" style="cursor:zoom-in" 4"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('kd',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('kd',1)">&#8250;</button>
               <div class="slide-dots" id="dots-kd"><div class="dot active" onclick="goSlide('kd',0)"></div><div class="dot" onclick="goSlide('kd',1)"></div><div class="dot" onclick="goSlide('kd',2)"></div><div class="dot" onclick="goSlide('kd',3)"></div></div>
@@ -725,7 +804,7 @@
         <div class="gallery-grid" id="grid-persian">
           <div class="cat-card" data-pattern="blueeye">
             <div class="slideshow">
-              <div class="slides" id="slides-pd"><div class="slide"><img src="persian1.jpg" alt="Kitten D"></div><div class="slide"><img src="persian1b.jpg" alt="Kitten D 2"></div><div class="slide"><img src="persian1c.jpg" alt="Kitten D 3"></div></div>
+              <div class="slides" id="slides-pd"><div class="slide"><img src="persian1.jpg" alt="Kitten D" onclick="openLightbox(["persian1.jpg", "persian1b.jpg", "persian1c.jpg"],0,'Kitten D')" style="cursor:zoom-in""></div><div class="slide"><img src="persian1b.jpg" alt="Kitten D" onclick="openLightbox(["persian1.jpg", "persian1b.jpg", "persian1c.jpg"],1,'Kitten D')" style="cursor:zoom-in" 2"></div><div class="slide"><img src="persian1c.jpg" alt="Kitten D" onclick="openLightbox(["persian1.jpg", "persian1b.jpg", "persian1c.jpg"],2,'Kitten D')" style="cursor:zoom-in" 3"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('pd',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('pd',1)">&#8250;</button>
               <div class="slide-dots" id="dots-pd"><div class="dot active" onclick="goSlide('pd',0)"></div><div class="dot" onclick="goSlide('pd',1)"></div><div class="dot" onclick="goSlide('pd',2)"></div></div>
@@ -783,7 +862,7 @@
         <div class="gallery-grid" id="grid-scottish">
           <div class="cat-card" data-pattern="fold">
             <div class="slideshow">
-              <div class="slides" id="slides-sf"><div class="slide"><img src="scottish1.jpg" alt="Kitten F"></div><div class="slide"><img src="scottish1b.jpg" alt="Kitten F 2"></div><div class="slide"><img src="scottish1c.jpg" alt="Kitten F 3"></div></div>
+              <div class="slides" id="slides-sf"><div class="slide"><img src="scottish1.jpg" alt="Kitten F" onclick="openLightbox(["scottish1.jpg", "scottish1b.jpg", "scottish1c.jpg"],0,'Kitten F')" style="cursor:zoom-in""></div><div class="slide"><img src="scottish1b.jpg" alt="Kitten F" onclick="openLightbox(["scottish1.jpg", "scottish1b.jpg", "scottish1c.jpg"],1,'Kitten F')" style="cursor:zoom-in" 2"></div><div class="slide"><img src="scottish1c.jpg" alt="Kitten F" onclick="openLightbox(["scottish1.jpg", "scottish1b.jpg", "scottish1c.jpg"],2,'Kitten F')" style="cursor:zoom-in" 3"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('sf',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('sf',1)">&#8250;</button>
               <div class="slide-dots" id="dots-sf"><div class="dot active" onclick="goSlide('sf',0)"></div><div class="dot" onclick="goSlide('sf',1)"></div><div class="dot" onclick="goSlide('sf',2)"></div></div>
@@ -836,7 +915,7 @@
         <div class="gallery-grid" id="grid-british">
           <div class="cat-card">
             <div class="slideshow">
-              <div class="slides" id="slides-bh"><div class="slide"><img src="british1.jpg" alt="Kitten H"></div><div class="slide"><img src="british1b.jpg" alt="Kitten H 2"></div><div class="slide"><img src="british1c.jpg" alt="Kitten H 3"></div></div>
+              <div class="slides" id="slides-bh"><div class="slide"><img src="british1.jpg" alt="Kitten H" onclick="openLightbox(["british1.jpg", "british1b.jpg", "british1c.jpg"],0,'Kitten H')" style="cursor:zoom-in""></div><div class="slide"><img src="british1b.jpg" alt="Kitten H" onclick="openLightbox(["british1.jpg", "british1b.jpg", "british1c.jpg"],1,'Kitten H')" style="cursor:zoom-in" 2"></div><div class="slide"><img src="british1c.jpg" alt="Kitten H" onclick="openLightbox(["british1.jpg", "british1b.jpg", "british1c.jpg"],2,'Kitten H')" style="cursor:zoom-in" 3"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('bh',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('bh',1)">&#8250;</button>
               <div class="slide-dots" id="dots-bh"><div class="dot active" onclick="goSlide('bh',0)"></div><div class="dot" onclick="goSlide('bh',1)"></div><div class="dot" onclick="goSlide('bh',2)"></div></div>
@@ -1040,6 +1119,17 @@
     <button class="btn-submit" onclick="submitOrder()">Confirm Order via WhatsApp 📱</button>
   </div>
 </div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">&#x2715;</button>
+  <button class="lightbox-nav lightbox-prev" onclick="lightboxNav(-1)">&#8249;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+  <button class="lightbox-nav lightbox-next" onclick="lightboxNav(1)">&#8250;</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
 <script>
   var sbOpen=true,slideIdx={},dSlIdx={},mSlIdx={},cart=[],selPaid='',pendingOrder=null;
   function toggleSidebar(){sbOpen=!sbOpen;document.getElementById('sidebar').classList.toggle('hidden',!sbOpen);document.getElementById('mainContent').classList.toggle('sb-hidden',!sbOpen);document.getElementById('sbToggle').classList.toggle('shifted',sbOpen);}
@@ -1072,6 +1162,31 @@
   function selPay(method){selPaid=method;document.querySelectorAll('.pay-opt').forEach(function(o){o.classList.remove('sel');});document.getElementById('pay-'+method).classList.add('sel');}
   function closeModal(){document.getElementById('orderModal').classList.remove('open');}
   function submitOrder(){var name=document.getElementById('orderName').value.trim(),phone=document.getElementById('orderPhone').value.trim(),loc=document.getElementById('orderLocation').value.trim(),msg=document.getElementById('orderMessage').value.trim();if(!name||!phone||!loc){alert('Please fill your name, phone, and location.');return;}if(!selPaid){alert('Please select a payment method.');return;}var payMap={bkash:'bKash — Send to: 01737170160',npsb:'Bank Transfer — Sonali Bank BUET Branch, A/C: 4404001031620 (Md. Rayhanur Rahman)',cod:'Cash on Delivery'};var orderType={order:'Order',prebook:'Pre-Book',service:'Service Booking',mating:'Mating Inquiry',cart:'Cart Order'};var items=pendingOrder.items.map(function(i){return '• '+i.name+(i.price>0?' — ৳ '+i.price.toLocaleString():'');}).join('\n');var total=pendingOrder.items.reduce(function(s,i){return s+i.price;},0);var text='Hello Shinzu Family! 🐱\n\n*'+orderType[pendingOrder.type||'order']+'*\n'+items+'\n'+(total>0?'*Total: ৳ '+total.toLocaleString()+'*\n':'\n')+'\n*Customer Details:*\nName: '+name+'\nPhone: '+phone+'\nLocation: '+loc+'\nPayment: '+payMap[selPaid]+(msg?'\nMessage: '+msg:'');window.open('https://wa.me/8801797822108?text='+encodeURIComponent(text),'_blank');if(pendingOrder.type==='cart'){cart=[];updateCartUI();document.querySelectorAll('.btn-cart-add').forEach(function(b){b.textContent='🛒';b.classList.remove('in-cart');});}closeModal();}
+
+  // LIGHTBOX
+  var lbImgs=[], lbIdx=0;
+  function openLightbox(imgs, idx, caption){
+    lbImgs=imgs; lbIdx=idx;
+    document.getElementById('lightboxImg').src=imgs[idx];
+    document.getElementById('lightboxCaption').textContent=caption||'';
+    document.getElementById('lightboxCounter').textContent=(idx+1)+' / '+imgs.length;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+  function closeLightboxOnBg(e){if(e.target===document.getElementById('lightbox'))closeLightbox();}
+  function lightboxNav(dir){
+    lbIdx=(lbIdx+dir+lbImgs.length)%lbImgs.length;
+    document.getElementById('lightboxImg').src=lbImgs[lbIdx];
+    document.getElementById('lightboxCounter').textContent=(lbIdx+1)+' / '+lbImgs.length;
+  }
+  document.addEventListener('keydown',function(e){
+    var lb=document.getElementById('lightbox');
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='ArrowRight')lightboxNav(1);
+    if(e.key==='ArrowLeft')lightboxNav(-1);
+    if(e.key==='Escape')closeLightbox();
+  });
   document.getElementById('orderModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
   if(window.innerWidth<768){sbOpen=true;toggleSidebar();}
 </script>
