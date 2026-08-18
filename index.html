@@ -119,13 +119,13 @@
     .gallery-inner{max-width:960px;margin:0 auto;padding:0 2rem;}
     .gallery-panel{display:none;}
     .gallery-panel.active{display:block;}
-    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;}
     .cat-card{background:#fff;border:1px solid var(--border);border-radius:13px;overflow:hidden;transition:transform .2s;box-shadow:0 2px 9px rgba(30,60,100,.05);}
     .cat-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(30,60,100,.1);}
-    .slideshow{position:relative;height:240px;overflow:hidden;background:#eef4fb;}
+    .slideshow{position:relative;height:280px;overflow:hidden;background:#eef4fb;}
     .slides{display:flex;height:100%;transition:transform .4s ease;}
-    .slide{min-width:100%;height:240px;display:flex;align-items:center;justify-content:center;font-size:4.5rem;flex-shrink:0;}
-    .slide img{width:100%;height:240px;object-fit:cover;display:block;cursor:zoom-in;}
+    .slide{min-width:100%;height:280px;display:flex;align-items:center;justify-content:center;font-size:4.5rem;flex-shrink:0;}
+    .slide img{width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;}
     .slide-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.4);color:#fff;border:none;width:23px;height:23px;border-radius:50%;cursor:pointer;font-size:.74rem;display:flex;align-items:center;justify-content:center;z-index:10;}
     .slide-btn:hover{background:rgba(0,0,0,.65);}
     .slide-prev{left:5px;}.slide-next{right:5px;}
@@ -163,10 +163,10 @@
     .dolls-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:1.35rem;}
     .doll-card{background:#fff;border:2px solid var(--gold);border-radius:16px;overflow:hidden;transition:transform .2s;box-shadow:0 4px 16px rgba(200,151,58,.11);}
     .doll-card:hover{transform:translateY(-4px);box-shadow:0 9px 28px rgba(30,60,100,.12);}
-    .doll-slideshow{position:relative;height:260px;overflow:hidden;}
+    .doll-slideshow{position:relative;height:300px;overflow:hidden;}
     .doll-slides{display:flex;height:100%;transition:transform .4s ease;}
-    .doll-slide{min-width:100%;height:260px;display:flex;align-items:center;justify-content:center;font-size:4.8rem;flex-shrink:0;}
-    .doll-slide img{width:100%;height:260px;object-fit:cover;display:block;cursor:zoom-in;}
+    .doll-slide{min-width:100%;height:300px;display:flex;align-items:center;justify-content:center;font-size:4.8rem;flex-shrink:0;}
+    .doll-slide img{width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;}
     .doll-slide-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.38);color:#fff;border:none;width:27px;height:27px;border-radius:50%;cursor:pointer;font-size:.82rem;display:flex;align-items:center;justify-content:center;z-index:10;}
     .doll-slide-btn:hover{background:rgba(0,0,0,.6);}
     .doll-prev{left:7px;}.doll-next{right:7px;}
@@ -217,10 +217,10 @@
     .mating-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(262px,1fr));gap:1.2rem;margin-top:1.55rem;}
     .mating-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s;}
     .mating-card:hover{transform:translateY(-4px);box-shadow:0 7px 24px rgba(30,60,100,.11);}
-    .mating-slideshow{position:relative;height:188px;overflow:hidden;}
+    .mating-slideshow{position:relative;height:220px;overflow:hidden;}
     .mating-slides{display:flex;height:100%;transition:transform .4s ease;}
-    .mating-slide{min-width:100%;height:188px;display:flex;align-items:center;justify-content:center;font-size:4rem;flex-shrink:0;}
-    .mating-slide img{width:100%;height:188px;object-fit:cover;display:block;}
+    .mating-slide{min-width:100%;height:220px;display:flex;align-items:center;justify-content:center;font-size:4rem;flex-shrink:0;}
+    .mating-slide img{width:100%;height:220px;object-fit:cover;display:block;}
     .mating-slide-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.38);color:#fff;border:none;width:25px;height:25px;border-radius:50%;cursor:pointer;font-size:.78rem;display:flex;align-items:center;justify-content:center;z-index:10;}
     .mating-slide-btn:hover{background:rgba(0,0,0,.62);}
     .mating-prev{left:6px;}.mating-next{right:6px;}
@@ -327,7 +327,7 @@
     /* LIGHTBOX */
     .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:2000;display:none;align-items:center;justify-content:center;flex-direction:column;}
     .lightbox.open{display:flex;}
-    .lightbox-img{max-width:92vw;max-height:82vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.5);}
+    .lightbox-img{max-width:96vw;max-height:88vh;object-fit:contain;border-radius:6px;box-shadow:0 8px 40px rgba(0,0,0,.6);}
     .lightbox-close{position:absolute;top:18px;right:22px;color:#fff;font-size:2rem;cursor:pointer;background:none;border:none;line-height:1;opacity:.8;}
     .lightbox-close:hover{opacity:1;}
     .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);color:#fff;border:none;width:46px;height:46px;border-radius:50%;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
@@ -422,6 +422,7 @@
     <div class="sb-sec-title">Browse Breeds</div>
     <div class="sb-item active" id="sb-ragdoll" onclick="filterBreed('ragdoll')"><div class="sb-item-l"><span class="sb-ico">🐱</span>Ragdoll</div><div class="toggle on" id="tog-ragdoll"></div></div>
     <div class="sb-sub">
+      <div class="sb-link" onclick="goSubTab('ragdoll','bicolor')">↳ Bicolor</div>
       <div class="sb-link" onclick="goSubTab('ragdoll','sealmitted')">↳ Seal Mitted</div>
       <div class="sb-link" onclick="goSubTab('ragdoll','colorpoint')">↳ Colorpoint</div>
       <div class="sb-link" onclick="goSubTab('ragdoll','van')">↳ Van</div>
@@ -668,6 +669,7 @@
       <div class="gallery-panel active" id="panel-ragdoll">
         <div class="subtabs">
           <button class="subtab active" id="stab-ragdoll-all" onclick="showSubTab('ragdoll','all',this)">All</button>
+          <button class="subtab" id="stab-ragdoll-bicolor" onclick="showSubTab('ragdoll','bicolor',this)">Bicolor</button>
           <button class="subtab" id="stab-ragdoll-sealmitted" onclick="showSubTab('ragdoll','sealmitted',this)">Seal Mitted</button>
           <button class="subtab" id="stab-ragdoll-colorpoint" onclick="showSubTab('ragdoll','colorpoint',this)">Colorpoint</button>
           <button class="subtab" id="stab-ragdoll-van" onclick="showSubTab('ragdoll','van',this)">Van</button>
@@ -702,7 +704,7 @@
               </div>
             </div>
           </div>
-          <div class="cat-card" data-pattern="colorpoint">
+          <div class="cat-card" data-pattern="sealmitted">
             <div class="slideshow">
               <div class="slides" id="slides-kb"><div class="slide"><img src="Mithai1.jpg" alt="Mithai" onclick="openLightbox(["Mithai1.jpg", "Mithai2.jpg", "Mithai3.jpg", "Mithai4.jpg"],0,'Mithai')" style="cursor:zoom-in""></div><div class="slide"><img src="Mithai2.jpg" alt="Mithai" onclick="openLightbox(["Mithai1.jpg", "Mithai2.jpg", "Mithai3.jpg", "Mithai4.jpg"],1,'Mithai')" style="cursor:zoom-in" 2"></div><div class="slide"><img src="Mithai3.jpg" alt="Mithai" onclick="openLightbox(["Mithai1.jpg", "Mithai2.jpg", "Mithai3.jpg", "Mithai4.jpg"],2,'Mithai')" style="cursor:zoom-in" 3"></div><div class="slide"><img src="Mithai4.jpg" alt="Mithai" onclick="openLightbox(["Mithai1.jpg", "Mithai2.jpg", "Mithai3.jpg", "Mithai4.jpg"],3,'Mithai')" style="cursor:zoom-in" 4"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('kb',-1)">&#8249;</button>
