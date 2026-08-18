@@ -182,7 +182,7 @@
     .dspec strong{color:var(--text);}
     .doll-tags{display:flex;flex-wrap:wrap;gap:.32rem;margin-bottom:.65rem;}
     .doll-tag{background:var(--warm);color:var(--navy);font-size:.63rem;padding:.18rem .55rem;border-radius:8px;border:1px solid var(--border);font-weight:500;}
-    .not-for-sale{background:rgba(200,151,58,.1);border:1px solid rgba(200,151,58,.26);color:var(--navy);font-size:.68rem;text-align:center;padding:.46rem;border-radius:7px;margin-bottom:.58rem;font-weight:600;}
+    .not-for-sale{background:linear-gradient(135deg,#fff0f0,#ffe8e8);border:1.5px solid #e53e3e;color:#c53030;font-size:.72rem;text-align:center;padding:.5rem .75rem;border-radius:8px;margin-bottom:.6rem;font-weight:700;letter-spacing:.02em;}
     .btn-doll-wa{background:linear-gradient(135deg,#25d366,#1da851);color:#fff;border:none;padding:.5rem 1.05rem;border-radius:17px;font-size:.74rem;font-weight:700;cursor:pointer;font-family:var(--font-body);}
     .btn-doll-wa:hover{opacity:.88;}
     .sold-wrap{background:var(--navy);padding:3.5rem 0;}
@@ -668,8 +668,8 @@
   <div class="dolls-wrap" id="ourdolls">
     <div class="dolls-inner">
       <div class="sec-eyebrow">Our Resident Cats</div>
-      <div class="sec-title">Our Dolls 👑</div>
-      <div class="sec-sub">Meet our beautiful parent cats — not for sale. Their kittens are available in the gallery below!</div>
+      <div class="sec-title">Our Dolls 👑 <span style="font-size:.65rem;font-family:var(--font-body);font-weight:600;background:#e53e3e;color:#fff;padding:.2rem .6rem;border-radius:8px;vertical-align:middle;margin-left:.5rem;">Not For Sale</span></div>
+      <div class="sec-sub">Meet our beautiful resident parent cats 👑 — these are <strong>not for sale</strong>. Their adorable kittens are available in the gallery below!</div>
       <div class="dolls-tabs">
         <button class="dtab active" id="dtab-ragdoll" onclick="showDollTab('ragdoll',this)">🐱 Ragdoll</button>
         <button class="dtab" id="dtab-scottish" onclick="showDollTab('scottish',this)">🐾 Scottish Fold</button>
@@ -679,14 +679,14 @@
         <div class="dolls-grid">
           <div class="doll-card">
             <div class="doll-slideshow">
-              <div class="doll-slides" id="dslides-luna">
-                <div class="doll-slide" style="background:linear-gradient(135deg,#dce8f5,#b8d4ed);">🐱</div>
-                <div class="doll-slide" style="background:linear-gradient(135deg,#c8dcf0,#a0c4e8);">🐱</div>
-                <div class="doll-slide" style="background:linear-gradient(135deg,#b8d0ec,#90b8e0);">🐱</div>
+              <div class="doll-slides" id="dslides-vutum">
+                <div class="doll-slide"><img src="vutum1.jpg" alt="Vutum" onclick="openLightbox(['vutum1.jpg','vutum2.jpg','vutum3.jpg'],0,'Vutum')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img src="vutum2.jpg" alt="Vutum 2" onclick="openLightbox(['vutum1.jpg','vutum2.jpg','vutum3.jpg'],1,'Vutum')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img src="vutum3.jpg" alt="Vutum 3" onclick="openLightbox(['vutum1.jpg','vutum2.jpg','vutum3.jpg'],2,'Vutum')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
               </div>
-              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('luna',-1)">&#8249;</button>
-              <button class="doll-slide-btn doll-next" onclick="changeDSlide('luna',1)">&#8250;</button>
-              <div class="doll-dots" id="ddots-luna"><div class="ddot active" onclick="goDSlide('luna',0)"></div><div class="ddot" onclick="goDSlide('luna',1)"></div><div class="ddot" onclick="goDSlide('luna',2)"></div></div>
+              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('vutum',-1)">&#8249;</button>
+              <button class="doll-slide-btn doll-next" onclick="changeDSlide('vutum',1)">&#8250;</button>
+              <div class="doll-dots" id="ddots-vutum"><div class="ddot active" onclick="goDSlide('vutum',0)"></div><div class="ddot" onclick="goDSlide('vutum',1)"></div><div class="ddot" onclick="goDSlide('vutum',2)"></div></div>
               <div class="doll-crown">👑 Parent Queen</div>
             </div>
             <div class="doll-info">
@@ -707,13 +707,14 @@
           </div>
           <div class="doll-card">
             <div class="doll-slideshow">
-              <div class="doll-slides" id="dslides-milo">
-                <div class="doll-slide" style="background:linear-gradient(135deg,#dce8f5,#b8d4ed);">🐱</div>
-                <div class="doll-slide" style="background:linear-gradient(135deg,#c8dcf0,#a0c4e8);">🐱</div>
+              <div class="doll-slides" id="dslides-sondesh">
+                <div class="doll-slide"><img src="Sondesh1.jpg" alt="Sondesh" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],0,'Sondesh')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img src="Sondesh2.jpg" alt="Sondesh 2" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],1,'Sondesh')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img src="Sondesh3.jpg" alt="Sondesh 3" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],2,'Sondesh')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
               </div>
-              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('milo',-1)">&#8249;</button>
-              <button class="doll-slide-btn doll-next" onclick="changeDSlide('milo',1)">&#8250;</button>
-              <div class="doll-dots" id="ddots-milo"><div class="ddot active" onclick="goDSlide('milo',0)"></div><div class="ddot" onclick="goDSlide('milo',1)"></div></div>
+              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('sondesh',-1)">&#8249;</button>
+              <button class="doll-slide-btn doll-next" onclick="changeDSlide('sondesh',1)">&#8250;</button>
+              <div class="doll-dots" id="ddots-sondesh"><div class="ddot active" onclick="goDSlide('sondesh',0)"></div><div class="ddot" onclick="goDSlide('sondesh',1)"></div><div class="ddot" onclick="goDSlide('sondesh',2)"></div></div>
               <div class="doll-crown">👑 Parent King</div>
             </div>
             <div class="doll-info">
@@ -730,6 +731,36 @@
               <div class="doll-tags"><span class="doll-tag">💙 Blue</span><span class="doll-tag">🤗 Playful</span><span class="doll-tag">👑 Pure Breed</span></div>
               <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
               <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Sondesh (Ragdoll Bicolor).','_blank')">Inquire About Sondesh's Kittens 🐱</button>
+            </div>
+          </div>
+          <div class="doll-card">
+            <div class="doll-slideshow">
+              <div class="doll-slides" id="dslides-rango">
+                <div class="doll-slide"><img src="Rango1.jpg" alt="Rango" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],0,'Rango')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img src="Rango2.jpg" alt="Rango 2" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],1,'Rango')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+              </div>
+              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('rango',-1)">&#8249;</button>
+              <button class="doll-slide-btn doll-next" onclick="changeDSlide('rango',1)">&#8250;</button>
+              <div class="doll-dots" id="ddots-rango">
+                <div class="ddot active" onclick="goDSlide('rango',0)"></div>
+                <div class="ddot" onclick="goDSlide('rango',1)"></div>
+              </div>
+              <div class="doll-crown">👑 Parent King</div
+            </div>
+            <div class="doll-info">
+              <div class="doll-name">Rango</div>
+              <div class="doll-role">Ragdoll · Colorpoint · Male</div>
+              <div class="doll-specs">
+                <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
+                <div class="dspec">🎂 <span><strong>Age:</strong> 16 Months</span></div>
+                <div class="dspec">🎨 <span><strong>Coat:</strong> Color Point</span></div>
+                <div class="dspec">👁️ <span><strong>Eyes:</strong> Blue</span></div>
+                <div class="dspec">🎀 <span><strong>Color:</strong> Chocolate</span></div>
+                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+              </div>
+              <div class="doll-tags"><span class="doll-tag">💙 Blue Eyes</span><span class="doll-tag">🍫 Chocolate</span><span class="doll-tag">💫 Color Point</span></div>
+              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
+              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Rango (Ragdoll Color Point Male).','_blank')">Inquire About Rango's Kittens 🐱</button>
             </div>
           </div>
         </div>
