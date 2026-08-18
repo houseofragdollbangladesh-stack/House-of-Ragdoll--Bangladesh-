@@ -217,10 +217,10 @@
     .mating-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(262px,1fr));gap:1.2rem;margin-top:1.55rem;}
     .mating-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s;}
     .mating-card:hover{transform:translateY(-4px);box-shadow:0 7px 24px rgba(30,60,100,.11);}
-    .mating-slideshow{position:relative;height:220px;overflow:hidden;}
+    .mating-slideshow{position:relative;height:360px;overflow:hidden;}
     .mating-slides{display:flex;height:100%;transition:transform .4s ease;}
-    .mating-slide{min-width:100%;height:220px;display:flex;align-items:center;justify-content:center;font-size:4rem;flex-shrink:0;}
-    .mating-slide img{width:100%;height:220px;object-fit:cover;display:block;}
+    .mating-slide{min-width:100%;height:360px;flex-shrink:0;overflow:hidden;}
+    .mating-slide img{width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;}
     .mating-slide-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.38);color:#fff;border:none;width:25px;height:25px;border-radius:50%;cursor:pointer;font-size:.78rem;display:flex;align-items:center;justify-content:center;z-index:10;}
     .mating-slide-btn:hover{background:rgba(0,0,0,.62);}
     .mating-prev{left:6px;}.mating-next{right:6px;}
@@ -1187,9 +1187,9 @@
           <div class="mating-card" id="service-mating">
           <div class="mating-slideshow">
             <div class="mating-slides" id="mslides-sondesh-m">
-              <div class="mating-slide"><img src="Sondesh1.jpg" alt="Sondesh" style="width:100%;height:220px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],0,'Sondesh')"></div>
-              <div class="mating-slide"><img src="Sondesh2.jpg" alt="Sondesh 2" style="width:100%;height:220px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],1,'Sondesh')"></div>
-              <div class="mating-slide"><img src="Sondesh3.jpg" alt="Sondesh 3" style="width:100%;height:220px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],2,'Sondesh')"></div>
+              <div class="mating-slide"><img src="Sondesh1.jpg" alt="Sondesh" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],0,'Sondesh')"></div>
+              <div class="mating-slide"><img src="Sondesh2.jpg" alt="Sondesh 2" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],1,'Sondesh')"></div>
+              <div class="mating-slide"><img src="Sondesh3.jpg" alt="Sondesh 3" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],2,'Sondesh')"></div>
             </div>
             <button class="mating-slide-btn mating-prev" onclick="changeMSlide('sondesh-m',-1)">&#8249;</button>
             <button class="mating-slide-btn mating-next" onclick="changeMSlide('sondesh-m',1)">&#8250;</button>
@@ -1214,8 +1214,8 @@
           <div class="mating-card">
           <div class="mating-slideshow">
             <div class="mating-slides" id="mslides-rango-m">
-              <div class="mating-slide"><img src="Rango1.jpg" alt="Rango" style="width:100%;height:220px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],0,'Rango')"></div>
-              <div class="mating-slide"><img src="Rango2.jpg" alt="Rango 2" style="width:100%;height:220px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],1,'Rango')"></div>
+              <div class="mating-slide"><img src="Rango1.jpg" alt="Rango" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],0,'Rango')"></div>
+              <div class="mating-slide"><img src="Rango2.jpg" alt="Rango 2" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],1,'Rango')"></div>
             </div>
             <button class="mating-slide-btn mating-prev" onclick="changeMSlide('rango-m',-1)">&#8249;</button>
             <button class="mating-slide-btn mating-next" onclick="changeMSlide('rango-m',1)">&#8250;</button>
