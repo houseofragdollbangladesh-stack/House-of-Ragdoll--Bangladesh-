@@ -348,6 +348,11 @@
     .gallery-wrap .sec-title,
     .gallery-wrap .sec-sub{padding-left:0;}
 
+
+    /* COVER PHOTO */
+    .cover-wrap{width:100%;overflow:hidden;position:relative;background:var(--navy);line-height:0;}
+    .cover-img{width:100%;height:500px;object-fit:cover;object-position:center center;display:block;}
+    @media(max-width:768px){.cover-img{height:220px;}}
     @media(max-width:768px){
       .main-content{margin-left:0;}
       .sb-toggle-btn{left:10px;}
@@ -609,6 +614,12 @@
   </div>
 </div>
 <div class="main-content" id="mainContent">
+
+  <!-- COVER PHOTO -->
+  <div class="cover-wrap">
+    <img class="cover-img" src="cover.jpg" alt="Shinzu Family - House of Ragdoll, Persian and Scottish Fold cats in Dhaka Bangladesh" onerror="this.parentElement.style.display='none'">
+  </div>
+
   <nav>
     <div class="nav-title">Shinzu Family<span>Ragdoll · Persian · Scottish Fold</span></div>
     <div class="nav-links">
