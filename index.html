@@ -670,7 +670,9 @@
   <!-- EmailJS for order notifications -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script type="text/javascript">
-    (function(){ emailjs.init('KJpxzXWeHM5b72MMb'); })();
+    window.addEventListener('load', function(){
+      try{ emailjs.init('KJpxzXWeHM5b72MMb'); console.log('EmailJS ready'); } catch(e){ console.warn('EmailJS init failed:', e); }
+    });
   </script>
 </head>
 <body>
@@ -2032,6 +2034,10 @@
 </div>
 
 <script>
+  // USER SESSION - initialize first
+  var currentUser = null;
+  try { currentUser = JSON.parse(localStorage.getItem('shinzu_user')); } catch(e){}
+
   var sbOpen=true,slideIdx={},dSlIdx={},mSlIdx={},cart=[],selPaid='',pendingOrder=null;
   function toggleSidebar(){sbOpen=!sbOpen;document.getElementById('sidebar').classList.toggle('hidden',!sbOpen);document.getElementById('mainContent').classList.toggle('sb-hidden',!sbOpen);document.getElementById('sbToggle').classList.toggle('shifted',sbOpen);}
   function goTo(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});}
@@ -2248,6 +2254,8 @@
     var itemsText = items.join('\n');
     var emailParams = {
       to_email: 'houseofragdollbangladesh@gmail.com',
+      from_name: name + ' - Shinzu Family Order',
+      name: name,
       order_id: orderId,
       order_type: orderType[pendingOrder.type||'order'],
       items: itemsText,
@@ -2260,10 +2268,19 @@
       order_date: orderDate
     };
 
-    // Try to send email (won't block the order if it fails)
+    // Send email notification
     try {
-      emailjs.send('service_kvbcepg', 'template_order', emailParams).catch(function(){});
-    } catch(e){}
+      if(typeof emailjs !== 'undefined'){
+        emailjs.send('service_kvbcepg', 'template_order', emailParams)
+          .then(function(response){
+            console.log('Email sent OK:', response.status);
+          }, function(error){
+            console.warn('Email failed:', JSON.stringify(error));
+          });
+      } else {
+        console.warn('EmailJS not loaded');
+      }
+    } catch(e){ console.warn('EmailJS error:', e); }
 
     // Send WhatsApp notification
     var waText = 'Hello Shinzu Family! 🐱\n\n*' + orderType[pendingOrder.type||'order'] + '* — ' + orderId + '\n' +
@@ -2286,56 +2303,64 @@
 
   function showOrderConfirmation(orderId){
     var box = document.createElement('div');
-    box.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:4000;display:flex;align-items:center;justify-content:center;';
-    box.innerHTML='<div style="background:#fff;border-radius:20px;padding:2rem;max-width:360px;width:90%;text-align:center;box-shadow:0 12px 48px rgba(0,0,0,.18);">' +
+    box.id = 'orderConfirmBox';
+    box.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:4000;display:flex;align-items:center;justify-content:center;';
+    box.innerHTML = '<div style="background:#fff;border-radius:20px;padding:2rem;max-width:360px;width:90%;text-align:center;box-shadow:0 4px 32px rgba(0,0,0,.15);">' +
       '<div style="font-size:2.5rem;margin-bottom:.5rem;">🎉</div>' +
-      '<div style="font-family:var(--font-display);font-size:1.2rem;color:var(--navy);font-weight:800;margin-bottom:.4rem;">Order Placed!</div>' +
-      '<div style="font-size:.78rem;color:var(--muted);margin-bottom:.8rem;">Your order has been received. We'll contact you shortly.</div>' +
-      '<div style="background:#f0f4ff;border-radius:10px;padding:.7rem;margin-bottom:1rem;">' +
+      '<div style="font-size:1.1rem;color:var(--navy);font-weight:800;margin-bottom:.4rem;">Order Placed!</div>' +
+      '<div style="font-size:.82rem;color:var(--muted);margin-bottom:.8rem;">Your order has been received. We will contact you shortly.</div>' +
+      '<div style="background:#f0f4ff;border-radius:10px;padding:.7rem;margin-bottom:.8rem;">' +
         '<div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem;">Order ID</div>' +
         '<div style="font-family:monospace;font-size:1rem;color:var(--navy);font-weight:800;letter-spacing:.05em;">' + orderId + '</div>' +
       '</div>' +
-      '<div style="font-size:.75rem;color:var(--muted);margin-bottom:1rem;">Save this ID to track your order status.</div>' +
-      '<button onclick="this.closest('div[style]').remove();openOrderStatus();" style="width:100%;padding:.7rem;background:var(--navy);color:#fff;border:none;border-radius:12px;font-size:.88rem;font-weight:700;cursor:pointer;margin-bottom:.5rem;">View Order Status 📦</button>' +
-      '<button onclick="this.closest('div[style]').remove();" style="width:100%;padding:.6rem;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:12px;font-size:.82rem;cursor:pointer;">Close</button>' +
+      '<div style="font-size:.75rem;color:var(--muted);margin-bottom:1rem;">Save this ID to track your order.</div>' +
+      '<button id="confViewBtn" style="width:100%;padding:.7rem;background:var(--navy);color:#fff;border:none;border-radius:12px;font-size:.88rem;font-weight:700;cursor:pointer;margin-bottom:.5rem;">View Order Status 📦</button>' +
+      '<button id="confCloseBtn" style="width:100%;padding:.6rem;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:12px;font-size:.82rem;cursor:pointer;">Close</button>' +
     '</div>';
     document.body.appendChild(box);
+    document.getElementById('confCloseBtn').onclick = function(){ box.remove(); };
+    document.getElementById('confViewBtn').onclick = function(){ box.remove(); openOrderStatus(); };
   }
 
+  
   // ORDER STATUS SYSTEM
   function openOrderStatus(){
+    if(!currentUser){ openLogin(); return; }
     var orders = [];
     try{ orders = JSON.parse(localStorage.getItem('shinzu_orders')||'[]'); } catch(e){}
     var modal = document.getElementById('orderStatusModal');
-    var content = document.getElementById('orderStatusContent');
+    var cont = document.getElementById('orderStatusContent');
     if(!modal) return;
     if(orders.length === 0){
-      content.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--muted);">' +
-        '<div style="font-size:3rem;">📦</div>' +
-        '<div style="margin-top:.5rem;font-size:.9rem;">No orders yet.</div>' +
-        '<div style="font-size:.78rem;margin-top:.3rem;">Place your first order!</div></div>';
+      cont.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--muted);"><div style="font-size:3rem;">&#128230;</div><div style="margin-top:.5rem;font-size:.9rem;">No orders yet.</div><div style="font-size:.78rem;margin-top:.3rem;">Place your first order!</div></div>';
     } else {
-      content.innerHTML = orders.map(function(o){
-        var statusColor = {Pending:'#f59e0b', Confirmed:'#3b82f6', Processing:'#8b5cf6', Shipped:'#06b6d4', Delivered:'#10b981', Cancelled:'#ef4444'}[o.status] || '#6b7280';
-        var itemsList = o.items.map(function(i){return '<div style="font-size:.75rem;color:var(--navy);padding:.2rem 0;">• '+i.name+(i.price>0?' — ৳'+i.price.toLocaleString():'')+'</div>';}).join('');
-        return '<div style="background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:1.1rem;margin-bottom:1rem;">' +
-          '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.6rem;">' +
-            '<div>' +
-              '<div style="font-family:monospace;font-size:.78rem;color:var(--muted);">' + o.id + '</div>' +
-              '<div style="font-size:.72rem;color:var(--muted);margin-top:.1rem;">' + o.date + '</div>' +
-            '</div>' +
-            '<div style="background:'+statusColor+';color:#fff;font-size:.65rem;font-weight:700;padding:.25rem .65rem;border-radius:20px;">' + o.status + '</div>' +
-          '</div>' +
-          itemsList +
-          (o.total>0?'<div style="font-size:.78rem;font-weight:700;color:var(--navy);margin-top:.4rem;">Total: ৳'+o.total.toLocaleString()+'</div>':'')+
-          '<div style="font-size:.72rem;color:var(--muted);margin-top:.35rem;">Payment: '+o.paymentDetail+'</div>' +
-          '<div style="font-size:.72rem;color:var(--muted);">Location: '+o.customer.location+'</div>' +
-        '</div>';
-      }).join('');
+      var html = '';
+      var statusColors = {Pending:'#f59e0b',Confirmed:'#3b82f6',Processing:'#8b5cf6',Shipped:'#06b6d4',Delivered:'#10b981',Cancelled:'#ef4444'};
+      for(var i=0;i<orders.length;i++){
+        var o = orders[i];
+        var sc = statusColors[o.status] || '#6b7280';
+        var itemsHtml = '';
+        for(var j=0;j<o.items.length;j++){
+          var it = o.items[j];
+          itemsHtml += '<div style="font-size:.75rem;color:var(--navy);padding:.2rem 0;">- ' + it.name + (it.price>0?' - ৳'+it.price.toLocaleString():'') + '</div>';
+        }
+        html += '<div style="background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:1.1rem;margin-bottom:1rem;">';
+        html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.6rem;">';
+        html += '<div><div style="font-family:monospace;font-size:.78rem;color:var(--muted);">' + o.id + '</div>';
+        html += '<div style="font-size:.72rem;color:var(--muted);margin-top:.1rem;">' + o.date + '</div></div>';
+        html += '<div style="background:'+sc+';color:#fff;font-size:.65rem;font-weight:700;padding:.25rem .65rem;border-radius:20px;">' + o.status + '</div></div>';
+        html += itemsHtml;
+        if(o.total>0) html += '<div style="font-size:.78rem;font-weight:700;color:var(--navy);margin-top:.4rem;">Total: ৳'+o.total.toLocaleString()+'</div>';
+        html += '<div style="font-size:.72rem;color:var(--muted);margin-top:.35rem;">Payment: '+o.paymentDetail+'</div>';
+        html += '<div style="font-size:.72rem;color:var(--muted);">Location: '+o.customer.location+'</div>';
+        html += '</div>';
+      }
+      cont.innerHTML = html;
     }
     modal.classList.add('open');
     document.body.style.overflow='hidden';
   }
+
   function closeOrderStatus(){
     var modal = document.getElementById('orderStatusModal');
     if(modal){ modal.classList.remove('open'); document.body.style.overflow=''; }
@@ -2368,9 +2393,7 @@
     if(e.key==='Escape')closeLightbox();
   });
 
-  // LOGIN SYSTEM
-  var currentUser = null;
-  try { currentUser = JSON.parse(localStorage.getItem('shinzu_user')); } catch(e){}
+
 
 
   function openProfile(){
