@@ -77,7 +77,7 @@
     .nav-links{display:flex;gap:1.2rem;font-size:.76rem;color:var(--muted);font-weight:500;}
     .nav-links a{cursor:pointer;}
     .nav-links a:hover{color:var(--blue);}
-    .nav-right{display:flex;align-items:center;gap:.6rem;}
+    .nav-right{display:flex;align-items:center;gap:.5rem;}
     .nav-cta{background:var(--blue);color:#fff;border:none;padding:.4rem .95rem;border-radius:17px;font-size:.76rem;cursor:pointer;font-family:var(--font-body);font-weight:600;}
     .nav-cta:hover{background:var(--navy);}
     .cart-btn{position:relative;background:var(--warm);border:1px solid var(--border);color:var(--navy);padding:.4rem .8rem;border-radius:17px;font-size:.76rem;cursor:pointer;font-family:var(--font-body);font-weight:600;display:flex;align-items:center;gap:4px;}
@@ -365,6 +365,40 @@
     .mating-panel{display:none;}
     .mating-panel.active{display:block;}
     .mating-tabs .tab{font-size:1rem;padding:.55rem 1.3rem;}
+
+    /* All Breeds view - hide subtabs, show breed tags */
+    .gallery-panel .subtabs{transition:none;}
+    /* Mating panels stacked in All view */
+    .mating-panel.active + .mating-panel.active{margin-top:2rem;border-top:1.5px solid var(--border);padding-top:2rem;}
+    /* Doll breed tag - shown in All view */
+    .doll-breed-tag{display:none;}
+
+    /* LOGIN MODAL */
+    .login-modal{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:3000;display:none;align-items:center;justify-content:center;}
+    .login-modal.open{display:flex;}
+    .login-box{background:#fff;border-radius:18px;padding:2rem 2rem 1.8rem;width:90%;max-width:380px;box-shadow:0 12px 48px rgba(0,0,0,.18);position:relative;}
+    .login-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--muted);}
+    .login-title{font-family:var(--font-head);font-size:1.3rem;color:var(--navy);font-weight:800;margin-bottom:.25rem;}
+    .login-sub{font-size:.8rem;color:var(--muted);margin-bottom:1.2rem;}
+    .login-tabs{display:flex;gap:.5rem;margin-bottom:1.1rem;}
+    .login-tab{flex:1;padding:.42rem;border-radius:10px;border:1.5px solid var(--border);background:#f8f9ff;font-size:.8rem;font-weight:600;color:var(--muted);cursor:pointer;text-align:center;transition:all .2s;}
+    .login-tab.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+    .login-input{width:100%;padding:.7rem .9rem;border:1.5px solid var(--border);border-radius:10px;font-size:.9rem;font-family:var(--font-body);margin-bottom:.9rem;box-sizing:border-box;outline:none;transition:border .2s;}
+    .login-input:focus{border-color:var(--blue);}
+    .login-btn{width:100%;padding:.75rem;background:var(--navy);color:#fff;border:none;border-radius:12px;font-size:.95rem;font-weight:700;cursor:pointer;transition:background .2s;}
+    .login-btn:hover{background:var(--blue);}
+    .login-err{color:#e53e3e;font-size:.78rem;margin-bottom:.6rem;display:none;}
+    .login-note{font-size:.72rem;color:var(--muted);text-align:center;margin-top:.8rem;}
+    /* NAV user area */
+    .nav-user{display:flex;align-items:center;gap:.5rem;}
+    .user-avatar{width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center;cursor:pointer;border:2px solid var(--navy);}
+    .user-menu{position:absolute;top:52px;right:0;background:#fff;border:1.5px solid var(--border);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:.5rem;min-width:170px;z-index:500;display:none;}
+    .user-menu.open{display:block;}
+    .user-menu-item{padding:.5rem .75rem;font-size:.82rem;color:var(--navy);cursor:pointer;border-radius:8px;font-weight:600;}
+    .user-menu-item:hover{background:#f0f4ff;}
+    .user-menu-name{padding:.5rem .75rem;font-size:.78rem;color:var(--muted);border-bottom:1px solid #f0f0f0;margin-bottom:.3rem;}
+    .btn-login{padding:.38rem .9rem;border-radius:12px;border:1.5px solid var(--gold);background:transparent;color:var(--gold);font-size:.78rem;font-weight:700;cursor:pointer;transition:all .2s;}
+    .btn-login:hover{background:var(--gold);color:var(--navy);}
     /* COVER PHOTO */
     .cover-wrap{width:100%;overflow:hidden;position:relative;background:var(--navy);line-height:0;}
     .cover-img{width:100%;height:500px;object-fit:cover;object-position:center center;display:block;}
@@ -652,7 +686,7 @@
     <div class="sb-link" onclick="filterPrice(15000,50000)">৳ 15,000 – 50,000</div>
     <div class="sb-link" onclick="filterPrice(50000,150000)">৳ 50,000 – 1,50,000</div>
     <div class="sb-link" onclick="filterPrice(150000,999999)">৳ 1,50,000+</div>
-    <div class="sb-link" onclick="filterPrice(0,999999)" style="color:var(--gold);">✕ Clear Filter</div>
+    <div class="sb-link" onclick="resetFilter()" style="color:var(--gold);">✕ Clear Filter</div>
 
     <div class="sb-sec-title">Quick Links</div>
     <div class="sb-link" onclick="goTo('ourdolls')">👑 Our Dolls</div>
@@ -694,8 +728,9 @@
     </div>
     <div class="nav-right">
       <button class="cart-btn" onclick="openCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button>
+      <div class="nav-user" id="navUserArea" style="position:relative;"><button class="btn-login" onclick="openLogin()">Sign In</button><div id="userMenu" class="user-menu"><div class="user-menu-name" id="userMenuName"></div><div class="user-menu-item" onclick="openCart()">🛒 My Cart</div><div class="user-menu-item" onclick="doLogout()">🚪 Sign Out</div></div></div>
       <button class="nav-cta" onclick="goTo('contact')">Adopt Now</button>
-    </div>
+  </div>
   </nav>
   <div class="hero">
     <div class="hero-circles"><span></span><span></span></div>
@@ -752,8 +787,7 @@
               <div class="doll-dots" id="ddots-vutum"><div class="ddot active" onclick="goDSlide('vutum',0)"></div><div class="ddot" onclick="goDSlide('vutum',1)"></div><div class="ddot" onclick="goDSlide('vutum',2)"></div></div>
               <div class="doll-crown">👑 Parent Queen</div>
             </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#2563eb;color:#fff;font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:8px;letter-spacing:.04em;margin-bottom:.4rem;text-transform:uppercase;">🐱 Ragdoll</div>
-              <div class="doll-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Vutum</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Vutum</div>
               <div class="doll-role">Ragdoll · Bicolor · Female</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
@@ -780,8 +814,7 @@
               <div class="doll-dots" id="ddots-sondesh"><div class="ddot active" onclick="goDSlide('sondesh',0)"></div><div class="ddot" onclick="goDSlide('sondesh',1)"></div><div class="ddot" onclick="goDSlide('sondesh',2)"></div></div>
               <div class="doll-crown">👑 Parent King</div>
             </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#2563eb;color:#fff;font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:8px;letter-spacing:.04em;margin-bottom:.4rem;text-transform:uppercase;">🐱 Ragdoll</div>
-              <div class="doll-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Sondesh</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Sondesh</div>
               <div class="doll-role">Ragdoll · Bicolor · Male</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
@@ -810,8 +843,7 @@
               </div>
               <div class="doll-crown">👑 Parent King</div>
             </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#2563eb;color:#fff;font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:8px;letter-spacing:.04em;margin-bottom:.4rem;text-transform:uppercase;">🐱 Ragdoll</div>
-              <div class="doll-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Rango</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Rango</div>
               <div class="doll-role">Ragdoll · Colorpoint · Male</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
@@ -841,8 +873,7 @@
               <div class="doll-dots" id="ddots-shangchi"><div class="ddot active" onclick="goDSlide('shangchi',0)"></div><div class="ddot" onclick="goDSlide('shangchi',1)"></div></div>
               <div class="doll-crown">👑 Parent King</div>
             </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#7c3aed;color:#fff;font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:8px;letter-spacing:.04em;margin-bottom:.4rem;text-transform:uppercase;">🐾 Scottish Fold</div>
-              <div class="doll-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐾 Scottish Fold</div><br><div class="doll-name">Shang Chi</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐾 Scottish Fold</div><br><div class="doll-name">Shang Chi</div>
               <div class="doll-role">Scottish Fold · Tabby · Male</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
@@ -866,8 +897,7 @@
               <div class="doll-dots" id="ddots-yangchi"><div class="ddot active" onclick="goDSlide('yangchi',0)"></div></div>
               <div class="doll-crown">👑 Parent Queen</div>
             </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#7c3aed;color:#fff;font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:8px;letter-spacing:.04em;margin-bottom:.4rem;text-transform:uppercase;">🐾 Scottish Fold</div>
-              <div class="doll-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐾 Scottish Fold</div><br><div class="doll-name">Yang Chi</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐾 Scottish Fold</div><br><div class="doll-name">Yang Chi</div>
               <div class="doll-role">Scottish Fold · Tabby · Female</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
@@ -897,8 +927,7 @@
               <div class="doll-dots" id="ddots-chinki"><div class="ddot active" onclick="goDSlide('chinki',0)"></div><div class="ddot" onclick="goDSlide('chinki',1)"></div></div>
               <div class="doll-crown">👑 Parent Queen</div>
             </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#db2777;color:#fff;font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:8px;letter-spacing:.04em;margin-bottom:.4rem;text-transform:uppercase;">🤍 Persian</div>
-              <div class="doll-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🤍 Persian</div><br><div class="doll-name">Chinki</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🤍 Persian</div><br><div class="doll-name">Chinki</div>
               <div class="doll-role">Persian · Orange Eye · Female</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
@@ -925,8 +954,7 @@
               <div class="doll-dots" id="ddots-gadu"><div class="ddot active" onclick="goDSlide('gadu',0)"></div><div class="ddot" onclick="goDSlide('gadu',1)"></div></div>
               <div class="doll-crown">👑 Parent King</div>
             </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#db2777;color:#fff;font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:8px;letter-spacing:.04em;margin-bottom:.4rem;text-transform:uppercase;">🤍 Persian</div>
-              <div class="doll-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🤍 Persian</div><br><div class="doll-name">Gadu</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🤍 Persian</div><br><div class="doll-name">Gadu</div>
               <div class="doll-role">Persian · Orange Eye · Male</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
@@ -968,7 +996,7 @@
           <button class="subtab" id="stab-ragdoll-van" onclick="showSubTab('ragdoll','van',this)">Van</button>
         </div>
         <div class="gallery-grid" id="grid-ragdoll">
-          <div class="cat-card" data-pattern="colorpoint">
+          <div class="cat-card" data-price="120000" data-sold="false" data-pattern="colorpoint">
             <div class="slideshow">
               <div class="slides" id="slides-ka"><div class="slide"><img src="Makhon1.jpg" alt="Makhon" onclick="openLightbox(['Makhon1.jpg','Makhon2.jpg','Makhon3.jpg','Makhon4.jpg'],0,'Makhon')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Makhon2.jpg" alt="Makhon" onclick="openLightbox(['Makhon1.jpg','Makhon2.jpg','Makhon3.jpg','Makhon4.jpg'],1,'Makhon')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Makhon3.jpg" alt="Makhon" onclick="openLightbox(['Makhon1.jpg','Makhon2.jpg','Makhon3.jpg','Makhon4.jpg'],2,'Makhon')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Makhon4.jpg" alt="Makhon" onclick="openLightbox(['Makhon1.jpg','Makhon2.jpg','Makhon3.jpg','Makhon4.jpg'],3,'Makhon')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('ka',-1)">&#8249;</button>
@@ -977,7 +1005,7 @@
               <div class="slide-count" id="count-ka">1/4</div>
             </div>
             <div class="cat-info">
-              <div class="cat-name">Makhon</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🐱 Ragdoll</div><br><div class="cat-name">Makhon</div>
               <div class="cat-parent">👑 Father: Sondesh (Bicolor) · Mother: Vutum (Bicolor)</div>
               <div class="cat-detail">Ragdoll · Seal Point (Colorpoint) · Male</div>
               <div class="cat-specs">
@@ -997,7 +1025,7 @@
               </div>
             </div>
           </div>
-          <div class="cat-card" data-pattern="sealmitted">
+          <div class="cat-card" data-price="180000" data-sold="false" data-pattern="sealmitted">
             <div class="slideshow">
               <div class="slides" id="slides-kb"><div class="slide"><img src="Mithai1.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],0,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Mithai2.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],1,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Mithai3.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],2,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Mithai4.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],3,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('kb',-1)">&#8249;</button>
@@ -1006,7 +1034,7 @@
               <div class="slide-count" id="count-kb">1/4</div>
             </div>
             <div class="cat-info">
-              <div class="cat-name">Mithai</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🐱 Ragdoll</div><br><div class="cat-name">Mithai</div>
               <div class="cat-parent">👑 Father: Sondesh (Bicolor) · Mother: Vutum (Bicolor)</div>
               <div class="cat-detail">Ragdoll · Seal Mitted · Female</div>
               <div class="cat-specs">
@@ -1026,14 +1054,14 @@
               </div>
             </div>
           </div>
-          <div class="cat-card" data-pattern="van">
+          <div class="cat-card" data-price="140000" data-sold="false" data-pattern="van">
             <div class="slideshow"><div class="slides" id="slides-kc"><div class="slide"><img src="Golla1.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],0,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Golla2.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],1,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Golla3.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],2,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Golla4.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],3,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('kc',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('kc',1)">&#8250;</button>
               <div class="slide-dots" id="dots-kc"><div class="dot active" onclick="goSlide('kc',0)"></div><div class="dot" onclick="goSlide('kc',1)"></div><div class="dot" onclick="goSlide('kc',2)"></div><div class="dot" onclick="goSlide('kc',3)"></div></div>
               <div class="slide-count" id="count-kc">1/4</div></div>
             <div class="cat-info">
-              <div class="cat-name">Golla</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🐱 Ragdoll</div><br><div class="cat-name">Golla</div>
               <div class="cat-parent">👑 Father: Sondesh (Bicolor) · Mother: Vutum (Bicolor)</div>
               <div class="cat-detail">Ragdoll · Van · Male</div>
               <div class="cat-specs">
@@ -1053,7 +1081,7 @@
               </div>
             </div>
           </div>
-          <div class="cat-card" data-pattern="sealmitted">
+          <div class="cat-card" data-price="130000" data-sold="false" data-pattern="sealmitted">
             <div class="slideshow">
               <div class="slides" id="slides-kd"><div class="slide"><img src="Laddu1.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],0,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Laddu2.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],1,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Laddu3.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],2,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Laddu4.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],3,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('kd',-1)">&#8249;</button>
@@ -1062,7 +1090,7 @@
               <div class="slide-count" id="count-kd">1/4</div>
             </div>
             <div class="cat-info">
-              <div class="cat-name">Laddu</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🐱 Ragdoll</div><br><div class="cat-name">Laddu</div>
               <div class="cat-parent">👑 Father: Sondesh (Bicolor) · Mother: Vutum (Bicolor)</div>
               <div class="cat-detail">Ragdoll · Seal Mitted · Male</div>
               <div class="cat-specs">
@@ -1093,7 +1121,7 @@
           <button class="subtab" id="stab-persian-orangeeye" onclick="showSubTab('persian','orangeeye',this)">Orange Eye</button>
         </div>
         <div class="gallery-grid" id="grid-persian">
-          <div class="cat-card" data-pattern="orangeeye">
+          <div class="cat-card" data-price="8000" data-sold="false" data-pattern="orangeeye">
             <div class="slideshow">
               <div class="slides" id="slides-pe-poofy"><div class="slide"><img src="Poofy1.jpg" alt="Poofy 1" onclick="openLightbox(['Poofy1.jpg', 'Poofy2.jpg', 'Poofy3.jpg'],0,'Poofy')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Poofy2.jpg" alt="Poofy 2" onclick="openLightbox(['Poofy1.jpg', 'Poofy2.jpg', 'Poofy3.jpg'],1,'Poofy')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Poofy3.jpg" alt="Poofy 3" onclick="openLightbox(['Poofy1.jpg', 'Poofy2.jpg', 'Poofy3.jpg'],2,'Poofy')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('pe-poofy',-1)">&#8249;</button>
@@ -1102,7 +1130,7 @@
               <div class="slide-count" id="count-pe-poofy">1/3</div>
             </div>
             <div class="cat-info">
-              <div class="cat-name">Poofy</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🤍 Persian</div><br><div class="cat-name">Poofy</div>
               <div class="cat-parent">👑 Father: Gadu · Mother: Shiku</div>
               <div class="cat-detail">Persian · Partial Odd Eye · Male</div>
               <div class="cat-specs">
@@ -1123,7 +1151,7 @@
             </div>
           </div>
 
-          <div class="cat-card" data-pattern="orangeeye">
+          <div class="cat-card" data-price="8000" data-sold="false" data-pattern="orangeeye">
             <div class="slideshow">
               <div class="slides" id="slides-pe-simba"><div class="slide"><img src="Simba1.jpg" alt="Simba 1" onclick="openLightbox(['Simba1.jpg', 'Simba2.jpg', 'Simba3.jpg'],0,'Simba')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Simba2.jpg" alt="Simba 2" onclick="openLightbox(['Simba1.jpg', 'Simba2.jpg', 'Simba3.jpg'],1,'Simba')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Simba3.jpg" alt="Simba 3" onclick="openLightbox(['Simba1.jpg', 'Simba2.jpg', 'Simba3.jpg'],2,'Simba')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('pe-simba',-1)">&#8249;</button>
@@ -1132,7 +1160,7 @@
               <div class="slide-count" id="count-pe-simba">1/3</div>
             </div>
             <div class="cat-info">
-              <div class="cat-name">Simba</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🤍 Persian</div><br><div class="cat-name">Simba</div>
               <div class="cat-parent">👑 Father: Gadu · Mother: Shiku</div>
               <div class="cat-detail">Persian · Orange Eye · Male</div>
               <div class="cat-specs">
@@ -1153,7 +1181,7 @@
             </div>
           </div>
 
-          <div class="cat-card" data-pattern="orangeeye">
+          <div class="cat-card" data-price="15000" data-sold="false" data-pattern="orangeeye">
             <div class="slideshow">
               <div class="slides" id="slides-pe-nishu"><div class="slide"><img src="Nishu1.jpg" alt="Nishu 1" onclick="openLightbox(['Nishu1.jpg', 'Nishu2.jpg', 'Nishu3.jpg'],0,'Nishu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Nishu2.jpg" alt="Nishu 2" onclick="openLightbox(['Nishu1.jpg', 'Nishu2.jpg', 'Nishu3.jpg'],1,'Nishu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Nishu3.jpg" alt="Nishu 3" onclick="openLightbox(['Nishu1.jpg', 'Nishu2.jpg', 'Nishu3.jpg'],2,'Nishu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('pe-nishu',-1)">&#8249;</button>
@@ -1162,7 +1190,7 @@
               <div class="slide-count" id="count-pe-nishu">1/3</div>
             </div>
             <div class="cat-info">
-              <div class="cat-name">Nishu</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🤍 Persian</div><br><div class="cat-name">Nishu</div>
               <div class="cat-parent">👑 Father: Sondesh (Ragdoll) · Mother: Niku (Persian)</div>
               <div class="cat-detail">Ragdoll × Persian · Orange Eye · Female</div>
               <div class="cat-specs">
@@ -1183,7 +1211,7 @@
             </div>
           </div>
 
-          <div class="cat-card" data-pattern="orangeeye">
+          <div class="cat-card" data-price="7000" data-sold="false" data-pattern="orangeeye">
             <div class="slideshow">
               <div class="slides" id="slides-pe-himu"><div class="slide"><img src="Himu1.jpg" alt="Himu 1" onclick="openLightbox(['Himu1.jpg', 'Himu2.jpg', 'Himu3.jpg'],0,'Himu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Himu2.jpg" alt="Himu 2" onclick="openLightbox(['Himu1.jpg', 'Himu2.jpg', 'Himu3.jpg'],1,'Himu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Himu3.jpg" alt="Himu 3" onclick="openLightbox(['Himu1.jpg', 'Himu2.jpg', 'Himu3.jpg'],2,'Himu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('pe-himu',-1)">&#8249;</button>
@@ -1192,7 +1220,7 @@
               <div class="slide-count" id="count-pe-himu">1/3</div>
             </div>
             <div class="cat-info">
-              <div class="cat-name">Himu</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🤍 Persian</div><br><div class="cat-name">Himu</div>
               <div class="cat-parent">👑 Father: Gadu · Mother: Shiku</div>
               <div class="cat-detail">Persian · Orange Eye · Male</div>
               <div class="cat-specs">
@@ -1213,7 +1241,7 @@
             </div>
           </div>
 
-          <div class="cat-card" data-pattern="orangeeye">
+          <div class="cat-card" data-price="8000" data-sold="true" data-pattern="orangeeye">
             <div class="slideshow">
               <div class="slides" id="slides-pe-snow"><div class="slide"><img src="Snow1.jpg" alt="Snow 1" onclick="openLightbox(['Snow1.jpg', 'Snow2.jpg'],0,'Snow')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Snow2.jpg" alt="Snow 2" onclick="openLightbox(['Snow1.jpg', 'Snow2.jpg'],1,'Snow')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('pe-snow',-1)">&#8249;</button>
@@ -1222,7 +1250,7 @@
               <div class="slide-count" id="count-pe-snow">1/2</div>
             </div>
             <div class="cat-info">
-              <div class="cat-name">Snow</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🤍 Persian</div><br><div class="cat-name">Snow</div>
               <div class="cat-parent">👑 Father: Gadu · Mother: Chinki</div>
               <div class="cat-detail">Persian · Orange Eye · Male</div>
               <div class="cat-specs">
@@ -1241,7 +1269,7 @@
             </div>
           </div>
 
-          <div class="cat-card" data-pattern="orangeeye">
+          <div class="cat-card" data-price="8000" data-sold="true" data-pattern="orangeeye">
             <div class="slideshow">
               <div class="slides" id="slides-pe-ash"><div class="slide"><img src="Ash1.jpg" alt="Ash 1" onclick="openLightbox(['Ash1.jpg', 'Ash2.jpg'],0,'Ash')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Ash2.jpg" alt="Ash 2" onclick="openLightbox(['Ash1.jpg', 'Ash2.jpg'],1,'Ash')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('pe-ash',-1)">&#8249;</button>
@@ -1250,7 +1278,7 @@
               <div class="slide-count" id="count-pe-ash">1/2</div>
             </div>
             <div class="cat-info">
-              <div class="cat-name">Ash</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🤍 Persian</div><br><div class="cat-name">Ash</div>
               <div class="cat-parent">👑 Father: Gadu · Mother: Chinki</div>
               <div class="cat-detail">Persian · Orange Eye · Female</div>
               <div class="cat-specs">
@@ -1279,7 +1307,7 @@
           <button class="subtab" id="stab-scottish-straight" onclick="showSubTab('scottish','scottishstraight',this)">Scottish Straight</button>
         </div>
         <div class="gallery-grid" id="grid-scottish">
-          <div class="cat-card" data-pattern="scottishfold">
+          <div class="cat-card" data-price="30000" data-sold="false" data-pattern="scottishfold">
             <div class="slideshow">
               <div class="slides" id="slides-sc-sifu"><div class="slide"><img src="Sifu1.jpg" alt="Sifu 1" onclick="openLightbox(['Sifu1.jpg', 'Sifu2.jpg', 'Sifu3.jpg'],0,'Sifu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Sifu2.jpg" alt="Sifu 2" onclick="openLightbox(['Sifu1.jpg', 'Sifu2.jpg', 'Sifu3.jpg'],1,'Sifu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Sifu3.jpg" alt="Sifu 3" onclick="openLightbox(['Sifu1.jpg', 'Sifu2.jpg', 'Sifu3.jpg'],2,'Sifu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('sc-sifu',-1)">&#8249;</button>
@@ -1288,7 +1316,7 @@
               <div class="slide-count" id="count-sc-sifu">1/3</div>
             </div>
             <div class="cat-info">
-              <div class="cat-name">Sifu</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🐾 Scottish Fold</div><br><div class="cat-name">Sifu</div>
               <div class="cat-parent">👑 Father: Shang Chi · Mother: Yang Chi</div>
               <div class="cat-detail">Scottish Fold · Orange Eye · Male</div>
               <div class="cat-specs">
@@ -1309,7 +1337,7 @@
             </div>
           </div>
 
-          <div class="cat-card" data-pattern="scottishfold">
+          <div class="cat-card" data-price="45000" data-sold="true" data-pattern="scottishfold">
             <div class="slideshow">
               <div class="slides" id="slides-sc-sinoy"><div class="slide"><img src="Sinoy1.jpg" alt="Sinoy 1" onclick="openLightbox(['Sinoy1.jpg', 'Sinoy2.jpg'],0,'Sinoy')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Sinoy2.jpg" alt="Sinoy 2" onclick="openLightbox(['Sinoy1.jpg', 'Sinoy2.jpg'],1,'Sinoy')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('sc-sinoy',-1)">&#8249;</button>
@@ -1318,7 +1346,7 @@
               <div class="slide-count" id="count-sc-sinoy">1/2</div>
             </div>
             <div class="cat-info">
-              <div class="cat-name">Sinoy</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🐾 Scottish Fold</div><br><div class="cat-name">Sinoy</div>
               <div class="cat-parent">👑 Father: Shang Chi · Mother: Yang Chi</div>
               <div class="cat-detail">Scottish Fold · Orange Eye · Male</div>
               <div class="cat-specs">
@@ -1337,7 +1365,7 @@
             </div>
           </div>
 
-          <div class="cat-card" data-pattern="scottishstraight">
+          <div class="cat-card" data-price="25000" data-sold="true" data-pattern="scottishstraight">
             <div class="slideshow">
               <div class="slides" id="slides-sc-kufi"><div class="slide"><img src="Kufi1.jpg" alt="Kufi 1" onclick="openLightbox(['Kufi1.jpg', 'Kufi2.jpg'],0,'Kufi')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Kufi2.jpg" alt="Kufi 2" onclick="openLightbox(['Kufi1.jpg', 'Kufi2.jpg'],1,'Kufi')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('sc-kufi',-1)">&#8249;</button>
@@ -1346,7 +1374,7 @@
               <div class="slide-count" id="count-sc-kufi">1/2</div>
             </div>
             <div class="cat-info">
-              <div class="cat-name">Kufi</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🐾 Scottish Fold</div><br><div class="cat-name">Kufi</div>
               <div class="cat-parent">👑 Father: Shang Chi · Mother: Yang Chi</div>
               <div class="cat-detail">Scottish Straight · Orange Eye · Female</div>
               <div class="cat-specs">
@@ -1374,7 +1402,7 @@
           <button class="subtab" id="stab-british-longhair" onclick="showSubTab('british','britishlonghair',this)">Long Hair</button>
         </div>
         <div class="gallery-grid" id="grid-british">
-          <div class="cat-card" data-pattern="britishlonghair">
+          <div class="cat-card" data-price="70000" data-sold="false" data-pattern="britishlonghair">
             <div class="slideshow">
               <div class="slides" id="slides-br-blue"><div class="slide"><img src="Blue1.jpg" alt="Blue 1" onclick="openLightbox(['Blue1.jpg', 'Blue2.jpg', 'Blue3.jpg'],0,'Blue')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Blue2.jpg" alt="Blue 2" onclick="openLightbox(['Blue1.jpg', 'Blue2.jpg', 'Blue3.jpg'],1,'Blue')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Blue3.jpg" alt="Blue 3" onclick="openLightbox(['Blue1.jpg', 'Blue2.jpg', 'Blue3.jpg'],2,'Blue')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('br-blue',-1)">&#8249;</button>
@@ -1383,7 +1411,7 @@
               <div class="slide-count" id="count-br-blue">1/3</div>
             </div>
             <div class="cat-info">
-              <div class="cat-name">Blue</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#047857;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🇬🇧 British</div><br><div class="cat-name">Blue</div>
               <div class="cat-parent">👑 Imported</div>
               <div class="cat-detail">British Long Hair · Orange Eye · Male</div>
               <div class="cat-specs">
@@ -1423,30 +1451,30 @@
       </div>
       <div class="sold-panel active" id="spanel-ragdoll">
         <div class="sold-grid">
-          <div class="sold-card"><div class="sold-img ragdoll-bg">🐱</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Snowball</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Bicolor</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Mirpur, Dhaka</div></div></div>
-          <div class="sold-card"><div class="sold-img ragdoll-bg">🐱</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Bluey</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Seal Bicolor</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Dhanmondi, Dhaka</div></div></div>
-          <div class="sold-card"><div class="sold-img ragdoll-bg">🐱</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Angel</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Lilac Mitted</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Uttara, Dhaka</div></div></div>
+          <div class="sold-card"><div class="sold-img ragdoll-bg">🐱</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.6rem;font-weight:800;padding:.15rem .5rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.25rem;">🐱 Ragdoll</div><br><div class="sold-name">Snowball</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Bicolor</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Mirpur, Dhaka</div></div></div>
+          <div class="sold-card"><div class="sold-img ragdoll-bg">🐱</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.6rem;font-weight:800;padding:.15rem .5rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.25rem;">🐱 Ragdoll</div><br><div class="sold-name">Bluey</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Seal Bicolor</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Dhanmondi, Dhaka</div></div></div>
+          <div class="sold-card"><div class="sold-img ragdoll-bg">🐱</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.6rem;font-weight:800;padding:.15rem .5rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.25rem;">🐱 Ragdoll</div><br><div class="sold-name">Angel</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Lilac Mitted</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Uttara, Dhaka</div></div></div>
         </div>
       </div>
       <div class="sold-panel" id="spanel-persian">
         <div class="sold-grid">
-          <div class="sold-card"><div class="sold-img persian-bg">🤍</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Pearl</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Category:</strong> Blue Eye</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Gulshan, Dhaka</div></div></div>
-          <div class="sold-card"><div class="sold-img persian-bg">🤍</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Fluffy</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Category:</strong> Orange Eye</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Chittagong</div></div></div>
-        <div class="sold-card"><div class="sold-img" style="padding:0;overflow:hidden;border-radius:8px 8px 0 0;"><img src="Snow1.jpg" alt="Snow" style="width:100%;height:160px;object-fit:cover;object-position:center top;display:block;"></div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Snow</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Orange Eye</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange Eye</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> White</span></div></div><div class="sold-home">🏡 New home: Savar, Dhaka</div></div></div>
-          <div class="sold-card"><div class="sold-img" style="padding:0;overflow:hidden;border-radius:8px 8px 0 0;"><img src="Ash1.jpg" alt="Ash" style="width:100%;height:160px;object-fit:cover;object-position:center top;display:block;"></div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Ash</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Orange Eye</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange Eye</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Ash</span></div></div><div class="sold-home">🏡 New home: Savar, Dhaka</div></div></div>
+          <div class="sold-card"><div class="sold-img persian-bg">🤍</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div style="display:inline-block;background:#be185d;color:#fff;font-size:.6rem;font-weight:800;padding:.15rem .5rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.25rem;">🤍 Persian</div><br><div class="sold-name">Pearl</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Category:</strong> Blue Eye</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Gulshan, Dhaka</div></div></div>
+          <div class="sold-card"><div class="sold-img persian-bg">🤍</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div style="display:inline-block;background:#be185d;color:#fff;font-size:.6rem;font-weight:800;padding:.15rem .5rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.25rem;">🤍 Persian</div><br><div class="sold-name">Fluffy</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Category:</strong> Orange Eye</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Chittagong</div></div></div>
+        <div class="sold-card"><div class="sold-img" style="padding:0;overflow:hidden;border-radius:8px 8px 0 0;"><img src="Snow1.jpg" alt="Snow" style="width:100%;height:160px;object-fit:cover;object-position:center top;display:block;"></div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div style="display:inline-block;background:#be185d;color:#fff;font-size:.6rem;font-weight:800;padding:.15rem .5rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.25rem;">🤍 Persian</div><br><div class="sold-name">Snow</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Orange Eye</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange Eye</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> White</span></div></div><div class="sold-home">🏡 New home: Savar, Dhaka</div></div></div>
+          <div class="sold-card"><div class="sold-img" style="padding:0;overflow:hidden;border-radius:8px 8px 0 0;"><img src="Ash1.jpg" alt="Ash" style="width:100%;height:160px;object-fit:cover;object-position:center top;display:block;"></div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div style="display:inline-block;background:#be185d;color:#fff;font-size:.6rem;font-weight:800;padding:.15rem .5rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.25rem;">🤍 Persian</div><br><div class="sold-name">Ash</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Orange Eye</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange Eye</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Ash</span></div></div><div class="sold-home">🏡 New home: Savar, Dhaka</div></div></div>
         </div>
       </div>
       <div class="sold-panel" id="spanel-scottish">
         <div class="sold-grid">
-          <div class="sold-card"><div class="sold-img scottish-bg">🐾</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Mochi</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Scottish Fold</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> To be updated</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Sylhet</div></div></div>
-          <div class="sold-card"><div class="sold-img scottish-bg">🐾</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Dumpling</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Scottish Straight</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> To be updated</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Bashundhara, Dhaka</div></div></div>
-        <div class="sold-card"><div class="sold-img" style="padding:0;overflow:hidden;border-radius:8px 8px 0 0;"><img src="Sinoy1.jpg" alt="Sinoy" style="width:100%;height:160px;object-fit:cover;object-position:center top;display:block;"></div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Sinoy</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Scottish Fold</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Fawn</span></div></div><div class="sold-home">🏡 New home: Uttara, Dhaka</div></div></div>
-          <div class="sold-card"><div class="sold-img" style="padding:0;overflow:hidden;border-radius:8px 8px 0 0;"><img src="Kufi1.jpg" alt="Kufi" style="width:100%;height:160px;object-fit:cover;object-position:center top;display:block;"></div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Kufi</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Scottish Straight</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Calico</span></div></div><div class="sold-home">🏡 New home: Uttara, Dhaka</div></div></div>
+          <div class="sold-card"><div class="sold-img scottish-bg">🐾</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div style="display:inline-block;background:#6d28d9;color:#fff;font-size:.6rem;font-weight:800;padding:.15rem .5rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.25rem;">🐾 Scottish Fold</div><br><div class="sold-name">Mochi</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Scottish Fold</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> To be updated</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Sylhet</div></div></div>
+          <div class="sold-card"><div class="sold-img scottish-bg">🐾</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div style="display:inline-block;background:#6d28d9;color:#fff;font-size:.6rem;font-weight:800;padding:.15rem .5rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.25rem;">🐾 Scottish Fold</div><br><div class="sold-name">Dumpling</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Scottish Straight</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> To be updated</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Bashundhara, Dhaka</div></div></div>
+        <div class="sold-card"><div class="sold-img" style="padding:0;overflow:hidden;border-radius:8px 8px 0 0;"><img src="Sinoy1.jpg" alt="Sinoy" style="width:100%;height:160px;object-fit:cover;object-position:center top;display:block;"></div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div style="display:inline-block;background:#6d28d9;color:#fff;font-size:.6rem;font-weight:800;padding:.15rem .5rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.25rem;">🐾 Scottish Fold</div><br><div class="sold-name">Sinoy</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Scottish Fold</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Fawn</span></div></div><div class="sold-home">🏡 New home: Uttara, Dhaka</div></div></div>
+          <div class="sold-card"><div class="sold-img" style="padding:0;overflow:hidden;border-radius:8px 8px 0 0;"><img src="Kufi1.jpg" alt="Kufi" style="width:100%;height:160px;object-fit:cover;object-position:center top;display:block;"></div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div style="display:inline-block;background:#6d28d9;color:#fff;font-size:.6rem;font-weight:800;padding:.15rem .5rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.25rem;">🐾 Scottish Fold</div><br><div class="sold-name">Kufi</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Scottish Straight</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Calico</span></div></div><div class="sold-home">🏡 New home: Uttara, Dhaka</div></div></div>
         </div>
       </div>
       <div class="sold-panel" id="spanel-british">
         <div class="sold-grid">
-          <div class="sold-card"><div class="sold-img british-bg">🇬🇧</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Winston</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Color:</strong> Blue</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> To be updated</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Rajshahi</div></div></div>
+          <div class="sold-card"><div class="sold-img british-bg">🇬🇧</div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div style="display:inline-block;background:#047857;color:#fff;font-size:.6rem;font-weight:800;padding:.15rem .5rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.25rem;">🇬🇧 British</div><br><div class="sold-name">Winston</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Color:</strong> Blue</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> To be updated</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div><div class="sold-home">🏡 New home: Rajshahi</div></div></div>
         </div>
       </div>
       <div class="sold-note">💬 Want to be adopted? Contact us!</div>
@@ -1482,7 +1510,7 @@
             <div class="mating-badge">💕 Ragdoll · Bicolor Stud</div>
           </div>
           <div class="mating-body">
-            <div class="mating-title">Sondesh — Ragdoll Stud</div>
+            <div class="mating-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🐱 Ragdoll</div><br><div class="mating-title">Sondesh — Ragdoll Stud</div>
             <div class="mating-specs">
               <div class="mspec">🐱 <span><strong>Stud:</strong> Sondesh</span></div>
               <div class="mspec">🎂 <span><strong>Age:</strong> 18 Months</span></div>
@@ -1508,7 +1536,7 @@
             <div class="mating-badge">💕 Ragdoll · Colorpoint Stud</div>
           </div>
           <div class="mating-body">
-            <div class="mating-title">Rango — Ragdoll Stud</div>
+            <div class="mating-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🐱 Ragdoll</div><br><div class="mating-title">Rango — Ragdoll Stud</div>
             <div class="mating-specs">
               <div class="mspec">🐱 <span><strong>Stud:</strong> Rango</span></div>
               <div class="mspec">🎂 <span><strong>Age:</strong> 16 Months</span></div>
@@ -1540,7 +1568,7 @@
               <div class="mating-badge">💕 Persian · Orange Eye Stud</div>
             </div>
             <div class="mating-body">
-              <div class="mating-title">Gadu — Persian Stud</div>
+              <div class="mating-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🤍 Persian</div><br><div class="mating-title">Gadu — Persian Stud</div>
               <div class="mating-specs">
                 <div class="mspec">🐱 <span><strong>Stud:</strong> Gadu</span></div>
                 <div class="mspec">🎂 <span><strong>Age:</strong> 59 Months</span></div>
@@ -1561,7 +1589,7 @@
             <div class="mating-dots" id="mdots-persian"><div class="mdot active" onclick="goMSlide('persian',0)"></div><div class="mdot" onclick="goMSlide('persian',1)"></div><div class="mdot" onclick="goMSlide('persian',2)"></div></div>
             <div class="mating-badge">💕 Persian Stud</div></div>
           <div class="mating-body">
-            <div class="mating-title">Persian Mating</div>
+            <div class="mating-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🤍 Persian</div><br><div class="mating-title">Persian Mating</div>
             <div class="mating-specs"><div class="mspec">🤍 <span><strong>Stud:</strong> To be updated</span></div><div class="mspec">🎂 <span><strong>Age:</strong> To be updated</span></div><div class="mspec">🎨 <span><strong>Category:</strong> Blue Eye</span></div><div class="mspec">👁️ <span><strong>Eyes:</strong> Blue / Orange</span></div><div class="mspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div>
             <div class="mating-desc">Premium Persian studs. Blue Eye &amp; Orange Eye variants available. Affectionate temperament passed to kittens.</div>
             <ul class="mating-features"><li>Health-tested &amp; vaccinated studs</li><li>Blue Eye &amp; Orange Eye variants</li><li>Pre-mating consultation included</li><li>Kitten guidance &amp; support</li></ul>
@@ -1586,7 +1614,7 @@
               <div class="mating-badge">💕 Scottish Fold · Tabby Stud</div>
             </div>
             <div class="mating-body">
-              <div class="mating-title">Shang Chi — Scottish Fold Stud</div>
+              <div class="mating-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🐾 Scottish Fold</div><br><div class="mating-title">Shang Chi — Scottish Fold Stud</div>
               <div class="mating-specs">
                 <div class="mspec">🐱 <span><strong>Stud:</strong> Shang Chi</span></div>
                 <div class="mspec">🎂 <span><strong>Age:</strong> 17 Months</span></div>
@@ -1607,7 +1635,7 @@
             <div class="mating-dots" id="mdots-scottish"><div class="mdot active" onclick="goMSlide('scottish',0)"></div><div class="mdot" onclick="goMSlide('scottish',1)"></div><div class="mdot" onclick="goMSlide('scottish',2)"></div></div>
             <div class="mating-badge">💕 Scottish Fold Stud</div></div>
           <div class="mating-body">
-            <div class="mating-title">Scottish Fold Mating</div>
+            <div class="mating-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🐾 Scottish Fold</div><br><div class="mating-title">Scottish Fold Mating</div>
             <div class="mating-specs"><div class="mspec">🐾 <span><strong>Stud:</strong> To be updated</span></div><div class="mspec">🎂 <span><strong>Age:</strong> To be updated</span></div><div class="mspec">🎨 <span><strong>Pattern:</strong> Scottish Fold</span></div><div class="mspec">👁️ <span><strong>Eyes:</strong> To be updated</span></div><div class="mspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div></div>
             <div class="mating-desc">Scottish Fold &amp; Straight studs. Ethical Fold × Straight breeding only. Distinctive traits maintained.</div>
             <ul class="mating-features"><li>Ethical Fold × Straight breeding only</li><li>Genetic health screening</li><li>Full breeding documentation</li><li>Post-mating follow-up support</li></ul>
@@ -1626,7 +1654,7 @@
               <div class="mating-badge">💕 British Stud</div>
             </div>
             <div class="mating-body">
-              <div class="mating-title">British L/S Hair Mating</div>
+              <div class="mating-breed-tag" style="display:inline-block;background:#047857;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🇬🇧 British</div><br><div class="mating-title">British L/S Hair Mating</div>
               <div class="mating-specs">
                 <div class="mspec">🐱 <span><strong>Stud:</strong> To be updated</span></div>
                 <div class="mspec">🎂 <span><strong>Age:</strong> To be updated</span></div>
@@ -1756,16 +1784,16 @@
       <!-- Google Maps Embed with Reviews -->
       <div style="margin:2rem 0;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.1);">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.4!2d90.3564!3d23.7561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zSG91c2Ugb2YgUmFnZG9sbCBCYW5nbGFkZXNo!5e0!3m2!1sen!2sbd!4v1"
-          width="100%" height="400" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+          src="https://maps.google.com/maps?q=Shinzu+Family+House+of+Ragdoll+Persian+and+Scottish+Fold+Chandrima+Model+Town+Dhaka&t=&z=17&ie=UTF8&iwloc=&output=embed"
+          width="100%" height="450" style="border:0;display:block;" allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade" title="Shinzu Family - House of Ragdoll Bangladesh on Google Maps">
         </iframe>
       </div>
 
       <div style="background:#f8f9ff;border:1.5px solid #e8eaf6;border-radius:14px;padding:1.8rem;margin-top:1.5rem;">
         <div style="font-size:2rem;margin-bottom:.5rem;">⭐⭐⭐⭐⭐</div>
-        <div style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.4rem;">See Our Reviews on Google Maps</div>
-        <div style="font-size:.85rem;color:var(--muted);margin-bottom:1.2rem;">Our customers share their experience on Google. Click below to read real reviews and leave yours!</div>
+        <div style="font-size:1.4rem;font-weight:800;color:var(--navy);margin-bottom:.2rem;">5.0 / 5.0 &nbsp;·&nbsp; 20 Reviews</div>
+        <div style="font-size:.85rem;color:var(--muted);margin-bottom:1.2rem;">Read our real reviews from happy cat families on Google Maps. Leave your review too!</div>
         <button class="btn-mating" onclick="window.open('https://maps.app.goo.gl/ur427txpaTomjEuz8','_blank')" style="font-size:.92rem;">
           📍 View Reviews on Google Maps
         </button>
@@ -1848,6 +1876,29 @@
   <div class="lightbox-counter" id="lightboxCounter"></div>
 </div>
 
+<!-- LOGIN MODAL -->
+<div class="login-modal" id="loginModal">
+  <div class="login-box">
+    <button class="login-close" onclick="closeLogin()">✕</button>
+    <div class="login-title">Welcome 🐱</div>
+    <div class="login-sub">Sign in to place orders and manage your cart</div>
+    <div class="login-tabs">
+      <div class="login-tab active" id="ltab-phone" onclick="switchLoginTab('phone')">📱 Phone</div>
+      <div class="login-tab" id="ltab-email" onclick="switchLoginTab('email')">📧 Email</div>
+    </div>
+    <div id="login-phone-field">
+      <input class="login-input" id="loginPhone" type="tel" placeholder="01XXXXXXXXX (Bangladesh)" maxlength="11">
+    </div>
+    <div id="login-email-field" style="display:none;">
+      <input class="login-input" id="loginEmail" type="email" placeholder="your@email.com">
+    </div>
+    <input class="login-input" id="loginName" type="text" placeholder="Your Name">
+    <div class="login-err" id="loginErr">Please enter a valid phone or email.</div>
+    <button class="login-btn" onclick="doLogin()">Continue →</button>
+    <div class="login-note">No password needed. Your info is saved on this device only.</div>
+  </div>
+</div>
+
 <script>
   var sbOpen=true,slideIdx={},dSlIdx={},mSlIdx={},cart=[],selPaid='',pendingOrder=null;
   function toggleSidebar(){sbOpen=!sbOpen;document.getElementById('sidebar').classList.toggle('hidden',!sbOpen);document.getElementById('mainContent').classList.toggle('sb-hidden',!sbOpen);document.getElementById('sbToggle').classList.toggle('shifted',sbOpen);}
@@ -1860,16 +1911,30 @@
     document.querySelectorAll('#gallery .tab').forEach(function(t){t.classList.remove('active');});
     if(btn)btn.classList.add('active');
     if(breed==='all'){
+      // Show ALL panels with ALL cards visible, hide subtab rows
       document.querySelectorAll('.gallery-panel').forEach(function(p){
         p.classList.add('active');
         p.querySelectorAll('.cat-card').forEach(function(c){c.style.display='';});
+        // Hide subtabs when All is selected
+        var subrow = p.querySelector('.subtabs');
+        if(subrow) subrow.style.display='none';
       });
     } else {
-      document.querySelectorAll('.gallery-panel').forEach(function(p){p.classList.remove('active');});
+      // Show only selected breed panel, reveal its subtabs
+      document.querySelectorAll('.gallery-panel').forEach(function(p){
+        p.classList.remove('active');
+        // Restore subtabs visibility for all panels
+        var subrow = p.querySelector('.subtabs');
+        if(subrow) subrow.style.display='';
+      });
       var panel=document.getElementById('panel-'+breed);
       if(panel){
         panel.classList.add('active');
         panel.querySelectorAll('.cat-card').forEach(function(c){c.style.display='';});
+        // Show subtabs for this breed
+        var subrow = panel.querySelector('.subtabs');
+        if(subrow) subrow.style.display='';
+        // Reset to All subtab
         var allTab=document.getElementById('stab-'+breed+'-all');
         if(allTab){
           panel.querySelectorAll('.subtab').forEach(function(t){t.classList.remove('active');});
@@ -1894,11 +1959,15 @@
     document.querySelectorAll('.dtab').forEach(function(t){t.classList.remove('active');});
     if(btn)btn.classList.add('active');
     if(breed==='all'){
+      // Show all panels, hide breed tags (they become redundant when all showing)
       document.querySelectorAll('.dolls-panel').forEach(function(p){p.classList.add('active');});
+      document.querySelectorAll('.doll-breed-tag').forEach(function(t){t.style.display='inline-block';});
     } else {
       document.querySelectorAll('.dolls-panel').forEach(function(p){p.classList.remove('active');});
       var panel=document.getElementById('dpanel-'+breed);
       if(panel)panel.classList.add('active');
+      // Hide breed tags when only one breed showing (redundant)
+      document.querySelectorAll('.doll-breed-tag').forEach(function(t){t.style.display='none';});
     }
   }
 
@@ -1906,43 +1975,58 @@
   function filterBreed(breed){
     goTo('gallery');
     setTimeout(function(){
-      if(breed==='all'){
-        showTab('all', document.getElementById('tab-all'));
-      } else {
-        var btn = document.getElementById('tab-'+breed);
-        showTab(breed, btn);
-      }
+      var btn = document.getElementById('tab-'+(breed==='all'?'all':breed));
+      showTab(breed, btn);
     }, 400);
   }
   function filterPrice(min, max){
     goTo('gallery');
-    // Show all breeds first
     setTimeout(function(){
-      showTab('all', document.getElementById('tab-all'));
+      // Show all breeds
+      var allBtn = document.getElementById('tab-all');
+      showTab('all', allBtn);
       setTimeout(function(){
         document.querySelectorAll('.cat-card').forEach(function(card){
-          // Get price from btn-order onclick
-          var btn = card.querySelector('.btn-order');
-          var price = 0;
-          if(btn){
-            var match = btn.getAttribute('onclick').match(/'(\d+)'/g);
-            if(match && match.length>1) price = parseInt(match[1].replace(/'/g,''));
+          var price = parseInt(card.getAttribute('data-price') || '0');
+          var isSold = card.getAttribute('data-sold') === 'true';
+          // Hide sold cards in price filter
+          if(isSold){
+            card.style.display = 'none';
+            return;
           }
-          // Also check btn-cart-add
-          if(!btn || price===0){
-            var cartBtn = card.querySelector('.btn-cart-add');
-            if(cartBtn){
-              var m = cartBtn.getAttribute('onclick').match(/'(\d+)'/);
-              if(m) price = parseInt(m[1].replace(/'/g,''));
-            }
-          }
-          if(price===0 || (price>=min && price<=max)){
-            card.style.display='';
+          // Show only if price in range
+          if(price >= min && price <= max){
+            card.style.display = '';
           } else {
-            card.style.display='none';
+            card.style.display = 'none';
           }
         });
-      }, 100);
+        // Hide panels that have no visible cards
+        document.querySelectorAll('.gallery-panel').forEach(function(p){
+          var visible = p.querySelectorAll('.cat-card:not([style*="none"])').length;
+          if(visible === 0){
+            p.classList.remove('active');
+          } else {
+            p.classList.add('active');
+          }
+        });
+      }, 150);
+    }, 400);
+  }
+
+  function resetFilter(){
+    goTo('gallery');
+    setTimeout(function(){
+      var allBtn = document.getElementById('tab-all');
+      showTab('all', allBtn);
+      setTimeout(function(){
+        document.querySelectorAll('.cat-card').forEach(function(card){
+          card.style.display='';
+        });
+        document.querySelectorAll('.gallery-panel').forEach(function(p){
+          p.classList.add('active');
+        });
+      }, 150);
     }, 400);
   }
   function showMatingTabAndGo(breed){
@@ -1996,6 +2080,91 @@
     if(e.key==='ArrowLeft')lightboxNav(-1);
     if(e.key==='Escape')closeLightbox();
   });
+
+  // LOGIN SYSTEM
+  var currentUser = null;
+  try { currentUser = JSON.parse(localStorage.getItem('shinzu_user')); } catch(e){}
+
+  function openLogin(){ document.getElementById('loginModal').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeLogin(){ document.getElementById('loginModal').classList.remove('open'); document.body.style.overflow=''; }
+  function switchLoginTab(tab){
+    document.querySelectorAll('.login-tab').forEach(function(t){t.classList.remove('active');});
+    document.getElementById('ltab-'+tab).classList.add('active');
+    document.getElementById('login-phone-field').style.display = tab==='phone'?'':'none';
+    document.getElementById('login-email-field').style.display = tab==='email'?'':'none';
+  }
+  function doLogin(){
+    var name = document.getElementById('loginName').value.trim();
+    var phone = document.getElementById('loginPhone').value.trim();
+    var email = document.getElementById('loginEmail').value.trim();
+    var err = document.getElementById('loginErr');
+    var isPhoneTab = document.getElementById('ltab-phone').classList.contains('active');
+    
+    if(!name){ err.textContent='Please enter your name.'; err.style.display='block'; return; }
+    
+    var identifier = '';
+    if(isPhoneTab){
+      // Bangladesh phone: starts with 01, 11 digits
+      if(!/^01[3-9]\d{8}$/.test(phone)){ err.textContent='Enter a valid Bangladesh number (01XXXXXXXXX).'; err.style.display='block'; return; }
+      identifier = phone;
+    } else {
+      if(!/^[^@]+@[^@]+\.[^@]+$/.test(email)){ err.textContent='Enter a valid email address.'; err.style.display='block'; return; }
+      identifier = email;
+    }
+    err.style.display='none';
+    currentUser = {name: name, identifier: identifier, type: isPhoneTab?'phone':'email'};
+    try{ localStorage.setItem('shinzu_user', JSON.stringify(currentUser)); } catch(e){}
+    closeLogin();
+    updateNavUser();
+  }
+  function doLogout(){
+    currentUser = null;
+    try{ localStorage.removeItem('shinzu_user'); } catch(e){}
+    updateNavUser();
+    closeUserMenu();
+  }
+  function updateNavUser(){
+    var area = document.getElementById('navUserArea');
+    if(!area) return;
+    if(currentUser){
+      var initial = currentUser.name.charAt(0).toUpperCase();
+      area.innerHTML = '<div class="user-avatar" onclick="toggleUserMenu()" title="'+currentUser.name+'">'+initial+'</div>';
+    } else {
+      area.innerHTML = '<button class="btn-login" onclick="openLogin()">Sign In</button>';
+    }
+  }
+  function toggleUserMenu(){
+    var menu = document.getElementById('userMenu');
+    if(!menu) return;
+    // Update name in menu
+    var nameEl = document.getElementById('userMenuName');
+    if(nameEl && currentUser) nameEl.textContent = currentUser.name + ' · ' + currentUser.identifier;
+    menu.classList.toggle('open');
+  }
+  function closeUserMenu(){
+    var menu = document.getElementById('userMenu');
+    if(menu) menu.classList.remove('open');
+  }
+  // Close user menu on outside click
+  document.addEventListener('click', function(e){
+    var menu = document.getElementById('userMenu');
+    var avatar = document.querySelector('.user-avatar');
+    if(menu && !menu.contains(e.target) && avatar && !avatar.contains(e.target)) closeUserMenu();
+  });
+  // Guard cart/order - require login
+  function requireLogin(action){
+    if(!currentUser){ openLogin(); return false; }
+    return true;
+  }
+  // Override openCart to require login
+  var _origOpenCart = openCart;
+  openCart = function(){ if(!requireLogin('cart')) return; _origOpenCart(); };
+  // Override quickOrder to require login
+  var _origQuickOrder = quickOrder;
+  quickOrder = function(name, price, type){ if(!requireLogin('order')) return; _origQuickOrder(name, price, type); };
+  // On page load, restore user
+  window.addEventListener('DOMContentLoaded', function(){ updateNavUser(); });
+
   document.getElementById('orderModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
   if(window.innerWidth<768){sbOpen=true;toggleSidebar();}
 </script>
