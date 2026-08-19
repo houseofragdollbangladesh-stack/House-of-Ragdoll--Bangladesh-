@@ -667,6 +667,11 @@
     }
   ]
   </script>
+  <!-- EmailJS for order notifications -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){ emailjs.init('KJpxzXWeHM5b72MMb'); })();
+  </script>
 </head>
 <body>
 <button class="sb-toggle-btn shifted" id="sbToggle" onclick="toggleSidebar()">☰</button>
@@ -725,6 +730,7 @@
     <div class="sb-link" onclick="goTo('about')">ℹ️ About</div>
     <div class="sb-link" onclick="goTo('contact')">📞 Contact</div>
     <div class="sb-link" onclick="openCart()">🛒 View Cart</div>
+    <div class="sb-link" onclick="openOrderStatus()">📦 My Orders</div>
   </div>
   <div class="sb-social">
     <div class="sb-sec-title" style="margin-bottom:.5rem;">Follow Us</div>
@@ -754,7 +760,7 @@
     </div>
     <div class="nav-right">
       <button class="cart-btn" onclick="openCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button>
-      <div style="position:relative;display:flex;align-items:center;"><div id="navUserArea"><button class="btn-login" onclick="openLogin()">Sign In</button></div><div id="userMenu" class="user-menu"><div class="user-menu-name" id="userMenuName"></div><div class="user-menu-item" onclick="openProfile()">👤 My Profile</div><div class="user-menu-item" onclick="openCart()">🛒 My Cart</div><div class="user-menu-item" onclick="doLogout()">🚪 Sign Out</div></div></div>
+      <div style="position:relative;display:flex;align-items:center;"><div id="navUserArea"><button class="btn-login" onclick="openLogin()">Sign In</button></div><div id="userMenu" class="user-menu"><div class="user-menu-name" id="userMenuName"></div><div class="user-menu-item" onclick="openProfile()">👤 My Profile</div><div class="user-menu-item" onclick="openOrderStatus()">📦 My Orders</div><div class="user-menu-item" onclick="openCart()">🛒 My Cart</div><div class="user-menu-item" onclick="doLogout()">🚪 Sign Out</div></div></div>
       <button class="nav-cta" onclick="goTo('contact')">Adopt Now</button>
   </div>
   </nav>
@@ -1950,7 +1956,7 @@
         <div class="pay-opt" id="pay-cod" onclick="selPay('cod')"><div class="pay-opt-head"><span class="pay-ico">💵</span><span class="pay-name">Cash on Delivery</span></div><div class="pay-detail">Pay on arrival. Dhaka &amp; nearby. Delivery charge may apply.</div></div>
       </div>
     </div>
-    <button class="btn-submit" onclick="submitOrder()">Confirm Order via WhatsApp 📱</button>
+    <button class="btn-submit" onclick="submitOrder()">Place Order 📦</button>
   </div>
 </div>
 
@@ -1988,6 +1994,17 @@
     <div style="margin-top:.8rem;text-align:center;">
       <span onclick="doLogout()" style="font-size:.78rem;color:#e53e3e;cursor:pointer;font-weight:600;">Sign Out 🚪</span>
     </div>
+  </div>
+</div>
+
+
+<!-- ORDER STATUS MODAL -->
+<div class="login-modal" id="orderStatusModal">
+  <div class="login-box" style="max-width:480px;max-height:80vh;overflow-y:auto;">
+    <button class="login-close" onclick="closeOrderStatus()">✕</button>
+    <div class="login-title">My Orders 📦</div>
+    <div class="login-sub">Track your order status below</div>
+    <div id="orderStatusContent" style="margin-top:1rem;"></div>
   </div>
 </div>
 
@@ -2179,14 +2196,152 @@
     if(!currentUser){ openLogin(); return; }var p=parseInt(price)||0;pendingOrder={items:[{id:'quick',name:name,price:p,type:type}],type:type};var summary='<div class="order-summary-item"><span>'+name+'</span><span>'+(p>0?'৳ '+p.toLocaleString():'Price on inquiry')+'</span></div>';if(p>0)summary+='<div class="order-summary-item"><span>Total</span><span>৳ '+p.toLocaleString()+'</span></div>';document.getElementById('orderSummary').innerHTML=summary;var titles={order:'Order Now',prebook:'Pre-Book',service:'Book Service',mating:'Mating Inquiry'};document.getElementById('modalTitle').textContent=titles[type]||'Order';document.getElementById('modalSub').textContent=name;selPaid='';document.querySelectorAll('.pay-opt').forEach(function(o){o.classList.remove('sel');});document.getElementById('orderModal').classList.add('open');}
   function selPay(method){selPaid=method;document.querySelectorAll('.pay-opt').forEach(function(o){o.classList.remove('sel');});document.getElementById('pay-'+method).classList.add('sel');}
   function closeModal(){document.getElementById('orderModal').classList.remove('open');}
-  function submitOrder(){var name=document.getElementById('orderName').value.trim(),phone=document.getElementById('orderPhone').value.trim(),loc=document.getElementById('orderLocation').value.trim(),msg=document.getElementById('orderMessage').value.trim()
-  // Save phone to user profile if logged in
-  if(currentUser && phone){
-    currentUser.phone = phone;
-    if(currentUser.name !== name && name) currentUser.name = name;
-    try{ localStorage.setItem('shinzu_user', JSON.stringify(currentUser)); updateNavUser(); } catch(e){}
+  function submitOrder(){
+    var name=document.getElementById('orderName').value.trim(),
+        phone=document.getElementById('orderPhone').value.trim(),
+        loc=document.getElementById('orderLocation').value.trim(),
+        msg=document.getElementById('orderMessage').value.trim();
+
+    // Save phone to user profile if logged in
+    if(currentUser && phone){
+      currentUser.phone = phone;
+      if(currentUser.name !== name && name) currentUser.name = name;
+      try{ localStorage.setItem('shinzu_user', JSON.stringify(currentUser)); updateNavUser(); } catch(e){}
+    }
+
+    if(!name||!phone||!loc){alert('Please fill your name, phone, and location.');return;}
+    if(!selPaid){alert('Please select a payment method.');return;}
+
+    var payMap={bkash:'bKash — Send to: 01737170160',npsb:'Bank Transfer — Sonali Bank BUET Branch, A/C: 4404001031620 (Md. Rayhanur Rahman)',cod:'Cash on Delivery'};
+    var orderType={order:'Order',prebook:'Pre-Book',service:'Service Booking',mating:'Mating Inquiry',cart:'Cart Order'};
+    var items=pendingOrder.items.map(function(i){return i.name+(i.price>0?' — ৳ '+i.price.toLocaleString():'');});
+    var total=pendingOrder.items.reduce(function(s,i){return s+i.price;},0);
+
+    // Generate order ID
+    var orderId = 'SHZ-' + Date.now().toString(36).toUpperCase();
+    var orderDate = new Date().toLocaleString('en-BD', {timeZone:'Asia/Dhaka'});
+
+    // Save order to localStorage
+    var order = {
+      id: orderId,
+      date: orderDate,
+      type: pendingOrder.type || 'order',
+      items: pendingOrder.items,
+      total: total,
+      customer: {name:name, phone:phone, location:loc, message:msg},
+      payment: selPaid,
+      paymentDetail: payMap[selPaid],
+      status: 'Pending',
+      statusHistory: [{status:'Pending', time:orderDate, note:'Order placed'}]
+    };
+    var orders = [];
+    try{ orders = JSON.parse(localStorage.getItem('shinzu_orders')||'[]'); } catch(e){}
+    orders.unshift(order);
+    try{ localStorage.setItem('shinzu_orders', JSON.stringify(orders)); } catch(e){}
+    // Also link to user profile
+    if(currentUser){
+      currentUser.lastOrderId = orderId;
+      try{ localStorage.setItem('shinzu_user', JSON.stringify(currentUser)); } catch(e){}
+    }
+
+    // Send email via EmailJS
+    var itemsText = items.join('\n');
+    var emailParams = {
+      to_email: 'houseofragdollbangladesh@gmail.com',
+      order_id: orderId,
+      order_type: orderType[pendingOrder.type||'order'],
+      items: itemsText,
+      total: total > 0 ? '৳ ' + total.toLocaleString() : 'Price on inquiry',
+      customer_name: name,
+      customer_phone: phone,
+      customer_location: loc,
+      payment_method: payMap[selPaid],
+      message: msg || 'None',
+      order_date: orderDate
+    };
+
+    // Try to send email (won't block the order if it fails)
+    try {
+      emailjs.send('service_kvbcepg', 'template_order', emailParams).catch(function(){});
+    } catch(e){}
+
+    // Send WhatsApp notification
+    var waText = 'Hello Shinzu Family! 🐱\n\n*' + orderType[pendingOrder.type||'order'] + '* — ' + orderId + '\n' +
+      items.map(function(i){return '• '+i;}).join('\n') +
+      (total>0?'\n*Total: ৳ '+total.toLocaleString()+'*':'') +
+      '\n\n*Customer:*\nName: '+name+'\nPhone: '+phone+'\nLocation: '+loc+
+      '\nPayment: '+payMap[selPaid]+(msg?'\nNote: '+msg:'');
+    window.open('https://wa.me/8801797822108?text='+encodeURIComponent(waText),'_blank');
+
+    // Clear cart if cart order
+    if(pendingOrder.type==='cart'){
+      cart=[];updateCartUI();
+      document.querySelectorAll('.btn-cart-add').forEach(function(b){b.textContent='🛒';b.classList.remove('in-cart');});
+    }
+
+    closeModal();
+    // Show order confirmation with order ID and status link
+    showOrderConfirmation(orderId);
   }
-;if(!name||!phone||!loc){alert('Please fill your name, phone, and location.');return;}if(!selPaid){alert('Please select a payment method.');return;}var payMap={bkash:'bKash — Send to: 01737170160',npsb:'Bank Transfer — Sonali Bank BUET Branch, A/C: 4404001031620 (Md. Rayhanur Rahman)',cod:'Cash on Delivery'};var orderType={order:'Order',prebook:'Pre-Book',service:'Service Booking',mating:'Mating Inquiry',cart:'Cart Order'};var items=pendingOrder.items.map(function(i){return '• '+i.name+(i.price>0?' — ৳ '+i.price.toLocaleString():'');}).join('\n');var total=pendingOrder.items.reduce(function(s,i){return s+i.price;},0);var text='Hello Shinzu Family! 🐱\n\n*'+orderType[pendingOrder.type||'order']+'*\n'+items+'\n'+(total>0?'*Total: ৳ '+total.toLocaleString()+'*\n':'\n')+'\n*Customer Details:*\nName: '+name+'\nPhone: '+phone+'\nLocation: '+loc+'\nPayment: '+payMap[selPaid]+(msg?'\nMessage: '+msg:'');window.open('https://wa.me/8801797822108?text='+encodeURIComponent(text),'_blank');if(pendingOrder.type==='cart'){cart=[];updateCartUI();document.querySelectorAll('.btn-cart-add').forEach(function(b){b.textContent='🛒';b.classList.remove('in-cart');});}closeModal();}
+
+  function showOrderConfirmation(orderId){
+    var box = document.createElement('div');
+    box.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:4000;display:flex;align-items:center;justify-content:center;';
+    box.innerHTML='<div style="background:#fff;border-radius:20px;padding:2rem;max-width:360px;width:90%;text-align:center;box-shadow:0 12px 48px rgba(0,0,0,.18);">' +
+      '<div style="font-size:2.5rem;margin-bottom:.5rem;">🎉</div>' +
+      '<div style="font-family:var(--font-display);font-size:1.2rem;color:var(--navy);font-weight:800;margin-bottom:.4rem;">Order Placed!</div>' +
+      '<div style="font-size:.78rem;color:var(--muted);margin-bottom:.8rem;">Your order has been received. We'll contact you shortly.</div>' +
+      '<div style="background:#f0f4ff;border-radius:10px;padding:.7rem;margin-bottom:1rem;">' +
+        '<div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem;">Order ID</div>' +
+        '<div style="font-family:monospace;font-size:1rem;color:var(--navy);font-weight:800;letter-spacing:.05em;">' + orderId + '</div>' +
+      '</div>' +
+      '<div style="font-size:.75rem;color:var(--muted);margin-bottom:1rem;">Save this ID to track your order status.</div>' +
+      '<button onclick="this.closest('div[style]').remove();openOrderStatus();" style="width:100%;padding:.7rem;background:var(--navy);color:#fff;border:none;border-radius:12px;font-size:.88rem;font-weight:700;cursor:pointer;margin-bottom:.5rem;">View Order Status 📦</button>' +
+      '<button onclick="this.closest('div[style]').remove();" style="width:100%;padding:.6rem;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:12px;font-size:.82rem;cursor:pointer;">Close</button>' +
+    '</div>';
+    document.body.appendChild(box);
+  }
+
+  // ORDER STATUS SYSTEM
+  function openOrderStatus(){
+    var orders = [];
+    try{ orders = JSON.parse(localStorage.getItem('shinzu_orders')||'[]'); } catch(e){}
+    var modal = document.getElementById('orderStatusModal');
+    var content = document.getElementById('orderStatusContent');
+    if(!modal) return;
+    if(orders.length === 0){
+      content.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--muted);">' +
+        '<div style="font-size:3rem;">📦</div>' +
+        '<div style="margin-top:.5rem;font-size:.9rem;">No orders yet.</div>' +
+        '<div style="font-size:.78rem;margin-top:.3rem;">Place your first order!</div></div>';
+    } else {
+      content.innerHTML = orders.map(function(o){
+        var statusColor = {Pending:'#f59e0b', Confirmed:'#3b82f6', Processing:'#8b5cf6', Shipped:'#06b6d4', Delivered:'#10b981', Cancelled:'#ef4444'}[o.status] || '#6b7280';
+        var itemsList = o.items.map(function(i){return '<div style="font-size:.75rem;color:var(--navy);padding:.2rem 0;">• '+i.name+(i.price>0?' — ৳'+i.price.toLocaleString():'')+'</div>';}).join('');
+        return '<div style="background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:1.1rem;margin-bottom:1rem;">' +
+          '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.6rem;">' +
+            '<div>' +
+              '<div style="font-family:monospace;font-size:.78rem;color:var(--muted);">' + o.id + '</div>' +
+              '<div style="font-size:.72rem;color:var(--muted);margin-top:.1rem;">' + o.date + '</div>' +
+            '</div>' +
+            '<div style="background:'+statusColor+';color:#fff;font-size:.65rem;font-weight:700;padding:.25rem .65rem;border-radius:20px;">' + o.status + '</div>' +
+          '</div>' +
+          itemsList +
+          (o.total>0?'<div style="font-size:.78rem;font-weight:700;color:var(--navy);margin-top:.4rem;">Total: ৳'+o.total.toLocaleString()+'</div>':'')+
+          '<div style="font-size:.72rem;color:var(--muted);margin-top:.35rem;">Payment: '+o.paymentDetail+'</div>' +
+          '<div style="font-size:.72rem;color:var(--muted);">Location: '+o.customer.location+'</div>' +
+        '</div>';
+      }).join('');
+    }
+    modal.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeOrderStatus(){
+    var modal = document.getElementById('orderStatusModal');
+    if(modal){ modal.classList.remove('open'); document.body.style.overflow=''; }
+  }
+
+
 
   // LIGHTBOX
   var lbImgs=[], lbIdx=0;
