@@ -119,12 +119,12 @@
     .sec-title{font-family:var(--font-display);font-size:1.7rem;color:var(--navy);margin-bottom:.55rem;font-weight:700;}
     .sec-sub{color:var(--muted);font-size:.88rem;line-height:1.7;max-width:600px;}
     .tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.3rem 0;width:100%;}
-    .tab{padding:.38rem .92rem;border-radius:17px;border:1.5px solid var(--border);background:#fff;font-size:.74rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .2s;font-family:var(--font-body);}
-    .tab.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+    .tab{padding:.55rem 1.4rem;border-radius:20px;border:2px solid var(--border);background:#fff;font-size:1rem;font-weight:700;color:var(--muted);cursor:pointer;transition:all .2s;font-family:var(--font-body);}
+    .tab.active{background:var(--blue);color:#fff;border-color:var(--blue);font-size:1rem;font-weight:800;}
     .tab:hover:not(.active){border-color:var(--blue);color:var(--blue);}
     .subtabs{display:flex;gap:.32rem;flex-wrap:wrap;margin-bottom:1.1rem;width:100%;overflow-x:auto;padding-bottom:4px;}
-    .subtab{padding:.28rem .75rem;border-radius:13px;border:1px solid var(--border);background:var(--cream);font-size:.68rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .2s;font-family:var(--font-body);}
-    .subtab.active{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+    .subtab{padding:.42rem 1rem;border-radius:16px;border:1.5px solid var(--border);background:var(--cream);font-size:.88rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .2s;font-family:var(--font-body);}
+    .subtab.active{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:700;}
     .subtab:hover:not(.active){border-color:var(--gold);color:var(--navy);}
     .gallery-wrap{background:var(--warm);padding:3.5rem 0;overflow:hidden;}
     .gallery-inner{max-width:960px;margin:0 auto;padding:0 2rem;width:100%;}
@@ -166,8 +166,8 @@
     .dolls-wrap{background:#fff;padding:3.5rem 0;border-bottom:1px solid var(--border);}
     .dolls-inner{max-width:960px;margin:0 auto;padding:0 2rem;}
     .dolls-tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.3rem 0 .75rem;}
-    .dtab{padding:.38rem 1.05rem;border-radius:17px;border:2px solid var(--border);background:var(--cream);font-size:.76rem;font-weight:700;color:var(--muted);cursor:pointer;transition:all .2s;font-family:var(--font-body);}
-    .dtab.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+    .dtab{padding:.55rem 1.4rem;border-radius:20px;border:2px solid var(--border);background:#fff;font-size:1rem;font-weight:700;color:var(--muted);cursor:pointer;transition:all .2s;font-family:var(--font-body);}
+    .dtab.active{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:800;}
     .dtab:hover:not(.active){border-color:var(--navy);color:var(--navy);}
     .dolls-panel{display:none;}
     .dolls-panel.active{display:block;}
@@ -201,7 +201,7 @@
     .sold-wrap .sec-eyebrow{color:var(--gold-light);}
     .sold-wrap .sec-title{color:#fff;}
     .sold-wrap .sec-sub{color:rgba(255,255,255,.55);}
-    .sold-tabs .tab{border-color:rgba(255,255,255,.17);background:rgba(255,255,255,.06);color:rgba(255,255,255,.65);}
+    .sold-tabs .tab{border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);}
     .sold-tabs .tab.active{background:var(--gold);color:var(--navy);border-color:var(--gold);}
     .sold-tabs .tab:hover:not(.active){border-color:var(--gold-light);color:var(--gold-light);}
     .sold-panel{display:none;}
@@ -364,7 +364,7 @@
     /* MATING TABS */
     .mating-panel{display:none;}
     .mating-panel.active{display:block;}
-    .mating-tabs .tab{font-size:.78rem;}
+    .mating-tabs .tab{font-size:1rem;padding:.55rem 1.3rem;}
     /* COVER PHOTO */
     .cover-wrap{width:100%;overflow:hidden;position:relative;background:var(--navy);line-height:0;}
     .cover-img{width:100%;height:500px;object-fit:cover;object-position:center center;display:block;}
@@ -616,28 +616,6 @@
     <button class="sb-x" onclick="toggleSidebar()">✕</button>
   </div>
   <div class="sb-sec">
-    <div class="sb-sec-title">Browse Breeds</div>
-    <div class="sb-item active" id="sb-ragdoll" onclick="filterBreed('ragdoll')"><div class="sb-item-l"><span class="sb-ico">🐱</span>Ragdoll</div><div class="toggle on" id="tog-ragdoll"></div></div>
-    <div class="sb-sub">
-      <div class="sb-link" onclick="goSubTab('ragdoll','bicolor')">↳ Bicolor</div>
-      <div class="sb-link" onclick="goSubTab('ragdoll','sealmitted')">↳ Seal Mitted</div>
-      <div class="sb-link" onclick="goSubTab('ragdoll','colorpoint')">↳ Colorpoint</div>
-      <div class="sb-link" onclick="goSubTab('ragdoll','van')">↳ Van</div>
-    </div>
-    <div class="sb-item active" id="sb-persian" onclick="filterBreed('persian')"><div class="sb-item-l"><span class="sb-ico">🤍</span>Persian</div><div class="toggle on" id="tog-persian"></div></div>
-    <div class="sb-sub">
-      <div class="sb-link" onclick="goSubTab('persian','blueeye')">↳ Blue Eye</div>
-      <div class="sb-link" onclick="goSubTab('persian','orangeeye')">↳ Orange Eye</div>
-    </div>
-    <div class="sb-item active" id="sb-scottish" onclick="filterBreed('scottish')"><div class="sb-item-l"><span class="sb-ico">🐾</span>Scottish Fold</div><div class="toggle on" id="tog-scottish"></div></div>
-    <div class="sb-sub">
-      <div class="sb-link" onclick="goSubTab('scottish','fold')">↳ Scottish Fold</div>
-      <div class="sb-link" onclick="goSubTab('scottish','straight')">↳ Scottish Straight</div>
-    </div>
-    <div class="sb-item active" id="sb-british" onclick="filterBreed('british')"><div class="sb-item-l"><span class="sb-ico">🇬🇧</span>British L/S Hair</div><div class="toggle on" id="tog-british"></div></div>
-  </div>
-  <div class="sb-div"></div>
-  <div class="sb-sec">
     <div class="sb-sec-title">Our Dolls (Parents)</div>
     <div class="sb-link" onclick="showDollTabAndGo('ragdoll')">🐱 Ragdoll</div>
     <div class="sb-link" onclick="showDollTabAndGo('scottish')">🐾 Scottish Fold</div>
@@ -658,12 +636,32 @@
   </div>
   <div class="sb-div"></div>
   <div class="sb-sec">
+    <div class="sb-sec-title" style="margin-top:1rem;">🔍 Filter Cats</div>
+
+    <!-- Breed Filter -->
+    <div class="sb-sec-title" style="font-size:.68rem;margin-top:.5rem;color:var(--gold);">BY BREED</div>
+    <div class="sb-link" onclick="filterBreed('all')">🐾 All Breeds</div>
+    <div class="sb-link" onclick="filterBreed('ragdoll')">🐱 Ragdoll</div>
+    <div class="sb-link" onclick="filterBreed('persian')">🤍 Persian</div>
+    <div class="sb-link" onclick="filterBreed('scottish')">🐾 Scottish Fold</div>
+    <div class="sb-link" onclick="filterBreed('british')">🇬🇧 British L/S Hair</div>
+
+    <!-- Price Filter -->
+    <div class="sb-sec-title" style="font-size:.68rem;margin-top:.75rem;color:var(--gold);">BY PRICE</div>
+    <div class="sb-link" onclick="filterPrice(0,15000)">৳ Under 15,000</div>
+    <div class="sb-link" onclick="filterPrice(15000,50000)">৳ 15,000 – 50,000</div>
+    <div class="sb-link" onclick="filterPrice(50000,150000)">৳ 50,000 – 1,50,000</div>
+    <div class="sb-link" onclick="filterPrice(150000,999999)">৳ 1,50,000+</div>
+    <div class="sb-link" onclick="filterPrice(0,999999)" style="color:var(--gold);">✕ Clear Filter</div>
+
     <div class="sb-sec-title">Quick Links</div>
     <div class="sb-link" onclick="goTo('ourdolls')">👑 Our Dolls</div>
     <div class="sb-link" onclick="goTo('gallery')">🐱 Available Kittens</div>
     <div class="sb-link" onclick="goTo('happyhomes')">🏡 Happy Homes</div>
     <div class="sb-link" onclick="goTo('mating')">💕 Mating</div>
     <div class="sb-link" onclick="goTo('services')">✂️ Services</div>
+    <div class="sb-link" onclick="goTo('clientmoments')">📸 Client Moments</div>
+    <div class="sb-link" onclick="goTo('reviews')">⭐ Reviews</div>
     <div class="sb-link" onclick="goTo('about')">ℹ️ About</div>
     <div class="sb-link" onclick="goTo('contact')">📞 Contact</div>
     <div class="sb-link" onclick="openCart()">🛒 View Cart</div>
@@ -691,7 +689,7 @@
       <a onclick="goTo('gallery')">Kittens</a>
       <a onclick="goTo('happyhomes')">Happy Homes</a>
       <a onclick="goTo('mating')">Mating</a>
-      <a onclick="goTo('services')">Services</a>
+      <a onclick="goTo('services')">Services</a> <a onclick="goTo('clientmoments')">Moments</a> <a onclick="goTo('reviews')">Reviews</a>
       <a onclick="goTo('contact')">Contact</a>
     </div>
     <div class="nav-right">
@@ -735,6 +733,7 @@
       <h2 class="sec-title">Our Dolls 👑 <span style="font-size:.65rem;font-family:var(--font-body);font-weight:600;background:#e53e3e;color:#fff;padding:.2rem .6rem;border-radius:8px;vertical-align:middle;margin-left:.5rem;">Not For Sale</span></h2>
       <div class="sec-sub">Meet our beautiful resident parent cats 👑 — these are <strong>not for sale</strong>. Their adorable kittens are available in the gallery below!</div>
       <div class="dolls-tabs">
+        <button class="dtab" id="dtab-all" onclick="showDollTab('all',this)">🐾 All Cats</button>
         <button class="dtab active" id="dtab-ragdoll" onclick="showDollTab('ragdoll',this)">🐱 Ragdoll</button>
         <button class="dtab" id="dtab-scottish" onclick="showDollTab('scottish',this)">🐾 Scottish Fold</button>
         <button class="dtab" id="dtab-persian" onclick="showDollTab('persian',this)">🤍 Persian</button>
@@ -753,8 +752,8 @@
               <div class="doll-dots" id="ddots-vutum"><div class="ddot active" onclick="goDSlide('vutum',0)"></div><div class="ddot" onclick="goDSlide('vutum',1)"></div><div class="ddot" onclick="goDSlide('vutum',2)"></div></div>
               <div class="doll-crown">👑 Parent Queen</div>
             </div>
-            <div class="doll-info">
-              <div class="doll-name">Vutum</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#2563eb;color:#fff;font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:8px;letter-spacing:.04em;margin-bottom:.4rem;text-transform:uppercase;">🐱 Ragdoll</div>
+              <div class="doll-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Vutum</div>
               <div class="doll-role">Ragdoll · Bicolor · Female</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
@@ -781,8 +780,8 @@
               <div class="doll-dots" id="ddots-sondesh"><div class="ddot active" onclick="goDSlide('sondesh',0)"></div><div class="ddot" onclick="goDSlide('sondesh',1)"></div><div class="ddot" onclick="goDSlide('sondesh',2)"></div></div>
               <div class="doll-crown">👑 Parent King</div>
             </div>
-            <div class="doll-info">
-              <div class="doll-name">Sondesh</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#2563eb;color:#fff;font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:8px;letter-spacing:.04em;margin-bottom:.4rem;text-transform:uppercase;">🐱 Ragdoll</div>
+              <div class="doll-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Sondesh</div>
               <div class="doll-role">Ragdoll · Bicolor · Male</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
@@ -811,8 +810,8 @@
               </div>
               <div class="doll-crown">👑 Parent King</div>
             </div>
-            <div class="doll-info">
-              <div class="doll-name">Rango</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#2563eb;color:#fff;font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:8px;letter-spacing:.04em;margin-bottom:.4rem;text-transform:uppercase;">🐱 Ragdoll</div>
+              <div class="doll-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Rango</div>
               <div class="doll-role">Ragdoll · Colorpoint · Male</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
@@ -842,8 +841,8 @@
               <div class="doll-dots" id="ddots-shangchi"><div class="ddot active" onclick="goDSlide('shangchi',0)"></div><div class="ddot" onclick="goDSlide('shangchi',1)"></div></div>
               <div class="doll-crown">👑 Parent King</div>
             </div>
-            <div class="doll-info">
-              <div class="doll-name">Shang Chi</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#7c3aed;color:#fff;font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:8px;letter-spacing:.04em;margin-bottom:.4rem;text-transform:uppercase;">🐾 Scottish Fold</div>
+              <div class="doll-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐾 Scottish Fold</div><br><div class="doll-name">Shang Chi</div>
               <div class="doll-role">Scottish Fold · Tabby · Male</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
@@ -867,8 +866,8 @@
               <div class="doll-dots" id="ddots-yangchi"><div class="ddot active" onclick="goDSlide('yangchi',0)"></div></div>
               <div class="doll-crown">👑 Parent Queen</div>
             </div>
-            <div class="doll-info">
-              <div class="doll-name">Yang Chi</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#7c3aed;color:#fff;font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:8px;letter-spacing:.04em;margin-bottom:.4rem;text-transform:uppercase;">🐾 Scottish Fold</div>
+              <div class="doll-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐾 Scottish Fold</div><br><div class="doll-name">Yang Chi</div>
               <div class="doll-role">Scottish Fold · Tabby · Female</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
@@ -898,8 +897,8 @@
               <div class="doll-dots" id="ddots-chinki"><div class="ddot active" onclick="goDSlide('chinki',0)"></div><div class="ddot" onclick="goDSlide('chinki',1)"></div></div>
               <div class="doll-crown">👑 Parent Queen</div>
             </div>
-            <div class="doll-info">
-              <div class="doll-name">Chinki</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#db2777;color:#fff;font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:8px;letter-spacing:.04em;margin-bottom:.4rem;text-transform:uppercase;">🤍 Persian</div>
+              <div class="doll-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🤍 Persian</div><br><div class="doll-name">Chinki</div>
               <div class="doll-role">Persian · Orange Eye · Female</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
@@ -926,8 +925,8 @@
               <div class="doll-dots" id="ddots-gadu"><div class="ddot active" onclick="goDSlide('gadu',0)"></div><div class="ddot" onclick="goDSlide('gadu',1)"></div></div>
               <div class="doll-crown">👑 Parent King</div>
             </div>
-            <div class="doll-info">
-              <div class="doll-name">Gadu</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#db2777;color:#fff;font-size:.65rem;font-weight:700;padding:.18rem .55rem;border-radius:8px;letter-spacing:.04em;margin-bottom:.4rem;text-transform:uppercase;">🤍 Persian</div>
+              <div class="doll-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🤍 Persian</div><br><div class="doll-name">Gadu</div>
               <div class="doll-role">Persian · Orange Eye · Male</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
@@ -953,6 +952,7 @@
       <h2 class="sec-title">Find Your Perfect Companion</h2>
       <div class="sec-sub">Select kittens, add to cart and checkout together. All kittens are vaccinated and health-certified.</div>
       <div class="tabs">
+        <button class="tab" id="tab-all" onclick="showTab('all',this)">🐾 All Breeds</button>
         <button class="tab active" id="tab-ragdoll" onclick="showTab('ragdoll',this)">🐱 Ragdoll</button>
         <button class="tab" id="tab-persian" onclick="showTab('persian',this)">🤍 Persian</button>
         <button class="tab" id="tab-scottish" onclick="showTab('scottish',this)">🐾 Scottish Fold</button>
@@ -1459,6 +1459,7 @@
 
       <!-- MATING BREED TABS -->
       <div class="tabs mating-tabs" style="margin-top:1.5rem;">
+        <button class="tab" id="mtab-all" onclick="showMatingTab('all',this)">🐾 All Breeds</button>
         <button class="tab active" id="mtab-ragdoll" onclick="showMatingTab('ragdoll',this)">🐱 Ragdoll</button>
         <button class="tab" id="mtab-persian" onclick="showMatingTab('persian',this)">🤍 Persian</button>
         <button class="tab" id="mtab-scottish" onclick="showMatingTab('scottish',this)">🐾 Scottish Fold</button>
@@ -1674,7 +1675,105 @@
       </div>
     </div>
   </div>
-  <!-- ABOUT -->
+
+  <!-- CLIENT MOMENTS -->
+  <section class="section" id="clientmoments" style="background:var(--cream);padding:4rem 0;">
+    <div class="section-inner" style="max-width:1100px;margin:0 auto;padding:0 2rem;">
+      <div class="sec-eyebrow">Our Happy Families</div>
+      <h2 class="sec-title">Client Moments 📸</h2>
+      <div class="sec-sub">Precious moments of our kittens in their new forever homes. Share yours on WhatsApp!</div>
+
+      <div class="moments-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-top:2rem;">
+
+        <!-- MOMENT CARD 1 -->
+        <div class="moment-card" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.08);transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+          <div style="position:relative;height:260px;background:linear-gradient(135deg,#dce8f5,#b8d4ed);display:flex;align-items:center;justify-content:center;font-size:4rem;">
+            📸
+            <!-- Replace with: <img src="client1.jpg" style="width:100%;height:260px;object-fit:cover;"> -->
+          </div>
+          <div style="padding:1rem 1.1rem 1.2rem;">
+            <div style="font-weight:700;font-size:.95rem;color:var(--navy);margin-bottom:.3rem;">Snowflake in Gulshan 🏠</div>
+            <div style="font-size:.82rem;color:var(--muted);line-height:1.5;">"Snowflake settled in perfectly! She sleeps on my lap every evening. Thank you Shinzu Family for this beautiful Ragdoll baby!" — <em>Nadia, Gulshan</em></div>
+            <div style="margin-top:.6rem;font-size:.72rem;color:var(--gold);font-weight:600;">🐱 Ragdoll · Bicolor</div>
+          </div>
+        </div>
+
+        <!-- MOMENT CARD 2 -->
+        <div class="moment-card" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.08);transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+          <div style="position:relative;height:260px;background:linear-gradient(135deg,#f5dce8,#edb8d4);display:flex;align-items:center;justify-content:center;font-size:4rem;">
+            📸
+            <!-- Replace with: <img src="client2.jpg" style="width:100%;height:260px;object-fit:cover;"> -->
+          </div>
+          <div style="padding:1rem 1.1rem 1.2rem;">
+            <div style="font-weight:700;font-size:.95rem;color:var(--navy);margin-bottom:.3rem;">Fluffy in Dhanmondi 🏠</div>
+            <div style="font-size:.82rem;color:var(--muted);line-height:1.5;">"Our Persian Fluffy is the fluffiest, most loving cat. My kids adore him! Shinzu Family took great care before handing him over." — <em>Rashid, Dhanmondi</em></div>
+            <div style="margin-top:.6rem;font-size:.72rem;color:var(--gold);font-weight:600;">🤍 Persian · Orange Eye</div>
+          </div>
+        </div>
+
+        <!-- MOMENT CARD 3 -->
+        <div class="moment-card" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.08);transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+          <div style="position:relative;height:260px;background:linear-gradient(135deg,#e8f5dc,#d4edb8);display:flex;align-items:center;justify-content:center;font-size:4rem;">
+            📸
+            <!-- Replace with: <img src="client3.jpg" style="width:100%;height:260px;object-fit:cover;"> -->
+          </div>
+          <div style="padding:1rem 1.1rem 1.2rem;">
+            <div style="font-weight:700;font-size:.95rem;color:var(--navy);margin-bottom:.3rem;">Mochi in Uttara 🏠</div>
+            <div style="font-size:.82rem;color:var(--muted);line-height:1.5;">"Mochi is our little Scottish Fold princess. She's so round-faced and funny! Already the most popular member of the family." — <em>Farhan, Uttara</em></div>
+            <div style="margin-top:.6rem;font-size:.72rem;color:var(--gold);font-weight:600;">🐾 Scottish Fold · Tabby</div>
+          </div>
+        </div>
+
+        <!-- MOMENT CARD 4 -->
+        <div class="moment-card" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.08);transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+          <div style="position:relative;height:260px;background:linear-gradient(135deg,#f5f0dc,#ede8b8);display:flex;align-items:center;justify-content:center;font-size:4rem;">
+            📸
+            <!-- Replace with: <img src="client4.jpg" style="width:100%;height:260px;object-fit:cover;"> -->
+          </div>
+          <div style="padding:1rem 1.1rem 1.2rem;">
+            <div style="font-weight:700;font-size:.95rem;color:var(--navy);margin-bottom:.3rem;">Biscuit in Bashundhara 🏠</div>
+            <div style="font-size:.82rem;color:var(--muted);line-height:1.5;">"Biscuit is the best decision we ever made! He's playful, gentle and so soft. Shinzu Family was helpful throughout the whole process." — <em>Sumaiya, Bashundhara</em></div>
+            <div style="margin-top:.6rem;font-size:.72rem;color:var(--gold);font-weight:600;">🇬🇧 British · Longhair</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;margin-top:2rem;">
+        <div style="font-size:.88rem;color:var(--muted);margin-bottom:.8rem;">Have a photo of your Shinzu kitty? Share it with us!</div>
+        <button class="btn-mating" onclick="window.open('https://wa.me/8801797822108?text=Hi! I want to share a photo of my Shinzu Family cat! 📸','_blank')" style="font-size:.9rem;">Share Your Moment 📸</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOGLE REVIEWS -->
+  <section class="section" id="reviews" style="background:#fff;padding:4rem 0;">
+    <div class="section-inner" style="max-width:900px;margin:0 auto;padding:0 2rem;text-align:center;">
+      <div class="sec-eyebrow">What Our Clients Say</div>
+      <h2 class="sec-title">Google Reviews ⭐</h2>
+      <div class="sec-sub">See what our happy families say about us directly on Google Maps.</div>
+
+      <!-- Google Maps Embed with Reviews -->
+      <div style="margin:2rem 0;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.1);">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.4!2d90.3564!3d23.7561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zSG91c2Ugb2YgUmFnZG9sbCBCYW5nbGFkZXNo!5e0!3m2!1sen!2sbd!4v1"
+          width="100%" height="400" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="Shinzu Family - House of Ragdoll Bangladesh on Google Maps">
+        </iframe>
+      </div>
+
+      <div style="background:#f8f9ff;border:1.5px solid #e8eaf6;border-radius:14px;padding:1.8rem;margin-top:1.5rem;">
+        <div style="font-size:2rem;margin-bottom:.5rem;">⭐⭐⭐⭐⭐</div>
+        <div style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.4rem;">See Our Reviews on Google Maps</div>
+        <div style="font-size:.85rem;color:var(--muted);margin-bottom:1.2rem;">Our customers share their experience on Google. Click below to read real reviews and leave yours!</div>
+        <button class="btn-mating" onclick="window.open('https://maps.app.goo.gl/ur427txpaTomjEuz8','_blank')" style="font-size:.92rem;">
+          📍 View Reviews on Google Maps
+        </button>
+      </div>
+    </div>
+  </section>
+
+    <!-- ABOUT -->
   <section class="section" id="about">
     <div class="sec-eyebrow">Who We Are</div>
     <div class="sec-title">About Shinzu Family</div>
@@ -1758,31 +1857,94 @@
   var svcOn={grooming:true,foster:true,mating:true};
   function filterService(s){svcOn[s]=!svcOn[s];document.getElementById('tog-'+s).classList.toggle('on',svcOn[s]);document.getElementById('sb-'+s).classList.toggle('active',svcOn[s]);var el=document.getElementById('service-'+s);if(el)el.style.display=svcOn[s]?'':'none';}
   function showTab(breed,btn){
-    document.querySelectorAll('.gallery-panel').forEach(function(p){p.classList.remove('active');});
     document.querySelectorAll('#gallery .tab').forEach(function(t){t.classList.remove('active');});
-    var panel=document.getElementById('panel-'+breed);
-    if(panel){
-      panel.classList.add('active');
-      // Reset all cards to visible when switching tabs
-      panel.querySelectorAll('.cat-card').forEach(function(c){c.style.display='';});
-      // Reset subtabs - activate "All"
-      var allTab=document.getElementById('stab-'+breed+'-all');
-      if(allTab){
-        panel.querySelectorAll('.subtab').forEach(function(t){t.classList.remove('active');});
-        allTab.classList.add('active');
+    if(btn)btn.classList.add('active');
+    if(breed==='all'){
+      document.querySelectorAll('.gallery-panel').forEach(function(p){
+        p.classList.add('active');
+        p.querySelectorAll('.cat-card').forEach(function(c){c.style.display='';});
+      });
+    } else {
+      document.querySelectorAll('.gallery-panel').forEach(function(p){p.classList.remove('active');});
+      var panel=document.getElementById('panel-'+breed);
+      if(panel){
+        panel.classList.add('active');
+        panel.querySelectorAll('.cat-card').forEach(function(c){c.style.display='';});
+        var allTab=document.getElementById('stab-'+breed+'-all');
+        if(allTab){
+          panel.querySelectorAll('.subtab').forEach(function(t){t.classList.remove('active');});
+          allTab.classList.add('active');
+        }
       }
     }
-    if(btn)btn.classList.add('active');
   }
 
   function showMatingTab(breed, btn) {
-    document.querySelectorAll('.mating-panel').forEach(function(p){p.classList.remove('active');});
     document.querySelectorAll('.mating-tabs .tab').forEach(function(t){t.classList.remove('active');});
-    var panel = document.getElementById('mpanel-' + breed);
-    if(panel) panel.classList.add('active');
     if(btn) btn.classList.add('active');
+    if(breed==='all'){
+      document.querySelectorAll('.mating-panel').forEach(function(p){p.classList.add('active');});
+    } else {
+      document.querySelectorAll('.mating-panel').forEach(function(p){p.classList.remove('active');});
+      var panel = document.getElementById('mpanel-' + breed);
+      if(panel) panel.classList.add('active');
+    }
   }
-  function showDollTab(breed,btn){document.querySelectorAll('.dolls-panel').forEach(function(p){p.classList.remove('active');});document.querySelectorAll('.dtab').forEach(function(t){t.classList.remove('active');});var panel=document.getElementById('dpanel-'+breed);if(panel)panel.classList.add('active');if(btn)btn.classList.add('active');}
+  function showDollTab(breed,btn){
+    document.querySelectorAll('.dtab').forEach(function(t){t.classList.remove('active');});
+    if(btn)btn.classList.add('active');
+    if(breed==='all'){
+      document.querySelectorAll('.dolls-panel').forEach(function(p){p.classList.add('active');});
+    } else {
+      document.querySelectorAll('.dolls-panel').forEach(function(p){p.classList.remove('active');});
+      var panel=document.getElementById('dpanel-'+breed);
+      if(panel)panel.classList.add('active');
+    }
+  }
+
+  // SIDEBAR FILTERS
+  function filterBreed(breed){
+    goTo('gallery');
+    setTimeout(function(){
+      if(breed==='all'){
+        showTab('all', document.getElementById('tab-all'));
+      } else {
+        var btn = document.getElementById('tab-'+breed);
+        showTab(breed, btn);
+      }
+    }, 400);
+  }
+  function filterPrice(min, max){
+    goTo('gallery');
+    // Show all breeds first
+    setTimeout(function(){
+      showTab('all', document.getElementById('tab-all'));
+      setTimeout(function(){
+        document.querySelectorAll('.cat-card').forEach(function(card){
+          // Get price from btn-order onclick
+          var btn = card.querySelector('.btn-order');
+          var price = 0;
+          if(btn){
+            var match = btn.getAttribute('onclick').match(/'(\d+)'/g);
+            if(match && match.length>1) price = parseInt(match[1].replace(/'/g,''));
+          }
+          // Also check btn-cart-add
+          if(!btn || price===0){
+            var cartBtn = card.querySelector('.btn-cart-add');
+            if(cartBtn){
+              var m = cartBtn.getAttribute('onclick').match(/'(\d+)'/);
+              if(m) price = parseInt(m[1].replace(/'/g,''));
+            }
+          }
+          if(price===0 || (price>=min && price<=max)){
+            card.style.display='';
+          } else {
+            card.style.display='none';
+          }
+        });
+      }, 100);
+    }, 400);
+  }
   function showMatingTabAndGo(breed){
     showMatingTab(breed, document.getElementById('mtab-'+breed));
     goTo('mating');
