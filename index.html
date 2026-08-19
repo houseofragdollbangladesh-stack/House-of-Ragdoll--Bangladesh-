@@ -728,7 +728,7 @@
     </div>
     <div class="nav-right">
       <button class="cart-btn" onclick="openCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button>
-      <div class="nav-user" id="navUserArea" style="position:relative;"><button class="btn-login" onclick="openLogin()">Sign In</button><div id="userMenu" class="user-menu"><div class="user-menu-name" id="userMenuName"></div><div class="user-menu-item" onclick="openCart()">🛒 My Cart</div><div class="user-menu-item" onclick="doLogout()">🚪 Sign Out</div></div></div>
+      <div class="nav-user" id="navUserArea" style="position:relative;"><button class="btn-login" onclick="openLogin()">Sign In</button><div id="userMenu" class="user-menu"><div class="user-menu-name" id="userMenuName"></div><div class="user-menu-item" onclick="openProfile()">👤 My Profile</div><div class="user-menu-item" onclick="openCart()">🛒 My Cart</div><div class="user-menu-item" onclick="doLogout()">🚪 Sign Out</div></div></div>
       <button class="nav-cta" onclick="goTo('contact')">Adopt Now</button>
   </div>
   </nav>
@@ -1876,6 +1876,33 @@
   <div class="lightbox-counter" id="lightboxCounter"></div>
 </div>
 
+
+<!-- USER PROFILE PANEL -->
+<div class="login-modal" id="profileModal">
+  <div class="login-box" style="max-width:400px;">
+    <button class="login-close" onclick="closeProfile()">✕</button>
+    <div class="login-title">My Profile 👤</div>
+    <div class="login-sub">Update your name and contact info</div>
+    <div style="margin-bottom:.6rem;">
+      <label style="font-size:.78rem;font-weight:700;color:var(--navy);display:block;margin-bottom:.3rem;">Full Name</label>
+      <input class="login-input" id="profileName" type="text" placeholder="Your full name" style="margin-bottom:0;">
+    </div>
+    <div style="margin:.8rem 0 .6rem;">
+      <label style="font-size:.78rem;font-weight:700;color:var(--navy);display:block;margin-bottom:.3rem;">Phone Number</label>
+      <input class="login-input" id="profilePhone" type="tel" placeholder="01XXXXXXXXX" maxlength="11" style="margin-bottom:0;">
+    </div>
+    <div style="margin:.8rem 0 .6rem;">
+      <label style="font-size:.78rem;font-weight:700;color:var(--navy);display:block;margin-bottom:.3rem;">Email (optional)</label>
+      <input class="login-input" id="profileEmail" type="email" placeholder="your@email.com" style="margin-bottom:0;">
+    </div>
+    <div class="login-err" id="profileErr"></div>
+    <button class="login-btn" onclick="saveProfile()" style="margin-top:1rem;">Save Changes ✓</button>
+    <div style="margin-top:.8rem;text-align:center;">
+      <span onclick="doLogout()" style="font-size:.78rem;color:#e53e3e;cursor:pointer;font-weight:600;">Sign Out 🚪</span>
+    </div>
+  </div>
+</div>
+
 <!-- LOGIN MODAL -->
 <div class="login-modal" id="loginModal">
   <div class="login-box">
@@ -2050,11 +2077,25 @@
   function closeCart(){document.getElementById('cartPanel').classList.remove('open');}
   function renderCart(){var el=document.getElementById('cartItems'),footer=document.getElementById('cartFooter');if(cart.length===0){el.innerHTML='<div class="cart-empty">Your cart is empty.<br>Browse our kittens and add them!</div>';footer.style.display='none';return;}footer.style.display='block';var total=cart.reduce(function(s,c){return s+c.price;},0);el.innerHTML=cart.map(function(item,i){return '<div class="cart-item"><div class="cart-item-info"><div class="cart-item-name">'+item.name+'</div>'+(item.price>0?'<div class="cart-item-price">৳ '+item.price.toLocaleString()+'</div>':'<div class="cart-item-price">Price on inquiry</div>')+'<div class="cart-item-type">'+(item.type==='prebook'?'Pre-Book':item.type==='service'?'Service':'Order')+'</div></div><button class="cart-item-remove" onclick="removeFromCart('+i+')">✕</button></div>';}).join('');document.getElementById('cartItemCount').textContent=cart.length+' item(s)';document.getElementById('cartTotal').textContent='৳ '+total.toLocaleString();}
   function removeFromCart(i){var id=cart[i].id;cart.splice(i,1);updateCartUI();renderCart();var btn=document.getElementById('cartbtn-'+id);if(btn){btn.textContent='🛒';btn.classList.remove('in-cart');}}
-  function checkoutCart(){pendingOrder={items:cart.slice(),type:'cart'};var summary='',total=0;pendingOrder.items.forEach(function(item){summary+='<div class="order-summary-item"><span>'+item.name+'</span><span>'+(item.price>0?'৳ '+item.price.toLocaleString():'Inquiry')+'</span></div>';total+=item.price;});summary+='<div class="order-summary-item"><span>Total</span><span>৳ '+total.toLocaleString()+'</span></div>';document.getElementById('orderSummary').innerHTML=summary;document.getElementById('modalTitle').textContent='Complete Your Order';document.getElementById('modalSub').textContent=cart.length+' item(s) in your cart';selPaid='';document.querySelectorAll('.pay-opt').forEach(function(o){o.classList.remove('sel');});document.getElementById('orderModal').classList.add('open');closeCart();}
+  function checkoutCart(){pendingOrder={items:cart.slice(),type:'cart'};var summary='',total=0;pendingOrder.items.forEach(function(item){summary+='<div class="order-summary-item"><span>'+item.name+'</span><span>'+(item.price>0?'৳ '+item.price.toLocaleString():'Inquiry')+'</span></div>';total+=item.price;});summary+='<div class="order-summary-item"><span>Total</span><span>৳ '+total.toLocaleString()+'</span></div>';document.getElementById('orderSummary').innerHTML=summary;document.getElementById('modalTitle').textContent='Complete Your Order';document.getElementById('modalSub').textContent=cart.length+' item(s) in your cart';selPaid='';document.querySelectorAll('.pay-opt').forEach(function(o){o.classList.remove('sel');});document.getElementById('orderModal').classList.add('open');
+  // Auto-fill from logged-in user
+  if(currentUser){
+    document.getElementById('orderName').value = currentUser.name || '';
+    document.getElementById('orderPhone').value = currentUser.type==='phone' ? currentUser.identifier : (currentUser.phone||'');
+  }
+  closeCart();
+}
   function quickOrder(name,price,type){var p=parseInt(price)||0;pendingOrder={items:[{id:'quick',name:name,price:p,type:type}],type:type};var summary='<div class="order-summary-item"><span>'+name+'</span><span>'+(p>0?'৳ '+p.toLocaleString():'Price on inquiry')+'</span></div>';if(p>0)summary+='<div class="order-summary-item"><span>Total</span><span>৳ '+p.toLocaleString()+'</span></div>';document.getElementById('orderSummary').innerHTML=summary;var titles={order:'Order Now',prebook:'Pre-Book',service:'Book Service',mating:'Mating Inquiry'};document.getElementById('modalTitle').textContent=titles[type]||'Order';document.getElementById('modalSub').textContent=name;selPaid='';document.querySelectorAll('.pay-opt').forEach(function(o){o.classList.remove('sel');});document.getElementById('orderModal').classList.add('open');}
   function selPay(method){selPaid=method;document.querySelectorAll('.pay-opt').forEach(function(o){o.classList.remove('sel');});document.getElementById('pay-'+method).classList.add('sel');}
   function closeModal(){document.getElementById('orderModal').classList.remove('open');}
-  function submitOrder(){var name=document.getElementById('orderName').value.trim(),phone=document.getElementById('orderPhone').value.trim(),loc=document.getElementById('orderLocation').value.trim(),msg=document.getElementById('orderMessage').value.trim();if(!name||!phone||!loc){alert('Please fill your name, phone, and location.');return;}if(!selPaid){alert('Please select a payment method.');return;}var payMap={bkash:'bKash — Send to: 01737170160',npsb:'Bank Transfer — Sonali Bank BUET Branch, A/C: 4404001031620 (Md. Rayhanur Rahman)',cod:'Cash on Delivery'};var orderType={order:'Order',prebook:'Pre-Book',service:'Service Booking',mating:'Mating Inquiry',cart:'Cart Order'};var items=pendingOrder.items.map(function(i){return '• '+i.name+(i.price>0?' — ৳ '+i.price.toLocaleString():'');}).join('\n');var total=pendingOrder.items.reduce(function(s,i){return s+i.price;},0);var text='Hello Shinzu Family! 🐱\n\n*'+orderType[pendingOrder.type||'order']+'*\n'+items+'\n'+(total>0?'*Total: ৳ '+total.toLocaleString()+'*\n':'\n')+'\n*Customer Details:*\nName: '+name+'\nPhone: '+phone+'\nLocation: '+loc+'\nPayment: '+payMap[selPaid]+(msg?'\nMessage: '+msg:'');window.open('https://wa.me/8801797822108?text='+encodeURIComponent(text),'_blank');if(pendingOrder.type==='cart'){cart=[];updateCartUI();document.querySelectorAll('.btn-cart-add').forEach(function(b){b.textContent='🛒';b.classList.remove('in-cart');});}closeModal();}
+  function submitOrder(){var name=document.getElementById('orderName').value.trim(),phone=document.getElementById('orderPhone').value.trim(),loc=document.getElementById('orderLocation').value.trim(),msg=document.getElementById('orderMessage').value.trim()
+  // Save phone to user profile if logged in
+  if(currentUser && phone){
+    currentUser.phone = phone;
+    if(currentUser.name !== name && name) currentUser.name = name;
+    try{ localStorage.setItem('shinzu_user', JSON.stringify(currentUser)); updateNavUser(); } catch(e){}
+  }
+;if(!name||!phone||!loc){alert('Please fill your name, phone, and location.');return;}if(!selPaid){alert('Please select a payment method.');return;}var payMap={bkash:'bKash — Send to: 01737170160',npsb:'Bank Transfer — Sonali Bank BUET Branch, A/C: 4404001031620 (Md. Rayhanur Rahman)',cod:'Cash on Delivery'};var orderType={order:'Order',prebook:'Pre-Book',service:'Service Booking',mating:'Mating Inquiry',cart:'Cart Order'};var items=pendingOrder.items.map(function(i){return '• '+i.name+(i.price>0?' — ৳ '+i.price.toLocaleString():'');}).join('\n');var total=pendingOrder.items.reduce(function(s,i){return s+i.price;},0);var text='Hello Shinzu Family! 🐱\n\n*'+orderType[pendingOrder.type||'order']+'*\n'+items+'\n'+(total>0?'*Total: ৳ '+total.toLocaleString()+'*\n':'\n')+'\n*Customer Details:*\nName: '+name+'\nPhone: '+phone+'\nLocation: '+loc+'\nPayment: '+payMap[selPaid]+(msg?'\nMessage: '+msg:'');window.open('https://wa.me/8801797822108?text='+encodeURIComponent(text),'_blank');if(pendingOrder.type==='cart'){cart=[];updateCartUI();document.querySelectorAll('.btn-cart-add').forEach(function(b){b.textContent='🛒';b.classList.remove('in-cart');});}closeModal();}
 
   // LIGHTBOX
   var lbImgs=[], lbIdx=0;
@@ -2085,6 +2126,49 @@
   var currentUser = null;
   try { currentUser = JSON.parse(localStorage.getItem('shinzu_user')); } catch(e){}
 
+
+  function openProfile(){
+    if(!currentUser){ openLogin(); return; }
+    document.getElementById('profileName').value = currentUser.name || '';
+    document.getElementById('profilePhone').value = currentUser.type==='phone' ? currentUser.identifier : (currentUser.phone||'');
+    document.getElementById('profileEmail').value = currentUser.type==='email' ? currentUser.identifier : (currentUser.email||'');
+    document.getElementById('profileErr').style.display='none';
+    document.getElementById('profileModal').classList.add('open');
+    document.body.style.overflow='hidden';
+    closeUserMenu();
+  }
+  function closeProfile(){
+    document.getElementById('profileModal').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function saveProfile(){
+    var name = document.getElementById('profileName').value.trim();
+    var phone = document.getElementById('profilePhone').value.trim();
+    var email = document.getElementById('profileEmail').value.trim();
+    var err = document.getElementById('profileErr');
+    if(!name){ err.textContent='Name is required.'; err.style.display='block'; return; }
+    if(phone && !/^01[3-9]\d{8}$/.test(phone)){ err.textContent='Enter a valid Bangladesh number.'; err.style.display='block'; return; }
+    if(email && !/^[^@]+@[^@]+\.[^@]+$/.test(email)){ err.textContent='Enter a valid email.'; err.style.display='block'; return; }
+    currentUser.name = name;
+    if(phone) currentUser.phone = phone;
+    if(email) currentUser.email = email;
+    // Update primary identifier if changed
+    if(currentUser.type==='phone' && phone) currentUser.identifier = phone;
+    if(currentUser.type==='email' && email) currentUser.identifier = email;
+    try{ localStorage.setItem('shinzu_user', JSON.stringify(currentUser)); } catch(e){}
+    updateNavUser();
+    err.style.display='none';
+    closeProfile();
+    // Show saved toast
+    showToast('Profile saved! ✓');
+  }
+  function showToast(msg){
+    var t = document.createElement('div');
+    t.textContent = msg;
+    t.style.cssText='position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:.6rem 1.4rem;border-radius:20px;font-size:.85rem;font-weight:600;z-index:9999;box-shadow:0 4px 16px rgba(0,0,0,.2);';
+    document.body.appendChild(t);
+    setTimeout(function(){t.remove();},2500);
+  }
   function openLogin(){ document.getElementById('loginModal').classList.add('open'); document.body.style.overflow='hidden'; }
   function closeLogin(){ document.getElementById('loginModal').classList.remove('open'); document.body.style.overflow=''; }
   function switchLoginTab(tab){
