@@ -153,6 +153,7 @@
     .spec-item strong{color:var(--text);}
     .cat-price{font-size:.74rem;color:var(--muted);margin:.38rem 0 .38rem;}
     .cat-price strong{color:var(--gold);font-size:.84rem;}
+    .badge-sold{background:linear-gradient(135deg,#e53e3e,#c53030);color:#fff;padding:.2rem .6rem;border-radius:8px;font-size:.64rem;font-weight:700;}
     .badge-avail{background:#e8f5e9;color:#2e7d32;font-size:.6rem;padding:.12rem .44rem;border-radius:8px;font-weight:700;}
     .badge-soon{background:#e3f2fd;color:#1565c0;font-size:.6rem;padding:.12rem .44rem;border-radius:8px;font-weight:700;}
     .card-btns{display:flex;gap:4px;margin-top:.48rem;flex-wrap:wrap;}
@@ -201,9 +202,9 @@
     .sold-wrap .sec-eyebrow{color:var(--blue);}
     .sold-wrap .sec-title{color:var(--navy);font-weight:800;}
     .sold-wrap .sec-sub{color:var(--muted);}
-    .sold-tabs .tab{border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);}
+    .sold-tabs .tab{border-color:var(--border);background:#fff;color:var(--muted);}
     .sold-tabs .tab.active{background:var(--gold);color:var(--navy);border-color:var(--gold);}
-    .sold-tabs .tab:hover:not(.active){border-color:var(--gold-light);color:var(--gold-light);}
+    .sold-tabs .tab:hover:not(.active){border-color:var(--blue);color:var(--blue);}
     .sold-panel{display:none;}
     .sold-panel.active{display:block;}
     .sold-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.95rem;}
@@ -220,8 +221,8 @@
     .sold-name{font-family:var(--font-display);font-size:.88rem;color:var(--navy);font-weight:700;}
     .sold-breed{font-size:.72rem;color:var(--muted);margin-bottom:.3rem;}
     .sold-specs{display:grid;grid-template-columns:1fr 1fr;gap:.16rem;margin:.3rem 0;}
-    .sold-spec{font-size:.6rem;color:rgba(255,255,255,.52);display:flex;gap:.22rem;line-height:1.35;}
-    .sold-spec strong{color:rgba(255,255,255,.82);}
+    .sold-spec{font-size:.6rem;color:var(--navy);display:flex;gap:.22rem;line-height:1.35;}
+    .sold-spec strong{color:var(--navy);font-weight:700;}
     .sold-home{font-size:.65rem;color:var(--gold-light);margin-top:.28rem;}
     .sold-note{text-align:center;margin-top:1.4rem;font-size:.78rem;color:rgba(255,255,255,.42);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:.75rem;}
     .mating-wrap{background:#fff;padding:3.5rem 0;}
