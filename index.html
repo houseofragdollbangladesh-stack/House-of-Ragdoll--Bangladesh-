@@ -128,8 +128,8 @@
     .subtab:hover:not(.active){border-color:var(--gold);color:var(--navy);}
     .gallery-wrap{background:var(--warm);padding:3.5rem 0;overflow:hidden;}
     .gallery-inner{max-width:960px;margin:0 auto;padding:0 2rem;width:100%;}
-    .gallery-panel{display:none;width:100%;}
-    .gallery-panel.active{display:block;width:100%;}
+    .gallery-panel{display:none;width:100%;visibility:hidden;height:0;overflow:hidden;}
+    .gallery-panel.active{display:block;width:100%;visibility:visible;height:auto;overflow:visible;}
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;width:100%;}
     .cat-card{background:#fff;border:1px solid var(--border);border-radius:13px;overflow:hidden;transition:transform .2s;box-shadow:0 2px 9px rgba(30,60,100,.05);}
     .cat-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(30,60,100,.1);}
@@ -169,8 +169,8 @@
     .dtab{padding:.55rem 1.4rem;border-radius:20px;border:2px solid var(--border);background:#fff;font-size:1rem;font-weight:700;color:var(--muted);cursor:pointer;transition:all .2s;font-family:var(--font-body);}
     .dtab.active{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:800;}
     .dtab:hover:not(.active){border-color:var(--navy);color:var(--navy);}
-    .dolls-panel{display:none;}
-    .dolls-panel.active{display:block;}
+    .dolls-panel{display:none;visibility:hidden;}
+    .dolls-panel.active{display:block;visibility:visible;}
     .dolls-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem;}
     .doll-card{background:#fff;border:2px solid var(--gold);border-radius:16px;overflow:hidden;transition:transform .2s;box-shadow:0 4px 16px rgba(200,151,58,.11);}
     .doll-card:hover{transform:translateY(-4px);box-shadow:0 9px 28px rgba(30,60,100,.12);}
@@ -362,8 +362,8 @@
 
 
     /* MATING TABS */
-    .mating-panel{display:none;}
-    .mating-panel.active{display:block;}
+    .mating-panel{display:none;visibility:hidden;}
+    .mating-panel.active{display:block;visibility:visible;}
     .mating-tabs .tab{font-size:1rem;padding:.55rem 1.3rem;}
 
     /* All Breeds view - hide subtabs, show breed tags */
@@ -1029,7 +1029,7 @@
               <div class="card-btns">
                 <button class="btn-order" onclick="quickOrder('Makhon - Ragdoll Seal Point (Father: Sondesh, Mother: Vutum)','120000','order')">Order Now</button>
                 <button class="btn-prebook" onclick="quickOrder('Makhon - Ragdoll Seal Point (Father: Sondesh, Mother: Vutum)','120000','prebook')">Pre-Book</button>
-                <button class="btn-cart-add" id="cartbtn-ka" onclick="addToCart('ka','Kitten A - Ragdoll Bicolor','120000')">🛒</button>
+                <button class="btn-cart-add" id="cartbtn-ka" onclick="addToCart('ka','Makhon - Ragdoll Seal Point','120000')">🛒</button>
               </div>
             </div>
           </div>
@@ -1059,7 +1059,7 @@
               <div class="card-btns">
                 <button class="btn-order" onclick="quickOrder('Mithai - Ragdoll Seal Mitted (Father: Sondesh, Mother: Vutum)','180000','order')">Order Now</button>
                 <button class="btn-prebook" onclick="quickOrder('Mithai - Ragdoll Seal Mitted (Father: Sondesh, Mother: Vutum)','180000','prebook')">Pre-Book</button>
-                <button class="btn-cart-add" id="cartbtn-kb" onclick="addToCart('kb','Kitten B - Ragdoll Colorpoint','120000')">🛒</button>
+                <button class="btn-cart-add" id="cartbtn-kb" onclick="addToCart('kb','Mithai - Ragdoll Seal Mitted','120000')">🛒</button>
               </div>
             </div>
           </div>
@@ -1517,36 +1517,37 @@
 
       <!-- RAGDOLL MATING PANEL -->
       <div class="mating-panel active" id="mpanel-ragdoll">
-        <div class="mating-grid" id="service-mating">
-          <div class="mating-card" id="service-mating">
-          <div class="mating-slideshow">
-            <div class="mating-slides" id="mslides-sondesh-m">
-              <div class="mating-slide"><img src="Sondesh1.jpg" alt="Sondesh" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],0,'Sondesh')"></div>
-              <div class="mating-slide"><img src="Sondesh2.jpg" alt="Sondesh 2" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],1,'Sondesh')"></div>
-              <div class="mating-slide"><img src="Sondesh3.jpg" alt="Sondesh 3" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],2,'Sondesh')"></div>
-            </div>
-            <button class="mating-slide-btn mating-prev" onclick="changeMSlide('sondesh-m',-1)">&#8249;</button>
-            <button class="mating-slide-btn mating-next" onclick="changeMSlide('sondesh-m',1)">&#8250;</button>
-            <div class="mating-dots" id="mdots-sondesh-m"><div class="mdot active" onclick="goMSlide('sondesh-m',0)"></div><div class="mdot" onclick="goMSlide('sondesh-m',1)"></div><div class="mdot" onclick="goMSlide('sondesh-m',2)"></div></div>
-            <div class="mating-badge">💕 Ragdoll · Bicolor Stud</div>
-          </div>
-          <div class="mating-body">
-            <div class="mating-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🐱 Ragdoll</div><br><div class="mating-title">Sondesh — Ragdoll Stud</div>
-            <div class="mating-specs">
-              <div class="mspec">🐱 <span><strong>Stud:</strong> Sondesh</span></div>
-              <div class="mspec">🎂 <span><strong>Age:</strong> 18 Months</span></div>
-              <div class="mspec">🎨 <span><strong>Pattern:</strong> Bicolor</span></div>
-              <div class="mspec">👁️ <span><strong>Eyes:</strong> Blue</span></div>
-              <div class="mspec">🎀 <span><strong>Color:</strong> Blue</span></div>
-              <div class="mspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
-              <div class="mspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
-            </div>
-            <div class="mating-desc">Pure-bred Ragdoll Bicolor stud. Blue eyes, silky coat and gentle temperament guaranteed in offspring.</div>
-            <ul class="mating-features"><li>Health-tested &amp; vaccinated</li><li>Pre-mating health check required</li><li>Post-mating follow-up support</li></ul>
-            <button class="btn-mating" onclick="quickOrder('Ragdoll Mating - Sondesh (Bicolor)','0','mating')">Inquire Now 📱</button>
-          </div>
-        </div>
+        <div class="mating-grid">
           <div class="mating-card">
+            <div class="mating-slideshow">
+              <div class="mating-slides" id="mslides-sondesh-m">
+                <div class="mating-slide"><img src="Sondesh1.jpg" alt="Sondesh" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],0,'Sondesh')"></div>
+                <div class="mating-slide"><img src="Sondesh2.jpg" alt="Sondesh 2" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],1,'Sondesh')"></div>
+                <div class="mating-slide"><img src="Sondesh3.jpg" alt="Sondesh 3" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],2,'Sondesh')"></div>
+              </div>
+              <button class="mating-slide-btn mating-prev" onclick="changeMSlide('sondesh-m',-1)">&#8249;</button>
+              <button class="mating-slide-btn mating-next" onclick="changeMSlide('sondesh-m',1)">&#8250;</button>
+              <div class="mating-dots" id="mdots-sondesh-m"><div class="mdot active" onclick="goMSlide('sondesh-m',0)"></div><div class="mdot" onclick="goMSlide('sondesh-m',1)"></div><div class="mdot" onclick="goMSlide('sondesh-m',2)"></div></div>
+              <div class="mating-badge">💕 Ragdoll · Bicolor Stud</div>
+            </div>
+            <div class="mating-body">
+              <div class="mating-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🐱 Ragdoll</div><br>
+              <div class="mating-title">Sondesh — Ragdoll Stud</div>
+              <div class="mating-specs">
+                <div class="mspec">🐱 <span><strong>Stud:</strong> Sondesh</span></div>
+                <div class="mspec">🎂 <span><strong>Age:</strong> 18 Months</span></div>
+                <div class="mspec">🎨 <span><strong>Pattern:</strong> Bicolor</span></div>
+                <div class="mspec">👁️ <span><strong>Eyes:</strong> Blue</span></div>
+                <div class="mspec">🎀 <span><strong>Color:</strong> Blue</span></div>
+                <div class="mspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+                <div class="mspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
+              </div>
+              <div class="mating-desc">Pure-bred Ragdoll Bicolor stud. Blue eyes, silky coat and gentle temperament guaranteed in offspring.</div>
+              <ul class="mating-features"><li>Health-tested &amp; vaccinated</li><li>Pre-mating health check required</li><li>Post-mating follow-up support</li></ul>
+              <button class="btn-mating" onclick="quickOrder('Ragdoll Mating - Sondesh (Bicolor)','0','mating')">Inquire Now 📱</button>
+            </div>
+          </div>
+<div class="mating-card">
           <div class="mating-slideshow">
             <div class="mating-slides" id="mslides-rango-m">
               <div class="mating-slide"><img src="Rango1.jpg" alt="Rango" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],0,'Rango')"></div>
@@ -1579,14 +1580,6 @@
       <!-- PERSIAN MATING PANEL -->
       <div class="mating-panel" id="mpanel-persian">
         <div class="mating-grid">
-                    
-
-          
-        </div>
-      </div>
-
-      <!-- SCOTTISH MATING PANEL -->
-      <div class="mating-panel"
 <div class="mating-card">
             <div class="mating-slideshow">
               <div class="mating-slides" id="mslides-gadu-m">
@@ -1615,9 +1608,43 @@
               <button class="btn-mating" onclick="quickOrder('Persian Mating - Gadu (Orange Eye)','0','mating')">Inquire Now 📱</button>
             </div>
           </div>
-         id="mpanel-scottish">
+<div class="mating-card">
+            <div class="mating-slideshow">
+              <div class="mating-slides" id="mslides-persian-cs" style="background:linear-gradient(135deg,#1a2a4a,#2d3f6b);">
+                <div class="mating-slide" style="display:flex;align-items:center;justify-content:center;height:360px;flex-direction:column;gap:.5rem;">
+                  <div style="font-size:4.5rem;">🐱</div>
+                  <div style="color:rgba(255,255,255,.6);font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Coming Soon</div>
+                </div>
+              </div>
+              <div class="mating-badge">💕 Persian Stud</div>
+            </div>
+            <div class="mating-body">
+              <div class="mating-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🤍 Persian</div><br>
+              <div class="mating-title">Persian Stud — Coming Soon</div>
+              <div class="mating-specs">
+                <div class="mspec">🐱 <span><strong>Stud:</strong> To be announced</span></div>
+                <div class="mspec">🎂 <span><strong>Age:</strong> To be updated</span></div>
+                <div class="mspec">👁️ <span><strong>Eyes:</strong> To be updated</span></div>
+                <div class="mspec">🎀 <span><strong>Color:</strong> To be updated</span></div>
+                <div class="mspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+                <div class="mspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
+              </div>
+              <div class="mating-desc">Our Persian stud is being prepared. Inquire now to be notified first!</div>
+              <ul class="mating-features">
+                <li>Health-tested &amp; vaccinated studs</li>
+                <li>Pre-mating health check required</li>
+                <li>Post-mating follow-up support</li>
+              </ul>
+              <button class="btn-mating" onclick="quickOrder('Persian Mating Inquiry','0','mating')">Inquire Now 📱</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCOTTISH MATING PANEL -->
+      <div class="mating-panel" id="mpanel-scottish">
         <div class="mating-grid">
-                    <div class="mating-card">
+<div class="mating-card">
             <div class="mating-slideshow">
               <div class="mating-slides" id="mslides-shangchi-m">
                 <div class="mating-slide"><img src="ShangChi1.jpg" alt="Shang Chi" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['ShangChi1.jpg','ShangChi2.jpg'],0,'Shang Chi')"></div>
@@ -1644,29 +1671,76 @@
               <button class="btn-mating" onclick="quickOrder('Scottish Mating - Shang Chi (Fold Tabby)','0','mating')">Inquire Now 📱</button>
             </div>
           </div>
-
-          
+<div class="mating-card">
+            <div class="mating-slideshow">
+              <div class="mating-slides" id="mslides-scottish-cs" style="background:linear-gradient(135deg,#1a2a4a,#2d3f6b);">
+                <div class="mating-slide" style="display:flex;align-items:center;justify-content:center;height:360px;flex-direction:column;gap:.5rem;">
+                  <div style="font-size:4.5rem;">🐱</div>
+                  <div style="color:rgba(255,255,255,.6);font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Coming Soon</div>
+                </div>
+              </div>
+              <div class="mating-badge">💕 Scottish Fold Stud</div>
+            </div>
+            <div class="mating-body">
+              <div class="mating-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🐾 Scottish Fold</div><br>
+              <div class="mating-title">Scottish Fold Stud — Coming Soon</div>
+              <div class="mating-specs">
+                <div class="mspec">🐱 <span><strong>Stud:</strong> To be announced</span></div>
+                <div class="mspec">🎂 <span><strong>Age:</strong> To be updated</span></div>
+                <div class="mspec">👁️ <span><strong>Eyes:</strong> To be updated</span></div>
+                <div class="mspec">🎀 <span><strong>Color:</strong> To be updated</span></div>
+                <div class="mspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+                <div class="mspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
+              </div>
+              <div class="mating-desc">Our Scottish stud is being prepared. Inquire now to be notified first!</div>
+              <ul class="mating-features">
+                <li>Health-tested &amp; vaccinated studs</li>
+                <li>Pre-mating health check required</li>
+                <li>Post-mating follow-up support</li>
+              </ul>
+              <button class="btn-mating" onclick="quickOrder('Scottish Fold Mating Inquiry','0','mating')">Inquire Now 📱</button>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- BRITISH MATING PANEL -->
       <div class="mating-panel" id="mpanel-british">
         <div class="mating-grid">
-          
+<div class="mating-card">
+            <div class="mating-slideshow">
+              <div class="mating-slides" id="mslides-british-cs" style="background:linear-gradient(135deg,#1a2a4a,#2d3f6b);">
+                <div class="mating-slide" style="display:flex;align-items:center;justify-content:center;height:360px;flex-direction:column;gap:.5rem;">
+                  <div style="font-size:4.5rem;">🐱</div>
+                  <div style="color:rgba(255,255,255,.6);font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Coming Soon</div>
+                </div>
+              </div>
+              <div class="mating-badge">💕 British Stud</div>
+            </div>
+            <div class="mating-body">
+              <div class="mating-breed-tag" style="display:inline-block;background:#047857;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🇬🇧 British</div><br>
+              <div class="mating-title">British L/S Hair Stud — Coming Soon</div>
+              <div class="mating-specs">
+                <div class="mspec">🐱 <span><strong>Stud:</strong> To be announced</span></div>
+                <div class="mspec">🎂 <span><strong>Age:</strong> To be updated</span></div>
+                <div class="mspec">👁️ <span><strong>Eyes:</strong> To be updated</span></div>
+                <div class="mspec">🎀 <span><strong>Color:</strong> To be updated</span></div>
+                <div class="mspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+                <div class="mspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
+              </div>
+              <div class="mating-desc">Our British stud is being prepared. Inquire now to be notified first!</div>
+              <ul class="mating-features">
+                <li>Health-tested &amp; vaccinated studs</li>
+                <li>Pre-mating health check required</li>
+                <li>Post-mating follow-up support</li>
+              </ul>
+              <button class="btn-mating" onclick="quickOrder('British L/S Hair Mating Inquiry','0','mating')">Inquire Now 📱</button>
+            </div>
+          </div>
         </div>
       </div>
 
     </div>
-  </div>
-
-  r('Scottish Fold Mating Service','0','mating')">Inquire Now 📱</button>
-          
-          
-        </div>
-        </div>
-      </div>
-    </div>
-  </div>
   </div>
 
   <!-- SERVICES -->
@@ -1918,8 +1992,14 @@
   var sbOpen=true,slideIdx={},dSlIdx={},mSlIdx={},cart=[],selPaid='',pendingOrder=null;
   function toggleSidebar(){sbOpen=!sbOpen;document.getElementById('sidebar').classList.toggle('hidden',!sbOpen);document.getElementById('mainContent').classList.toggle('sb-hidden',!sbOpen);document.getElementById('sbToggle').classList.toggle('shifted',sbOpen);}
   function goTo(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});}
-  var breedOn={ragdoll:true,persian:true,scottish:true,british:true};
-  function filterBreed(b){breedOn[b]=!breedOn[b];document.getElementById('tog-'+b).classList.toggle('on',breedOn[b]);document.getElementById('sb-'+b).classList.toggle('active',breedOn[b]);var tab=document.getElementById('tab-'+b);if(tab)tab.style.display=breedOn[b]?'':'none';if(!breedOn[b]){var first=Object.keys(breedOn).find(function(k){return breedOn[k];});if(first)showTab(first,document.getElementById('tab-'+first));}}
+  
+  function filterBreed(breed){
+    goTo('gallery');
+    setTimeout(function(){
+      var btn = document.getElementById('tab-'+(breed==='all'?'all':breed));
+      showTab(breed, btn);
+    }, 400);
+  }
   var svcOn={grooming:true,foster:true,mating:true};
   function filterService(s){svcOn[s]=!svcOn[s];document.getElementById('tog-'+s).classList.toggle('on',svcOn[s]);document.getElementById('sb-'+s).classList.toggle('active',svcOn[s]);var el=document.getElementById('service-'+s);if(el)el.style.display=svcOn[s]?'':'none';}
   function showTab(breed,btn){
@@ -1987,13 +2067,7 @@
   }
 
   // SIDEBAR FILTERS
-  function filterBreed(breed){
-    goTo('gallery');
-    setTimeout(function(){
-      var btn = document.getElementById('tab-'+(breed==='all'?'all':breed));
-      showTab(breed, btn);
-    }, 400);
-  }
+
   function filterPrice(min, max){
     goTo('gallery');
     setTimeout(function(){
