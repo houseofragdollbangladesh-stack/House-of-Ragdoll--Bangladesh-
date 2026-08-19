@@ -147,9 +147,9 @@
     .cat-info{padding:.78rem .88rem;}
     .cat-name{font-family:var(--font-display);font-size:.93rem;color:var(--navy);font-weight:700;}
     .cat-parent{font-size:.63rem;color:var(--gold);margin:.04rem 0;font-weight:600;}
-    .cat-detail{font-size:.67rem;color:var(--blue);margin:.06rem 0;}
+    .cat-detail{font-size:.67rem;color:var(--navy);margin:.06rem 0;font-weight:600;}
     .cat-specs{display:grid;grid-template-columns:1fr 1fr;gap:.18rem;margin:.42rem 0;}
-    .spec-item{font-size:.61rem;color:var(--muted);display:flex;align-items:flex-start;gap:.25rem;line-height:1.35;}
+    .spec-item{font-size:.61rem;color:var(--navy);display:flex;align-items:flex-start;gap:.25rem;line-height:1.35;}
     .spec-item strong{color:var(--text);}
     .cat-price{font-size:.74rem;color:var(--muted);margin:.38rem 0 .38rem;}
     .cat-price strong{color:var(--gold);font-size:.84rem;}
@@ -189,7 +189,7 @@
     .doll-name{font-family:var(--font-display);font-size:1.12rem;color:var(--navy);font-weight:700;}
     .doll-role{font-size:.66rem;color:var(--gold);font-weight:700;margin:.08rem 0 .45rem;text-transform:uppercase;letter-spacing:.06em;}
     .doll-specs{display:grid;grid-template-columns:1fr 1fr;gap:.25rem;margin:.45rem 0 .6rem;}
-    .dspec{font-size:.63rem;color:var(--muted);display:flex;align-items:flex-start;gap:.28rem;line-height:1.38;}
+    .dspec{font-size:.63rem;color:var(--navy);display:flex;align-items:flex-start;gap:.28rem;line-height:1.38;}
     .dspec strong{color:var(--text);}
     .doll-tags{display:flex;flex-wrap:wrap;gap:.32rem;margin-bottom:.65rem;}
     .doll-tag{background:var(--warm);color:var(--navy);font-size:.63rem;padding:.18rem .55rem;border-radius:8px;border:1px solid var(--border);font-weight:500;}
@@ -218,13 +218,19 @@
     .sold-badge{position:absolute;top:7px;right:7px;background:var(--gold);color:var(--navy);font-size:.6rem;font-weight:700;padding:.2rem .52rem;border-radius:10px;}
     .sold-info{padding:.72rem .84rem;}
     .sold-name{font-family:var(--font-display);font-size:.88rem;color:#fff;font-weight:700;}
+    .sold-breed{font-size:.72rem;color:rgba(255,255,255,.75);margin-bottom:.3rem;}
     .sold-specs{display:grid;grid-template-columns:1fr 1fr;gap:.16rem;margin:.3rem 0;}
     .sold-spec{font-size:.6rem;color:rgba(255,255,255,.52);display:flex;gap:.22rem;line-height:1.35;}
     .sold-spec strong{color:rgba(255,255,255,.82);}
     .sold-home{font-size:.65rem;color:var(--gold-light);margin-top:.28rem;}
     .sold-note{text-align:center;margin-top:1.4rem;font-size:.78rem;color:rgba(255,255,255,.42);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:.75rem;}
-    .mating-wrap{background:var(--warm);padding:3.5rem 0;}
+    .mating-wrap{background:var(--navy);padding:3.5rem 0;}
     .mating-inner{max-width:960px;margin:0 auto;padding:0 2rem;}
+    .mating-inner .sec-eyebrow{color:var(--gold-light);}
+    .mating-inner .sec-title{color:#fff;font-weight:800;}
+    .mating-inner .sec-sub{color:rgba(255,255,255,.65);}
+    .mating-inner .tabs .tab{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);}
+    .mating-inner .tabs .tab.active{background:var(--gold);color:var(--navy);border-color:var(--gold);}
     .mating-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(262px,1fr));gap:1.2rem;margin-top:1.55rem;}
     .mating-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s;}
     .mating-card:hover{transform:translateY(-4px);box-shadow:0 7px 24px rgba(30,60,100,.11);}
@@ -242,10 +248,10 @@
     .mating-body{padding:1.05rem 1.2rem;}
     .mating-title{font-family:var(--font-display);font-size:1.02rem;color:var(--navy);font-weight:700;margin-bottom:.32rem;}
     .mating-specs{display:grid;grid-template-columns:1fr 1fr;gap:.22rem;margin:.4rem 0 .65rem;}
-    .mspec{font-size:.63rem;color:var(--muted);display:flex;gap:.25rem;line-height:1.38;}
+    .mspec{font-size:.63rem;color:var(--navy);display:flex;gap:.25rem;line-height:1.38;}
     .mspec strong{color:var(--text);}
-    .mating-desc{font-size:.76rem;color:var(--muted);line-height:1.62;margin-bottom:.8rem;}
-    .mating-features{list-style:none;display:flex;flex-direction:column;gap:.26rem;margin-bottom:.8rem;}
+    .mating-desc{font-size:.76rem;color:var(--navy);line-height:1.62;margin-bottom:.8rem;}
+    .mating-features{list-style:none;display:flex;flex-direction:column;gap:.26rem;margin-bottom:.8rem;color:var(--navy);font-size:.74rem;}
     .mating-features li{font-size:.72rem;color:var(--text);display:flex;align-items:center;gap:.38rem;}
     .mating-features li::before{content:'♦';color:var(--gold);font-size:.56rem;}
     .btn-mating{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border:none;padding:.48rem 1.15rem;border-radius:16px;font-size:.74rem;cursor:pointer;font-family:var(--font-body);font-weight:600;}
@@ -355,9 +361,9 @@
     .tabs,.subtabs{min-width:0;max-width:100%;}
     .gallery-grid{min-width:0;}
     /* Fix section title alignment in gallery */
-    .gallery-wrap .sec-eyebrow,
-    .gallery-wrap .sec-title,
-    .gallery-wrap .sec-sub{padding-left:0;}
+    .gallery-wrap .sec-eyebrow{color:var(--blue);letter-spacing:.13em;}
+    .gallery-wrap .sec-title{color:var(--navy);font-weight:800;}
+    .gallery-wrap .sec-sub{color:var(--muted);}
 
 
 
@@ -402,6 +408,25 @@
     /* COVER PHOTO */
     .cover-wrap{width:100%;overflow:hidden;position:relative;background:var(--navy);line-height:0;}
     .cover-img{width:100%;height:500px;object-fit:cover;object-position:center center;display:block;}
+
+    /* MOMENTS & REVIEWS */
+    .moment-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.08);transition:transform .2s;}
+    .moment-card:hover{transform:translateY(-4px);}
+    .moments-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-top:2rem;}
+    .moment-card-img{height:260px;display:flex;align-items:center;justify-content:center;font-size:4rem;}
+    .moment-card-img img{width:100%;height:260px;object-fit:cover;display:block;}
+    .moment-card-body{padding:1rem 1.1rem 1.2rem;}
+    .moment-card-title{font-weight:700;font-size:.95rem;color:var(--navy);margin-bottom:.3rem;}
+    .moment-card-text{font-size:.82rem;color:var(--navy);line-height:1.5;}
+    .moment-card-breed{margin-top:.6rem;font-size:.72rem;color:var(--gold);font-weight:600;}
+    .review-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;margin-top:2rem;text-align:left;}
+    .review-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.3rem;box-shadow:0 2px 10px rgba(0,0,0,.05);}
+    .review-header{display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem;}
+    .review-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1rem;flex-shrink:0;}
+    .review-name{font-weight:700;font-size:.88rem;color:var(--navy);}
+    .review-stars{color:#fbbc04;font-size:.82rem;}
+    .review-text{font-size:.82rem;color:var(--navy);line-height:1.6;}
+    .review-date{font-size:.7rem;color:var(--muted);margin-top:.6rem;}
     @media(max-width:768px){.cover-img{height:220px;}}
     @media(max-width:768px){
       .main-content{margin-left:0;}
@@ -984,7 +1009,7 @@
   <div class="gallery-wrap" id="gallery">
     <div class="gallery-inner" style="box-sizing:border-box;">
       <div class="sec-eyebrow">Available Kittens</div>
-      <h2 class="sec-title">Find Your Perfect Companion</h2>
+      <div class="sec-title">Find Your Perfect Companion</div>
       <div class="sec-sub">Select kittens, add to cart and checkout together. All kittens are vaccinated and health-certified.</div>
       <div class="tabs">
         <button class="tab" id="tab-all" onclick="showTab('all',this)">🐾 All Breeds</button>
@@ -1503,7 +1528,7 @@
   <div id="mating">
     <div class="mating-inner">
       <div class="sec-eyebrow">Breeding Services</div>
-      <h2 class="sec-title">Mating Service 💕</h2>
+      <div class="sec-title">Mating Service 💕</div>
       <div class="sec-sub">Professional and responsible mating services. Health-tested studs available for all breeds.</div>
 
       <!-- MATING BREED TABS -->
@@ -1767,63 +1792,63 @@
   </div>
 
   <!-- CLIENT MOMENTS -->
-  <section class="section" id="clientmoments" style="background:var(--cream);padding:4rem 0;">
-    <div class="section-inner" style="max-width:1100px;margin:0 auto;padding:0 2rem;">
+  <div class="gallery-wrap" id="clientmoments">
+    <div class="gallery-inner">
       <div class="sec-eyebrow">Our Happy Families</div>
-      <h2 class="sec-title">Client Moments 📸</h2>
+      <div class="sec-title">Client Moments 📸</div>
       <div class="sec-sub">Precious moments of our kittens in their new forever homes. Share yours on WhatsApp!</div>
 
-      <div class="moments-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-top:2rem;">
+      <div class="moments-grid">
 
         <!-- MOMENT CARD 1 -->
-        <div class="moment-card" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.08);transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
-          <div style="position:relative;height:260px;background:linear-gradient(135deg,#dce8f5,#b8d4ed);display:flex;align-items:center;justify-content:center;font-size:4rem;">
+        <div class="moment-card">
+          <div class="moment-card-img" style="background:linear-gradient(135deg,#dce8f5,#b8d4ed);">
             📸
             <!-- Replace with: <img src="client1.jpg" style="width:100%;height:260px;object-fit:cover;"> -->
           </div>
-          <div style="padding:1rem 1.1rem 1.2rem;">
-            <div style="font-weight:700;font-size:.95rem;color:var(--navy);margin-bottom:.3rem;">Snowflake in Gulshan 🏠</div>
-            <div style="font-size:.82rem;color:var(--muted);line-height:1.5;">"Snowflake settled in perfectly! She sleeps on my lap every evening. Thank you Shinzu Family for this beautiful Ragdoll baby!" — <em>Nadia, Gulshan</em></div>
-            <div style="margin-top:.6rem;font-size:.72rem;color:var(--gold);font-weight:600;">🐱 Ragdoll · Bicolor</div>
+          <div class="moment-card-body">
+            <div class="moment-card-title">Snowflake in Gulshan 🏠</div>
+            <div class="moment-card-text">"Snowflake settled in perfectly! She sleeps on my lap every evening. Thank you Shinzu Family for this beautiful Ragdoll baby!" — <em>Nadia, Gulshan</em></div>
+            <div class="moment-card-breed">🐱 Ragdoll · Bicolor</div>
           </div>
         </div>
 
         <!-- MOMENT CARD 2 -->
-        <div class="moment-card" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.08);transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
-          <div style="position:relative;height:260px;background:linear-gradient(135deg,#f5dce8,#edb8d4);display:flex;align-items:center;justify-content:center;font-size:4rem;">
+        <div class="moment-card">
+          <div class="moment-card-img" style="background:linear-gradient(135deg,#f5dce8,#edb8d4);">
             📸
             <!-- Replace with: <img src="client2.jpg" style="width:100%;height:260px;object-fit:cover;"> -->
           </div>
-          <div style="padding:1rem 1.1rem 1.2rem;">
-            <div style="font-weight:700;font-size:.95rem;color:var(--navy);margin-bottom:.3rem;">Fluffy in Dhanmondi 🏠</div>
-            <div style="font-size:.82rem;color:var(--muted);line-height:1.5;">"Our Persian Fluffy is the fluffiest, most loving cat. My kids adore him! Shinzu Family took great care before handing him over." — <em>Rashid, Dhanmondi</em></div>
-            <div style="margin-top:.6rem;font-size:.72rem;color:var(--gold);font-weight:600;">🤍 Persian · Orange Eye</div>
+          <div class="moment-card-body">
+            <div class="moment-card-title">Fluffy in Dhanmondi 🏠</div>
+            <div class="moment-card-text">"Our Persian Fluffy is the fluffiest, most loving cat. My kids adore him! Shinzu Family took great care before handing him over." — <em>Rashid, Dhanmondi</em></div>
+            <div class="moment-card-breed">🤍 Persian · Orange Eye</div>
           </div>
         </div>
 
         <!-- MOMENT CARD 3 -->
-        <div class="moment-card" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.08);transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
-          <div style="position:relative;height:260px;background:linear-gradient(135deg,#e8f5dc,#d4edb8);display:flex;align-items:center;justify-content:center;font-size:4rem;">
+        <div class="moment-card">
+          <div class="moment-card-img" style="background:linear-gradient(135deg,#e8f5dc,#d4edb8);">
             📸
             <!-- Replace with: <img src="client3.jpg" style="width:100%;height:260px;object-fit:cover;"> -->
           </div>
-          <div style="padding:1rem 1.1rem 1.2rem;">
-            <div style="font-weight:700;font-size:.95rem;color:var(--navy);margin-bottom:.3rem;">Mochi in Uttara 🏠</div>
-            <div style="font-size:.82rem;color:var(--muted);line-height:1.5;">"Mochi is our little Scottish Fold princess. She's so round-faced and funny! Already the most popular member of the family." — <em>Farhan, Uttara</em></div>
-            <div style="margin-top:.6rem;font-size:.72rem;color:var(--gold);font-weight:600;">🐾 Scottish Fold · Tabby</div>
+          <div class="moment-card-body">
+            <div class="moment-card-title">Mochi in Uttara 🏠</div>
+            <div class="moment-card-text">"Mochi is our little Scottish Fold princess. She's so round-faced and funny! Already the most popular member of the family." — <em>Farhan, Uttara</em></div>
+            <div class="moment-card-breed">🐾 Scottish Fold · Tabby</div>
           </div>
         </div>
 
         <!-- MOMENT CARD 4 -->
-        <div class="moment-card" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.08);transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
-          <div style="position:relative;height:260px;background:linear-gradient(135deg,#f5f0dc,#ede8b8);display:flex;align-items:center;justify-content:center;font-size:4rem;">
+        <div class="moment-card">
+          <div class="moment-card-img" style="background:linear-gradient(135deg,#f5f0dc,#ede8b8);">
             📸
             <!-- Replace with: <img src="client4.jpg" style="width:100%;height:260px;object-fit:cover;"> -->
           </div>
-          <div style="padding:1rem 1.1rem 1.2rem;">
-            <div style="font-weight:700;font-size:.95rem;color:var(--navy);margin-bottom:.3rem;">Biscuit in Bashundhara 🏠</div>
-            <div style="font-size:.82rem;color:var(--muted);line-height:1.5;">"Biscuit is the best decision we ever made! He's playful, gentle and so soft. Shinzu Family was helpful throughout the whole process." — <em>Sumaiya, Bashundhara</em></div>
-            <div style="margin-top:.6rem;font-size:.72rem;color:var(--gold);font-weight:600;">🇬🇧 British · Longhair</div>
+          <div class="moment-card-body">
+            <div class="moment-card-title">Biscuit in Bashundhara 🏠</div>
+            <div class="moment-card-text">"Biscuit is the best decision we ever made! He's playful, gentle and so soft. Shinzu Family was helpful throughout the whole process." — <em>Sumaiya, Bashundhara</em></div>
+            <div class="moment-card-breed">🇬🇧 British · Longhair</div>
           </div>
         </div>
 
@@ -1837,10 +1862,10 @@
   </section>
 
   <!-- GOOGLE REVIEWS -->
-  <section class="section" id="reviews" style="background:#fff;padding:4rem 0;">
+  <div class="gallery-wrap" id="reviews">
     <div class="section-inner" style="max-width:900px;margin:0 auto;padding:0 2rem;text-align:center;">
       <div class="sec-eyebrow">What Our Clients Say</div>
-      <h2 class="sec-title">Google Reviews ⭐</h2>
+      <div class="sec-title">Google Reviews ⭐</div>
       <div class="sec-sub">See what our happy families say about us directly on Google Maps.</div>
 
       <!-- Google Maps Embed with Reviews -->
@@ -1853,9 +1878,9 @@
       </div>
 
       <div style="background:#f8f9ff;border:1.5px solid #e8eaf6;border-radius:14px;padding:1.8rem;margin-top:1.5rem;">
-        <div style="font-size:2rem;margin-bottom:.5rem;">⭐⭐⭐⭐⭐</div>
+        <div style="font-size:2rem;margin-bottom:.5rem;color:var(--navy);">⭐⭐⭐⭐⭐</div>
         <div style="font-size:1.4rem;font-weight:800;color:var(--navy);margin-bottom:.2rem;">5.0 / 5.0 &nbsp;·&nbsp; 20 Reviews</div>
-        <div style="font-size:.85rem;color:var(--muted);margin-bottom:1.2rem;">Read our real reviews from happy cat families on Google Maps. Leave your review too!</div>
+        <div style="font-size:.85rem;color:var(--navy);margin-bottom:1.2rem;">Read our real reviews from happy cat families on Google Maps. Leave your review too!</div>
         <button class="btn-mating" onclick="window.open('https://maps.app.goo.gl/ur427txpaTomjEuz8','_blank')" style="font-size:.92rem;">
           📍 View Reviews on Google Maps
         </button>
