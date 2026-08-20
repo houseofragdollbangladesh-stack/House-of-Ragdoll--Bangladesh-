@@ -224,6 +224,18 @@
     .sold-spec{font-size:.6rem;color:var(--navy);display:flex;gap:.22rem;line-height:1.35;}
     .sold-spec strong{color:var(--navy);font-weight:700;}
     .sold-home{font-size:.65rem;color:var(--gold-light);margin-top:.28rem;}
+
+    .sold-slides-wrap{position:relative;height:200px;overflow:hidden;}
+    .sold-slides{display:flex;height:200px;transition:transform .4s ease;}
+    .sold-slide{min-width:100%;height:200px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+    .sold-slide img{width:100%;height:200px;object-fit:cover;object-position:center top;display:block;}
+    .sold-slide-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.4);color:#fff;border:none;width:22px;height:22px;border-radius:50%;cursor:pointer;font-size:.75rem;display:flex;align-items:center;justify-content:center;z-index:10;}
+    .sold-slide-btn:hover{background:rgba(0,0,0,.65);}
+    .sold-sprev{left:5px;}.sold-snext{right:5px;}
+    .sold-sdots{position:absolute;bottom:5px;left:50%;transform:translateX(-50%);display:flex;gap:3px;z-index:5;}
+    .sold-sdot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:background .2s;}
+    .sold-sdot.active{background:#fff;}
+    .sold-breed-tag{display:inline-block;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;color:#fff;}
     .sold-note{text-align:center;margin-top:1.4rem;font-size:.78rem;color:rgba(255,255,255,.42);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:.75rem;}
     .mating-wrap{background:#fff;padding:3.5rem 0;}
     .mating-inner{max-width:960px;margin:0 auto;padding:0 2rem;}
@@ -1458,68 +1470,107 @@
         <button class="tab" onclick="showSoldTab('scottish',this)">🐾 Scottish Fold</button>
         <button class="tab" onclick="showSoldTab('british',this)">🇬🇧 British Shorthair</button>
       </div>
+
+      <!-- RAGDOLL -->
       <div class="sold-panel active" id="spanel-ragdoll">
         <div class="sold-grid">
-          
-          
-          
-        
           <div class="sold-card">
-            <div class="sold-img ragdoll-bg">
-              <img src="leo1.jpg" alt="Leo" onerror="this.parentElement.innerHTML='🐱'" style="width:100%;height:155px;object-fit:cover;object-position:center top;display:block;">
+            <div class="sold-slides-wrap">
+              <div class="sold-slides" id="sslides-leo"><div class="sold-slide"><img src="leo1.jpg" alt="Leo" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img src="leo2.jpg" alt="Leo" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img src="leo3.jpg" alt="Leo" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+              <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('leo',-1)">&#8249;</button>
+              <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('leo',1)">&#8250;</button>
+              <div class="sold-sdots" id="ssdots-leo"><div class="sold-sdot  active" onclick="soldSlideIdx['leo']=0;updateSoldSlide('leo',3)"></div><div class="sold-sdot" onclick="soldSlideIdx['leo']=1;updateSoldSlide('leo',3)"></div><div class="sold-sdot" onclick="soldSlideIdx['leo']=2;updateSoldSlide('leo',3)"></div></div>
+              <div class="sold-badge">Adopted ✓</div>
             </div>
-            <div class="sold-badge">Adopted ✓</div>
             <div class="sold-info">
+              <div class="sold-breed-tag" style="background:#1d4ed8;">🐱 Ragdoll</div>
               <div class="sold-name">Leo</div>
-              <div class="sold-specs">
-                <div class="sold-spec">🎨 <span><strong>Pattern:</strong> Van</span></div>
-                <div class="sold-spec">🎀 <span><strong>Color:</strong> Blue Mitted White</span></div>
-                <div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div>
-                <div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div>
-                <div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
-                <div class="sold-spec">💰 <span><strong>Price:</strong> ৳1,40,000</span></div>
-              </div>
+              <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Van</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Blue Mitted White</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong>Price:</strong> ৳1,40,000</span></div></div>
               <div class="sold-home">🏠 New home: Baridhara DOHS</div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- PERSIAN -->
       <div class="sold-panel active" id="spanel-persian">
         <div class="sold-grid">
-          
-          
-        <div class="sold-card"><div class="sold-img" style="padding:0;overflow:hidden;border-radius:8px 8px 0 0;"><img src="Snow1.jpg" alt="Snow" style="width:100%;height:160px;object-fit:cover;object-position:center top;display:block;"></div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div style="display:inline-block;background:#be185d;color:#fff;font-size:.6rem;font-weight:800;padding:.15rem .5rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.25rem;">🤍 Persian</div><br><div class="sold-name">Snow</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Single Color</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange Eye</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> White</span></div></div><div class="sold-home">🏡 New home: Savar, Dhaka</div></div></div>
-                          <div class="sold-card">
-            <div class="sold-img persian-bg"><img src="Ash1.jpg" alt="Ash" onerror="this.style.display='none';this.parentElement.innerHTML='🤍';"></div>
-            <div class="sold-badge">Adopted ✓</div>
+          <div class="sold-card">
+            <div class="sold-slides-wrap">
+              <div class="sold-slides" id="sslides-snow"><div class="sold-slide"><img src="Snow1.jpg" alt="Snow" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img src="Snow2.jpg" alt="Snow" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+              <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('snow',-1)">&#8249;</button>
+              <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('snow',1)">&#8250;</button>
+              <div class="sold-sdots" id="ssdots-snow"><div class="sold-sdot  active" onclick="soldSlideIdx['snow']=0;updateSoldSlide('snow',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['snow']=1;updateSoldSlide('snow',2)"></div></div>
+              <div class="sold-badge">Adopted ✓</div>
+            </div>
             <div class="sold-info">
+              <div class="sold-breed-tag" style="background:#be185d;">🤍 Persian</div>
+              <div class="sold-name">Snow</div>
+              <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Single Color</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> White</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong>Price:</strong> ৳8,000</span></div></div>
+              <div class="sold-home">🏠 New home: Savar, Dhaka</div>
+            </div>
+          </div>
+          <div class="sold-card">
+            <div class="sold-slides-wrap">
+              <div class="sold-slides" id="sslides-ash"><div class="sold-slide"><img src="Ash1.jpg" alt="Ash" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img src="Ash2.jpg" alt="Ash" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+              <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('ash',-1)">&#8249;</button>
+              <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('ash',1)">&#8250;</button>
+              <div class="sold-sdots" id="ssdots-ash"><div class="sold-sdot  active" onclick="soldSlideIdx['ash']=0;updateSoldSlide('ash',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['ash']=1;updateSoldSlide('ash',2)"></div></div>
+              <div class="sold-badge">Adopted ✓</div>
+            </div>
+            <div class="sold-info">
+              <div class="sold-breed-tag" style="background:#be185d;">🤍 Persian</div>
               <div class="sold-name">Ash</div>
-              <div class="sold-specs">
-                <div class="sold-spec">🎨 <span><strong>Pattern:</strong> Torte</span></div>
-                <div class="sold-spec">🎀 <span><strong>Color:</strong> Multi Color</span></div>
-                <div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange</span></div>
-                <div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div>
-                <div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
-                <div class="sold-spec">💰 <span><strong>Price:</strong> ৳8,000</span></div>
-              </div>
+              <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Torte</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Multi Color</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong>Price:</strong> ৳8,000</span></div></div>
               <div class="sold-home">🏠 New home: Savar, Dhaka</div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- SCOTTISH -->
       <div class="sold-panel active" id="spanel-scottish">
         <div class="sold-grid">
-          
-          
-        <div class="sold-card"><div class="sold-img scottish-bg"><img src="Sinoy1.jpg" alt="Sinoy" onerror="this.style.display='none';this.parentElement.innerHTML='🐾';"></div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Sinoy</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Tabby</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Bi Color Ash</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong>Price:</strong> ৳45,000</span></div></div><div class="sold-home">🏠 New home: Uttara, Dhaka</div></div></div>
-                          <div class="sold-card"><div class="sold-img scottish-bg"><img src="Kufi1.jpg" alt="Kufi" onerror="this.style.display='none';this.parentElement.innerHTML='🐾';"></div><div class="sold-badge">Adopted ✓</div><div class="sold-info"><div class="sold-name">Kufi</div><div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Calico</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Multi Color</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong>Price:</strong> ৳25,000</span></div></div><div class="sold-home">🏠 New home: Uttara, Dhaka</div></div></div>
+          <div class="sold-card">
+            <div class="sold-slides-wrap">
+              <div class="sold-slides" id="sslides-sinoy"><div class="sold-slide"><img src="Sinoy1.jpg" alt="Sinoy" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img src="Sinoy2.jpg" alt="Sinoy" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+              <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('sinoy',-1)">&#8249;</button>
+              <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('sinoy',1)">&#8250;</button>
+              <div class="sold-sdots" id="ssdots-sinoy"><div class="sold-sdot  active" onclick="soldSlideIdx['sinoy']=0;updateSoldSlide('sinoy',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['sinoy']=1;updateSoldSlide('sinoy',2)"></div></div>
+              <div class="sold-badge">Adopted ✓</div>
+            </div>
+            <div class="sold-info">
+              <div class="sold-breed-tag" style="background:#6d28d9;">🐾 Scottish Fold</div>
+              <div class="sold-name">Sinoy</div>
+              <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Tabby</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Bi Color Ash</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong>Price:</strong> ৳45,000</span></div></div>
+              <div class="sold-home">🏠 New home: Uttara, Dhaka</div>
+            </div>
+          </div>
+          <div class="sold-card">
+            <div class="sold-slides-wrap">
+              <div class="sold-slides" id="sslides-kufi"><div class="sold-slide"><img src="Kufi1.jpg" alt="Kufi" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img src="Kufi2.jpg" alt="Kufi" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+              <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('kufi',-1)">&#8249;</button>
+              <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('kufi',1)">&#8250;</button>
+              <div class="sold-sdots" id="ssdots-kufi"><div class="sold-sdot  active" onclick="soldSlideIdx['kufi']=0;updateSoldSlide('kufi',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['kufi']=1;updateSoldSlide('kufi',2)"></div></div>
+              <div class="sold-badge">Adopted ✓</div>
+            </div>
+            <div class="sold-info">
+              <div class="sold-breed-tag" style="background:#6d28d9;">🐾 Scottish Straight</div>
+              <div class="sold-name">Kufi</div>
+              <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Calico</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Multi Color</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong>Price:</strong> ৳25,000</span></div></div>
+              <div class="sold-home">🏠 New home: Uttara, Dhaka</div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- BRITISH -->
       <div class="sold-panel active" id="spanel-british">
         <div class="sold-grid">
-          
+          <div class="sold-card" style="display:flex;align-items:center;justify-content:center;min-height:200px;opacity:.5;font-size:.82rem;color:var(--muted);">No adoptions yet</div>
         </div>
       </div>
+
       <div class="sold-note">💬 Want to be adopted? Contact us!</div>
 
   <div id="mating">
@@ -2160,6 +2211,23 @@
     goTo('mating');
   }
   function showDollTabAndGo(breed){showDollTab(breed,document.getElementById('dtab-'+breed));goTo('ourdolls');}
+
+  // SOLD SLIDESHOW
+  var soldSlideIdx = {};
+  function changeSoldSlide(id,dir){
+    if(!soldSlideIdx[id]) soldSlideIdx[id]=0;
+    var s=document.getElementById('sslides-'+id);
+    if(!s) return;
+    soldSlideIdx[id]=(soldSlideIdx[id]+dir+s.children.length)%s.children.length;
+    updateSoldSlide(id,s.children.length);
+  }
+  function updateSoldSlide(id,total){
+    var s=document.getElementById('sslides-'+id);
+    if(!s) return;
+    s.style.transform='translateX(-'+(soldSlideIdx[id]*100)+'%)';
+    var dots=document.getElementById('ssdots-'+id);
+    if(dots) dots.querySelectorAll('.sold-sdot').forEach(function(d,i){d.classList.toggle('active',i===soldSlideIdx[id]);});
+  }
   function showSoldTab(breed,btn){
     document.querySelectorAll('.sold-tabs .tab').forEach(function(t){t.classList.remove('active');});
     if(btn) btn.classList.add('active');
