@@ -36,8 +36,8 @@
     }
     body{font-family:var(--font-body);background:var(--cream);color:var(--text);}
     a{text-decoration:none;color:inherit;}
-    .main-content{margin-left:var(--sidebar);transition:margin-left .3s;}
-    .main-content.sb-hidden{margin-left:0;}
+    .main-content{margin-left:var(--sidebar);transition:margin-left .3s;width:calc(100% - var(--sidebar));box-sizing:border-box;}
+    .main-content.sb-hidden{margin-left:0;width:100%;}
     .sidebar{width:var(--sidebar);position:fixed;top:0;left:0;height:100vh;background:var(--navy);color:#fff;overflow-y:auto;z-index:300;transition:transform .3s;display:flex;flex-direction:column;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent;}
     .sidebar.hidden{transform:translateX(-100%);}
     .sb-head{padding:1rem 1.1rem .85rem;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;}
@@ -449,7 +449,7 @@
     .review-date{font-size:.7rem;color:var(--muted);margin-top:.6rem;}
     @media(max-width:768px){.cover-img{height:220px;}}
     @media(max-width:768px){
-      .main-content{margin-left:0;}
+      .main-content{margin-left:0;width:100%;}
       .sb-toggle-btn{left:10px;}
       .sb-toggle-btn.shifted{left:calc(var(--sidebar) + 7px);}
       .hero h1{font-size:1.72rem;}
@@ -1567,7 +1567,7 @@
     </div><!-- end sold-inner -->
   </div><!-- end sold-wrap -->
 
-  <div id="mating" style="scroll-margin-top:70px;"><div id="service-mating">
+  <div id="mating" data-service-id="service-mating" style="scroll-margin-top:70px;">
     <div class="mating-inner">
       <div class="sec-eyebrow">Breeding Services</div>
       <div class="sec-title">Mating Service 💕</div>
@@ -1701,101 +1701,110 @@
         <!-- British -->        </div>
       </div>
 
-    </div>
-  </div></div><!-- end service-mating / mating -->
+  </div><!-- end mating -->
 
   <!-- SERVICES -->
-  <div class="services-wrap" id="services">
-    <div class="services-inner">
+  <div id="services" style="background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:3.5rem 0;">
+    <div class="mating-inner">
       <div class="sec-eyebrow">What We Offer</div>
       <div class="sec-title">Cat Services</div>
       <div class="sec-sub">Professional care for your beloved feline companions.</div>
-      <div class="services-grid">
-        <div class="svc-card" id="service-grooming">
-          <div class="svc-icon">✂️</div><div class="svc-title">Cat Grooming</div>
-          <div class="svc-desc">Full professional grooming for all breeds. Your cat will look beautiful and feel comfortable.</div>
-          <ul class="svc-features"><li>Full body bath &amp; blow dry</li><li>Coat brushing &amp; dematting</li><li>Nail trimming &amp; ear cleaning</li><li>Eye cleaning &amp; sanitary trim</li><li>All breeds welcome</li></ul>
-          <button class="btn-svc" onclick="quickOrder('Cat Grooming Service','0','service')">Book Grooming</button>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin-top:1.55rem;">
+        <div class="doll-card" id="service-grooming" style="border-color:var(--blue);">
+          <div style="background:linear-gradient(135deg,#dce8f5,#b8d4ed);height:120px;display:flex;align-items:center;justify-content:center;font-size:3rem;">✂️</div>
+          <div class="doll-info" style="padding:1rem 1.1rem 1.2rem;">
+            <div class="doll-breed-tag" style="display:inline-block;background:var(--blue);color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.5rem;">🐾 Service</div>
+            <div class="doll-name">Cat Grooming</div>
+            <div class="doll-role" style="margin-bottom:.6rem;">Full professional grooming for all breeds.</div>
+            <div class="doll-specs">
+              <div class="dspec">✓ <span>Full body bath &amp; blow dry</span></div>
+              <div class="dspec">✓ <span>Coat brushing &amp; dematting</span></div>
+              <div class="dspec">✓ <span>Nail trimming &amp; ear cleaning</span></div>
+              <div class="dspec">✓ <span>Eye cleaning &amp; sanitary trim</span></div>
+              <div class="dspec">✓ <span>All breeds welcome</span></div>
+            </div>
+            <button class="btn-doll-wa" style="margin-top:.8rem;width:100%;" onclick="quickOrder('Cat Grooming Service','0','service')">Book Grooming ✂️</button>
+          </div>
         </div>
-        <div class="svc-card" id="service-foster">
-          <div class="svc-icon">🏠</div><div class="svc-title">Cat Foster Care</div>
-          <div class="svc-desc">Going on vacation? We provide a safe, loving home for your cat while you're away.</div>
-          <ul class="svc-features"><li>Home-based foster environment</li><li>Daily feeding &amp; fresh water</li><li>Playtime &amp; socialization</li><li>Daily photo updates sent to you</li><li>Experienced cat handlers</li></ul>
-          <button class="btn-svc" onclick="quickOrder('Cat Foster Care Service','0','service')">Book Foster Care</button>
+        <div class="doll-card" id="service-foster" style="border-color:var(--blue);">
+          <div style="background:linear-gradient(135deg,#dcf5e8,#b8edc8);height:120px;display:flex;align-items:center;justify-content:center;font-size:3rem;">🏠</div>
+          <div class="doll-info" style="padding:1rem 1.1rem 1.2rem;">
+            <div class="doll-breed-tag" style="display:inline-block;background:var(--blue);color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.5rem;">🐾 Service</div>
+            <div class="doll-name">Cat Foster Care</div>
+            <div class="doll-role" style="margin-bottom:.6rem;">Going on vacation? We provide a safe, loving home.</div>
+            <div class="doll-specs">
+              <div class="dspec">✓ <span>Home-based foster environment</span></div>
+              <div class="dspec">✓ <span>Daily feeding &amp; fresh water</span></div>
+              <div class="dspec">✓ <span>Playtime &amp; socialization</span></div>
+              <div class="dspec">✓ <span>Daily photo updates sent to you</span></div>
+              <div class="dspec">✓ <span>Experienced cat handlers</span></div>
+            </div>
+            <button class="btn-doll-wa" style="margin-top:.8rem;width:100%;" onclick="quickOrder('Cat Foster Care Service','0','service')">Book Foster Care 🏠</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- CLIENT MOMENTS -->
-  <div class="gallery-wrap" id="clientmoments">
-    <div class="gallery-inner">
-      <div class="sec-eyebrow">Our Happy Families</div>
+  <div id="clientmoments" style="background:var(--warm);padding:3.5rem 0;">
+    <div class="mating-inner">
+      <div class="sec-eyebrow" style="color:var(--blue);">Our Happy Families</div>
       <div class="sec-title">Client Moments 📸</div>
       <div class="sec-sub">Precious moments of our kittens in their new forever homes. Share yours on WhatsApp!</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin-top:1.55rem;">
 
-      <div class="moments-grid">
-
-        <!-- MOMENT CARD 1 -->
-        <div class="moment-card">
-          <div class="moment-card-img" style="background:linear-gradient(135deg,#dce8f5,#b8d4ed);">
-            📸
-            <!-- Replace with: <img src="client1.jpg" style="width:100%;height:260px;object-fit:cover;"> -->
+        <div class="doll-card">
+          <div style="background:linear-gradient(135deg,#dce8f5,#b8d4ed);height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;">
+            <img src="client1.jpg" style="width:100%;height:200px;object-fit:cover;display:block;" onerror="this.style.display='none'">
           </div>
-          <div class="moment-card-body">
-            <div class="moment-card-title">Snowflake in Gulshan 🏠</div>
-            <div class="moment-card-text">"Snowflake settled in perfectly! She sleeps on my lap every evening. Thank you Shinzu Family for this beautiful Ragdoll baby!" — <em>Nadia, Gulshan</em></div>
-            <div class="moment-card-breed">🐱 Ragdoll · Bicolor</div>
+          <div class="doll-info" style="padding:1rem 1.1rem 1.2rem;">
+            <div class="doll-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.5rem;">🐱 Ragdoll</div>
+            <div class="doll-name" style="font-size:1rem;">Snowflake in Gulshan 🏠</div>
+            <div class="doll-role" style="font-size:.75rem;margin-top:.3rem;line-height:1.5;">"Snowflake settled in perfectly! She sleeps on my lap every evening." — <em>Nadia, Gulshan</em></div>
           </div>
         </div>
 
-        <!-- MOMENT CARD 2 -->
-        <div class="moment-card">
-          <div class="moment-card-img" style="background:linear-gradient(135deg,#f5dce8,#edb8d4);">
-            📸
-            <!-- Replace with: <img src="client2.jpg" style="width:100%;height:260px;object-fit:cover;"> -->
+        <div class="doll-card">
+          <div style="background:linear-gradient(135deg,#f5dce8,#edb8d4);height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;">
+            <img src="client2.jpg" style="width:100%;height:200px;object-fit:cover;display:block;" onerror="this.style.display='none'">
           </div>
-          <div class="moment-card-body">
-            <div class="moment-card-title">Fluffy in Dhanmondi 🏠</div>
-            <div class="moment-card-text">"Our Persian Fluffy is the fluffiest, most loving cat. My kids adore him! Shinzu Family took great care before handing him over." — <em>Rashid, Dhanmondi</em></div>
-            <div class="moment-card-breed">🤍 Persian · Orange Eye</div>
+          <div class="doll-info" style="padding:1rem 1.1rem 1.2rem;">
+            <div class="doll-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.5rem;">🤍 Persian</div>
+            <div class="doll-name" style="font-size:1rem;">Fluffy in Dhanmondi 🏠</div>
+            <div class="doll-role" style="font-size:.75rem;margin-top:.3rem;line-height:1.5;">"Our Persian Fluffy is the most loving cat. My kids adore him!" — <em>Rashid, Dhanmondi</em></div>
           </div>
         </div>
 
-        <!-- MOMENT CARD 3 -->
-        <div class="moment-card">
-          <div class="moment-card-img" style="background:linear-gradient(135deg,#e8f5dc,#d4edb8);">
-            📸
-            <!-- Replace with: <img src="client3.jpg" style="width:100%;height:260px;object-fit:cover;"> -->
+        <div class="doll-card">
+          <div style="background:linear-gradient(135deg,#e8f5dc,#d4edb8);height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;">
+            <img src="client3.jpg" style="width:100%;height:200px;object-fit:cover;display:block;" onerror="this.style.display='none'">
           </div>
-          <div class="moment-card-body">
-            <div class="moment-card-title">Mochi in Uttara 🏠</div>
-            <div class="moment-card-text">"Mochi is our little Scottish Fold princess. She's so round-faced and funny! Already the most popular member of the family." — <em>Farhan, Uttara</em></div>
-            <div class="moment-card-breed">🐾 Scottish Fold · Tabby</div>
+          <div class="doll-info" style="padding:1rem 1.1rem 1.2rem;">
+            <div class="doll-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.5rem;">🐾 Scottish Fold</div>
+            <div class="doll-name" style="font-size:1rem;">Mochi in Uttara 🏠</div>
+            <div class="doll-role" style="font-size:.75rem;margin-top:.3rem;line-height:1.5;">"Mochi is our little Scottish Fold princess. So round-faced and funny!" — <em>Farhan, Uttara</em></div>
           </div>
         </div>
 
-        <!-- MOMENT CARD 4 -->
-        <div class="moment-card">
-          <div class="moment-card-img" style="background:linear-gradient(135deg,#f5f0dc,#ede8b8);">
-            📸
-            <!-- Replace with: <img src="client4.jpg" style="width:100%;height:260px;object-fit:cover;"> -->
+        <div class="doll-card">
+          <div style="background:linear-gradient(135deg,#f5f0dc,#ede8b8);height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;">
+            <img src="client4.jpg" style="width:100%;height:200px;object-fit:cover;display:block;" onerror="this.style.display='none'">
           </div>
-          <div class="moment-card-body">
-            <div class="moment-card-title">Biscuit in Bashundhara 🏠</div>
-            <div class="moment-card-text">"Biscuit is the best decision we ever made! He's playful, gentle and so soft. Shinzu Family was helpful throughout the whole process." — <em>Sumaiya, Bashundhara</em></div>
-            <div class="moment-card-breed">🇬🇧 British · Longhair</div>
+          <div class="doll-info" style="padding:1rem 1.1rem 1.2rem;">
+            <div class="doll-breed-tag" style="display:inline-block;background:#047857;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.5rem;">🇬🇧 British</div>
+            <div class="doll-name" style="font-size:1rem;">Biscuit in Bashundhara 🏠</div>
+            <div class="doll-role" style="font-size:.75rem;margin-top:.3rem;line-height:1.5;">"Biscuit is the best decision we ever made! Playful, gentle and so soft." — <em>Sumaiya, Bashundhara</em></div>
           </div>
         </div>
 
       </div>
-
       <div style="text-align:center;margin-top:2rem;">
         <div style="font-size:.88rem;color:var(--muted);margin-bottom:.8rem;">Have a photo of your Shinzu kitty? Share it with us!</div>
-        <button class="btn-mating" onclick="window.open('https://wa.me/8801797822108?text=Hi! I want to share a photo of my Shinzu Family cat! 📸','_blank')" style="font-size:.9rem;">Share Your Moment 📸</button>
+        <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I want to share a photo of my Shinzu Family cat! 📸','_blank')" style="font-size:.9rem;padding:.6rem 1.4rem;">Share Your Moment 📸</button>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- GOOGLE REVIEWS -->
   <div class="gallery-wrap" id="reviews">
@@ -1822,7 +1831,7 @@
         </button>
       </div>
     </div>
-  </section>
+  </div><!-- end reviews -->
 
     <!-- ABOUT -->
   <section class="section" id="about">
@@ -1856,7 +1865,7 @@
     <p>© 2026 <span>Shinzu Family — House of Ragdoll, Persian &amp; Scottish Fold</span> · Chandrima Model Town, Dhaka 1207 ·
       <a href="https://wa.me/8801797822108">WhatsApp</a> · <a href="https://www.facebook.com/profile.php?id=61592266154793">Facebook</a> · <a href="https://www.youtube.com/@HouseofRagdollBangladesh">YouTube</a></p>
   </footer>
-</div>
+</div><!-- end mainContent -->
 <div class="float-cart" id="floatCart"><button class="float-cart-btn" onclick="openCart()">🛒 View Cart (<span id="floatCount">0</span>)</button></div>
 <div class="cart-panel" id="cartPanel">
   <div class="cart-header"><h3>🛒 Your Cart</h3><button class="cart-close" onclick="closeCart()">✕</button></div>
@@ -1960,8 +1969,6 @@
   </div>
 </div><!-- end login modal -->
 
-</div><!-- end mainContent -->
-
 <script>
   // USER SESSION - initialize first
   var currentUser = null;
@@ -1979,7 +1986,7 @@
     }, 400);
   }
   var svcOn={grooming:true,foster:true,mating:true};
-  function filterService(s){svcOn[s]=!svcOn[s];document.getElementById('tog-'+s).classList.toggle('on',svcOn[s]);document.getElementById('sb-'+s).classList.toggle('active',svcOn[s]);var el=document.getElementById('service-'+s);if(el)el.style.display=svcOn[s]?'':'none';}
+  function filterService(s){svcOn[s]=!svcOn[s];document.getElementById('tog-'+s).classList.toggle('on',svcOn[s]);document.getElementById('sb-'+s).classList.toggle('active',svcOn[s]);var elId=s==='mating'?'mating':'service-'+s;var el=document.getElementById(elId);if(el)el.style.display=svcOn[s]?'':'none';}
   function showTab(breed,btn){
     document.querySelectorAll('#gallery .tab').forEach(function(t){t.classList.remove('active');});
     if(btn)btn.classList.add('active');
