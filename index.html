@@ -152,7 +152,7 @@
     .spec-item{font-size:.61rem;color:var(--navy);display:flex;align-items:flex-start;gap:.25rem;line-height:1.35;}
     .spec-item strong{color:var(--text);}
     .cat-price{font-size:.74rem;color:var(--muted);margin:.38rem 0 .38rem;}
-    .cat-price strong{color:var(--gold);font-size:.84rem;}
+    .cat-price strong{color:#b71c1c;font-size:.84rem;}
     .badge-sold{background:linear-gradient(135deg,#e53e3e,#c53030);color:#fff;padding:.2rem .6rem;border-radius:8px;font-size:.64rem;font-weight:700;}
     .badge-avail{background:#e8f5e9;color:#2e7d32;font-size:.6rem;padding:.12rem .44rem;border-radius:8px;font-weight:700;}
     .badge-soon{background:#e3f2fd;color:#1565c0;font-size:.6rem;padding:.12rem .44rem;border-radius:8px;font-weight:700;}
@@ -222,7 +222,7 @@
     .sold-specs{display:grid;grid-template-columns:1fr 1fr;gap:.16rem;margin:.3rem 0;}
     .sold-spec{font-size:.6rem;color:var(--navy);display:flex;gap:.22rem;line-height:1.35;}
     .sold-spec strong{color:var(--navy);font-weight:700;}
-    .sold-home{font-size:.65rem;color:var(--gold-light);margin-top:.28rem;}
+    .sold-home{font-size:.65rem;color:#0277bd;margin-top:.28rem;}
 
     .sold-slides-wrap{position:relative;height:200px;overflow:hidden;}
     .sold-slides{display:flex;height:200px;transition:transform .4s ease;}
@@ -310,7 +310,7 @@
     .cart-item{display:flex;gap:8px;padding:.58rem 0;border-bottom:1px solid var(--border);align-items:center;}
     .cart-item-info{flex:1;}
     .cart-item-name{font-size:.78rem;font-weight:600;color:var(--navy);}
-    .cart-item-price{font-size:.71rem;color:var(--gold);}
+    .cart-item-price{font-size:.71rem;color:#b71c1c;}
     .cart-item-type{font-size:.63rem;color:var(--blue);margin-top:1px;}
     .cart-item-remove{background:none;border:none;color:var(--muted);cursor:pointer;font-size:.83rem;}
     .cart-empty{text-align:center;padding:2rem;color:var(--muted);font-size:.78rem;}
@@ -731,6 +731,11 @@
     <div class="sb-link" onclick="filterBreed('persian')">🤍 Persian</div>
     <div class="sb-link" onclick="filterBreed('scottish')">🐾 Scottish Fold</div>
     <div class="sb-link" onclick="filterBreed('british')">🇬🇧 British L/S Hair</div>
+    <div class="sb-sec-title" style="font-size:.68rem;margin-top:.5rem;color:var(--gold);">BY STATUS</div>
+    <div class="sb-link" onclick="filterStatus('all')">🐾 All Kittens</div>
+    <div class="sb-link" onclick="filterStatus('available')" style="color:#4ade80;">✅ Available</div>
+    <div class="sb-link" onclick="filterStatus('booked')" style="color:#fb923c;">🟠 Booked</div>
+    <div class="sb-link" onclick="goTo('happyhomes')" style="color:#60a5fa;">🏡 Happy Homes</div>
 
     <!-- Price Filter -->
     <div class="sb-sec-title" style="font-size:.68rem;margin-top:.75rem;color:var(--gold);">BY PRICE</div>
@@ -792,12 +797,13 @@
     <p class="hero-sub">House of Ragdoll, Persian &amp; Scottish Fold</p>
     <div class="hero-loc">📍 Chandrima Model Town, Dhaka 1207</div>
     <div class="hero-btns">
-      <button class="btn-gold" onclick="goTo('gallery')">Meet Our Kittens</button>
+      <button class="btn-gold" onclick="filterStatus('available')">Adopt Available Kittens</button>
       <button class="btn-ghost" onclick="goTo('ourdolls')">Our Parent Cats</button>
     </div>
     <div class="breed-pills">
-      <span class="breed-pill">🐱 Ragdoll</span><span class="breed-pill">🤍 Persian</span>
-      <span class="breed-pill">🐾 Scottish Fold</span><span class="breed-pill">🇬🇧 British Shorthair</span>
+      <span class="breed-pill" onclick="filterStatus('available')" style="cursor:pointer;background:#16a34a;color:#fff;border-color:#16a34a;">✅ Available</span>
+      <span class="breed-pill" onclick="filterStatus('booked')" style="cursor:pointer;background:#e65100;color:#fff;border-color:#e65100;">🟠 Booked</span>
+      <span class="breed-pill" onclick="goTo('happyhomes')" style="cursor:pointer;background:#1a237e;color:#fff;border-color:#1a237e;">🏡 Happy Homes</span>
     </div>
   </div>
   <div class="stats">
@@ -840,7 +846,7 @@
               <div class="doll-dots" id="ddots-vutum"><div class="ddot active" onclick="goDSlide('vutum',0)"></div><div class="ddot" onclick="goDSlide('vutum',1)"></div><div class="ddot" onclick="goDSlide('vutum',2)"></div></div>
               <div class="doll-crown">👑 Parent Queen</div>
             </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Vutum</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Vutum</div>
               <div class="doll-role">Ragdoll · Bicolor · Female</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
@@ -868,7 +874,7 @@
               <div class="doll-dots" id="ddots-sondesh"><div class="ddot active" onclick="goDSlide('sondesh',0)"></div><div class="ddot" onclick="goDSlide('sondesh',1)"></div><div class="ddot" onclick="goDSlide('sondesh',2)"></div></div>
               <div class="doll-crown">👑 Parent King</div>
             </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Sondesh</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Sondesh</div>
               <div class="doll-role">Ragdoll · Bicolor · Male</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
@@ -898,7 +904,7 @@
               </div>
               <div class="doll-crown">👑 Parent King</div>
             </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Rango</div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Rango</div>
               <div class="doll-role">Ragdoll · Colorpoint · Male</div>
               <div class="doll-specs">
                 <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
@@ -1128,7 +1134,7 @@
               <div class="slide-count" id="count-kb">1/4</div>
             </div>
             <div class="cat-info">
-              <div class="cat-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🐱 Ragdoll</div><br><div class="cat-name">Mithai</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🐱 Ragdoll</div><br><div class="cat-name">Mithai</div>
               <div class="cat-parent">👑 Father: Sondesh (Bicolor) · Mother: Vutum (Bicolor)</div>
               <div class="cat-detail">Ragdoll · Seal Mitted · Female</div>
               <div class="cat-specs">
@@ -1156,7 +1162,7 @@
               <div class="slide-dots" id="dots-kc"><div class="dot active" onclick="goSlide('kc',0)"></div><div class="dot" onclick="goSlide('kc',1)"></div><div class="dot" onclick="goSlide('kc',2)"></div><div class="dot" onclick="goSlide('kc',3)"></div></div>
               <div class="slide-count" id="count-kc">1/4</div></div>
             <div class="cat-info">
-              <div class="cat-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🐱 Ragdoll</div><br><div class="cat-name">Golla</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🐱 Ragdoll</div><br><div class="cat-name">Golla</div>
               <div class="cat-parent">👑 Father: Sondesh (Bicolor) · Mother: Vutum (Bicolor)</div>
               <div class="cat-detail">Ragdoll · Van · Male</div>
               <div class="cat-specs">
@@ -1186,7 +1192,7 @@
               <div class="slide-count" id="count-kd">1/4</div>
             </div>
             <div class="cat-info">
-              <div class="cat-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🐱 Ragdoll</div><br><div class="cat-name">Laddu</div>
+              <div class="cat-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🐱 Ragdoll</div><br><div class="cat-name">Laddu</div>
               <div class="cat-parent">👑 Father: Sondesh (Bicolor) · Mother: Vutum (Bicolor)</div>
               <div class="cat-detail">Ragdoll · Seal Mitted · Male</div>
               <div class="cat-specs">
@@ -1455,9 +1461,9 @@
             <div class="sold-badge">Adopted ✓</div>
           </div>
           <div class="sold-info">
-            <div class="sold-breed-tag" style="background:#1d4ed8;">🐱 Ragdoll</div>
+            <div class="sold-breed-tag" style="background:#1a237e;">🐱 Ragdoll</div>
             <div class="sold-name">Makhon</div>
-            <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Seal Point (Colorpoint)</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Chocolate</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong>Price:</strong> ৳1,60,000 (Sold)</span></div></div>
+            <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Seal Point (Colorpoint)</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Chocolate</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong style="color:#b71c1c;">Price:</strong> <span style="color:#b71c1c;font-weight:700;">৳1,60,000 (Sold)</span></span></div></div>
             <div class="sold-home">🏠 New home: Gulshan 2</div>
           </div>
         </div>
@@ -1472,9 +1478,9 @@
             <div class="sold-badge">Adopted ✓</div>
           </div>
           <div class="sold-info">
-            <div class="sold-breed-tag" style="background:#1d4ed8;">🐱 Ragdoll</div>
+            <div class="sold-breed-tag" style="background:#1a237e;">🐱 Ragdoll</div>
             <div class="sold-name">Leo</div>
-            <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Van</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Blue Mitted White</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong>Price:</strong> ৳1,60,000 (Sold)</span></div></div>
+            <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Van</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Blue Mitted White</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong style="color:#b71c1c;">Price:</strong> <span style="color:#b71c1c;font-weight:700;">৳1,60,000 (Sold)</span></span></div></div>
             <div class="sold-home">🏠 New home: Baridhara DOHS</div>
           </div>
         </div>
@@ -1491,7 +1497,7 @@
           <div class="sold-info">
             <div class="sold-breed-tag" style="background:#be185d;">🤍 Persian</div>
             <div class="sold-name">Snow</div>
-            <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Single Color</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> White</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong>Price:</strong> ৳8,000 (Sold)</span></div></div>
+            <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Single Color</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> White</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong style="color:#b71c1c;">Price:</strong> <span style="color:#b71c1c;font-weight:700;">৳8,000 (Sold)</span></span></div></div>
             <div class="sold-home">🏠 New home: Savar, Dhaka</div>
           </div>
         </div>
@@ -1508,7 +1514,7 @@
           <div class="sold-info">
             <div class="sold-breed-tag" style="background:#be185d;">🤍 Persian</div>
             <div class="sold-name">Ash</div>
-            <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Torte</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Multi Color</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong>Price:</strong> ৳8,000 (Sold)</span></div></div>
+            <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Torte</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Multi Color</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong style="color:#b71c1c;">Price:</strong> <span style="color:#b71c1c;font-weight:700;">৳8,000 (Sold)</span></span></div></div>
             <div class="sold-home">🏠 New home: Savar, Dhaka</div>
           </div>
         </div>
@@ -1525,7 +1531,7 @@
           <div class="sold-info">
             <div class="sold-breed-tag" style="background:#6d28d9;">🐾 Scottish Fold</div>
             <div class="sold-name">Sinoy</div>
-            <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Tabby</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Bi Color Ash</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong>Price:</strong> ৳45,000 (Sold)</span></div></div>
+            <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Tabby</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Bi Color Ash</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong style="color:#b71c1c;">Price:</strong> <span style="color:#b71c1c;font-weight:700;">৳45,000 (Sold)</span></span></div></div>
             <div class="sold-home">🏠 New home: Uttara, Dhaka</div>
           </div>
         </div>
@@ -1542,7 +1548,7 @@
           <div class="sold-info">
             <div class="sold-breed-tag" style="background:#6d28d9;">🐾 Scottish Straight</div>
             <div class="sold-name">Kufi</div>
-            <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Calico</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Multi Color</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong>Price:</strong> ৳25,000 (Sold)</span></div></div>
+            <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Calico</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Multi Color</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong style="color:#b71c1c;">Price:</strong> <span style="color:#b71c1c;font-weight:700;">৳25,000 (Sold)</span></span></div></div>
             <div class="sold-home">🏠 New home: Uttara, Dhaka</div>
           </div>
         </div><!-- end sold-card -->
@@ -1584,7 +1590,7 @@
               <div class="mating-badge">💕 Ragdoll · Bicolor Stud</div>
             </div>
             <div class="mating-body">
-              <div class="mating-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🐱 Ragdoll</div><br>
+              <div class="mating-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🐱 Ragdoll</div><br>
               <div class="mating-title">Sondesh — Ragdoll Stud</div>
               <div class="mating-specs">
                 <div class="mspec">🐱 <span><strong>Stud:</strong> Sondesh</span></div>
@@ -1612,7 +1618,7 @@
             <div class="mating-badge">💕 Ragdoll · Colorpoint Stud</div>
           </div>
           <div class="mating-body">
-            <div class="mating-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🐱 Ragdoll</div><br><div class="mating-title">Rango — Ragdoll Stud</div>
+            <div class="mating-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🐱 Ragdoll</div><br><div class="mating-title">Rango — Ragdoll Stud</div>
             <div class="mating-specs">
               <div class="mspec">🐱 <span><strong>Stud:</strong> Rango</span></div>
               <div class="mspec">🎂 <span><strong>Age:</strong> 16 Months</span></div>
@@ -1746,7 +1752,7 @@
             <img src="client1.jpg" style="width:100%;height:200px;object-fit:cover;display:block;" onerror="this.style.display='none'">
           </div>
           <div class="doll-info" style="padding:1rem 1.1rem 1.2rem;">
-            <div class="doll-breed-tag" style="display:inline-block;background:#1d4ed8;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.5rem;">🐱 Ragdoll</div>
+            <div class="doll-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.5rem;">🐱 Ragdoll</div>
             <div class="doll-name" style="font-size:1rem;">Snowflake in Gulshan 🏠</div>
             <div class="doll-role" style="font-size:.75rem;margin-top:.3rem;line-height:1.5;">"Snowflake settled in perfectly! She sleeps on my lap every evening." — <em>Nadia, Gulshan</em></div>
           </div>
@@ -1970,6 +1976,28 @@
     setTimeout(function(){
       var btn = document.getElementById('tab-'+(breed==='all'?'all':breed));
       showTab(breed, btn);
+    }, 400);
+  }
+
+  function filterStatus(status){
+    goTo('gallery');
+    setTimeout(function(){
+      // Show all breeds flat
+      var allBtn = document.getElementById('tab-all');
+      showTab('all', allBtn);
+      setTimeout(function(){
+        document.querySelectorAll('.cat-card').forEach(function(card){
+          if(status==='all'){
+            card.style.display='';
+            return;
+          }
+          var badge = card.querySelector('.badge-avail');
+          if(!badge){ card.style.display='none'; return; }
+          var txt = badge.textContent.trim().toLowerCase();
+          if(status==='available') card.style.display=(txt==='available')?'':'none';
+          if(status==='booked')    card.style.display=(txt==='booked')?'':'none';
+        });
+      }, 100);
     }, 400);
   }
   var svcOn={grooming:true,foster:true,mating:true};
