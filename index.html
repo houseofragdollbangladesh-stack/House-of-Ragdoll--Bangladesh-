@@ -22,7 +22,10 @@
   <meta property="og:type" content="website">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/House-of-Ragdoll--Bangladesh-/sitemap.xml">
   <link rel="canonical" href="https://houseofragdollbangladesh-stack.github.io/House-of-Ragdoll--Bangladesh-">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
     :root{
@@ -687,7 +690,7 @@
   ]
   </script>
   <!-- EmailJS for order notifications -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
   <script type="text/javascript">
     window.addEventListener('load', function(){
       try{ emailjs.init('KJpxzXWeHM5b72MMb'); console.log('EmailJS ready'); } catch(e){ console.warn('EmailJS init failed:', e); }
@@ -767,22 +770,22 @@
     </div>
   </div>
 </div>
-<div class="main-content" id="mainContent">
+<main id="mainContent" class="main-content">
 
   <!-- COVER PHOTO -->
   <div class="cover-wrap">
-    <img class="cover-img" src="cover.jpg" alt="Shinzu Family - House of Ragdoll, Persian and Scottish Fold cats in Dhaka Bangladesh" onerror="this.parentElement.style.display='none'">
+    <img class="cover-img" src="cover.jpg" width="1942" height="900" fetchpriority="high" alt="Shinzu Family - House of Ragdoll, Persian and Scottish Fold cats in Dhaka Bangladesh" onerror="this.parentElement.style.display='none'">
   </div>
 
   <nav>
     <div class="nav-title">Shinzu Family<span>Ragdoll · Persian · Scottish Fold</span></div>
     <div class="nav-links">
-      <a onclick="goTo('ourdolls')">Our Dolls</a>
-      <a onclick="goTo('gallery')">Kittens</a>
-      <a onclick="goTo('happyhomes')">Happy Homes</a>
-      <a onclick="goTo('mating')">Mating</a>
-      <a onclick="goTo('services')">Services</a> <a onclick="goTo('clientmoments')">Moments</a> <a onclick="goTo('reviews')">Reviews</a>
-      <a onclick="goTo('contact')">Contact</a>
+      <a href="#ourdolls" onclick="goTo('ourdolls')">Our Dolls</a>
+      <a href="#gallery" onclick="goTo('gallery')">Kittens</a>
+      <a href="#happyhomes" onclick="goTo('happyhomes')">Happy Homes</a>
+      <a href="#mating" onclick="goTo('mating')">Mating</a>
+      <a href="#services" onclick="goTo('services')">Services</a> <a href="#clientmoments" onclick="goTo('clientmoments')">Moments</a> <a href="#reviews" onclick="goTo('reviews')">Reviews</a>
+      <a href="#contact" onclick="goTo('contact')">Contact</a>
     </div>
     <div class="nav-right">
       <button class="cart-btn" onclick="openCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button>
@@ -837,9 +840,9 @@
           <div class="doll-card" data-breed="ragdoll">
             <div class="doll-slideshow">
               <div class="doll-slides"  id="dslides-vutum">
-                <div class="doll-slide"><img src="vutum1.jpg" alt="Vutum" onclick="openLightbox(['vutum1.jpg','vutum2.jpg','vutum3.jpg'],0,'Vutum')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-                <div class="doll-slide"><img src="vutum2.jpg" alt="Vutum 2" onclick="openLightbox(['vutum1.jpg','vutum2.jpg','vutum3.jpg'],1,'Vutum')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-                <div class="doll-slide"><img src="vutum3.jpg" alt="Vutum 3" onclick="openLightbox(['vutum1.jpg','vutum2.jpg','vutum3.jpg'],2,'Vutum')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="vutum1.jpg" alt="Vutum" onclick="openLightbox(['vutum1.jpg','vutum2.jpg','vutum3.jpg'],0,'Vutum')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="vutum2.jpg" alt="Vutum 2" onclick="openLightbox(['vutum1.jpg','vutum2.jpg','vutum3.jpg'],1,'Vutum')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="vutum3.jpg" alt="Vutum 3" onclick="openLightbox(['vutum1.jpg','vutum2.jpg','vutum3.jpg'],2,'Vutum')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
               </div>
               <button class="doll-slide-btn doll-prev" onclick="changeDSlide('vutum',-1)">&#8249;</button>
               <button class="doll-slide-btn doll-next" onclick="changeDSlide('vutum',1)">&#8250;</button>
@@ -865,9 +868,9 @@
           <div class="doll-card" data-breed="ragdoll">
             <div class="doll-slideshow">
               <div class="doll-slides"  id="dslides-sondesh">
-                <div class="doll-slide"><img src="Sondesh1.jpg" alt="Sondesh" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],0,'Sondesh')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-                <div class="doll-slide"><img src="Sondesh2.jpg" alt="Sondesh 2" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],1,'Sondesh')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-                <div class="doll-slide"><img src="Sondesh3.jpg" alt="Sondesh 3" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],2,'Sondesh')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="Sondesh1.jpg" alt="Sondesh" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],0,'Sondesh')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="Sondesh2.jpg" alt="Sondesh 2" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],1,'Sondesh')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="Sondesh3.jpg" alt="Sondesh 3" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],2,'Sondesh')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
               </div>
               <button class="doll-slide-btn doll-prev" onclick="changeDSlide('sondesh',-1)">&#8249;</button>
               <button class="doll-slide-btn doll-next" onclick="changeDSlide('sondesh',1)">&#8250;</button>
@@ -893,8 +896,8 @@
           <div class="doll-card" data-breed="ragdoll">
             <div class="doll-slideshow">
               <div class="doll-slides"  id="dslides-rango">
-                <div class="doll-slide"><img src="Rango1.jpg" alt="Rango" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],0,'Rango')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-                <div class="doll-slide"><img src="Rango2.jpg" alt="Rango 2" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],1,'Rango')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="Rango1.jpg" alt="Rango" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],0,'Rango')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="Rango2.jpg" alt="Rango 2" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],1,'Rango')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
               </div>
               <button class="doll-slide-btn doll-prev" onclick="changeDSlide('rango',-1)">&#8249;</button>
               <button class="doll-slide-btn doll-next" onclick="changeDSlide('rango',1)">&#8250;</button>
@@ -924,8 +927,8 @@
                     <div class="doll-card" data-breed="scottish">
             <div class="doll-slideshow">
               <div class="doll-slides"  id="dslides-shangchi">
-                <div class="doll-slide"><img src="ShangChi1.jpg" alt="Shang Chi" onclick="openLightbox(['ShangChi1.jpg','ShangChi2.jpg'],0,'Shang Chi')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-                <div class="doll-slide"><img src="ShangChi2.jpg" alt="Shang Chi 2" onclick="openLightbox(['ShangChi1.jpg','ShangChi2.jpg'],1,'Shang Chi')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="ShangChi1.jpg" alt="Shang Chi" onclick="openLightbox(['ShangChi1.jpg','ShangChi2.jpg'],0,'Shang Chi')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="ShangChi2.jpg" alt="Shang Chi 2" onclick="openLightbox(['ShangChi1.jpg','ShangChi2.jpg'],1,'Shang Chi')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
               </div>
               <button class="doll-slide-btn doll-prev" onclick="changeDSlide('shangchi',-1)">&#8249;</button>
               <button class="doll-slide-btn doll-next" onclick="changeDSlide('shangchi',1)">&#8250;</button>
@@ -952,7 +955,7 @@
           <div class="doll-card" data-breed="scottish">
             <div class="doll-slideshow">
               <div class="doll-slides"  id="dslides-yangchi">
-                <div class="doll-slide"><img src="YangChi1.jpg" alt="Yang Chi" onclick="openLightbox(['YangChi1.jpg'],0,'Yang Chi')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="YangChi1.jpg" alt="Yang Chi" onclick="openLightbox(['YangChi1.jpg'],0,'Yang Chi')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
               </div>
               <div class="doll-dots" id="ddots-yangchi"><div class="ddot active" onclick="goDSlide('yangchi',0)"></div></div>
               <div class="doll-crown">👑 Parent Queen</div>
@@ -977,8 +980,8 @@
                     <div class="doll-card" data-breed="persian">
             <div class="doll-slideshow">
               <div class="doll-slides"  id="dslides-chinki">
-                <div class="doll-slide"><img src="Chinki1.jpg" alt="Chinki" onclick="openLightbox(['Chinki1.jpg','Chinki2.jpg'],0,'Chinki')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-                <div class="doll-slide"><img src="Chinki2.jpg" alt="Chinki 2" onclick="openLightbox(['Chinki1.jpg','Chinki2.jpg'],1,'Chinki')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="Chinki1.jpg" alt="Chinki" onclick="openLightbox(['Chinki1.jpg','Chinki2.jpg'],0,'Chinki')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="Chinki2.jpg" alt="Chinki 2" onclick="openLightbox(['Chinki1.jpg','Chinki2.jpg'],1,'Chinki')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
               </div>
               <button class="doll-slide-btn doll-prev" onclick="changeDSlide('chinki',-1)">&#8249;</button>
               <button class="doll-slide-btn doll-next" onclick="changeDSlide('chinki',1)">&#8250;</button>
@@ -1005,8 +1008,8 @@
           <div class="doll-card" data-breed="persian">
             <div class="doll-slideshow">
               <div class="doll-slides"  id="dslides-gadu">
-                <div class="doll-slide"><img src="gadu1.jpg" alt="Gadu" onclick="openLightbox(['gadu1.jpg','gadu2.jpg'],0,'Gadu')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-                <div class="doll-slide"><img src="gadu2.jpg" alt="Gadu 2" onclick="openLightbox(['gadu1.jpg','gadu2.jpg'],1,'Gadu')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="gadu1.jpg" alt="Gadu" onclick="openLightbox(['gadu1.jpg','gadu2.jpg'],0,'Gadu')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="gadu2.jpg" alt="Gadu 2" onclick="openLightbox(['gadu1.jpg','gadu2.jpg'],1,'Gadu')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
               </div>
               <button class="doll-slide-btn doll-prev" onclick="changeDSlide('gadu',-1)">&#8249;</button>
               <button class="doll-slide-btn doll-next" onclick="changeDSlide('gadu',1)">&#8250;</button>
@@ -1033,9 +1036,9 @@
           <div class="doll-card" data-breed="persian">
             <div class="doll-slideshow">
               <div class="doll-slides"  id="dslides-shiku">
-                <div class="doll-slide"><img src="shiku1.jpg" alt="Shiku" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['shiku1.jpg','shiku2.jpg','shiku3.jpg'],0,'Shiku')"></div>
-                <div class="doll-slide"><img src="shiku2.jpg" alt="Shiku 2" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['shiku1.jpg','shiku2.jpg','shiku3.jpg'],1,'Shiku')"></div>
-                <div class="doll-slide"><img src="shiku3.jpg" alt="Shiku 3" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['shiku1.jpg','shiku2.jpg','shiku3.jpg'],2,'Shiku')"></div>
+                <div class="doll-slide"><img loading="lazy" src="shiku1.jpg" alt="Shiku" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['shiku1.jpg','shiku2.jpg','shiku3.jpg'],0,'Shiku')"></div>
+                <div class="doll-slide"><img loading="lazy" src="shiku2.jpg" alt="Shiku 2" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['shiku1.jpg','shiku2.jpg','shiku3.jpg'],1,'Shiku')"></div>
+                <div class="doll-slide"><img loading="lazy" src="shiku3.jpg" alt="Shiku 3" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['shiku1.jpg','shiku2.jpg','shiku3.jpg'],2,'Shiku')"></div>
               </div>
               <button class="doll-slide-btn doll-prev" onclick="changeDSlide('shiku',-1)">&#8249;</button>
               <button class="doll-slide-btn doll-next" onclick="changeDSlide('shiku',1)">&#8250;</button>
@@ -1067,9 +1070,9 @@
           <div class="doll-card" data-breed="persian">
             <div class="doll-slideshow">
               <div class="doll-slides"  id="dslides-niku">
-                <div class="doll-slide"><img src="niku1.jpg" alt="Niku" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['niku1.jpg','niku2.jpg','niku3.jpg'],0,'Niku')"></div>
-                <div class="doll-slide"><img src="niku2.jpg" alt="Niku 2" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['niku1.jpg','niku2.jpg','niku3.jpg'],1,'Niku')"></div>
-                <div class="doll-slide"><img src="niku3.jpg" alt="Niku 3" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['niku1.jpg','niku2.jpg','niku3.jpg'],2,'Niku')"></div>
+                <div class="doll-slide"><img loading="lazy" src="niku1.jpg" alt="Niku" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['niku1.jpg','niku2.jpg','niku3.jpg'],0,'Niku')"></div>
+                <div class="doll-slide"><img loading="lazy" src="niku2.jpg" alt="Niku 2" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['niku1.jpg','niku2.jpg','niku3.jpg'],1,'Niku')"></div>
+                <div class="doll-slide"><img loading="lazy" src="niku3.jpg" alt="Niku 3" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['niku1.jpg','niku2.jpg','niku3.jpg'],2,'Niku')"></div>
               </div>
               <button class="doll-slide-btn doll-prev" onclick="changeDSlide('niku',-1)">&#8249;</button>
               <button class="doll-slide-btn doll-next" onclick="changeDSlide('niku',1)">&#8250;</button>
@@ -1127,7 +1130,7 @@
         <div class="gallery-grid" id="grid-ragdoll">
                     <div class="cat-card" data-price="200000" data-sold="false" data-pattern="sealmitted">
             <div class="slideshow">
-              <div class="slides" id="slides-kb"><div class="slide"><img src="Mithai1.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],0,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Mithai2.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],1,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Mithai3.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],2,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Mithai4.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],3,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
+              <div class="slides" id="slides-kb"><div class="slide"><img loading="lazy" src="Mithai1.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],0,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Mithai2.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],1,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Mithai3.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],2,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Mithai4.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],3,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('kb',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('kb',1)">&#8250;</button>
               <div class="slide-dots" id="dots-kb"><div class="dot active" onclick="goSlide('kb',0)"></div><div class="dot" onclick="goSlide('kb',1)"></div><div class="dot" onclick="goSlide('kb',2)"></div><div class="dot" onclick="goSlide('kb',3)"></div></div>
@@ -1156,7 +1159,7 @@
             </div>
           </div>
           <div class="cat-card" data-price="160000" data-sold="false" data-pattern="van">
-            <div class="slideshow"><div class="slides" id="slides-kc"><div class="slide"><img src="Golla1.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],0,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Golla2.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],1,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Golla3.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],2,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Golla4.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],3,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
+            <div class="slideshow"><div class="slides" id="slides-kc"><div class="slide"><img loading="lazy" src="Golla1.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],0,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Golla2.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],1,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Golla3.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],2,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Golla4.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],3,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('kc',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('kc',1)">&#8250;</button>
               <div class="slide-dots" id="dots-kc"><div class="dot active" onclick="goSlide('kc',0)"></div><div class="dot" onclick="goSlide('kc',1)"></div><div class="dot" onclick="goSlide('kc',2)"></div><div class="dot" onclick="goSlide('kc',3)"></div></div>
@@ -1185,7 +1188,7 @@
           </div>
           <div class="cat-card" data-price="160000" data-sold="false" data-pattern="sealmitted">
             <div class="slideshow">
-              <div class="slides" id="slides-kd"><div class="slide"><img src="Laddu1.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],0,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Laddu2.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],1,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Laddu3.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],2,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Laddu4.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],3,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
+              <div class="slides" id="slides-kd"><div class="slide"><img loading="lazy" src="Laddu1.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],0,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Laddu2.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],1,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Laddu3.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],2,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Laddu4.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],3,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('kd',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('kd',1)">&#8250;</button>
               <div class="slide-dots" id="dots-kd"><div class="dot active" onclick="goSlide('kd',0)"></div><div class="dot" onclick="goSlide('kd',1)"></div><div class="dot" onclick="goSlide('kd',2)"></div><div class="dot" onclick="goSlide('kd',3)"></div></div>
@@ -1226,7 +1229,7 @@
         <div class="gallery-grid" id="grid-persian">
           <div class="cat-card" data-price="8000" data-sold="false" data-pattern="orangeeye">
             <div class="slideshow">
-              <div class="slides" id="slides-pe-poofy"><div class="slide"><img src="Poofy1.jpg" alt="Poofy 1" onclick="openLightbox(['Poofy1.jpg', 'Poofy2.jpg', 'Poofy3.jpg'],0,'Poofy')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Poofy2.jpg" alt="Poofy 2" onclick="openLightbox(['Poofy1.jpg', 'Poofy2.jpg', 'Poofy3.jpg'],1,'Poofy')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Poofy3.jpg" alt="Poofy 3" onclick="openLightbox(['Poofy1.jpg', 'Poofy2.jpg', 'Poofy3.jpg'],2,'Poofy')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
+              <div class="slides" id="slides-pe-poofy"><div class="slide"><img loading="lazy" src="Poofy1.jpg" alt="Poofy 1" onclick="openLightbox(['Poofy1.jpg', 'Poofy2.jpg', 'Poofy3.jpg'],0,'Poofy')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Poofy2.jpg" alt="Poofy 2" onclick="openLightbox(['Poofy1.jpg', 'Poofy2.jpg', 'Poofy3.jpg'],1,'Poofy')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Poofy3.jpg" alt="Poofy 3" onclick="openLightbox(['Poofy1.jpg', 'Poofy2.jpg', 'Poofy3.jpg'],2,'Poofy')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('pe-poofy',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('pe-poofy',1)">&#8250;</button>
               <div class="slide-dots" id="dots-pe-poofy"><div class="dot  active" onclick="goSlide('pe-poofy',0)"></div><div class="dot" onclick="goSlide('pe-poofy',1)"></div><div class="dot" onclick="goSlide('pe-poofy',2)"></div></div>
@@ -1257,7 +1260,7 @@
 
           <div class="cat-card" data-price="8000" data-sold="false" data-pattern="orangeeye">
             <div class="slideshow">
-              <div class="slides" id="slides-pe-simba"><div class="slide"><img src="Simba1.jpg" alt="Simba 1" onclick="openLightbox(['Simba1.jpg', 'Simba2.jpg', 'Simba3.jpg'],0,'Simba')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Simba2.jpg" alt="Simba 2" onclick="openLightbox(['Simba1.jpg', 'Simba2.jpg', 'Simba3.jpg'],1,'Simba')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Simba3.jpg" alt="Simba 3" onclick="openLightbox(['Simba1.jpg', 'Simba2.jpg', 'Simba3.jpg'],2,'Simba')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
+              <div class="slides" id="slides-pe-simba"><div class="slide"><img loading="lazy" src="Simba1.jpg" alt="Simba 1" onclick="openLightbox(['Simba1.jpg', 'Simba2.jpg', 'Simba3.jpg'],0,'Simba')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Simba2.jpg" alt="Simba 2" onclick="openLightbox(['Simba1.jpg', 'Simba2.jpg', 'Simba3.jpg'],1,'Simba')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Simba3.jpg" alt="Simba 3" onclick="openLightbox(['Simba1.jpg', 'Simba2.jpg', 'Simba3.jpg'],2,'Simba')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('pe-simba',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('pe-simba',1)">&#8250;</button>
               <div class="slide-dots" id="dots-pe-simba"><div class="dot  active" onclick="goSlide('pe-simba',0)"></div><div class="dot" onclick="goSlide('pe-simba',1)"></div><div class="dot" onclick="goSlide('pe-simba',2)"></div></div>
@@ -1288,7 +1291,7 @@
 
           <div class="cat-card" data-price="15000" data-sold="false" data-pattern="orangeeye">
             <div class="slideshow">
-              <div class="slides" id="slides-pe-nishu"><div class="slide"><img src="Nishu1.jpg" alt="Nishu 1" onclick="openLightbox(['Nishu1.jpg', 'Nishu2.jpg', 'Nishu3.jpg'],0,'Nishu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Nishu2.jpg" alt="Nishu 2" onclick="openLightbox(['Nishu1.jpg', 'Nishu2.jpg', 'Nishu3.jpg'],1,'Nishu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Nishu3.jpg" alt="Nishu 3" onclick="openLightbox(['Nishu1.jpg', 'Nishu2.jpg', 'Nishu3.jpg'],2,'Nishu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
+              <div class="slides" id="slides-pe-nishu"><div class="slide"><img loading="lazy" src="Nishu1.jpg" alt="Nishu 1" onclick="openLightbox(['Nishu1.jpg', 'Nishu2.jpg', 'Nishu3.jpg'],0,'Nishu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Nishu2.jpg" alt="Nishu 2" onclick="openLightbox(['Nishu1.jpg', 'Nishu2.jpg', 'Nishu3.jpg'],1,'Nishu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Nishu3.jpg" alt="Nishu 3" onclick="openLightbox(['Nishu1.jpg', 'Nishu2.jpg', 'Nishu3.jpg'],2,'Nishu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('pe-nishu',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('pe-nishu',1)">&#8250;</button>
               <div class="slide-dots" id="dots-pe-nishu"><div class="dot  active" onclick="goSlide('pe-nishu',0)"></div><div class="dot" onclick="goSlide('pe-nishu',1)"></div><div class="dot" onclick="goSlide('pe-nishu',2)"></div></div>
@@ -1319,7 +1322,7 @@
 
           <div class="cat-card" data-price="7000" data-sold="false" data-pattern="orangeeye">
             <div class="slideshow">
-              <div class="slides" id="slides-pe-himu"><div class="slide"><img src="Himu1.jpg" alt="Himu 1" onclick="openLightbox(['Himu1.jpg', 'Himu2.jpg', 'Himu3.jpg'],0,'Himu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Himu2.jpg" alt="Himu 2" onclick="openLightbox(['Himu1.jpg', 'Himu2.jpg', 'Himu3.jpg'],1,'Himu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Himu3.jpg" alt="Himu 3" onclick="openLightbox(['Himu1.jpg', 'Himu2.jpg', 'Himu3.jpg'],2,'Himu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
+              <div class="slides" id="slides-pe-himu"><div class="slide"><img loading="lazy" src="Himu1.jpg" alt="Himu 1" onclick="openLightbox(['Himu1.jpg', 'Himu2.jpg', 'Himu3.jpg'],0,'Himu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Himu2.jpg" alt="Himu 2" onclick="openLightbox(['Himu1.jpg', 'Himu2.jpg', 'Himu3.jpg'],1,'Himu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Himu3.jpg" alt="Himu 3" onclick="openLightbox(['Himu1.jpg', 'Himu2.jpg', 'Himu3.jpg'],2,'Himu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('pe-himu',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('pe-himu',1)">&#8250;</button>
               <div class="slide-dots" id="dots-pe-himu"><div class="dot  active" onclick="goSlide('pe-himu',0)"></div><div class="dot" onclick="goSlide('pe-himu',1)"></div><div class="dot" onclick="goSlide('pe-himu',2)"></div></div>
@@ -1360,7 +1363,7 @@
         <div class="gallery-grid" id="grid-scottish">
           <div class="cat-card" data-price="30000" data-sold="false" data-pattern="scottishfold">
             <div class="slideshow">
-              <div class="slides" id="slides-sc-sifu"><div class="slide"><img src="Sifu1.jpg" alt="Sifu 1" onclick="openLightbox(['Sifu1.jpg', 'Sifu2.jpg', 'Sifu3.jpg'],0,'Sifu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Sifu2.jpg" alt="Sifu 2" onclick="openLightbox(['Sifu1.jpg', 'Sifu2.jpg', 'Sifu3.jpg'],1,'Sifu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Sifu3.jpg" alt="Sifu 3" onclick="openLightbox(['Sifu1.jpg', 'Sifu2.jpg', 'Sifu3.jpg'],2,'Sifu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
+              <div class="slides" id="slides-sc-sifu"><div class="slide"><img loading="lazy" src="Sifu1.jpg" alt="Sifu 1" onclick="openLightbox(['Sifu1.jpg', 'Sifu2.jpg', 'Sifu3.jpg'],0,'Sifu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Sifu2.jpg" alt="Sifu 2" onclick="openLightbox(['Sifu1.jpg', 'Sifu2.jpg', 'Sifu3.jpg'],1,'Sifu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Sifu3.jpg" alt="Sifu 3" onclick="openLightbox(['Sifu1.jpg', 'Sifu2.jpg', 'Sifu3.jpg'],2,'Sifu')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('sc-sifu',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('sc-sifu',1)">&#8250;</button>
               <div class="slide-dots" id="dots-sc-sifu"><div class="dot  active" onclick="goSlide('sc-sifu',0)"></div><div class="dot" onclick="goSlide('sc-sifu',1)"></div><div class="dot" onclick="goSlide('sc-sifu',2)"></div></div>
@@ -1400,7 +1403,7 @@
         <div class="gallery-grid" id="grid-british">
           <div class="cat-card" data-price="70000" data-sold="false" data-pattern="britishlonghair">
             <div class="slideshow">
-              <div class="slides" id="slides-br-blue"><div class="slide"><img src="Blue1.jpg" alt="Blue 1" onclick="openLightbox(['Blue1.jpg', 'Blue2.jpg', 'Blue3.jpg'],0,'Blue')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Blue2.jpg" alt="Blue 2" onclick="openLightbox(['Blue1.jpg', 'Blue2.jpg', 'Blue3.jpg'],1,'Blue')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img src="Blue3.jpg" alt="Blue 3" onclick="openLightbox(['Blue1.jpg', 'Blue2.jpg', 'Blue3.jpg'],2,'Blue')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
+              <div class="slides" id="slides-br-blue"><div class="slide"><img loading="lazy" src="Blue1.jpg" alt="Blue 1" onclick="openLightbox(['Blue1.jpg', 'Blue2.jpg', 'Blue3.jpg'],0,'Blue')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Blue2.jpg" alt="Blue 2" onclick="openLightbox(['Blue1.jpg', 'Blue2.jpg', 'Blue3.jpg'],1,'Blue')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Blue3.jpg" alt="Blue 3" onclick="openLightbox(['Blue1.jpg', 'Blue2.jpg', 'Blue3.jpg'],2,'Blue')" style="width:100%;height:280px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div></div>
               <button class="slide-btn slide-prev" onclick="changeSlide('br-blue',-1)">&#8249;</button>
               <button class="slide-btn slide-next" onclick="changeSlide('br-blue',1)">&#8250;</button>
               <div class="slide-dots" id="dots-br-blue"><div class="dot  active" onclick="goSlide('br-blue',0)"></div><div class="dot" onclick="goSlide('br-blue',1)"></div><div class="dot" onclick="goSlide('br-blue',2)"></div></div>
@@ -1454,7 +1457,7 @@
         <!-- Makhon — Ragdoll -->
         <div class="sold-card" data-breed="ragdoll">
           <div class="sold-slides-wrap">
-            <div class="sold-slides" id="sslides-makhon"><div class="sold-slide"><img src="Makhon1.jpg" alt="Makhon" onclick="openLightbox(['Makhon1.jpg','Makhon2.jpg','Makhon3.jpg','Makhon4.jpg'],0,'Makhon')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img src="Makhon2.jpg" alt="Makhon" onclick="openLightbox(['Makhon1.jpg','Makhon2.jpg','Makhon3.jpg','Makhon4.jpg'],1,'Makhon')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img src="Makhon3.jpg" alt="Makhon" onclick="openLightbox(['Makhon1.jpg','Makhon2.jpg','Makhon3.jpg','Makhon4.jpg'],2,'Makhon')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img src="Makhon4.jpg" alt="Makhon" onclick="openLightbox(['Makhon1.jpg','Makhon2.jpg','Makhon3.jpg','Makhon4.jpg'],3,'Makhon')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+            <div class="sold-slides" id="sslides-makhon"><div class="sold-slide"><img loading="lazy" src="Makhon1.jpg" alt="Makhon" onclick="openLightbox(['Makhon1.jpg','Makhon2.jpg','Makhon3.jpg','Makhon4.jpg'],0,'Makhon')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Makhon2.jpg" alt="Makhon" onclick="openLightbox(['Makhon1.jpg','Makhon2.jpg','Makhon3.jpg','Makhon4.jpg'],1,'Makhon')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Makhon3.jpg" alt="Makhon" onclick="openLightbox(['Makhon1.jpg','Makhon2.jpg','Makhon3.jpg','Makhon4.jpg'],2,'Makhon')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Makhon4.jpg" alt="Makhon" onclick="openLightbox(['Makhon1.jpg','Makhon2.jpg','Makhon3.jpg','Makhon4.jpg'],3,'Makhon')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('makhon',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('makhon',1)">&#8250;</button>
             <div class="sold-sdots" id="ssdots-makhon"><div class="sold-sdot active" onclick="soldSlideIdx['makhon']=0;updateSoldSlide('makhon',4)"></div><div class="sold-sdot" onclick="soldSlideIdx['makhon']=1;updateSoldSlide('makhon',4)"></div><div class="sold-sdot" onclick="soldSlideIdx['makhon']=2;updateSoldSlide('makhon',4)"></div><div class="sold-sdot" onclick="soldSlideIdx['makhon']=3;updateSoldSlide('makhon',4)"></div></div>
@@ -1471,7 +1474,7 @@
         <!-- Leo — Ragdoll -->
         <div class="sold-card" data-breed="ragdoll">
           <div class="sold-slides-wrap">
-            <div class="sold-slides" id="sslides-leo"><div class="sold-slide"><img src="leo1.jpg" alt="Leo" onclick="openLightbox(['leo1.jpg','leo2.jpg','leo3.jpg'],0,'Leo')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img src="leo2.jpg" alt="Leo" onclick="openLightbox(['leo1.jpg','leo2.jpg','leo3.jpg'],1,'Leo')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img src="leo3.jpg" alt="Leo" onclick="openLightbox(['leo1.jpg','leo2.jpg','leo3.jpg'],2,'Leo')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+            <div class="sold-slides" id="sslides-leo"><div class="sold-slide"><img loading="lazy" src="leo1.jpg" alt="Leo" onclick="openLightbox(['leo1.jpg','leo2.jpg','leo3.jpg'],0,'Leo')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="leo2.jpg" alt="Leo" onclick="openLightbox(['leo1.jpg','leo2.jpg','leo3.jpg'],1,'Leo')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="leo3.jpg" alt="Leo" onclick="openLightbox(['leo1.jpg','leo2.jpg','leo3.jpg'],2,'Leo')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('leo',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('leo',1)">&#8250;</button>
             <div class="sold-sdots" id="ssdots-leo"><div class="sold-sdot active" onclick="soldSlideIdx['leo']=0;updateSoldSlide('leo',3)"></div><div class="sold-sdot" onclick="soldSlideIdx['leo']=1;updateSoldSlide('leo',3)"></div><div class="sold-sdot" onclick="soldSlideIdx['leo']=2;updateSoldSlide('leo',3)"></div></div>
@@ -1488,7 +1491,7 @@
         <!-- Snow — Persian -->
         <div class="sold-card" data-breed="persian">
           <div class="sold-slides-wrap">
-            <div class="sold-slides" id="sslides-snow"><div class="sold-slide"><img src="Snow1.jpg" alt="Snow" onclick="openLightbox(['Snow1.jpg','Snow2.jpg'],0,'Snow')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img src="Snow2.jpg" alt="Snow" onclick="openLightbox(['Snow1.jpg','Snow2.jpg'],1,'Snow')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+            <div class="sold-slides" id="sslides-snow"><div class="sold-slide"><img loading="lazy" src="Snow1.jpg" alt="Snow" onclick="openLightbox(['Snow1.jpg','Snow2.jpg'],0,'Snow')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Snow2.jpg" alt="Snow" onclick="openLightbox(['Snow1.jpg','Snow2.jpg'],1,'Snow')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('snow',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('snow',1)">&#8250;</button>
             <div class="sold-sdots" id="ssdots-snow"><div class="sold-sdot active" onclick="soldSlideIdx['snow']=0;updateSoldSlide('snow',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['snow']=1;updateSoldSlide('snow',2)"></div></div>
@@ -1505,7 +1508,7 @@
         <!-- Ash — Persian -->
         <div class="sold-card" data-breed="persian">
           <div class="sold-slides-wrap">
-            <div class="sold-slides" id="sslides-ash"><div class="sold-slide"><img src="Ash1.jpg" alt="Ash" onclick="openLightbox(['Ash1.jpg','Ash2.jpg'],0,'Ash')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img src="Ash2.jpg" alt="Ash" onclick="openLightbox(['Ash1.jpg','Ash2.jpg'],1,'Ash')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+            <div class="sold-slides" id="sslides-ash"><div class="sold-slide"><img loading="lazy" src="Ash1.jpg" alt="Ash" onclick="openLightbox(['Ash1.jpg','Ash2.jpg'],0,'Ash')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Ash2.jpg" alt="Ash" onclick="openLightbox(['Ash1.jpg','Ash2.jpg'],1,'Ash')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('ash',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('ash',1)">&#8250;</button>
             <div class="sold-sdots" id="ssdots-ash"><div class="sold-sdot active" onclick="soldSlideIdx['ash']=0;updateSoldSlide('ash',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['ash']=1;updateSoldSlide('ash',2)"></div></div>
@@ -1522,7 +1525,7 @@
         <!-- Sinoy — Scottish -->
         <div class="sold-card" data-breed="scottish">
           <div class="sold-slides-wrap">
-            <div class="sold-slides" id="sslides-sinoy"><div class="sold-slide"><img src="Sinoy1.jpg" alt="Sinoy" onclick="openLightbox(['Sinoy1.jpg','Sinoy2.jpg'],0,'Sinoy')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img src="Sinoy2.jpg" alt="Sinoy" onclick="openLightbox(['Sinoy1.jpg','Sinoy2.jpg'],1,'Sinoy')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+            <div class="sold-slides" id="sslides-sinoy"><div class="sold-slide"><img loading="lazy" src="Sinoy1.jpg" alt="Sinoy" onclick="openLightbox(['Sinoy1.jpg','Sinoy2.jpg'],0,'Sinoy')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Sinoy2.jpg" alt="Sinoy" onclick="openLightbox(['Sinoy1.jpg','Sinoy2.jpg'],1,'Sinoy')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('sinoy',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('sinoy',1)">&#8250;</button>
             <div class="sold-sdots" id="ssdots-sinoy"><div class="sold-sdot active" onclick="soldSlideIdx['sinoy']=0;updateSoldSlide('sinoy',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['sinoy']=1;updateSoldSlide('sinoy',2)"></div></div>
@@ -1539,7 +1542,7 @@
         <!-- Kufi — Scottish -->
         <div class="sold-card" data-breed="scottish">
           <div class="sold-slides-wrap">
-            <div class="sold-slides" id="sslides-kufi"><div class="sold-slide"><img src="Kufi1.jpg" alt="Kufi" onclick="openLightbox(['Kufi1.jpg','Kufi2.jpg'],0,'Kufi')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img src="Kufi2.jpg" alt="Kufi" onclick="openLightbox(['Kufi1.jpg','Kufi2.jpg'],1,'Kufi')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+            <div class="sold-slides" id="sslides-kufi"><div class="sold-slide"><img loading="lazy" src="Kufi1.jpg" alt="Kufi" onclick="openLightbox(['Kufi1.jpg','Kufi2.jpg'],0,'Kufi')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Kufi2.jpg" alt="Kufi" onclick="openLightbox(['Kufi1.jpg','Kufi2.jpg'],1,'Kufi')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('kufi',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('kufi',1)">&#8250;</button>
             <div class="sold-sdots" id="ssdots-kufi"><div class="sold-sdot active" onclick="soldSlideIdx['kufi']=0;updateSoldSlide('kufi',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['kufi']=1;updateSoldSlide('kufi',2)"></div></div>
@@ -1580,9 +1583,9 @@
           <div class="mating-card" data-breed="ragdoll">
             <div class="mating-slideshow">
               <div class="mating-slides"  id="mslides-sondesh-m">
-                <div class="mating-slide"><img src="Sondesh1.jpg" alt="Sondesh" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],0,'Sondesh')"></div>
-                <div class="mating-slide"><img src="Sondesh2.jpg" alt="Sondesh 2" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],1,'Sondesh')"></div>
-                <div class="mating-slide"><img src="Sondesh3.jpg" alt="Sondesh 3" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],2,'Sondesh')"></div>
+                <div class="mating-slide"><img loading="lazy" src="Sondesh1.jpg" alt="Sondesh" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],0,'Sondesh')"></div>
+                <div class="mating-slide"><img loading="lazy" src="Sondesh2.jpg" alt="Sondesh 2" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],1,'Sondesh')"></div>
+                <div class="mating-slide"><img loading="lazy" src="Sondesh3.jpg" alt="Sondesh 3" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],2,'Sondesh')"></div>
               </div>
               <button class="mating-slide-btn mating-prev" onclick="changeMSlide('sondesh-m',-1)">&#8249;</button>
               <button class="mating-slide-btn mating-next" onclick="changeMSlide('sondesh-m',1)">&#8250;</button>
@@ -1609,8 +1612,8 @@
 <div class="mating-card" data-breed="ragdoll">
           <div class="mating-slideshow">
             <div class="mating-slides"  id="mslides-rango-m">
-              <div class="mating-slide"><img src="Rango1.jpg" alt="Rango" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],0,'Rango')"></div>
-              <div class="mating-slide"><img src="Rango2.jpg" alt="Rango 2" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],1,'Rango')"></div>
+              <div class="mating-slide"><img loading="lazy" src="Rango1.jpg" alt="Rango" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],0,'Rango')"></div>
+              <div class="mating-slide"><img loading="lazy" src="Rango2.jpg" alt="Rango 2" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],1,'Rango')"></div>
             </div>
             <button class="mating-slide-btn mating-prev" onclick="changeMSlide('rango-m',-1)">&#8249;</button>
             <button class="mating-slide-btn mating-next" onclick="changeMSlide('rango-m',1)">&#8250;</button>
@@ -1638,8 +1641,8 @@
 <div class="mating-card" data-breed="persian">
             <div class="mating-slideshow">
               <div class="mating-slides"  id="mslides-gadu-m">
-                <div class="mating-slide"><img src="gadu1.jpg" alt="Gadu" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['gadu1.jpg','gadu2.jpg'],0,'Gadu')"></div>
-                <div class="mating-slide"><img src="gadu2.jpg" alt="Gadu 2" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['gadu1.jpg','gadu2.jpg'],1,'Gadu')"></div>
+                <div class="mating-slide"><img loading="lazy" src="gadu1.jpg" alt="Gadu" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['gadu1.jpg','gadu2.jpg'],0,'Gadu')"></div>
+                <div class="mating-slide"><img loading="lazy" src="gadu2.jpg" alt="Gadu 2" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['gadu1.jpg','gadu2.jpg'],1,'Gadu')"></div>
               </div>
               <button class="mating-slide-btn mating-prev" onclick="changeMSlide('gadu-m',-1)">&#8249;</button>
               <button class="mating-slide-btn mating-next" onclick="changeMSlide('gadu-m',1)">&#8250;</button>
@@ -1667,8 +1670,8 @@
 <div class="mating-card" data-breed="scottish">
             <div class="mating-slideshow">
               <div class="mating-slides"  id="mslides-shangchi-m">
-                <div class="mating-slide"><img src="ShangChi1.jpg" alt="Shang Chi" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['ShangChi1.jpg','ShangChi2.jpg'],0,'Shang Chi')"></div>
-                <div class="mating-slide"><img src="ShangChi2.jpg" alt="Shang Chi 2" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['ShangChi1.jpg','ShangChi2.jpg'],1,'Shang Chi')"></div>
+                <div class="mating-slide"><img loading="lazy" src="ShangChi1.jpg" alt="Shang Chi" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['ShangChi1.jpg','ShangChi2.jpg'],0,'Shang Chi')"></div>
+                <div class="mating-slide"><img loading="lazy" src="ShangChi2.jpg" alt="Shang Chi 2" style="width:100%;height:360px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['ShangChi1.jpg','ShangChi2.jpg'],1,'Shang Chi')"></div>
               </div>
               <button class="mating-slide-btn mating-prev" onclick="changeMSlide('shangchi-m',-1)">&#8249;</button>
               <button class="mating-slide-btn mating-next" onclick="changeMSlide('shangchi-m',1)">&#8250;</button>
@@ -1749,7 +1752,7 @@
 
         <div class="doll-card">
           <div style="background:linear-gradient(135deg,#dce8f5,#b8d4ed);height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;">
-            <img src="client1.jpg" style="width:100%;height:200px;object-fit:cover;display:block;" onerror="this.style.display='none'">
+            <img loading="lazy" src="client1.jpg" style="width:100%;height:200px;object-fit:cover;display:block;" onerror="this.style.display='none'">
           </div>
           <div class="doll-info" style="padding:1rem 1.1rem 1.2rem;">
             <div class="doll-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.5rem;">🐱 Ragdoll</div>
@@ -1760,7 +1763,7 @@
 
         <div class="doll-card">
           <div style="background:linear-gradient(135deg,#f5dce8,#edb8d4);height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;">
-            <img src="client2.jpg" style="width:100%;height:200px;object-fit:cover;display:block;" onerror="this.style.display='none'">
+            <img loading="lazy" src="client2.jpg" style="width:100%;height:200px;object-fit:cover;display:block;" onerror="this.style.display='none'">
           </div>
           <div class="doll-info" style="padding:1rem 1.1rem 1.2rem;">
             <div class="doll-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.5rem;">🤍 Persian</div>
@@ -1771,7 +1774,7 @@
 
         <div class="doll-card">
           <div style="background:linear-gradient(135deg,#e8f5dc,#d4edb8);height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;">
-            <img src="client3.jpg" style="width:100%;height:200px;object-fit:cover;display:block;" onerror="this.style.display='none'">
+            <img loading="lazy" src="client3.jpg" style="width:100%;height:200px;object-fit:cover;display:block;" onerror="this.style.display='none'">
           </div>
           <div class="doll-info" style="padding:1rem 1.1rem 1.2rem;">
             <div class="doll-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.5rem;">🐾 Scottish Fold</div>
@@ -1782,7 +1785,7 @@
 
         <div class="doll-card">
           <div style="background:linear-gradient(135deg,#f5f0dc,#ede8b8);height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;">
-            <img src="client4.jpg" style="width:100%;height:200px;object-fit:cover;display:block;" onerror="this.style.display='none'">
+            <img loading="lazy" src="client4.jpg" style="width:100%;height:200px;object-fit:cover;display:block;" onerror="this.style.display='none'">
           </div>
           <div class="doll-info" style="padding:1rem 1.1rem 1.2rem;">
             <div class="doll-breed-tag" style="display:inline-block;background:#047857;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.5rem;">🇬🇧 British</div>
@@ -1858,7 +1861,7 @@
     <p>© 2026 <span>Shinzu Family — House of Ragdoll, Persian &amp; Scottish Fold</span> · Chandrima Model Town, Dhaka 1207 ·
       <a href="https://wa.me/8801797822108">WhatsApp</a> · <a href="https://www.facebook.com/profile.php?id=61592266154793">Facebook</a> · <a href="https://www.youtube.com/@HouseofRagdollBangladesh">YouTube</a></p>
   </footer>
-</div><!-- end mainContent -->
+</main><!-- end mainContent -->
 <div class="float-cart" id="floatCart"><button class="float-cart-btn" onclick="openCart()">🛒 View Cart (<span id="floatCount">0</span>)</button></div>
 <div class="cart-panel" id="cartPanel">
   <div class="cart-header"><h3>🛒 Your Cart</h3><button class="cart-close" onclick="closeCart()">✕</button></div>
@@ -1895,7 +1898,7 @@
 <div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
   <button class="lightbox-close" onclick="closeLightbox()">&#x2715;</button>
   <button class="lightbox-nav lightbox-prev" onclick="lightboxNav(-1)">&#8249;</button>
-  <img class="lightbox-img" id="lightboxImg" src="" alt="Shinzu Family Cat Cattery Bangladesh">
+  <img loading="lazy" class="lightbox-img" id="lightboxImg" src="" alt="Shinzu Family Cat Cattery Bangladesh">
   <div class="lightbox-caption" id="lightboxCaption"></div>
   <button class="lightbox-nav lightbox-next" onclick="lightboxNav(1)">&#8250;</button>
   <div class="lightbox-counter" id="lightboxCounter"></div>
