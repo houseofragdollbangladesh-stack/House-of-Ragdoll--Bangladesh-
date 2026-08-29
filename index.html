@@ -566,7 +566,7 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5",
-        "reviewCount": "10",
+        "reviewCount": "22",
         "bestRating": "5",
         "worstRating": "1"
       },
@@ -705,26 +705,6 @@
     <button class="sb-x" onclick="toggleSidebar()">✕</button>
   </div>
   <div class="sb-sec">
-    <div class="sb-sec-title">Our Dolls (Parents)</div>
-    <div class="sb-link" onclick="showDollTabAndGo('ragdoll')">🐱 Ragdoll</div>
-    <div class="sb-link" onclick="showDollTabAndGo('scottish')">🐾 Scottish Fold</div>
-    <div class="sb-link" onclick="showDollTabAndGo('persian')">🤍 Persian</div>
-  </div>
-  <div class="sb-div"></div>
-  <div class="sb-sec">
-    <div class="sb-sec-title">Services</div>
-    <div class="sb-item active" id="sb-grooming" onclick="filterService('grooming')"><div class="sb-item-l"><span class="sb-ico">✂️</span>Grooming</div><div class="toggle on" id="tog-grooming"></div></div>
-    <div class="sb-item active" id="sb-foster" onclick="filterService('foster')"><div class="sb-item-l"><span class="sb-ico">🏠</span>Foster Care</div><div class="toggle on" id="tog-foster"></div></div>
-    <div class="sb-item active" id="sb-mating" onclick="filterService('mating')"><div class="sb-item-l"><span class="sb-ico">💕</span>Mating Service</div><div class="toggle on" id="tog-mating"></div></div>
-    <div class="sb-sub">
-      <div class="sb-link" onclick="showMatingTabAndGo('ragdoll')">↳ Ragdoll</div>
-      <div class="sb-link" onclick="showMatingTabAndGo('persian')">↳ Persian</div>
-      <div class="sb-link" onclick="showMatingTabAndGo('scottish')">↳ Scottish Fold</div>
-      <div class="sb-link" onclick="showMatingTabAndGo('british')">↳ British L/S Hair</div>
-    </div>
-  </div>
-  <div class="sb-div"></div>
-  <div class="sb-sec">
     <div class="sb-sec-title" style="margin-top:1rem;">🔍 Filter Cats</div>
 
     <!-- Breed Filter -->
@@ -747,10 +727,32 @@
     <div class="sb-link" onclick="filterPrice(50000,150000)">৳ 50,000 – 1,50,000</div>
     <div class="sb-link" onclick="filterPrice(150000,999999)">৳ 1,50,000+</div>
     <div class="sb-link" onclick="resetFilter()" style="color:var(--gold);">✕ Clear Filter</div>
-
+  </div>
+  <div class="sb-div"></div>
+  <div class="sb-sec">
+    <div class="sb-sec-title">Our Dolls (Parents)</div>
+    <div class="sb-link" onclick="showDollTabAndGo('ragdoll')">🐱 Ragdoll</div>
+    <div class="sb-link" onclick="showDollTabAndGo('scottish')">🐾 Scottish Fold</div>
+    <div class="sb-link" onclick="showDollTabAndGo('persian')">🤍 Persian</div>
+  </div>
+  <div class="sb-div"></div>
+  <div class="sb-sec">
+    <div class="sb-sec-title">Services</div>
+    <div class="sb-item active" id="sb-grooming" onclick="filterService('grooming')"><div class="sb-item-l"><span class="sb-ico">✂️</span>Grooming</div><div class="toggle on" id="tog-grooming"></div></div>
+    <div class="sb-item active" id="sb-foster" onclick="filterService('foster')"><div class="sb-item-l"><span class="sb-ico">🏠</span>Foster Care</div><div class="toggle on" id="tog-foster"></div></div>
+    <div class="sb-item active" id="sb-mating" onclick="filterService('mating')"><div class="sb-item-l"><span class="sb-ico">💕</span>Mating Service</div><div class="toggle on" id="tog-mating"></div></div>
+    <div class="sb-sub">
+      <div class="sb-link" onclick="showMatingTabAndGo('ragdoll')">↳ Ragdoll</div>
+      <div class="sb-link" onclick="showMatingTabAndGo('persian')">↳ Persian</div>
+      <div class="sb-link" onclick="showMatingTabAndGo('scottish')">↳ Scottish Fold</div>
+      <div class="sb-link" onclick="showMatingTabAndGo('british')">↳ British L/S Hair</div>
+    </div>
+  </div>
+  <div class="sb-div"></div>
+  <div class="sb-sec">
     <div class="sb-sec-title">Quick Links</div>
-    <div class="sb-link" onclick="goTo('ourdolls')">👑 Our Dolls</div>
     <div class="sb-link" onclick="goTo('gallery')">🐱 Available Kittens</div>
+    <div class="sb-link" onclick="goTo('ourdolls')">👑 Our Dolls</div>
     <div class="sb-link" onclick="goTo('happyhomes')">🏡 Happy Homes</div>
     <div class="sb-link" onclick="goTo('mating')">💕 Mating</div>
     <div class="sb-link" onclick="goTo('services')">✂️ Services</div>
@@ -780,8 +782,8 @@
   <nav>
     <div class="nav-title">Shinzu Family<span>Ragdoll · Persian · Scottish Fold</span></div>
     <div class="nav-links">
-      <a href="#ourdolls" onclick="goTo('ourdolls')">Our Dolls</a>
       <a href="#gallery" onclick="goTo('gallery')">Kittens</a>
+      <a href="#ourdolls" onclick="goTo('ourdolls')">Our Dolls</a>
       <a href="#happyhomes" onclick="goTo('happyhomes')">Happy Homes</a>
       <a href="#mating" onclick="goTo('mating')">Mating</a>
       <a href="#services" onclick="goTo('services')">Services</a> <a href="#clientmoments" onclick="goTo('clientmoments')">Moments</a> <a href="#reviews" onclick="goTo('reviews')">Reviews</a>
@@ -821,287 +823,6 @@
     </div>
     <div class="soc-card yt" onclick="window.open('https://www.youtube.com/@HouseofRagdollBangladesh','_blank')">
       <div class="soc-icon">🎬</div><div><div class="soc-label">Watch us on</div><div class="soc-name">YouTube</div><div class="soc-sub">Cute cat videos &amp; care guides</div><button class="soc-btn">Subscribe</button></div>
-    </div>
-  </div>
-  <!-- OUR DOLLS -->
-  <div class="dolls-wrap" id="ourdolls">
-    <div class="dolls-inner">
-      <div class="sec-eyebrow">Our Resident Cats</div>
-      <h2 class="sec-title">Our Dolls 👑 <span style="font-size:.65rem;font-family:var(--font-body);font-weight:600;background:#e53e3e;color:#fff;padding:.2rem .6rem;border-radius:8px;vertical-align:middle;margin-left:.5rem;">Not For Sale</span></h2>
-      <div class="sec-sub">Meet our beautiful resident parent cats 👑 — these are <strong>not for sale</strong>. Their adorable kittens are available in the gallery below!</div>
-      <div class="dolls-tabs">
-        <button class="dtab active" id="dtab-all" onclick="showDollTab('all',this)">🐾 All Cats</button>
-        <button class="dtab" id="dtab-ragdoll" onclick="showDollTab('ragdoll',this)">🐱 Ragdoll</button>
-        <button class="dtab" id="dtab-scottish" onclick="showDollTab('scottish',this)">🐾 Scottish Fold</button>
-        <button class="dtab" id="dtab-persian" onclick="showDollTab('persian',this)">🤍 Persian</button>
-      </div>
-      <div class="dolls-grid" id="dolls-all-grid">
-        <!-- Ragdoll cards -->
-          <div class="doll-card" data-breed="ragdoll">
-            <div class="doll-slideshow">
-              <div class="doll-slides"  id="dslides-vutum">
-                <div class="doll-slide"><img loading="lazy" src="vutum1.jpg" alt="Vutum" onclick="openLightbox(['vutum1.jpg','vutum2.jpg','vutum3.jpg'],0,'Vutum')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-                <div class="doll-slide"><img loading="lazy" src="vutum2.jpg" alt="Vutum 2" onclick="openLightbox(['vutum1.jpg','vutum2.jpg','vutum3.jpg'],1,'Vutum')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-                <div class="doll-slide"><img loading="lazy" src="vutum3.jpg" alt="Vutum 3" onclick="openLightbox(['vutum1.jpg','vutum2.jpg','vutum3.jpg'],2,'Vutum')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-              </div>
-              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('vutum',-1)">&#8249;</button>
-              <button class="doll-slide-btn doll-next" onclick="changeDSlide('vutum',1)">&#8250;</button>
-              <div class="doll-dots" id="ddots-vutum"><div class="ddot active" onclick="goDSlide('vutum',0)"></div><div class="ddot" onclick="goDSlide('vutum',1)"></div><div class="ddot" onclick="goDSlide('vutum',2)"></div></div>
-              <div class="doll-crown">👑 Parent Queen</div>
-            </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Vutum</div>
-              <div class="doll-role">Ragdoll · Bicolor · Female</div>
-              <div class="doll-specs">
-                <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
-                <div class="dspec">🎂 <span><strong>Age:</strong> 16 Months</span></div>
-                <div class="dspec">🎨 <span><strong>Coat:</strong> Bicolor</span></div>
-                <div class="dspec">👁️ <span><strong>Eyes:</strong> Blue</span></div>
-                <div class="dspec">🎀 <span><strong>Color:</strong> Chocolate</span></div>
-                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
-                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
-              </div>
-              <div class="doll-tags"><span class="doll-tag">💙 Blue Eyes</span><span class="doll-tag">🍫 Chocolate</span><span class="doll-tag">😇 Gentle</span></div>
-              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
-              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Vutum (Ragdoll Bicolor).','_blank')">Inquire About Vutum's Kittens 🐱</button>
-            </div>
-          </div>
-          <div class="doll-card" data-breed="ragdoll">
-            <div class="doll-slideshow">
-              <div class="doll-slides"  id="dslides-sondesh">
-                <div class="doll-slide"><img loading="lazy" src="Sondesh1.jpg" alt="Sondesh" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],0,'Sondesh')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-                <div class="doll-slide"><img loading="lazy" src="Sondesh2.jpg" alt="Sondesh 2" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],1,'Sondesh')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-                <div class="doll-slide"><img loading="lazy" src="Sondesh3.jpg" alt="Sondesh 3" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],2,'Sondesh')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-              </div>
-              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('sondesh',-1)">&#8249;</button>
-              <button class="doll-slide-btn doll-next" onclick="changeDSlide('sondesh',1)">&#8250;</button>
-              <div class="doll-dots" id="ddots-sondesh"><div class="ddot active" onclick="goDSlide('sondesh',0)"></div><div class="ddot" onclick="goDSlide('sondesh',1)"></div><div class="ddot" onclick="goDSlide('sondesh',2)"></div></div>
-              <div class="doll-crown">👑 Parent King</div>
-            </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Sondesh</div>
-              <div class="doll-role">Ragdoll · Bicolor · Male</div>
-              <div class="doll-specs">
-                <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
-                <div class="dspec">🎂 <span><strong>Age:</strong> 18 Months</span></div>
-                <div class="dspec">🎨 <span><strong>Coat:</strong> Bicolor</span></div>
-                <div class="dspec">👁️ <span><strong>Eyes:</strong> Blue</span></div>
-                <div class="dspec">🎀 <span><strong>Color:</strong> Blue</span></div>
-                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
-                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
-              </div>
-              <div class="doll-tags"><span class="doll-tag">💙 Blue</span><span class="doll-tag">🤗 Playful</span><span class="doll-tag">👑 Pure Breed</span></div>
-              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
-              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Sondesh (Ragdoll Bicolor).','_blank')">Inquire About Sondesh's Kittens 🐱</button>
-            </div>
-          </div>
-          <div class="doll-card" data-breed="ragdoll">
-            <div class="doll-slideshow">
-              <div class="doll-slides"  id="dslides-rango">
-                <div class="doll-slide"><img loading="lazy" src="Rango1.jpg" alt="Rango" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],0,'Rango')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-                <div class="doll-slide"><img loading="lazy" src="Rango2.jpg" alt="Rango 2" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],1,'Rango')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-              </div>
-              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('rango',-1)">&#8249;</button>
-              <button class="doll-slide-btn doll-next" onclick="changeDSlide('rango',1)">&#8250;</button>
-              <div class="doll-dots" id="ddots-rango">
-                <div class="ddot active" onclick="goDSlide('rango',0)"></div>
-                <div class="ddot" onclick="goDSlide('rango',1)"></div>
-              </div>
-              <div class="doll-crown">👑 Parent King</div>
-            </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Rango</div>
-              <div class="doll-role">Ragdoll · Colorpoint · Male</div>
-              <div class="doll-specs">
-                <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
-                <div class="dspec">🎂 <span><strong>Age:</strong> 16 Months</span></div>
-                <div class="dspec">🎨 <span><strong>Coat:</strong> Color Point</span></div>
-                <div class="dspec">👁️ <span><strong>Eyes:</strong> Blue</span></div>
-                <div class="dspec">🎀 <span><strong>Color:</strong> Chocolate</span></div>
-                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
-                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
-              </div>
-              <div class="doll-tags"><span class="doll-tag">💙 Blue Eyes</span><span class="doll-tag">🍫 Chocolate</span><span class="doll-tag">💫 Color Point</span></div>
-              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
-              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Rango (Ragdoll Color Point Male).','_blank')">Inquire About Rango's Kittens 🐱</button>
-            </div>
-          </div>
-        <!-- Scottish Fold cards -->
-                    <div class="doll-card" data-breed="scottish">
-            <div class="doll-slideshow">
-              <div class="doll-slides"  id="dslides-shangchi">
-                <div class="doll-slide"><img loading="lazy" src="ShangChi1.jpg" alt="Shang Chi" onclick="openLightbox(['ShangChi1.jpg','ShangChi2.jpg'],0,'Shang Chi')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-                <div class="doll-slide"><img loading="lazy" src="ShangChi2.jpg" alt="Shang Chi 2" onclick="openLightbox(['ShangChi1.jpg','ShangChi2.jpg'],1,'Shang Chi')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-              </div>
-              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('shangchi',-1)">&#8249;</button>
-              <button class="doll-slide-btn doll-next" onclick="changeDSlide('shangchi',1)">&#8250;</button>
-              <div class="doll-dots" id="ddots-shangchi"><div class="ddot active" onclick="goDSlide('shangchi',0)"></div><div class="ddot" onclick="goDSlide('shangchi',1)"></div></div>
-              <div class="doll-crown">👑 Parent King</div>
-            </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐾 Scottish Fold</div><br><div class="doll-name">Shang Chi</div>
-              <div class="doll-role">Scottish Fold · Tabby · Male</div>
-              <div class="doll-specs">
-                <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
-                <div class="dspec">🎂 <span><strong>Age:</strong> 17 Months</span></div>
-                <div class="dspec">🎨 <span><strong>Pattern:</strong> Scottish Fold</span></div>
-                <div class="dspec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div>
-                <div class="dspec">🎀 <span><strong>Color:</strong> Bi-colored Tabby</span></div>
-                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
-                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
-              </div>
-              <div class="doll-tags"><span class="doll-tag">👂 Folded Ears</span><span class="doll-tag">🌀 Round Face</span><span class="doll-tag">💫 Unique</span></div>
-              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
-              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Shang Chi (Scottish Fold Tabby Male).','_blank')">Inquire About Shang Chi's Kittens 🐱</button>
-            </div>
-          </div>
-
-          <div class="doll-card" data-breed="scottish">
-            <div class="doll-slideshow">
-              <div class="doll-slides"  id="dslides-yangchi">
-                <div class="doll-slide"><img loading="lazy" src="YangChi1.jpg" alt="Yang Chi" onclick="openLightbox(['YangChi1.jpg'],0,'Yang Chi')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-              </div>
-              <div class="doll-dots" id="ddots-yangchi"><div class="ddot active" onclick="goDSlide('yangchi',0)"></div></div>
-              <div class="doll-crown">👑 Parent Queen</div>
-            </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐾 Scottish Fold</div><br><div class="doll-name">Yang Chi</div>
-              <div class="doll-role">Scottish Fold · Tabby · Female</div>
-              <div class="doll-specs">
-                <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
-                <div class="dspec">🎂 <span><strong>Age:</strong> 17 Months</span></div>
-                <div class="dspec">🎨 <span><strong>Pattern:</strong> Scottish Fold</span></div>
-                <div class="dspec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div>
-                <div class="dspec">🎀 <span><strong>Color:</strong> Ginger</span></div>
-                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
-                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
-              </div>
-              <div class="doll-tags"><span class="doll-tag">👂 Folded Ears</span><span class="doll-tag">🌀 Round Face</span><span class="doll-tag">💫 Unique</span></div>
-              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
-              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Yang Chi (Scottish Fold Tabby Female).','_blank')">Inquire About Yang Chi's Kittens 🐱</button>
-            </div>
-          </div>
-        <!-- Persian cards -->
-                    <div class="doll-card" data-breed="persian">
-            <div class="doll-slideshow">
-              <div class="doll-slides"  id="dslides-chinki">
-                <div class="doll-slide"><img loading="lazy" src="Chinki1.jpg" alt="Chinki" onclick="openLightbox(['Chinki1.jpg','Chinki2.jpg'],0,'Chinki')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-                <div class="doll-slide"><img loading="lazy" src="Chinki2.jpg" alt="Chinki 2" onclick="openLightbox(['Chinki1.jpg','Chinki2.jpg'],1,'Chinki')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-              </div>
-              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('chinki',-1)">&#8249;</button>
-              <button class="doll-slide-btn doll-next" onclick="changeDSlide('chinki',1)">&#8250;</button>
-              <div class="doll-dots" id="ddots-chinki"><div class="ddot active" onclick="goDSlide('chinki',0)"></div><div class="ddot" onclick="goDSlide('chinki',1)"></div></div>
-              <div class="doll-crown">👑 Parent Queen</div>
-            </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🤍 Persian</div><br><div class="doll-name">Chinki</div>
-              <div class="doll-role">Persian · Orange Eye · Female</div>
-              <div class="doll-specs">
-                <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
-                <div class="dspec">🎂 <span><strong>Age:</strong> 56 Months</span></div>
-                <div class="dspec">🎨 <span><strong>Category:</strong> Orange Eye</span></div>
-                <div class="dspec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div>
-                <div class="dspec">🎀 <span><strong>Color:</strong> Torte</span></div>
-                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
-                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
-              </div>
-              <div class="doll-tags"><span class="doll-tag">🤍 Calm</span><span class="doll-tag">🎨 Torte</span><span class="doll-tag">🧡 Orange Eye</span></div>
-              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
-              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Chinki (Persian Orange Eye).','_blank')">Inquire About Chinki's Kittens 🐱</button>
-            </div>
-          </div>
-
-          <div class="doll-card" data-breed="persian">
-            <div class="doll-slideshow">
-              <div class="doll-slides"  id="dslides-gadu">
-                <div class="doll-slide"><img loading="lazy" src="gadu1.jpg" alt="Gadu" onclick="openLightbox(['gadu1.jpg','gadu2.jpg'],0,'Gadu')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-                <div class="doll-slide"><img loading="lazy" src="gadu2.jpg" alt="Gadu 2" onclick="openLightbox(['gadu1.jpg','gadu2.jpg'],1,'Gadu')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
-              </div>
-              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('gadu',-1)">&#8249;</button>
-              <button class="doll-slide-btn doll-next" onclick="changeDSlide('gadu',1)">&#8250;</button>
-              <div class="doll-dots" id="ddots-gadu"><div class="ddot active" onclick="goDSlide('gadu',0)"></div><div class="ddot" onclick="goDSlide('gadu',1)"></div></div>
-              <div class="doll-crown">👑 Parent King</div>
-            </div>
-            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🤍 Persian</div><br><div class="doll-name">Gadu</div>
-              <div class="doll-role">Persian · Orange Eye · Male</div>
-              <div class="doll-specs">
-                <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
-                <div class="dspec">🎂 <span><strong>Age:</strong> 59 Months</span></div>
-                <div class="dspec">🎨 <span><strong>Category:</strong> Orange Eye</span></div>
-                <div class="dspec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div>
-                <div class="dspec">🎀 <span><strong>Color:</strong> White</span></div>
-                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
-                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
-              </div>
-              <div class="doll-tags"><span class="doll-tag">🤍 Snow White</span><span class="doll-tag">🧡 Orange Eye</span><span class="doll-tag">👑 Pure Breed</span></div>
-              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
-              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Gadu (Persian Orange Eye Male).','_blank')">Inquire About Gadu's Kittens 🐱</button>
-            </div>
-          </div>
-        
-          <div class="doll-card" data-breed="persian">
-            <div class="doll-slideshow">
-              <div class="doll-slides"  id="dslides-shiku">
-                <div class="doll-slide"><img loading="lazy" src="shiku1.jpg" alt="Shiku" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['shiku1.jpg','shiku2.jpg','shiku3.jpg'],0,'Shiku')"></div>
-                <div class="doll-slide"><img loading="lazy" src="shiku2.jpg" alt="Shiku 2" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['shiku1.jpg','shiku2.jpg','shiku3.jpg'],1,'Shiku')"></div>
-                <div class="doll-slide"><img loading="lazy" src="shiku3.jpg" alt="Shiku 3" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['shiku1.jpg','shiku2.jpg','shiku3.jpg'],2,'Shiku')"></div>
-              </div>
-              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('shiku',-1)">&#8249;</button>
-              <button class="doll-slide-btn doll-next" onclick="changeDSlide('shiku',1)">&#8250;</button>
-              <div class="doll-dots" id="ddots-shiku">
-                <div class="ddot active" onclick="goDSlide('shiku',0)"></div>
-                <div class="ddot" onclick="goDSlide('shiku',1)"></div>
-                <div class="ddot" onclick="goDSlide('shiku',2)"></div>
-              </div>
-              <div class="doll-crown">👑 Parent Queen</div>
-            </div>
-            <div class="doll-info">
-              <div class="mating-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🤍 Persian</div><br>
-              <div class="doll-name">Shiku</div>
-              <div class="doll-role">Persian · Orange Eye · Female</div>
-              <div class="doll-specs">
-                <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
-                <div class="dspec">🎂 <span><strong>Age:</strong> 22 Months</span></div>
-                <div class="dspec">🎨 <span><strong>Category:</strong> Orange Eye</span></div>
-                <div class="dspec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div>
-                <div class="dspec">🎀 <span><strong>Color:</strong> Fawn</span></div>
-                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
-                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
-              </div>
-              <div class="doll-tags"><span class="doll-tag">🤍 Calm</span><span class="doll-tag">🎨 Fawn</span><span class="doll-tag">🧡 Orange Eye</span></div>
-              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
-              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Shiku (Persian Orange Eye Female).','_blank')">Inquire About Shiku's Kittens 🐱</button>
-            </div>
-          </div>
-          <div class="doll-card" data-breed="persian">
-            <div class="doll-slideshow">
-              <div class="doll-slides"  id="dslides-niku">
-                <div class="doll-slide"><img loading="lazy" src="niku1.jpg" alt="Niku" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['niku1.jpg','niku2.jpg','niku3.jpg'],0,'Niku')"></div>
-                <div class="doll-slide"><img loading="lazy" src="niku2.jpg" alt="Niku 2" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['niku1.jpg','niku2.jpg','niku3.jpg'],1,'Niku')"></div>
-                <div class="doll-slide"><img loading="lazy" src="niku3.jpg" alt="Niku 3" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['niku1.jpg','niku2.jpg','niku3.jpg'],2,'Niku')"></div>
-              </div>
-              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('niku',-1)">&#8249;</button>
-              <button class="doll-slide-btn doll-next" onclick="changeDSlide('niku',1)">&#8250;</button>
-              <div class="doll-dots" id="ddots-niku">
-                <div class="ddot active" onclick="goDSlide('niku',0)"></div>
-                <div class="ddot" onclick="goDSlide('niku',1)"></div>
-                <div class="ddot" onclick="goDSlide('niku',2)"></div>
-              </div>
-              <div class="doll-crown">👑 Parent Queen</div>
-            </div>
-            <div class="doll-info">
-              <div class="mating-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🤍 Persian</div><br>
-              <div class="doll-name">Niku</div>
-              <div class="doll-role">Persian · Orange Eye · Female</div>
-              <div class="doll-specs">
-                <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
-                <div class="dspec">🎂 <span><strong>Age:</strong> 22 Months</span></div>
-                <div class="dspec">🎨 <span><strong>Category:</strong> Orange Eye</span></div>
-                <div class="dspec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div>
-                <div class="dspec">🎀 <span><strong>Color:</strong> White</span></div>
-                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
-                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
-              </div>
-              <div class="doll-tags"><span class="doll-tag">🤍 Calm</span><span class="doll-tag">🎨 White</span><span class="doll-tag">🧡 Orange Eye</span></div>
-              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
-              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Niku (Persian Orange Eye Female).','_blank')">Inquire About Niku's Kittens 🐱</button>
-            </div>
-          </div>
-      </div><!-- end dolls-all-grid -->
     </div>
   </div>
   <!-- KITTENS GALLERY -->
@@ -1437,6 +1158,287 @@
     </div>
   </div>
 
+  <!-- OUR DOLLS -->
+  <div class="dolls-wrap" id="ourdolls">
+    <div class="dolls-inner">
+      <div class="sec-eyebrow">Our Resident Cats</div>
+      <h2 class="sec-title">Our Dolls 👑 <span style="font-size:.65rem;font-family:var(--font-body);font-weight:600;background:#e53e3e;color:#fff;padding:.2rem .6rem;border-radius:8px;vertical-align:middle;margin-left:.5rem;">Not For Sale</span></h2>
+      <div class="sec-sub">Meet our beautiful resident parent cats 👑 — these are <strong>not for sale</strong>. Their adorable kittens are available in the gallery below!</div>
+      <div class="dolls-tabs">
+        <button class="dtab active" id="dtab-all" onclick="showDollTab('all',this)">🐾 All Cats</button>
+        <button class="dtab" id="dtab-ragdoll" onclick="showDollTab('ragdoll',this)">🐱 Ragdoll</button>
+        <button class="dtab" id="dtab-scottish" onclick="showDollTab('scottish',this)">🐾 Scottish Fold</button>
+        <button class="dtab" id="dtab-persian" onclick="showDollTab('persian',this)">🤍 Persian</button>
+      </div>
+      <div class="dolls-grid" id="dolls-all-grid">
+        <!-- Ragdoll cards -->
+          <div class="doll-card" data-breed="ragdoll">
+            <div class="doll-slideshow">
+              <div class="doll-slides"  id="dslides-vutum">
+                <div class="doll-slide"><img loading="lazy" src="vutum1.jpg" alt="Vutum" onclick="openLightbox(['vutum1.jpg','vutum2.jpg','vutum3.jpg'],0,'Vutum')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="vutum2.jpg" alt="Vutum 2" onclick="openLightbox(['vutum1.jpg','vutum2.jpg','vutum3.jpg'],1,'Vutum')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="vutum3.jpg" alt="Vutum 3" onclick="openLightbox(['vutum1.jpg','vutum2.jpg','vutum3.jpg'],2,'Vutum')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+              </div>
+              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('vutum',-1)">&#8249;</button>
+              <button class="doll-slide-btn doll-next" onclick="changeDSlide('vutum',1)">&#8250;</button>
+              <div class="doll-dots" id="ddots-vutum"><div class="ddot active" onclick="goDSlide('vutum',0)"></div><div class="ddot" onclick="goDSlide('vutum',1)"></div><div class="ddot" onclick="goDSlide('vutum',2)"></div></div>
+              <div class="doll-crown">👑 Parent Queen</div>
+            </div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Vutum</div>
+              <div class="doll-role">Ragdoll · Bicolor · Female</div>
+              <div class="doll-specs">
+                <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
+                <div class="dspec">🎂 <span><strong>Age:</strong> 16 Months</span></div>
+                <div class="dspec">🎨 <span><strong>Coat:</strong> Bicolor</span></div>
+                <div class="dspec">👁️ <span><strong>Eyes:</strong> Blue</span></div>
+                <div class="dspec">🎀 <span><strong>Color:</strong> Chocolate</span></div>
+                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
+              </div>
+              <div class="doll-tags"><span class="doll-tag">💙 Blue Eyes</span><span class="doll-tag">🍫 Chocolate</span><span class="doll-tag">😇 Gentle</span></div>
+              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
+              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Vutum (Ragdoll Bicolor).','_blank')">Inquire About Vutum's Kittens 🐱</button>
+            </div>
+          </div>
+          <div class="doll-card" data-breed="ragdoll">
+            <div class="doll-slideshow">
+              <div class="doll-slides"  id="dslides-sondesh">
+                <div class="doll-slide"><img loading="lazy" src="Sondesh1.jpg" alt="Sondesh" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],0,'Sondesh')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="Sondesh2.jpg" alt="Sondesh 2" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],1,'Sondesh')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="Sondesh3.jpg" alt="Sondesh 3" onclick="openLightbox(['Sondesh1.jpg','Sondesh2.jpg','Sondesh3.jpg'],2,'Sondesh')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+              </div>
+              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('sondesh',-1)">&#8249;</button>
+              <button class="doll-slide-btn doll-next" onclick="changeDSlide('sondesh',1)">&#8250;</button>
+              <div class="doll-dots" id="ddots-sondesh"><div class="ddot active" onclick="goDSlide('sondesh',0)"></div><div class="ddot" onclick="goDSlide('sondesh',1)"></div><div class="ddot" onclick="goDSlide('sondesh',2)"></div></div>
+              <div class="doll-crown">👑 Parent King</div>
+            </div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Sondesh</div>
+              <div class="doll-role">Ragdoll · Bicolor · Male</div>
+              <div class="doll-specs">
+                <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
+                <div class="dspec">🎂 <span><strong>Age:</strong> 18 Months</span></div>
+                <div class="dspec">🎨 <span><strong>Coat:</strong> Bicolor</span></div>
+                <div class="dspec">👁️ <span><strong>Eyes:</strong> Blue</span></div>
+                <div class="dspec">🎀 <span><strong>Color:</strong> Blue</span></div>
+                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
+              </div>
+              <div class="doll-tags"><span class="doll-tag">💙 Blue</span><span class="doll-tag">🤗 Playful</span><span class="doll-tag">👑 Pure Breed</span></div>
+              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
+              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Sondesh (Ragdoll Bicolor).','_blank')">Inquire About Sondesh's Kittens 🐱</button>
+            </div>
+          </div>
+          <div class="doll-card" data-breed="ragdoll">
+            <div class="doll-slideshow">
+              <div class="doll-slides"  id="dslides-rango">
+                <div class="doll-slide"><img loading="lazy" src="Rango1.jpg" alt="Rango" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],0,'Rango')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="Rango2.jpg" alt="Rango 2" onclick="openLightbox(['Rango1.jpg','Rango2.jpg'],1,'Rango')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+              </div>
+              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('rango',-1)">&#8249;</button>
+              <button class="doll-slide-btn doll-next" onclick="changeDSlide('rango',1)">&#8250;</button>
+              <div class="doll-dots" id="ddots-rango">
+                <div class="ddot active" onclick="goDSlide('rango',0)"></div>
+                <div class="ddot" onclick="goDSlide('rango',1)"></div>
+              </div>
+              <div class="doll-crown">👑 Parent King</div>
+            </div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐱 Ragdoll</div><br><div class="doll-name">Rango</div>
+              <div class="doll-role">Ragdoll · Colorpoint · Male</div>
+              <div class="doll-specs">
+                <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
+                <div class="dspec">🎂 <span><strong>Age:</strong> 16 Months</span></div>
+                <div class="dspec">🎨 <span><strong>Coat:</strong> Color Point</span></div>
+                <div class="dspec">👁️ <span><strong>Eyes:</strong> Blue</span></div>
+                <div class="dspec">🎀 <span><strong>Color:</strong> Chocolate</span></div>
+                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
+              </div>
+              <div class="doll-tags"><span class="doll-tag">💙 Blue Eyes</span><span class="doll-tag">🍫 Chocolate</span><span class="doll-tag">💫 Color Point</span></div>
+              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
+              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Rango (Ragdoll Color Point Male).','_blank')">Inquire About Rango's Kittens 🐱</button>
+            </div>
+          </div>
+        <!-- Scottish Fold cards -->
+                    <div class="doll-card" data-breed="scottish">
+            <div class="doll-slideshow">
+              <div class="doll-slides"  id="dslides-shangchi">
+                <div class="doll-slide"><img loading="lazy" src="ShangChi1.jpg" alt="Shang Chi" onclick="openLightbox(['ShangChi1.jpg','ShangChi2.jpg'],0,'Shang Chi')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="ShangChi2.jpg" alt="Shang Chi 2" onclick="openLightbox(['ShangChi1.jpg','ShangChi2.jpg'],1,'Shang Chi')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+              </div>
+              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('shangchi',-1)">&#8249;</button>
+              <button class="doll-slide-btn doll-next" onclick="changeDSlide('shangchi',1)">&#8250;</button>
+              <div class="doll-dots" id="ddots-shangchi"><div class="ddot active" onclick="goDSlide('shangchi',0)"></div><div class="ddot" onclick="goDSlide('shangchi',1)"></div></div>
+              <div class="doll-crown">👑 Parent King</div>
+            </div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐾 Scottish Fold</div><br><div class="doll-name">Shang Chi</div>
+              <div class="doll-role">Scottish Fold · Tabby · Male</div>
+              <div class="doll-specs">
+                <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
+                <div class="dspec">🎂 <span><strong>Age:</strong> 17 Months</span></div>
+                <div class="dspec">🎨 <span><strong>Pattern:</strong> Scottish Fold</span></div>
+                <div class="dspec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div>
+                <div class="dspec">🎀 <span><strong>Color:</strong> Bi-colored Tabby</span></div>
+                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
+              </div>
+              <div class="doll-tags"><span class="doll-tag">👂 Folded Ears</span><span class="doll-tag">🌀 Round Face</span><span class="doll-tag">💫 Unique</span></div>
+              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
+              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Shang Chi (Scottish Fold Tabby Male).','_blank')">Inquire About Shang Chi's Kittens 🐱</button>
+            </div>
+          </div>
+
+          <div class="doll-card" data-breed="scottish">
+            <div class="doll-slideshow">
+              <div class="doll-slides"  id="dslides-yangchi">
+                <div class="doll-slide"><img loading="lazy" src="YangChi1.jpg" alt="Yang Chi" onclick="openLightbox(['YangChi1.jpg'],0,'Yang Chi')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+              </div>
+              <div class="doll-dots" id="ddots-yangchi"><div class="ddot active" onclick="goDSlide('yangchi',0)"></div></div>
+              <div class="doll-crown">👑 Parent Queen</div>
+            </div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#6d28d9;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🐾 Scottish Fold</div><br><div class="doll-name">Yang Chi</div>
+              <div class="doll-role">Scottish Fold · Tabby · Female</div>
+              <div class="doll-specs">
+                <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
+                <div class="dspec">🎂 <span><strong>Age:</strong> 17 Months</span></div>
+                <div class="dspec">🎨 <span><strong>Pattern:</strong> Scottish Fold</span></div>
+                <div class="dspec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div>
+                <div class="dspec">🎀 <span><strong>Color:</strong> Ginger</span></div>
+                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
+              </div>
+              <div class="doll-tags"><span class="doll-tag">👂 Folded Ears</span><span class="doll-tag">🌀 Round Face</span><span class="doll-tag">💫 Unique</span></div>
+              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
+              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Yang Chi (Scottish Fold Tabby Female).','_blank')">Inquire About Yang Chi's Kittens 🐱</button>
+            </div>
+          </div>
+        <!-- Persian cards -->
+                    <div class="doll-card" data-breed="persian">
+            <div class="doll-slideshow">
+              <div class="doll-slides"  id="dslides-chinki">
+                <div class="doll-slide"><img loading="lazy" src="Chinki1.jpg" alt="Chinki" onclick="openLightbox(['Chinki1.jpg','Chinki2.jpg'],0,'Chinki')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="Chinki2.jpg" alt="Chinki 2" onclick="openLightbox(['Chinki1.jpg','Chinki2.jpg'],1,'Chinki')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+              </div>
+              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('chinki',-1)">&#8249;</button>
+              <button class="doll-slide-btn doll-next" onclick="changeDSlide('chinki',1)">&#8250;</button>
+              <div class="doll-dots" id="ddots-chinki"><div class="ddot active" onclick="goDSlide('chinki',0)"></div><div class="ddot" onclick="goDSlide('chinki',1)"></div></div>
+              <div class="doll-crown">👑 Parent Queen</div>
+            </div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🤍 Persian</div><br><div class="doll-name">Chinki</div>
+              <div class="doll-role">Persian · Orange Eye · Female</div>
+              <div class="doll-specs">
+                <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
+                <div class="dspec">🎂 <span><strong>Age:</strong> 56 Months</span></div>
+                <div class="dspec">🎨 <span><strong>Category:</strong> Orange Eye</span></div>
+                <div class="dspec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div>
+                <div class="dspec">🎀 <span><strong>Color:</strong> Torte</span></div>
+                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
+              </div>
+              <div class="doll-tags"><span class="doll-tag">🤍 Calm</span><span class="doll-tag">🎨 Torte</span><span class="doll-tag">🧡 Orange Eye</span></div>
+              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
+              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Chinki (Persian Orange Eye).','_blank')">Inquire About Chinki's Kittens 🐱</button>
+            </div>
+          </div>
+
+          <div class="doll-card" data-breed="persian">
+            <div class="doll-slideshow">
+              <div class="doll-slides"  id="dslides-gadu">
+                <div class="doll-slide"><img loading="lazy" src="gadu1.jpg" alt="Gadu" onclick="openLightbox(['gadu1.jpg','gadu2.jpg'],0,'Gadu')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+                <div class="doll-slide"><img loading="lazy" src="gadu2.jpg" alt="Gadu 2" onclick="openLightbox(['gadu1.jpg','gadu2.jpg'],1,'Gadu')" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;"></div>
+              </div>
+              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('gadu',-1)">&#8249;</button>
+              <button class="doll-slide-btn doll-next" onclick="changeDSlide('gadu',1)">&#8250;</button>
+              <div class="doll-dots" id="ddots-gadu"><div class="ddot active" onclick="goDSlide('gadu',0)"></div><div class="ddot" onclick="goDSlide('gadu',1)"></div></div>
+              <div class="doll-crown">👑 Parent King</div>
+            </div>
+            <div class="doll-info"><div class="doll-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.65rem;font-weight:800;padding:.2rem .6rem;border-radius:8px;letter-spacing:.05em;margin-bottom:.35rem;text-transform:uppercase;">🤍 Persian</div><br><div class="doll-name">Gadu</div>
+              <div class="doll-role">Persian · Orange Eye · Male</div>
+              <div class="doll-specs">
+                <div class="dspec">⚥ <span><strong>Gender:</strong> Male</span></div>
+                <div class="dspec">🎂 <span><strong>Age:</strong> 59 Months</span></div>
+                <div class="dspec">🎨 <span><strong>Category:</strong> Orange Eye</span></div>
+                <div class="dspec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div>
+                <div class="dspec">🎀 <span><strong>Color:</strong> White</span></div>
+                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
+              </div>
+              <div class="doll-tags"><span class="doll-tag">🤍 Snow White</span><span class="doll-tag">🧡 Orange Eye</span><span class="doll-tag">👑 Pure Breed</span></div>
+              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
+              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Gadu (Persian Orange Eye Male).','_blank')">Inquire About Gadu's Kittens 🐱</button>
+            </div>
+          </div>
+        
+          <div class="doll-card" data-breed="persian">
+            <div class="doll-slideshow">
+              <div class="doll-slides"  id="dslides-shiku">
+                <div class="doll-slide"><img loading="lazy" src="shiku1.jpg" alt="Shiku" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['shiku1.jpg','shiku2.jpg','shiku3.jpg'],0,'Shiku')"></div>
+                <div class="doll-slide"><img loading="lazy" src="shiku2.jpg" alt="Shiku 2" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['shiku1.jpg','shiku2.jpg','shiku3.jpg'],1,'Shiku')"></div>
+                <div class="doll-slide"><img loading="lazy" src="shiku3.jpg" alt="Shiku 3" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['shiku1.jpg','shiku2.jpg','shiku3.jpg'],2,'Shiku')"></div>
+              </div>
+              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('shiku',-1)">&#8249;</button>
+              <button class="doll-slide-btn doll-next" onclick="changeDSlide('shiku',1)">&#8250;</button>
+              <div class="doll-dots" id="ddots-shiku">
+                <div class="ddot active" onclick="goDSlide('shiku',0)"></div>
+                <div class="ddot" onclick="goDSlide('shiku',1)"></div>
+                <div class="ddot" onclick="goDSlide('shiku',2)"></div>
+              </div>
+              <div class="doll-crown">👑 Parent Queen</div>
+            </div>
+            <div class="doll-info">
+              <div class="mating-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🤍 Persian</div><br>
+              <div class="doll-name">Shiku</div>
+              <div class="doll-role">Persian · Orange Eye · Female</div>
+              <div class="doll-specs">
+                <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
+                <div class="dspec">🎂 <span><strong>Age:</strong> 22 Months</span></div>
+                <div class="dspec">🎨 <span><strong>Category:</strong> Orange Eye</span></div>
+                <div class="dspec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div>
+                <div class="dspec">🎀 <span><strong>Color:</strong> Fawn</span></div>
+                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
+              </div>
+              <div class="doll-tags"><span class="doll-tag">🤍 Calm</span><span class="doll-tag">🎨 Fawn</span><span class="doll-tag">🧡 Orange Eye</span></div>
+              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
+              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Shiku (Persian Orange Eye Female).','_blank')">Inquire About Shiku's Kittens 🐱</button>
+            </div>
+          </div>
+          <div class="doll-card" data-breed="persian">
+            <div class="doll-slideshow">
+              <div class="doll-slides"  id="dslides-niku">
+                <div class="doll-slide"><img loading="lazy" src="niku1.jpg" alt="Niku" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['niku1.jpg','niku2.jpg','niku3.jpg'],0,'Niku')"></div>
+                <div class="doll-slide"><img loading="lazy" src="niku2.jpg" alt="Niku 2" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['niku1.jpg','niku2.jpg','niku3.jpg'],1,'Niku')"></div>
+                <div class="doll-slide"><img loading="lazy" src="niku3.jpg" alt="Niku 3" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block;cursor:zoom-in;" onclick="openLightbox(['niku1.jpg','niku2.jpg','niku3.jpg'],2,'Niku')"></div>
+              </div>
+              <button class="doll-slide-btn doll-prev" onclick="changeDSlide('niku',-1)">&#8249;</button>
+              <button class="doll-slide-btn doll-next" onclick="changeDSlide('niku',1)">&#8250;</button>
+              <div class="doll-dots" id="ddots-niku">
+                <div class="ddot active" onclick="goDSlide('niku',0)"></div>
+                <div class="ddot" onclick="goDSlide('niku',1)"></div>
+                <div class="ddot" onclick="goDSlide('niku',2)"></div>
+              </div>
+              <div class="doll-crown">👑 Parent Queen</div>
+            </div>
+            <div class="doll-info">
+              <div class="mating-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem;">🤍 Persian</div><br>
+              <div class="doll-name">Niku</div>
+              <div class="doll-role">Persian · Orange Eye · Female</div>
+              <div class="doll-specs">
+                <div class="dspec">⚥ <span><strong>Gender:</strong> Female</span></div>
+                <div class="dspec">🎂 <span><strong>Age:</strong> 22 Months</span></div>
+                <div class="dspec">🎨 <span><strong>Category:</strong> Orange Eye</span></div>
+                <div class="dspec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div>
+                <div class="dspec">🎀 <span><strong>Color:</strong> White</span></div>
+                <div class="dspec">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
+                <div class="dspec">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
+              </div>
+              <div class="doll-tags"><span class="doll-tag">🤍 Calm</span><span class="doll-tag">🎨 White</span><span class="doll-tag">🧡 Orange Eye</span></div>
+              <div class="not-for-sale">🚫 Not for sale — Parent Cat</div>
+              <button class="btn-doll-wa" onclick="window.open('https://wa.me/8801797822108?text=Hi! I am interested in kittens from Niku (Persian Orange Eye Female).','_blank')">Inquire About Niku's Kittens 🐱</button>
+            </div>
+          </div>
+      </div><!-- end dolls-all-grid -->
+    </div>
+  </div>
   <!-- HAPPY HOMES -->
   <div class="sold-wrap" id="happyhomes">
     <div class="sold-inner">
@@ -1490,7 +1492,7 @@
         <!-- Piku — ragdoll -->
         <div class="sold-card" data-breed="ragdoll">
           <div class="sold-slides-wrap">
-            <div class="sold-slides" id="sslides-piku"><div class="sold-slide"><img loading="lazy" src="Piku.jpg" alt="Piku" onclick="openLightbox(['Piku.jpg'],0,'Piku')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+            <div class="sold-slides" id="sslides-piku"><div class="sold-slide"><img loading="lazy" src="Piku.jpg" alt="Piku" onclick="openLightbox(['Piku.jpg'],0,'Piku')" style="cursor:zoom-in;object-fit:cover;object-position:center center;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('piku',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('piku',1)">&#8250;</button>
             <div class="sold-sdots" id="ssdots-piku"><div class="sold-sdot active" onclick="soldSlideIdx['piku']=0;updateSoldSlide('piku',1)"></div></div>
@@ -1555,7 +1557,7 @@
         <!-- Pookie — persian -->
         <div class="sold-card" data-breed="persian">
           <div class="sold-slides-wrap">
-            <div class="sold-slides" id="sslides-pookie"><div class="sold-slide"><img loading="lazy" src="Pookie1.jpg" alt="Pookie" onclick="openLightbox(['Pookie1.jpg', 'Pookie2.jpg'],0,'Pookie')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Pookie2.jpg" alt="Pookie" onclick="openLightbox(['Pookie1.jpg', 'Pookie2.jpg'],1,'Pookie')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+            <div class="sold-slides" id="sslides-pookie"><div class="sold-slide"><img loading="lazy" src="Pookie1.jpg" alt="Pookie" onclick="openLightbox(['Pookie1.jpg', 'Pookie2.jpg'],0,'Pookie')" style="cursor:zoom-in;object-fit:cover;object-position:center center;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Pookie2.jpg" alt="Pookie" onclick="openLightbox(['Pookie1.jpg', 'Pookie2.jpg'],1,'Pookie')" style="cursor:zoom-in;object-fit:cover;object-position:center center;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('pookie',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('pookie',1)">&#8250;</button>
             <div class="sold-sdots" id="ssdots-pookie"><div class="sold-sdot active" onclick="soldSlideIdx['pookie']=0;updateSoldSlide('pookie',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['pookie']=0;updateSoldSlide('pookie',2)"></div></div>
@@ -1720,7 +1722,7 @@
         <!-- Rubel — british -->
         <div class="sold-card" data-breed="british">
           <div class="sold-slides-wrap">
-            <div class="sold-slides" id="sslides-rubel"><div class="sold-slide"><img loading="lazy" src="Rubel1.jpg" alt="Rubel" onclick="openLightbox(['Rubel1.jpg', 'Rubel2.jpg'],0,'Rubel')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Rubel2.jpg" alt="Rubel" onclick="openLightbox(['Rubel1.jpg', 'Rubel2.jpg'],1,'Rubel')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+            <div class="sold-slides" id="sslides-rubel"><div class="sold-slide"><img loading="lazy" src="Rubel1.jpg" alt="Rubel" onclick="openLightbox(['Rubel1.jpg', 'Rubel2.jpg'],0,'Rubel')" style="cursor:zoom-in;object-fit:cover;object-position:center center;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Rubel2.jpg" alt="Rubel" onclick="openLightbox(['Rubel1.jpg', 'Rubel2.jpg'],1,'Rubel')" style="cursor:zoom-in;object-fit:cover;object-position:center center;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('rubel',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('rubel',1)">&#8250;</button>
             <div class="sold-sdots" id="ssdots-rubel"><div class="sold-sdot active" onclick="soldSlideIdx['rubel']=0;updateSoldSlide('rubel',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['rubel']=0;updateSoldSlide('rubel',2)"></div></div>
@@ -2014,7 +2016,7 @@
 
       <div style="background:#f8f9ff;border:1.5px solid #e8eaf6;border-radius:14px;padding:1.8rem;margin-top:1.5rem;">
         <div style="font-size:2rem;margin-bottom:.5rem;color:var(--navy);">⭐⭐⭐⭐⭐</div>
-        <div style="font-size:1.4rem;font-weight:800;color:var(--navy);margin-bottom:.2rem;">5.0 / 5.0 &nbsp;·&nbsp; 20 Reviews</div>
+        <div style="font-size:1.4rem;font-weight:800;color:var(--navy);margin-bottom:.2rem;">5.0 / 5.0 &nbsp;·&nbsp; 22 Reviews</div>
         <div style="font-size:.85rem;color:var(--navy);margin-bottom:1.2rem;">Read our real reviews from happy cat families on Google Maps. Leave your review too!</div>
         <button class="btn-mating" onclick="window.open('https://maps.app.goo.gl/ur427txpaTomjEuz8','_blank')" style="font-size:.92rem;">
           📍 View Reviews on Google Maps
