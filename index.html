@@ -242,6 +242,12 @@
     .sold-sdot.active{background:#fff;}
     .sold-breed-tag{display:inline-block;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;color:#fff;}
     .sold-note{text-align:center;margin-top:1.4rem;font-size:.78rem;color:rgba(255,255,255,.42);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:.75rem;}
+    .hh-pagination{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1.6rem;flex-wrap:wrap;}
+    .hh-page-btn{background:#fff;border:1.5px solid var(--border);color:var(--navy);font-family:var(--font-body);font-size:.78rem;font-weight:600;padding:.38rem .75rem;border-radius:8px;cursor:pointer;transition:all .18s;}
+    .hh-page-btn:hover:not(.active){border-color:var(--blue);color:var(--blue);}
+    .hh-page-btn.active{background:var(--gold);border-color:var(--gold);color:var(--navy);}
+    .hh-page-btn:disabled{opacity:.35;cursor:default;}
+    .hh-page-info{font-size:.72rem;color:var(--muted);padding:0 .3rem;}
     .mating-wrap{background:#fff;padding:3.5rem 0;}
     .mating-inner{max-width:1400px;margin:0 auto;padding:0 2rem;}
     .mating-inner .sec-eyebrow{color:var(--blue);}
@@ -462,6 +468,376 @@
       .stat{padding:.82rem .92rem;}
       .dolls-grid{grid-template-columns:1fr;}
     }
+
+    /* ═══════════════════════════════════════════════
+       VISUAL ENHANCEMENTS — Gorgeous upgrade pass
+       ═══════════════════════════════════════════════ */
+
+    /* — Hero: richer depth, paw-print shimmer, floating paws — */
+    .hero{
+      background:linear-gradient(160deg,#0d1b35 0%,#162848 35%,#1e3d72 70%,#2a5299 100%);
+      padding:5.5rem 2rem 4.2rem;
+      position:relative;overflow:hidden;
+    }
+    .hero::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(91,155,213,.22) 0%,transparent 70%),
+                 radial-gradient(ellipse 40% 40% at 80% 80%,rgba(200,151,58,.12) 0%,transparent 60%);
+      pointer-events:none;
+    }
+    .hero-circles span:nth-child(1){
+      width:440px;height:440px;top:-110px;right:-90px;
+      border:1px solid rgba(255,255,255,.05);
+      animation:heroOrbit 22s linear infinite;
+    }
+    .hero-circles span:nth-child(2){
+      width:320px;height:320px;bottom:-80px;left:-60px;
+      border:1px solid rgba(200,151,58,.08);
+      animation:heroOrbit 30s linear infinite reverse;
+    }
+    @keyframes heroOrbit{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+    .hero-badge{
+      background:rgba(200,151,58,.16);
+      border:1px solid rgba(200,151,58,.38);
+      color:var(--gold-light);
+      font-size:.69rem;letter-spacing:.14em;
+      padding:.35rem 1.05rem;border-radius:22px;
+      margin-bottom:1.5rem;
+      backdrop-filter:blur(6px);
+    }
+    .hero h1{
+      font-size:3rem;line-height:1.12;
+      margin-bottom:.65rem;
+      text-shadow:0 2px 30px rgba(0,0,0,.35);
+    }
+    .hero h1 em{
+      color:var(--gold-light);
+      display:block;font-size:3.4rem;
+      text-shadow:0 0 40px rgba(200,151,58,.3);
+    }
+    .hero-sub{
+      font-size:1rem;color:rgba(255,255,255,.65);
+      margin-bottom:.5rem;letter-spacing:.015em;
+    }
+    .hero-loc{
+      font-size:.79rem;color:rgba(255,255,255,.42);
+      margin-bottom:2rem;
+    }
+    .btn-gold{
+      background:linear-gradient(135deg,#d4a03f,#c8973a,#b5842e);
+      box-shadow:0 4px 18px rgba(200,151,58,.35);
+      transition:all .2s;
+    }
+    .btn-gold:hover{
+      background:linear-gradient(135deg,#e0b050,#d4a03f);
+      box-shadow:0 6px 24px rgba(200,151,58,.5);
+      transform:translateY(-1px);
+    }
+    .btn-ghost{
+      backdrop-filter:blur(6px);
+      background:rgba(255,255,255,.07);
+      transition:all .2s;
+    }
+    .btn-ghost:hover{
+      background:rgba(255,255,255,.16);
+      transform:translateY(-1px);
+    }
+    .breed-pill{transition:all .18s;}
+    .breed-pill:hover{transform:translateY(-2px);filter:brightness(1.1);}
+
+    /* — Stats bar: warmer, lifted — */
+    .stats{
+      background:linear-gradient(180deg,#fff 0%,#f8f4ef 100%);
+      border-bottom:1px solid rgba(200,151,58,.18);
+      box-shadow:0 2px 16px rgba(30,60,100,.06);
+    }
+    .stat-num{
+      background:linear-gradient(135deg,var(--blue),var(--sky));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      font-size:1.65rem;
+    }
+    .stat:hover .stat-num{
+      background:linear-gradient(135deg,var(--gold),#d4a03f);
+      -webkit-background-clip:text;background-clip:text;
+    }
+
+    /* — Social banner: deeper, richer — */
+    .social-banner{
+      background:linear-gradient(150deg,#0d1225 0%,#1a1240 50%,#120d2a 100%);
+      padding:1.8rem 2rem;
+      position:relative;overflow:hidden;
+    }
+    .social-banner::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse 50% 80% at 25% 50%,rgba(24,119,242,.12) 0%,transparent 60%),
+                 radial-gradient(ellipse 50% 80% at 75% 50%,rgba(255,0,0,.1) 0%,transparent 60%);
+      pointer-events:none;
+    }
+    .soc-card{
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(8px);
+      transition:transform .25s, box-shadow .25s;
+    }
+    .soc-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 32px rgba(0,0,0,.35);
+    }
+
+    /* — Section headers: bolder, cleaner — */
+    .sec-eyebrow{
+      font-size:.66rem;letter-spacing:.18em;
+      color:var(--gold);font-weight:700;
+      margin-bottom:.4rem;
+    }
+    .sec-title{
+      font-size:1.85rem;
+      background:linear-gradient(135deg,var(--navy) 0%,#2e5fa3 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      margin-bottom:.6rem;line-height:1.2;
+    }
+
+    /* — Cat cards: deeper shadow, sharper corners — */
+    .cat-card{
+      border-radius:16px;
+      border:1px solid rgba(221,227,237,.7);
+      box-shadow:0 2px 14px rgba(30,60,100,.07);
+      transition:transform .22s,box-shadow .22s,border-color .22s;
+    }
+    .cat-card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 10px 30px rgba(30,60,100,.13);
+      border-color:rgba(91,155,213,.35);
+    }
+    .cat-name{font-size:.95rem;letter-spacing:.01em;}
+    .btn-order{
+      background:linear-gradient(135deg,var(--blue),#2252a0);
+      border-radius:7px;
+      box-shadow:0 2px 8px rgba(46,95,163,.25);
+      transition:all .18s;
+    }
+    .btn-order:hover{
+      background:linear-gradient(135deg,#2252a0,var(--navy));
+      box-shadow:0 4px 14px rgba(46,95,163,.4);
+      transform:translateY(-1px);
+    }
+    .btn-prebook{
+      border-radius:7px;
+      transition:all .18s;
+    }
+    .btn-prebook:hover{
+      background:linear-gradient(135deg,var(--gold),#d4a03f);
+      border-color:transparent;
+      transform:translateY(-1px);
+    }
+
+    /* — Gallery section: warmer background — */
+    .gallery-wrap{
+      background:linear-gradient(180deg,#f2ede5 0%,#f7f2ea 100%);
+    }
+
+    /* — Parent Cats (dolls) — */
+    .doll-card{
+      border-radius:18px;
+      box-shadow:0 4px 20px rgba(200,151,58,.14);
+      transition:transform .25s,box-shadow .25s;
+    }
+    .doll-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 14px 36px rgba(200,151,58,.2);
+    }
+
+    /* — Happy Homes section — */
+    .sold-wrap{
+      background:linear-gradient(160deg,#1a2642 0%,#1e3060 40%,#1b3264 100%);
+    }
+    .sold-inner .sec-eyebrow{color:var(--gold-light);}
+    .sold-inner .sec-title{
+      color:#fff;
+      -webkit-text-fill-color:#fff;
+      background:none;
+    }
+    .sold-inner .sec-sub{color:rgba(255,255,255,.55);}
+    .sold-tabs .tab{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.12);
+      color:rgba(255,255,255,.6);
+    }
+    .sold-tabs .tab.active{
+      background:var(--gold);color:var(--navy);border-color:var(--gold);
+    }
+    .sold-tabs .tab:hover:not(.active){
+      background:rgba(255,255,255,.1);
+      border-color:rgba(255,255,255,.25);
+      color:#fff;
+    }
+    .sold-card{
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      backdrop-filter:blur(8px);
+      box-shadow:0 3px 18px rgba(0,0,0,.2);
+      transition:transform .22s,box-shadow .22s;
+    }
+    .sold-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 10px 30px rgba(0,0,0,.3);
+    }
+    .sold-info{background:rgba(255,255,255,.04);}
+    .sold-name{color:#fff;}
+    .sold-spec{color:rgba(255,255,255,.75);}
+    .sold-spec strong{color:rgba(255,255,255,.9);}
+    .sold-home{color:var(--gold-light);}
+    .sold-breed-tag{box-shadow:0 2px 8px rgba(0,0,0,.25);}
+    .hh-page-btn{
+      background:rgba(255,255,255,.08);
+      border-color:rgba(255,255,255,.15);
+      color:rgba(255,255,255,.75);
+    }
+    .hh-page-btn:hover:not(.active){
+      border-color:var(--gold);
+      color:var(--gold);
+      background:rgba(200,151,58,.1);
+    }
+    .hh-page-btn.active{background:var(--gold);border-color:var(--gold);color:var(--navy);}
+    .hh-page-info{color:rgba(255,255,255,.4);}
+    .sold-note{
+      color:rgba(255,255,255,.38);
+      border-color:rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+    }
+
+    /* — Mating section: premium — */
+    .mating-wrap{
+      background:linear-gradient(180deg,#fff 0%,#f8f5ef 100%);
+      padding:4rem 0;
+    }
+    .mating-card{
+      border-radius:16px;
+      border:1.5px solid var(--border);
+      box-shadow:0 3px 16px rgba(30,60,100,.07);
+      transition:transform .25s,box-shadow .25s;
+    }
+    .mating-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 14px 36px rgba(30,60,100,.14);
+    }
+
+    /* — Services: refined — */
+    .services-wrap{
+      background:linear-gradient(180deg,#f8f4ef 0%,#fff 100%);
+    }
+    .svc-card{
+      border-radius:16px;
+      background:linear-gradient(180deg,#fff 0%,#fdfbf8 100%);
+      box-shadow:0 2px 12px rgba(30,60,100,.05);
+      transition:transform .22s,box-shadow .22s,border-color .22s;
+    }
+    .svc-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 10px 28px rgba(46,95,163,.11);
+      border-color:var(--blue);
+    }
+    .svc-icon{
+      background:linear-gradient(135deg,#dce8f5,#b8d4ed);
+      border-radius:13px;
+      width:48px;height:48px;
+      box-shadow:0 3px 10px rgba(46,95,163,.12);
+    }
+
+    /* — Why cards — */
+    .why-card{
+      border-radius:14px;
+      transition:transform .2s,box-shadow .2s;
+    }
+    .why-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 8px 22px rgba(30,60,100,.1);
+    }
+      .promo-paw{animation:none;}
+      .hero-circles span{animation:none;}
+    }
+
+    /* Mobile adjustments */
+    @media(max-width:600px){
+      .hero h1{font-size:2.1rem;}
+      .hero h1 em{font-size:2.4rem;}
+      .promo-panel{width:210px;}
+    }
+
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       PROMO TICKER — moves like a train
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .promo-ticker-wrap{
+      position:fixed;
+      bottom:0;left:0;right:0;
+      z-index:600;
+      background:linear-gradient(90deg,#0d1b35,#1b2a4a,#0d1b35);
+      border-top:2px solid rgba(200,151,58,.5);
+      padding:.6rem 0;
+      overflow:hidden;
+      cursor:pointer;
+    }
+    .promo-ticker-track{
+      display:flex;
+      width:max-content;
+      animation:tickerRun 22s linear infinite;
+      white-space:nowrap;
+    }
+    .promo-ticker-wrap:hover .promo-ticker-track{
+      animation-play-state:paused;
+    }
+    @keyframes tickerRun{
+      0%{transform:translateX(0);}
+      100%{transform:translateX(-50%);}
+    }
+    .promo-ticker-item{
+      display:inline-flex;align-items:center;gap:.65rem;
+      padding:0 2.5rem;
+      font-family:var(--font-body);
+      font-size:.82rem;
+      font-weight:700;
+      color:var(--gold-light);
+      letter-spacing:.03em;
+    }
+    .promo-ticker-item .t-sep{
+      color:rgba(200,151,58,.35);
+      font-size:1rem;
+    }
+    .promo-ticker-item .t-tag{
+      background:rgba(200,151,58,.18);
+      border:1px solid rgba(200,151,58,.4);
+      color:var(--gold-light);
+      font-size:.7rem;
+      font-weight:800;
+      padding:.15rem .55rem;
+      border-radius:20px;
+      letter-spacing:.06em;
+    }
+    .promo-ticker-item .t-paw{
+      font-size:1rem;
+    }
+    .promo-ticker-close{
+      position:absolute;right:.8rem;top:50%;transform:translateY(-50%);
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      color:rgba(255,255,255,.5);
+      width:22px;height:22px;border-radius:50%;
+      font-size:.68rem;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      z-index:2;transition:background .15s,color .15s;
+      font-family:var(--font-body);
+    }
+    .promo-ticker-close:hover{background:rgba(255,255,255,.18);color:#fff;}
+    @media(max-width:600px){
+      .promo-ticker-item{font-size:.74rem;padding:0 1.6rem;}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .promo-ticker-track{animation:none;}
+    }
+
   </style>
 
   <!-- Google Search Verification - replace with your code from Google Search Console -->
@@ -1682,16 +2058,11 @@
           </div>
         </div>
 
-      </div><!-- end sold-all-grid -->
-
-      <div class="sold-note">💬 Want to be adopted? Contact us!</div>
-
-    </div><!-- end sold-inner -->
 
         <!-- Blue — British -->
         <div class="sold-card" data-breed="british">
           <div class="sold-slides-wrap">
-            <div class="sold-slides" id="sslides-blue-british"><div class="sold-slide"><img loading="lazy" src="Blue1.jpg" alt="Blue" onclick="openLightbox(['Blue1.jpg','Blue2.jpg','Blue3.jpg'],0,'Blue')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Blue2.jpg" alt="Blue" onclick="openLightbox(['Blue1.jpg','Blue2.jpg','Blue3.jpg'],1,'Blue')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Blue3.jpg" alt="Blue" onclick="openLightbox(['Blue1.jpg','Blue2.jpg','Blue3.jpg'],2,'Blue')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+            <div class="sold-slides" id="sslides-blue-british"><div class="sold-slide"><img loading="lazy" src="Blue1.jpg" alt="Blue" onclick="openLightbox(['Blue1.jpg','Blue2.jpg','Blue3.jpg'],0,'Blue')" style="cursor:zoom-in;object-fit:cover;object-position:center center;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Blue2.jpg" alt="Blue" onclick="openLightbox(['Blue1.jpg','Blue2.jpg','Blue3.jpg'],1,'Blue')" style="cursor:zoom-in;object-fit:cover;object-position:center center;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Blue3.jpg" alt="Blue" onclick="openLightbox(['Blue1.jpg','Blue2.jpg','Blue3.jpg'],2,'Blue')" style="cursor:zoom-in;object-fit:cover;object-position:center center;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('blue-british',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('blue-british',1)">&#8250;</button>
             <div class="sold-sdots" id="ssdots-blue-british"><div class="sold-dot active" onclick="goSoldSlide('blue-british',0)"></div><div class="sold-dot" onclick="goSoldSlide('blue-british',1)"></div><div class="sold-dot" onclick="goSoldSlide('blue-british',2)"></div></div>
@@ -1705,6 +2076,12 @@
             <div class="sold-home">🏠 New home: Basila</div>
           </div>
         </div>
+      </div><!-- end sold-all-grid -->
+
+      <div class="hh-pagination" id="hh-pagination"></div>
+      <div class="sold-note">💬 Want to be adopted? Contact us!</div>
+
+    </div><!-- end sold-inner -->
   </div><!-- end sold-wrap -->
 
   <div id="mating" data-service-id="service-mating" style="scroll-margin-top:70px;">
@@ -2008,6 +2385,27 @@
     <p>© 2026 <span>Shinzu Family — House of Ragdoll, Persian &amp; Scottish Fold</span> · Chandrima Model Town, Dhaka 1207 ·
       <a href="https://wa.me/8801797822108">WhatsApp</a> · <a href="https://www.facebook.com/profile.php?id=61592266154793">Facebook</a> · <a href="https://www.youtube.com/@HouseofRagdollBangladesh">YouTube</a></p>
   </footer>
+
+
+  <!-- PROMO TICKER -->
+  <div class="promo-ticker-wrap" id="promoTicker" onclick="handleTickerClick(event)">
+    <div class="promo-ticker-track" id="promoTrack">
+      
+        <span class="promo-ticker-item"><span class="t-paw">🐾</span> 10% OFF Mating Service this October <span class="t-tag">SHFAM10</span> <span class="t-sep">★</span></span>
+        <span class="promo-ticker-item"><span class="t-paw">✂️</span> 10% OFF Grooming — Book Now <span class="t-tag">SHFAM10</span> <span class="t-sep">★</span></span>
+        <span class="promo-ticker-item"><span class="t-paw">🐱</span> Pure-bred Ragdoll, Persian &amp; Scottish Fold Kittens in Dhaka <span class="t-sep">★</span></span>
+        <span class="promo-ticker-item"><span class="t-paw">🏠</span> Nationwide delivery available <span class="t-sep">★</span></span>
+
+      
+        <span class="promo-ticker-item"><span class="t-paw">🐾</span> 10% OFF Mating Service this October <span class="t-tag">SHFAM10</span> <span class="t-sep">★</span></span>
+        <span class="promo-ticker-item"><span class="t-paw">✂️</span> 10% OFF Grooming — Book Now <span class="t-tag">SHFAM10</span> <span class="t-sep">★</span></span>
+        <span class="promo-ticker-item"><span class="t-paw">🐱</span> Pure-bred Ragdoll, Persian &amp; Scottish Fold Kittens in Dhaka <span class="t-sep">★</span></span>
+        <span class="promo-ticker-item"><span class="t-paw">🏠</span> Nationwide delivery available <span class="t-sep">★</span></span>
+
+    </div>
+    <button class="promo-ticker-close" onclick="event.stopPropagation();document.getElementById('promoTicker').style.display='none'" aria-label="Close ticker">✕</button>
+  </div>
+
 </main><!-- end mainContent -->
 <div class="float-cart" id="floatCart"><button class="float-cart-btn" onclick="openCart()">🛒 View Cart (<span id="floatCount">0</span>)</button></div>
 <div class="cart-panel" id="cartPanel">
@@ -2269,12 +2667,41 @@
     var dots=document.getElementById('ssdots-'+id);
     if(dots) dots.querySelectorAll('.sold-sdot').forEach(function(d,i){d.classList.toggle('active',i===soldSlideIdx[id]);});
   }
+  var hhCurrentBreed='all', hhCurrentPage=1, hhPerPage=10;
   function showSoldTab(breed,btn){
     document.querySelectorAll('.sold-tabs .tab').forEach(function(t){t.classList.remove('active');});
     if(btn) btn.classList.add('active');
-    document.querySelectorAll('#sold-all-grid .sold-card').forEach(function(card){
-      card.style.display=(breed==='all'||card.dataset.breed===breed)?'':'none';
-    });
+    hhCurrentBreed=breed; hhCurrentPage=1;
+    hhRenderPage();
+  }
+  function hhRenderPage(){
+    var allCards=Array.from(document.querySelectorAll('#sold-all-grid .sold-card'));
+    var filtered=allCards.filter(function(c){return hhCurrentBreed==='all'||c.dataset.breed===hhCurrentBreed;});
+    var totalPages=Math.max(1,Math.ceil(filtered.length/hhPerPage));
+    if(hhCurrentPage>totalPages) hhCurrentPage=totalPages;
+    var start=(hhCurrentPage-1)*hhPerPage, end=start+hhPerPage;
+    allCards.forEach(function(c){c.style.display='none';});
+    filtered.forEach(function(c,i){c.style.display=(i>=start&&i<end)?'':'none';});
+    // Render pagination
+    var pg=document.getElementById('hh-pagination');
+    if(!pg) return;
+    if(totalPages<=1){pg.innerHTML='';return;}
+    var html='';
+    html+='<button class="hh-page-btn" onclick="hhGoPage('+(hhCurrentPage-1)+')" '+(hhCurrentPage===1?'disabled':'')+'>&#8249;</button>';
+    for(var i=1;i<=totalPages;i++){
+      html+='<button class="hh-page-btn'+(i===hhCurrentPage?' active':'')+'" onclick="hhGoPage('+i+')">'+i+'</button>';
+    }
+    html+='<button class="hh-page-btn" onclick="hhGoPage('+(hhCurrentPage+1)+')" '+(hhCurrentPage===totalPages?'disabled':'')+'>&#8250;</button>';
+    html+='<span class="hh-page-info">'+filtered.length+' homes · Page '+hhCurrentPage+' of '+totalPages+'</span>';
+    pg.innerHTML=html;
+  }
+  function hhGoPage(p){
+    var allCards=Array.from(document.querySelectorAll('#sold-all-grid .sold-card'));
+    var filtered=allCards.filter(function(c){return hhCurrentBreed==='all'||c.dataset.breed===hhCurrentBreed;});
+    var totalPages=Math.max(1,Math.ceil(filtered.length/hhPerPage));
+    hhCurrentPage=Math.max(1,Math.min(p,totalPages));
+    hhRenderPage();
+    document.getElementById('happyhomes').scrollIntoView({behavior:'smooth',block:'start'});
   }
   function showSubTab(breed,pattern,btn){document.querySelectorAll('[id^="stab-'+breed+'"]').forEach(function(t){t.classList.remove('active');});if(btn)btn.classList.add('active');var grid=document.getElementById('grid-'+breed);if(!grid)return;grid.querySelectorAll('.cat-card').forEach(function(card){card.style.display=(pattern==='all'||card.dataset.pattern===pattern)?'':' none';});}
   function goSubTab(breed,pattern){var tab=document.getElementById('stab-'+breed+'-'+pattern);showTab(breed,document.getElementById('tab-'+breed));showSubTab(breed,pattern,tab);goTo('gallery');}
@@ -2627,6 +3054,35 @@
 
   document.getElementById('orderModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
   if(window.innerWidth<768){sbOpen=true;toggleSidebar();}
+    } else {
+      var el=document.getElementById('service-grooming');
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  }
+  // Close promo on outside click
+  document.addEventListener('click',function(e){
+    var float=document.getElementById('promoFloat');
+    if(float&&!float.contains(e.target)){
+      var panel=document.getElementById('promoPanel');
+      if(panel&&panel.classList.contains('open')) closePromo();
+    }
+  });
+
+
+  // ── Promo ticker click handler ──
+  function handleTickerClick(e){
+    var txt = e.target.closest('.promo-ticker-item');
+    if(!txt) return;
+    var content = txt.textContent.toLowerCase();
+    if(content.indexOf('mating')>-1){
+      var el=document.getElementById('mating');
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    } else if(content.indexOf('grooming')>-1){
+      var el=document.getElementById('service-grooming');
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  }
+
 </script>
 </body>
 </html>
