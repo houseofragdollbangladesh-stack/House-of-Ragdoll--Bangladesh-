@@ -354,7 +354,6 @@
     footer a{color:rgba(255,255,255,.44);}
     footer span{color:var(--gold);}
 
-
     .slideshow::after{content:'🔍';position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.45);color:#fff;font-size:.75rem;padding:3px 7px;border-radius:8px;pointer-events:none;opacity:0;transition:opacity .2s;}
     .slideshow:hover::after{opacity:1;}
     .doll-slideshow::after{content:'🔍 Tap to zoom';position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.45);color:#fff;font-size:.72rem;padding:3px 8px;border-radius:8px;pointer-events:none;opacity:0;transition:opacity .2s;}
@@ -390,7 +389,6 @@
     .gallery-wrap .sec-eyebrow{color:var(--blue);letter-spacing:.13em;}
     .gallery-wrap .sec-title{color:var(--navy);font-weight:800;}
     .gallery-wrap .sec-sub{color:var(--muted);}
-
 
 
     /* MATING TABS */
@@ -852,66 +850,8 @@
           <button class="subtab" id="stab-ragdoll-van" onclick="showSubTab('ragdoll','van',this)">Van</button>
         </div>
         <div class="gallery-grid" id="grid-ragdoll">
-                    <div class="cat-card" data-price="200000" data-sold="false" data-pattern="sealmitted">
-            <div class="slideshow">
-              <div class="slides" id="slides-kb"><div class="slide"><img loading="lazy" src="Mithai1.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],0,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Mithai2.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],1,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Mithai3.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],2,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Mithai4.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],3,'Mithai')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div></div>
-              <button class="slide-btn slide-prev" onclick="changeSlide('kb',-1)">&#8249;</button>
-              <button class="slide-btn slide-next" onclick="changeSlide('kb',1)">&#8250;</button>
-              <div class="slide-dots" id="dots-kb"><div class="dot active" onclick="goSlide('kb',0)"></div><div class="dot" onclick="goSlide('kb',1)"></div><div class="dot" onclick="goSlide('kb',2)"></div><div class="dot" onclick="goSlide('kb',3)"></div></div>
-              <div class="slide-count" id="count-kb">1/4</div>
-            </div>
-            <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
-            <div class="cat-info">
-              <div class="cat-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🐱 Ragdoll</div><br><div class="cat-name">Mithai</div>
-              <div class="cat-parent">👑 Father: Sondesh (Bicolor) · Mother: Vutum (Bicolor)</div>
-              <div class="cat-detail">Ragdoll · Mitted · Female</div>
-              <div class="cat-specs">
-                <div class="spec-item">⚥ <span><strong>Gender:</strong> Female</span></div>
-                <div class="spec-item">🎂 <span><strong>Age:</strong> 2 Months</span></div>
-                <div class="spec-item">🎨 <span><strong>Pattern:</strong> Mitted</span></div>
-                <div class="spec-item">👁️ <span><strong>Eyes:</strong> Blue</span></div>
-                <div class="spec-item">🎀 <span><strong>Color:</strong> Blue</span></div>
-                <div class="spec-item">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
-                <div class="spec-item">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
-              </div>
-              <div class="cat-price"><strong>৳ 2,00,000</strong></div>
-              <span class="badge-avail">Booked</span>
-              <div class="card-btns">
-                <button class="btn-order" disabled style="opacity:.4;cursor:not-allowed;" onclick="quickOrder('Mithai - Ragdoll Seal Mitted (Father: Sondesh, Mother: Vutum)','200000','order')">Order Now</button>
-                <button class="btn-prebook" disabled style="opacity:.4;cursor:not-allowed;" onclick="quickOrder('Mithai - Ragdoll Seal Mitted (Father: Sondesh, Mother: Vutum)','200000','prebook')">Pre-Book</button>
-                <button class="btn-cart-add" disabled style="opacity:.4;cursor:not-allowed;" id="cartbtn-kb" disabled onclick="addToCart('kb','Mithai - Ragdoll Seal Mitted','120000')">🛒</button>
-              </div>
-            </div>
-          </div>
-          <div class="cat-card" data-price="160000" data-sold="false" data-pattern="van">
-            <div class="slideshow"><div class="slides" id="slides-kc"><div class="slide"><img loading="lazy" src="Golla1.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],0,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Golla2.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],1,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Golla3.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],2,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Golla4.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],3,'Golla')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div></div>
-              <button class="slide-btn slide-prev" onclick="changeSlide('kc',-1)">&#8249;</button>
-              <button class="slide-btn slide-next" onclick="changeSlide('kc',1)">&#8250;</button>
-              <div class="slide-dots" id="dots-kc"><div class="dot active" onclick="goSlide('kc',0)"></div><div class="dot" onclick="goSlide('kc',1)"></div><div class="dot" onclick="goSlide('kc',2)"></div><div class="dot" onclick="goSlide('kc',3)"></div></div>
-              <div class="slide-count" id="count-kc">1/4</div></div>
-            <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
-            <div class="cat-info">
-              <div class="cat-breed-tag" style="display:inline-block;background:#1a237e;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🐱 Ragdoll</div><br><div class="cat-name">Golla</div>
-              <div class="cat-parent">👑 Father: Sondesh (Bicolor) · Mother: Vutum (Bicolor)</div>
-              <div class="cat-detail">Ragdoll · Van · Male</div>
-              <div class="cat-specs">
-                <div class="spec-item">⚥ <span><strong>Gender:</strong> Male</span></div>
-                <div class="spec-item">🎂 <span><strong>Age:</strong> 2 Months</span></div>
-                <div class="spec-item">🎨 <span><strong>Pattern:</strong> Van</span></div>
-                <div class="spec-item">👁️ <span><strong>Eyes:</strong> Blue</span></div>
-                <div class="spec-item">🎀 <span><strong>Color:</strong> Chocolate</span></div>
-                <div class="spec-item">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
-                <div class="spec-item">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
-              </div>
-              <div class="cat-price"><strong>৳ 1,60,000</strong></div>
-              <span class="badge-avail">Booked</span>
-              <div class="card-btns">
-                <button class="btn-order" disabled style="opacity:.4;cursor:not-allowed;" onclick="quickOrder('Golla - Ragdoll Van Male (Father: Sondesh, Mother: Vutum)','140000','order')">Order Now</button>
-                <button class="btn-prebook" disabled style="opacity:.4;cursor:not-allowed;" onclick="quickOrder('Golla - Ragdoll Van Male (Father: Sondesh, Mother: Vutum)','140000','prebook')">Pre-Book</button>
-                <button class="btn-cart-add" disabled style="opacity:.4;cursor:not-allowed;" id="cartbtn-kc" disabled onclick="addToCart('kc','Golla - Ragdoll Van Male','140000')">🛒</button>
-              </div>
-            </div>
-          </div>
+                    
+
           <div class="cat-card" data-price="160000" data-sold="false" data-pattern="sealmitted">
             <div class="slideshow">
               <div class="slides" id="slides-kd"><div class="slide"><img loading="lazy" src="Laddu1.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],0,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Laddu2.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],1,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Laddu3.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],2,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Laddu4.jpg" alt="Laddu" onclick="openLightbox(['Laddu1.jpg','Laddu2.jpg','Laddu3.jpg','Laddu4.jpg'],3,'Laddu')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div></div>
@@ -935,11 +875,11 @@
                 <div class="spec-item">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
               </div>
               <div class="cat-price"><strong>৳ 1,60,000</strong></div>
-              <span class="badge-avail">Booked</span>
+              <span class="badge-avail">Available</span>
               <div class="card-btns">
-                <button class="btn-order" disabled style="opacity:.4;cursor:not-allowed;" onclick="quickOrder('Laddu - Ragdoll Seal Mitted Male (Father: Sondesh, Mother: Vutum)','130000','order')">Order Now</button>
-                <button class="btn-prebook" disabled style="opacity:.4;cursor:not-allowed;" onclick="quickOrder('Laddu - Ragdoll Seal Mitted Male (Father: Sondesh, Mother: Vutum)','130000','prebook')">Pre-Book</button>
-                <button class="btn-cart-add" disabled style="opacity:.4;cursor:not-allowed;" id="cartbtn-kd" disabled onclick="addToCart('kd','Laddu - Ragdoll Seal Mitted Male','130000')">🛒</button>
+                <button class="btn-order" onclick="quickOrder('Laddu - Ragdoll Seal Mitted Male (Father: Sondesh, Mother: Vutum)','160000','order')">Order Now</button>
+                <button class="btn-prebook" onclick="quickOrder('Laddu - Ragdoll Seal Mitted Male (Father: Sondesh, Mother: Vutum)','160000','prebook')">Pre-Book</button>
+                <button class="btn-cart-add" id="cartbtn-kd" onclick="addToCart('kd','Laddu - Ragdoll Seal Mitted Male','160000')">🛒</button>
               </div>
             </div>
           </div>
@@ -987,37 +927,6 @@
             </div>
           </div>
 
-          <div class="cat-card" data-price="7000" data-sold="false" data-pattern="orangeeye">
-            <div class="slideshow">
-              <div class="slides" id="slides-pe-himu"><div class="slide"><img loading="lazy" src="Himu1.jpg" alt="Himu 1" onclick="openLightbox(['Himu1.jpg', 'Himu2.jpg', 'Himu3.jpg'],0,'Himu')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Himu2.jpg" alt="Himu 2" onclick="openLightbox(['Himu1.jpg', 'Himu2.jpg', 'Himu3.jpg'],1,'Himu')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Himu3.jpg" alt="Himu 3" onclick="openLightbox(['Himu1.jpg', 'Himu2.jpg', 'Himu3.jpg'],2,'Himu')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div></div>
-              <button class="slide-btn slide-prev" onclick="changeSlide('pe-himu',-1)">&#8249;</button>
-              <button class="slide-btn slide-next" onclick="changeSlide('pe-himu',1)">&#8250;</button>
-              <div class="slide-dots" id="dots-pe-himu"><div class="dot  active" onclick="goSlide('pe-himu',0)"></div><div class="dot" onclick="goSlide('pe-himu',1)"></div><div class="dot" onclick="goSlide('pe-himu',2)"></div></div>
-              <div class="slide-count" id="count-pe-himu">1/3</div>
-            </div>
-            <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
-            <div class="cat-info">
-              <div class="cat-breed-tag" style="display:inline-block;background:#be185d;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🤍 Persian</div><br><div class="cat-name">Himu</div>
-              <div class="cat-parent">👑 Father: Gadu · Mother: Shiku</div>
-              <div class="cat-detail">Persian · Orange Eye · Male</div>
-              <div class="cat-specs">
-                <div class="spec-item">⚥ <span><strong>Gender:</strong> Male</span></div>
-                <div class="spec-item">🎂 <span><strong>Age:</strong> 2 Months</span></div>
-                <div class="spec-item">🎨 <span><strong>Category:</strong> Orange Eye</span></div>
-                <div class="spec-item">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div>
-                <div class="spec-item">🎀 <span><strong>Color:</strong> Fawn</span></div>
-                <div class="spec-item">💉 <span><strong>Vaccinated:</strong> No</span></div>
-                <div class="spec-item">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
-              </div>
-              <div class="cat-price"><strong>৳ 7,000</strong></div>
-              <span class="badge-avail">Available</span>
-              <div class="card-btns">
-                <button class="btn-order" onclick="quickOrder('Himu - Persian Orange Eye Male','7000','order')">Order Now</button>
-                <button class="btn-prebook" onclick="quickOrder('Himu - Persian Orange Eye Male','7000','prebook')">Pre-Book</button>
-                <button class="btn-cart-add" id="cartbtn-pe-himu" onclick="addToCart('pe-himu','Himu','7000')">🛒</button>
-              </div>
-            </div>
-          </div>
         </div><!-- end grid-persian -->
       </div><!-- end persian block -->
 
@@ -1040,37 +949,7 @@
           <button class="subtab" id="stab-british-longhair" onclick="showSubTab('british','britishlonghair',this)">Long Hair</button>
         </div>
         <div class="gallery-grid" id="grid-british">
-          <div class="cat-card" data-price="70000" data-sold="false" data-pattern="britishlonghair">
-            <div class="slideshow">
-              <div class="slides" id="slides-br-blue"><div class="slide"><img loading="lazy" src="Blue1.jpg" alt="Blue 1" onclick="openLightbox(['Blue1.jpg', 'Blue2.jpg', 'Blue3.jpg'],0,'Blue')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Blue2.jpg" alt="Blue 2" onclick="openLightbox(['Blue1.jpg', 'Blue2.jpg', 'Blue3.jpg'],1,'Blue')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div><div class="slide"><img loading="lazy" src="Blue3.jpg" alt="Blue 3" onclick="openLightbox(['Blue1.jpg', 'Blue2.jpg', 'Blue3.jpg'],2,'Blue')" style="width:100%;height:280px;object-fit:cover;object-position:center 20%;display:block;cursor:zoom-in;"></div></div>
-              <button class="slide-btn slide-prev" onclick="changeSlide('br-blue',-1)">&#8249;</button>
-              <button class="slide-btn slide-next" onclick="changeSlide('br-blue',1)">&#8250;</button>
-              <div class="slide-dots" id="dots-br-blue"><div class="dot  active" onclick="goSlide('br-blue',0)"></div><div class="dot" onclick="goSlide('br-blue',1)"></div><div class="dot" onclick="goSlide('br-blue',2)"></div></div>
-              <div class="slide-count" id="count-br-blue">1/3</div>
-            </div>
-            <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
-            <div class="cat-info">
-              <div class="cat-breed-tag" style="display:inline-block;background:#047857;color:#fff;font-size:.62rem;font-weight:800;padding:.18rem .55rem;border-radius:7px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.3rem;">🇬🇧 British</div><br><div class="cat-name">Blue</div>
-              <div class="cat-parent">👑 Imported</div>
-              <div class="cat-detail">British Long Hair · Orange Eye · Male</div>
-              <div class="cat-specs">
-                <div class="spec-item">⚥ <span><strong>Gender:</strong> Male</span></div>
-                <div class="spec-item">🎂 <span><strong>Age:</strong> 2 Months</span></div>
-                <div class="spec-item">🎨 <span><strong>Category:</strong> British Long Hair</span></div>
-                <div class="spec-item">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div>
-                <div class="spec-item">🎀 <span><strong>Color:</strong> Ash</span></div>
-                <div class="spec-item">💉 <span><strong>Vaccinated:</strong> Yes</span></div>
-                <div class="spec-item">🚽 <span><strong>Litter Trained:</strong> Yes</span></div>
-              </div>
-              <div class="cat-price"><strong>৳ 70,000</strong></div>
-              <span class="badge-avail">Available</span>
-              <div class="card-btns">
-                <button class="btn-order" onclick="quickOrder('Blue - British Long Hair Orange Eye Male','70000','order')">Order Now</button>
-                <button class="btn-prebook" onclick="quickOrder('Blue - British Long Hair Orange Eye Male','70000','prebook')">Pre-Book</button>
-                <button class="btn-cart-add" id="cartbtn-br-blue" onclick="addToCart('br-blue','Blue','70000')">🛒</button>
-              </div>
-            </div>
-          </div>
+
         </div><!-- end grid-british -->
       </div><!-- end british block -->
       </div><!-- end kittens-all-grid -->
@@ -1385,6 +1264,42 @@
       <div class="sold-grid" id="sold-all-grid">
 
         <!-- Leo — Ragdoll -->
+
+        <!-- Mithai — Ragdoll -->
+        <div class="sold-card" data-breed="ragdoll">
+          <div class="sold-slides-wrap">
+            <div class="sold-slides" id="sslides-mithai"><div class="sold-slide"><img loading="lazy" src="Mithai1.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],0,'Mithai')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Mithai2.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],1,'Mithai')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Mithai3.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],2,'Mithai')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Mithai4.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],3,'Mithai')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+            <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('mithai',-1)">&#8249;</button>
+            <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('mithai',1)">&#8250;</button>
+            <div class="sold-sdots" id="ssdots-mithai"><div class="sold-dot active" onclick="goSoldSlide('mithai',0)"></div><div class="sold-dot" onclick="goSoldSlide('mithai',1)"></div><div class="sold-dot" onclick="goSoldSlide('mithai',2)"></div><div class="sold-dot" onclick="goSoldSlide('mithai',3)"></div></div>
+            <div class="sold-badge">Adopted ✓</div>
+          </div>
+          <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
+          <div class="sold-info">
+            <div class="sold-breed-tag" style="background:#1a237e;">🐱 Ragdoll</div>
+            <div class="sold-name">Mithai</div>
+            <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Seal Mitted</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Blue</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Female</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong style="color:#b71c1c;">Price:</strong> <span style="color:#b71c1c;font-weight:700;">৳2,00,000 (Sold)</span></span></div></div>
+            <div class="sold-home">🏠 New home: Banani</div>
+          </div>
+        </div>
+
+        <!-- Golla — Ragdoll -->
+        <div class="sold-card" data-breed="ragdoll">
+          <div class="sold-slides-wrap">
+            <div class="sold-slides" id="sslides-golla"><div class="sold-slide"><img loading="lazy" src="Golla1.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],0,'Golla')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Golla2.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],1,'Golla')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Golla3.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],2,'Golla')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Golla4.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],3,'Golla')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+            <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('golla',-1)">&#8249;</button>
+            <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('golla',1)">&#8250;</button>
+            <div class="sold-sdots" id="ssdots-golla"><div class="sold-dot active" onclick="goSoldSlide('golla',0)"></div><div class="sold-dot" onclick="goSoldSlide('golla',1)"></div><div class="sold-dot" onclick="goSoldSlide('golla',2)"></div><div class="sold-dot" onclick="goSoldSlide('golla',3)"></div></div>
+            <div class="sold-badge">Adopted ✓</div>
+          </div>
+          <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
+          <div class="sold-info">
+            <div class="sold-breed-tag" style="background:#1a237e;">🐱 Ragdoll</div>
+            <div class="sold-name">Golla</div>
+            <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Van</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Chocolate</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Blue</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong style="color:#b71c1c;">Price:</strong> <span style="color:#b71c1c;font-weight:700;">৳1,60,000 (Sold)</span></span></div></div>
+            <div class="sold-home">🏠 New home: Gulshan-1</div>
+          </div>
+        </div>
         <div class="sold-card" data-breed="ragdoll">
           <div class="sold-slides-wrap">
             <div class="sold-slides" id="sslides-leo"><div class="sold-slide"><img loading="lazy" src="leo1.jpg" alt="Leo" onclick="openLightbox(['leo1.jpg','leo2.jpg','leo3.jpg'],0,'Leo')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="leo2.jpg" alt="Leo" onclick="openLightbox(['leo1.jpg','leo2.jpg','leo3.jpg'],1,'Leo')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="leo3.jpg" alt="Leo" onclick="openLightbox(['leo1.jpg','leo2.jpg','leo3.jpg'],2,'Leo')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
@@ -1520,6 +1435,24 @@
             <div class="sold-name">Poofy</div>
             <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Pattern:</strong> Mono Color</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> White</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Partial Odd Eye</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> No</span></div><div class="sold-spec">💰 <span><strong style="color:#b71c1c;">Price:</strong> <span style="color:#b71c1c;font-weight:700;">৳8,000 (Sold)</span></span></div></div>
             <div class="sold-home">🏠 New home: Mohammadpur</div>
+          </div>
+        </div>
+
+        <!-- Himu — Persian -->
+        <div class="sold-card" data-breed="persian">
+          <div class="sold-slides-wrap">
+            <div class="sold-slides" id="sslides-himu"><div class="sold-slide"><img loading="lazy" src="Himu1.jpg" alt="Himu" onclick="openLightbox(['Himu1.jpg','Himu2.jpg','Himu3.jpg'],0,'Himu')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Himu2.jpg" alt="Himu" onclick="openLightbox(['Himu1.jpg','Himu2.jpg','Himu3.jpg'],1,'Himu')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Himu3.jpg" alt="Himu" onclick="openLightbox(['Himu1.jpg','Himu2.jpg','Himu3.jpg'],2,'Himu')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+            <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('himu',-1)">&#8249;</button>
+            <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('himu',1)">&#8250;</button>
+            <div class="sold-sdots" id="ssdots-himu"><div class="sold-dot active" onclick="goSoldSlide('himu',0)"></div><div class="sold-dot" onclick="goSoldSlide('himu',1)"></div><div class="sold-dot" onclick="goSoldSlide('himu',2)"></div></div>
+            <div class="sold-badge">Adopted ✓</div>
+          </div>
+          <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
+          <div class="sold-info">
+            <div class="sold-breed-tag" style="background:#be185d;">🤍 Persian</div>
+            <div class="sold-name">Himu</div>
+            <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Category:</strong> Orange Eye</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Fawn</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> No</span></div><div class="sold-spec">💰 <span><strong style="color:#b71c1c;">Price:</strong> <span style="color:#b71c1c;font-weight:700;">৳7,000 (Sold)</span></span></div></div>
+            <div class="sold-home">🏠 New home: Mirpur 14</div>
           </div>
         </div>
                 <!-- Ron & Rianna — persian -->
@@ -1754,6 +1687,24 @@
       <div class="sold-note">💬 Want to be adopted? Contact us!</div>
 
     </div><!-- end sold-inner -->
+
+        <!-- Blue — British -->
+        <div class="sold-card" data-breed="british">
+          <div class="sold-slides-wrap">
+            <div class="sold-slides" id="sslides-blue-british"><div class="sold-slide"><img loading="lazy" src="Blue1.jpg" alt="Blue" onclick="openLightbox(['Blue1.jpg','Blue2.jpg','Blue3.jpg'],0,'Blue')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Blue2.jpg" alt="Blue" onclick="openLightbox(['Blue1.jpg','Blue2.jpg','Blue3.jpg'],1,'Blue')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Blue3.jpg" alt="Blue" onclick="openLightbox(['Blue1.jpg','Blue2.jpg','Blue3.jpg'],2,'Blue')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
+            <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('blue-british',-1)">&#8249;</button>
+            <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('blue-british',1)">&#8250;</button>
+            <div class="sold-sdots" id="ssdots-blue-british"><div class="sold-dot active" onclick="goSoldSlide('blue-british',0)"></div><div class="sold-dot" onclick="goSoldSlide('blue-british',1)"></div><div class="sold-dot" onclick="goSoldSlide('blue-british',2)"></div></div>
+            <div class="sold-badge">Adopted ✓</div>
+          </div>
+          <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
+          <div class="sold-info">
+            <div class="sold-breed-tag" style="background:#047857;">🇬🇧 British</div>
+            <div class="sold-name">Blue</div>
+            <div class="sold-specs"><div class="sold-spec">🎨 <span><strong>Category:</strong> British Long Hair</span></div><div class="sold-spec">🎀 <span><strong>Color:</strong> Ash</span></div><div class="sold-spec">👁️ <span><strong>Eyes:</strong> Orange/Hazel</span></div><div class="sold-spec">⚥ <span><strong>Gender:</strong> Male</span></div><div class="sold-spec">💉 <span><strong>Vaccinated:</strong> Yes</span></div><div class="sold-spec">💰 <span><strong style="color:#b71c1c;">Price:</strong> <span style="color:#b71c1c;font-weight:700;">৳70,000 (Sold)</span></span></div></div>
+            <div class="sold-home">🏠 New home: Basila</div>
+          </div>
+        </div>
   </div><!-- end sold-wrap -->
 
   <div id="mating" data-service-id="service-mating" style="scroll-margin-top:70px;">
@@ -2100,7 +2051,6 @@
   <div class="lightbox-counter" id="lightboxCounter"></div>
 </div>
 
-
 <!-- USER PROFILE PANEL -->
 <div class="login-modal" id="profileModal">
   <div class="login-box" style="max-width:400px;">
@@ -2126,7 +2076,6 @@
     </div>
   </div>
 </div>
-
 
 <!-- ORDER STATUS MODAL -->
 <div class="login-modal" id="orderStatusModal">
@@ -2521,7 +2470,6 @@
   }
 
 
-
   // LIGHTBOX
   var lbImgs=[], lbIdx=0;
   function openLightbox(imgs, idx, caption){
@@ -2546,7 +2494,6 @@
     if(e.key==='ArrowLeft')lightboxNav(-1);
     if(e.key==='Escape')closeLightbox();
   });
-
 
 
 
