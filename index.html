@@ -229,6 +229,8 @@
     .sold-spec{font-size:.6rem;color:var(--navy);display:flex;gap:.22rem;line-height:1.35;}
     .sold-spec strong{color:var(--navy);font-weight:700;}
     .sold-home{font-size:.65rem;color:#0277bd;margin-top:.28rem;}
+    .sold-inner .sold-breed{color:rgba(255,255,255,.6);}
+    .sold-inner .sold-home{color:var(--gold-light);}
 
     .sold-slides-wrap{position:relative;height:200px;overflow:hidden;background:#f5f0e8;}
     .sold-slides{display:flex;height:200px;transition:transform .4s ease;}
@@ -654,9 +656,9 @@
     }
     .sold-inner .sec-eyebrow{color:var(--gold-light);}
     .sold-inner .sec-title{
-      color:#fff;
-      -webkit-text-fill-color:#fff;
-      background:none;
+      color:#fff !important;
+      -webkit-text-fill-color:#fff !important;
+      background:none !important;
     }
     .sold-inner .sec-sub{color:rgba(255,255,255,.55);}
     .sold-tabs .tab{
@@ -755,7 +757,7 @@
       transform:translateY(-3px);
       box-shadow:0 8px 22px rgba(30,60,100,.1);
     }
-      .promo-paw{animation:none;}
+    @media(prefers-reduced-motion:reduce){
       .hero-circles span{animation:none;}
     }
 
@@ -763,7 +765,6 @@
     @media(max-width:600px){
       .hero h1{font-size:2.1rem;}
       .hero h1 em{font-size:2.4rem;}
-      .promo-panel{width:210px;}
     }
 
 
@@ -1647,7 +1648,7 @@
             <div class="sold-slides" id="sslides-mithai"><div class="sold-slide"><img loading="lazy" src="Mithai1.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],0,'Mithai')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Mithai2.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],1,'Mithai')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Mithai3.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],2,'Mithai')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Mithai4.jpg" alt="Mithai" onclick="openLightbox(['Mithai1.jpg','Mithai2.jpg','Mithai3.jpg','Mithai4.jpg'],3,'Mithai')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('mithai',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('mithai',1)">&#8250;</button>
-            <div class="sold-sdots" id="ssdots-mithai"><div class="sold-dot active" onclick="goSoldSlide('mithai',0)"></div><div class="sold-dot" onclick="goSoldSlide('mithai',1)"></div><div class="sold-dot" onclick="goSoldSlide('mithai',2)"></div><div class="sold-dot" onclick="goSoldSlide('mithai',3)"></div></div>
+            <div class="sold-sdots" id="ssdots-mithai"><div class="sold-sdot active" onclick="goSoldSlide('mithai',0)"></div><div class="sold-sdot" onclick="goSoldSlide('mithai',1)"></div><div class="sold-sdot" onclick="goSoldSlide('mithai',2)"></div><div class="sold-sdot" onclick="goSoldSlide('mithai',3)"></div></div>
             <div class="sold-badge">Adopted ✓</div>
           </div>
           <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
@@ -1665,7 +1666,7 @@
             <div class="sold-slides" id="sslides-golla"><div class="sold-slide"><img loading="lazy" src="Golla1.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],0,'Golla')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Golla2.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],1,'Golla')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Golla3.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],2,'Golla')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Golla4.jpg" alt="Golla" onclick="openLightbox(['Golla1.jpg','Golla2.jpg','Golla3.jpg','Golla4.jpg'],3,'Golla')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('golla',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('golla',1)">&#8250;</button>
-            <div class="sold-sdots" id="ssdots-golla"><div class="sold-dot active" onclick="goSoldSlide('golla',0)"></div><div class="sold-dot" onclick="goSoldSlide('golla',1)"></div><div class="sold-dot" onclick="goSoldSlide('golla',2)"></div><div class="sold-dot" onclick="goSoldSlide('golla',3)"></div></div>
+            <div class="sold-sdots" id="ssdots-golla"><div class="sold-sdot active" onclick="goSoldSlide('golla',0)"></div><div class="sold-sdot" onclick="goSoldSlide('golla',1)"></div><div class="sold-sdot" onclick="goSoldSlide('golla',2)"></div><div class="sold-sdot" onclick="goSoldSlide('golla',3)"></div></div>
             <div class="sold-badge">Adopted ✓</div>
           </div>
           <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
@@ -1768,7 +1769,7 @@
             <div class="sold-slides" id="sslides-muffy"><div class="sold-slide"><img loading="lazy" src="Muffy1.jpg" alt="Muffy" onclick="openLightbox(['Muffy1.jpg', 'Muffy2.jpg'],0,'Muffy')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Muffy2.jpg" alt="Muffy" onclick="openLightbox(['Muffy1.jpg', 'Muffy2.jpg'],1,'Muffy')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('muffy',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('muffy',1)">&#8250;</button>
-            <div class="sold-sdots" id="ssdots-muffy"><div class="sold-sdot active" onclick="soldSlideIdx['muffy']=0;updateSoldSlide('muffy',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['muffy']=0;updateSoldSlide('muffy',2)"></div></div>
+            <div class="sold-sdots" id="ssdots-muffy"><div class="sold-sdot active" onclick="soldSlideIdx['muffy']=0;updateSoldSlide('muffy',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['muffy']=1;updateSoldSlide('muffy',2)"></div></div>
             <div class="sold-badge">Adopted ✓</div>
           </div>
           <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
@@ -1785,7 +1786,7 @@
             <div class="sold-slides" id="sslides-pookie"><div class="sold-slide"><img loading="lazy" src="Pookie1.jpg" alt="Pookie" onclick="openLightbox(['Pookie1.jpg', 'Pookie2.jpg'],0,'Pookie')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Pookie2.jpg" alt="Pookie" onclick="openLightbox(['Pookie1.jpg', 'Pookie2.jpg'],1,'Pookie')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('pookie',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('pookie',1)">&#8250;</button>
-            <div class="sold-sdots" id="ssdots-pookie"><div class="sold-sdot active" onclick="soldSlideIdx['pookie']=0;updateSoldSlide('pookie',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['pookie']=0;updateSoldSlide('pookie',2)"></div></div>
+            <div class="sold-sdots" id="ssdots-pookie"><div class="sold-sdot active" onclick="soldSlideIdx['pookie']=0;updateSoldSlide('pookie',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['pookie']=1;updateSoldSlide('pookie',2)"></div></div>
             <div class="sold-badge">Adopted ✓</div>
           </div>
           <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
@@ -1820,7 +1821,7 @@
             <div class="sold-slides" id="sslides-himu"><div class="sold-slide"><img loading="lazy" src="Himu1.jpg" alt="Himu" onclick="openLightbox(['Himu1.jpg','Himu2.jpg','Himu3.jpg'],0,'Himu')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Himu2.jpg" alt="Himu" onclick="openLightbox(['Himu1.jpg','Himu2.jpg','Himu3.jpg'],1,'Himu')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Himu3.jpg" alt="Himu" onclick="openLightbox(['Himu1.jpg','Himu2.jpg','Himu3.jpg'],2,'Himu')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('himu',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('himu',1)">&#8250;</button>
-            <div class="sold-sdots" id="ssdots-himu"><div class="sold-dot active" onclick="goSoldSlide('himu',0)"></div><div class="sold-dot" onclick="goSoldSlide('himu',1)"></div><div class="sold-dot" onclick="goSoldSlide('himu',2)"></div></div>
+            <div class="sold-sdots" id="ssdots-himu"><div class="sold-sdot active" onclick="goSoldSlide('himu',0)"></div><div class="sold-sdot" onclick="goSoldSlide('himu',1)"></div><div class="sold-sdot" onclick="goSoldSlide('himu',2)"></div></div>
             <div class="sold-badge">Adopted ✓</div>
           </div>
           <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
@@ -1854,7 +1855,7 @@
             <div class="sold-slides" id="sslides-sia"><div class="sold-slide"><img loading="lazy" src="Sia1.jpg" alt="Sia" onclick="openLightbox(['Sia1.jpg', 'Sia2.jpg'],0,'Sia')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Sia2.jpg" alt="Sia" onclick="openLightbox(['Sia1.jpg', 'Sia2.jpg'],1,'Sia')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('sia',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('sia',1)">&#8250;</button>
-            <div class="sold-sdots" id="ssdots-sia"><div class="sold-sdot active" onclick="soldSlideIdx['sia']=0;updateSoldSlide('sia',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['sia']=0;updateSoldSlide('sia',2)"></div></div>
+            <div class="sold-sdots" id="ssdots-sia"><div class="sold-sdot active" onclick="soldSlideIdx['sia']=0;updateSoldSlide('sia',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['sia']=1;updateSoldSlide('sia',2)"></div></div>
             <div class="sold-badge">Adopted ✓</div>
           </div>
           <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
@@ -1924,7 +1925,7 @@
             <div class="sold-slides" id="sslides-turtur"><div class="sold-slide"><img loading="lazy" src="Turtur1.jpg" alt="Turtur" onclick="openLightbox(['Turtur1.jpg', 'Turtur2.jpg'],0,'Turtur')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Turtur2.jpg" alt="Turtur" onclick="openLightbox(['Turtur1.jpg', 'Turtur2.jpg'],1,'Turtur')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('turtur',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('turtur',1)">&#8250;</button>
-            <div class="sold-sdots" id="ssdots-turtur"><div class="sold-sdot active" onclick="soldSlideIdx['turtur']=0;updateSoldSlide('turtur',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['turtur']=0;updateSoldSlide('turtur',2)"></div></div>
+            <div class="sold-sdots" id="ssdots-turtur"><div class="sold-sdot active" onclick="soldSlideIdx['turtur']=0;updateSoldSlide('turtur',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['turtur']=1;updateSoldSlide('turtur',2)"></div></div>
             <div class="sold-badge">Adopted ✓</div>
           </div>
           <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
@@ -1960,7 +1961,7 @@
             <div class="sold-slides" id="sslides-linkon"><div class="sold-slide"><img loading="lazy" src="Linkon1.jpg" alt="Linkon" onclick="openLightbox(['Linkon1.jpg', 'Linkon2.jpg'],0,'Linkon')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Linkon2.jpg" alt="Linkon" onclick="openLightbox(['Linkon1.jpg', 'Linkon2.jpg'],1,'Linkon')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('linkon',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('linkon',1)">&#8250;</button>
-            <div class="sold-sdots" id="ssdots-linkon"><div class="sold-sdot active" onclick="soldSlideIdx['linkon']=0;updateSoldSlide('linkon',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['linkon']=0;updateSoldSlide('linkon',2)"></div></div>
+            <div class="sold-sdots" id="ssdots-linkon"><div class="sold-sdot active" onclick="soldSlideIdx['linkon']=0;updateSoldSlide('linkon',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['linkon']=1;updateSoldSlide('linkon',2)"></div></div>
             <div class="sold-badge">Adopted ✓</div>
           </div>
           <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
@@ -2012,7 +2013,7 @@
             <div class="sold-slides" id="sslides-tabby"><div class="sold-slide"><img loading="lazy" src="Tabby1.jpg" alt="Tabby" onclick="openLightbox(['Tabby1.jpg', 'Tabby2.jpg'],0,'Tabby')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Tabby2.jpg" alt="Tabby" onclick="openLightbox(['Tabby1.jpg', 'Tabby2.jpg'],1,'Tabby')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('tabby',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('tabby',1)">&#8250;</button>
-            <div class="sold-sdots" id="ssdots-tabby"><div class="sold-sdot active" onclick="soldSlideIdx['tabby']=0;updateSoldSlide('tabby',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['tabby']=0;updateSoldSlide('tabby',2)"></div></div>
+            <div class="sold-sdots" id="ssdots-tabby"><div class="sold-sdot active" onclick="soldSlideIdx['tabby']=0;updateSoldSlide('tabby',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['tabby']=1;updateSoldSlide('tabby',2)"></div></div>
             <div class="sold-badge">Adopted ✓</div>
           </div>
           <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
@@ -2029,7 +2030,7 @@
             <div class="sold-slides" id="sslides-rubel"><div class="sold-slide"><img loading="lazy" src="Rubel1.jpg" alt="Rubel" onclick="openLightbox(['Rubel1.jpg', 'Rubel2.jpg'],0,'Rubel')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Rubel2.jpg" alt="Rubel" onclick="openLightbox(['Rubel1.jpg', 'Rubel2.jpg'],1,'Rubel')" style="cursor:zoom-in;object-fit:cover;object-position:center 20%;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('rubel',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('rubel',1)">&#8250;</button>
-            <div class="sold-sdots" id="ssdots-rubel"><div class="sold-sdot active" onclick="soldSlideIdx['rubel']=0;updateSoldSlide('rubel',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['rubel']=0;updateSoldSlide('rubel',2)"></div></div>
+            <div class="sold-sdots" id="ssdots-rubel"><div class="sold-sdot active" onclick="soldSlideIdx['rubel']=0;updateSoldSlide('rubel',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['rubel']=1;updateSoldSlide('rubel',2)"></div></div>
             <div class="sold-badge">Adopted ✓</div>
           </div>
           <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
@@ -2046,7 +2047,7 @@
             <div class="sold-slides" id="sslides-samon"><div class="sold-slide"><img loading="lazy" src="Samon1.jpg" alt="Samon" onclick="openLightbox(['Samon1.jpg', 'Samon2.jpg'],0,'Samon')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Samon2.jpg" alt="Samon" onclick="openLightbox(['Samon1.jpg', 'Samon2.jpg'],1,'Samon')" style="cursor:zoom-in;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('samon',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('samon',1)">&#8250;</button>
-            <div class="sold-sdots" id="ssdots-samon"><div class="sold-sdot active" onclick="soldSlideIdx['samon']=0;updateSoldSlide('samon',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['samon']=0;updateSoldSlide('samon',2)"></div></div>
+            <div class="sold-sdots" id="ssdots-samon"><div class="sold-sdot active" onclick="soldSlideIdx['samon']=0;updateSoldSlide('samon',2)"></div><div class="sold-sdot" onclick="soldSlideIdx['samon']=1;updateSoldSlide('samon',2)"></div></div>
             <div class="sold-badge">Adopted ✓</div>
           </div>
           <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
@@ -2065,7 +2066,7 @@
             <div class="sold-slides" id="sslides-blue-british"><div class="sold-slide"><img loading="lazy" src="Blue1.jpg" alt="Blue" onclick="openLightbox(['Blue1.jpg','Blue2.jpg','Blue3.jpg'],0,'Blue')" style="cursor:zoom-in;object-fit:cover;object-position:center center;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Blue2.jpg" alt="Blue" onclick="openLightbox(['Blue1.jpg','Blue2.jpg','Blue3.jpg'],1,'Blue')" style="cursor:zoom-in;object-fit:cover;object-position:center center;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div><div class="sold-slide"><img loading="lazy" src="Blue3.jpg" alt="Blue" onclick="openLightbox(['Blue1.jpg','Blue2.jpg','Blue3.jpg'],2,'Blue')" style="cursor:zoom-in;object-fit:cover;object-position:center center;" onerror="this.parentElement.style.background='#eee';this.style.display='none'"></div></div>
             <button class="sold-slide-btn sold-sprev" onclick="changeSoldSlide('blue-british',-1)">&#8249;</button>
             <button class="sold-slide-btn sold-snext" onclick="changeSoldSlide('blue-british',1)">&#8250;</button>
-            <div class="sold-sdots" id="ssdots-blue-british"><div class="sold-dot active" onclick="goSoldSlide('blue-british',0)"></div><div class="sold-dot" onclick="goSoldSlide('blue-british',1)"></div><div class="sold-dot" onclick="goSoldSlide('blue-british',2)"></div></div>
+            <div class="sold-sdots" id="ssdots-blue-british"><div class="sold-sdot active" onclick="goSoldSlide('blue-british',0)"></div><div class="sold-sdot" onclick="goSoldSlide('blue-british',1)"></div><div class="sold-sdot" onclick="goSoldSlide('blue-british',2)"></div></div>
             <div class="sold-badge">Adopted ✓</div>
           </div>
           <div class="photo-hint"><span>🔍 Click pictures for better view</span></div>
@@ -2703,7 +2704,7 @@
     hhRenderPage();
     document.getElementById('happyhomes').scrollIntoView({behavior:'smooth',block:'start'});
   }
-  function showSubTab(breed,pattern,btn){document.querySelectorAll('[id^="stab-'+breed+'"]').forEach(function(t){t.classList.remove('active');});if(btn)btn.classList.add('active');var grid=document.getElementById('grid-'+breed);if(!grid)return;grid.querySelectorAll('.cat-card').forEach(function(card){card.style.display=(pattern==='all'||card.dataset.pattern===pattern)?'':' none';});}
+  function showSubTab(breed,pattern,btn){document.querySelectorAll('[id^="stab-'+breed+'"]').forEach(function(t){t.classList.remove('active');});if(btn)btn.classList.add('active');var grid=document.getElementById('grid-'+breed);if(!grid)return;grid.querySelectorAll('.cat-card').forEach(function(card){card.style.display=(pattern==='all'||card.dataset.pattern===pattern)?'':'none';});}
   function goSubTab(breed,pattern){var tab=document.getElementById('stab-'+breed+'-'+pattern);showTab(breed,document.getElementById('tab-'+breed));showSubTab(breed,pattern,tab);goTo('gallery');}
   function changeSlide(id,dir){if(!slideIdx[id])slideIdx[id]=0;var s=document.getElementById('slides-'+id);if(!s)return;slideIdx[id]=(slideIdx[id]+dir+s.children.length)%s.children.length;updateSlide(id,s.children.length);}
   function goSlide(id,idx){slideIdx[id]=idx;var s=document.getElementById('slides-'+id);if(s)updateSlide(id,s.children.length);}
@@ -3054,20 +3055,15 @@
 
   document.getElementById('orderModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
   if(window.innerWidth<768){sbOpen=true;toggleSidebar();}
-    } else {
-      var el=document.getElementById('service-grooming');
-      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
-    }
-  }
-  // Close promo on outside click
-  document.addEventListener('click',function(e){
-    var float=document.getElementById('promoFloat');
-    if(float&&!float.contains(e.target)){
-      var panel=document.getElementById('promoPanel');
-      if(panel&&panel.classList.contains('open')) closePromo();
-    }
-  });
 
+
+  // ── goSoldSlide helper (for dot buttons on Mithai/Golla/Himu/Blue-british) ──
+  function goSoldSlide(id,idx){
+    soldSlideIdx[id]=idx;
+    var s=document.getElementById('sslides-'+id);
+    if(!s) return;
+    updateSoldSlide(id,s.children.length);
+  }
 
   // ── Promo ticker click handler ──
   function handleTickerClick(e){
