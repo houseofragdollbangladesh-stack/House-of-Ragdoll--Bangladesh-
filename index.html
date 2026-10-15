@@ -465,9 +465,8 @@
     @media(max-width:768px){
       /* Sidebar hidden by default on mobile — JS toggles it open */
       .sidebar{transform:translateX(-100%);}
+      .sidebar.open{transform:translateX(0);}
       .main-content{margin-left:0 !important;width:100% !important;}
-      /* Sidebar open overlay */
-      .sidebar-overlay{display:block !important;}
       /* Toggle button: always at left edge on mobile */
       .sb-toggle-btn{left:10px !important;}
       .sb-toggle-btn.shifted{left:10px !important;}
@@ -826,12 +825,12 @@
     .promo-ticker-wrap{
       position:fixed;
       bottom:0;left:0;right:0;
-      z-index:600;
+      z-index:200;
       background:linear-gradient(90deg,#0d1b35,#1b2a4a,#0d1b35);
       border-top:2px solid rgba(200,151,58,.5);
-      padding:.6rem 0;
+      padding:.5rem 0;
       overflow:hidden;
-      cursor:pointer;
+      cursor:default;
     }
     .promo-ticker-track{
       display:flex;
@@ -2591,14 +2590,17 @@
   var isMobile=window.innerWidth<768;
   function toggleSidebar(){
     sbOpen=!sbOpen;
-    document.getElementById('sidebar').classList.toggle('hidden',!sbOpen);
-    if(!isMobile){
+    var sb=document.getElementById('sidebar');
+    var ov=document.getElementById('sidebarOverlay');
+    if(isMobile){
+      // Mobile: use .open class to slide sidebar in/out
+      sb.classList.toggle('open',sbOpen);
+      if(ov) ov.style.display=sbOpen?'block':'none';
+    } else {
+      // Desktop: use .hidden class and shift main content
+      sb.classList.toggle('hidden',!sbOpen);
       document.getElementById('mainContent').classList.toggle('sb-hidden',!sbOpen);
       document.getElementById('sbToggle').classList.toggle('shifted',sbOpen);
-    } else {
-      // On mobile: overlay shows when sidebar is open
-      var ov=document.getElementById('sidebarOverlay');
-      if(ov) ov.style.display=sbOpen?'block':'none';
     }
   }
   function closeSidebarMobile(){if(sbOpen)toggleSidebar();}
